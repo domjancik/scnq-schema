@@ -1,0 +1,99 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\RGBMorph.v4p" systemname="RGBMorph" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\RGBMorph.v4p" scrollx="0" scrolly="240">
+   <NODE systemname="InputMorph (4d Buffer)" filename="..\InputMorph (4d Buffer).v4p" nodename="InputMorph (4d Buffer)" componentmode="Hidden" id="0" stayontop="0">
+   <BOUNDS type="Node" left="1500" top="2040" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Value A XYZW Default" visible="1" slicecount="4" values="1,1,1,1">
+   </PIN>
+   <PIN pinname="Value B XYZW Default" visible="1" slicecount="4" values="0,0,0,0">
+   </PIN>
+   <PIN pinname="Morph Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="4D Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1" slicecount="1" values="53">
+   </PIN>
+   <PIN pinname="Value A 4D Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="7035" top="6330" width="11370" height="6495">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="RGB (Color Split Vector)" nodename="RGB (Color Split Vector)" componentmode="Hidden" id="1" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.RGBVector.dll">
+   <BOUNDS type="Node" left="1890" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|0.00000,1.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname=" RGBA" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RGB (Color Split Vector)" nodename="RGB (Color Split Vector)" componentmode="Hidden" id="2" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.RGBVector.dll">
+   <BOUNDS type="Node" left="2550" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|0.00000,1.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname=" RGBA" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="3" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Morph Buffer|">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="0" dstpinname="Morph Buffer">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname=" RGBA" dstnodeid="0" dstpinname="Value A XYZW Default">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname=" RGBA" dstnodeid="0" dstpinname="Value B XYZW Default">
+   </LINK>
+   <NODE id="4" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Spread Count|">
+   </PIN>
+   <BOUNDS type="Box" left="2400" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2400" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Spread Count">
+   </LINK>
+   <NODE id="5" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Colors">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="2640" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="2640" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="4D Buffer" dstnodeid="5" dstpinname="Input Node">
+   </LINK>
+   <NODE id="6" systemname="IOBox (Color)" componentmode="InABox" nodename="IOBox (Color)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Color Off|">
+   </PIN>
+   <BOUNDS type="Box" left="3300" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3300" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Color Output" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <NODE id="7" systemname="IOBox (Color)" componentmode="InABox" nodename="IOBox (Color)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Color On|">
+   </PIN>
+   <BOUNDS type="Box" left="4200" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4200" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Color Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <BOUNDS type="Window" left="-1" top="-1" width="4150" height="3640">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   </PATCH>
