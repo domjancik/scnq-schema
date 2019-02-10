@@ -1,6 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!DOCTYPE ROOT PUBLIC "" ""[]>
 <ImmutableDictionary xmlns:r="reflection">
+  <Item Key="EvenOdd">
+    <Value Name="EvenOdd">
+      <Children>
+        <Item Name="OEvenOdd">
+          <Bee r:Type="VVVV.Beehive.EvenOddBee" />
+          <Children>
+            <Item Name="OAdd">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="OMultiply">
+                  <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+                  <Children>
+                    <Item Name="OAdd">
+                      <Bee r:Type="VVVV.Beehive.AddBee" />
+                      <Children>
+                        <Item Name="SFillPrimary">
+                          <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+                        </Item>
+                        <Item Name="SFillExternal">
+                          <Bee r:Type="VVVV.Beehive.FillExternalBee" />
+                        </Item>
+                      </Children>
+                    </Item>
+                    <Item Name="SFlash">
+                      <Bee r:Type="VVVV.Beehive.FlashBee" />
+                    </Item>
+                  </Children>
+                </Item>
+                <Item Name="SFillExternal">
+                  <Bee r:Type="VVVV.Beehive.FillExternalBee" />
+                </Item>
+              </Children>
+            </Item>
+          </Children>
+          <Properties>
+            <Properties>
+              <Item Key="Flip Even">
+                <Value r:Type="System.Boolean">True</Value>
+              </Item>
+              <Item Key="Show Even">
+                <Value r:Type="System.Boolean">True</Value>
+              </Item>
+              <Item Key="Show Odd">
+                <Value r:Type="System.Boolean">True</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+    </Value>
+  </Item>
   <Item Key="PrimaryExternal">
     <Value Name="OMultiply">
       <Bee r:Type="VVVV.Beehive.MultiplyBee" />
@@ -106,6 +157,63 @@
               <Bee r:Type="VVVV.Beehive.FlashBee" />
             </Item>
           </Children>
+        </Item>
+      </Children>
+    </Value>
+  </Item>
+  <Item Key="FlashQuick">
+    <Value Name="FlashQuick">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="SFlash">
+          <Bee __slot_101357="1.5" __slot_1421460="0.5" r:Type="VVVV.Beehive.FlashBee" />
+          <Properties>
+            <Properties>
+              <Item Key="Interval">
+                <Value r:Type="System.Single">0.5</Value>
+              </Item>
+              <Item Key="Decay">
+                <Value r:Type="System.Single">1.5</Value>
+              </Item>
+              <Item Key="Randomness">
+                <Value r:Type="System.Single">0.25</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+    </Value>
+  </Item>
+  <Item Key="Director">
+    <Value Name="Director">
+      <Children>
+        <Item Name="PGatekeeper">
+          <Bee r:Type="VVVV.Beehive.GatekeeperBee" />
+          <Children>
+            <Item Name="DAssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">FlashQuick</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Dancefloor</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+          </Children>
+          <Properties>
+            <Properties>
+              <Item Key="Open">
+                <Value r:Type="System.Boolean">False</Value>
+              </Item>
+            </Properties>
+          </Properties>
         </Item>
       </Children>
     </Value>
