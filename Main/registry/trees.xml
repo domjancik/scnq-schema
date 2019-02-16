@@ -143,6 +143,80 @@
       </Children>
     </Value>
   </Item>
+  <Item Key="ExternalFlashChanging">
+    <Value Name="ExternalFlashChanging">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="OAdd">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="OMultiply">
+              <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+              <Children>
+                <Item Name="SFillPrimary">
+                  <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+                </Item>
+                <Item Name="PIndexPick">
+                  <Bee r:Type="VVVV.Beehive.IndexPickBee" />
+                  <Children>
+                    <Item Name="SFillExternal">
+                      <Bee r:Type="VVVV.Beehive.FillExternalBee" />
+                      <Children>
+                        <Item Name="ICounter">
+                          <Bee r:Type="VVVV.Beehive.IndexCounterBee" />
+                          <Properties>
+                            <Properties>
+                              <Item Key="Period">
+                                <Value r:Type="System.Int32">2</Value>
+                              </Item>
+                            </Properties>
+                          </Properties>
+                        </Item>
+                      </Children>
+                    </Item>
+                    <Item Name="SFlash">
+                      <Bee __slot_106245="1" __slot_106299="2.25" r:Type="VVVV.Beehive.FlashBee" />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Interval">
+                            <Value r:Type="System.Single">2.25</Value>
+                          </Item>
+                          <Item Key="Decay">
+                            <Value r:Type="System.Single">1</Value>
+                          </Item>
+                          <Item Key="Randomness">
+                            <Value r:Type="System.Single">0.5</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                    </Item>
+                  </Children>
+                </Item>
+              </Children>
+            </Item>
+            <Item Name="OMultiply">
+              <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+              <Children>
+                <Item Name="SFillPrimary">
+                  <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+                </Item>
+                <Item Name="SConstant">
+                  <Bee r:Type="VVVV.Beehive.ConstantBee" />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0.25</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                </Item>
+              </Children>
+            </Item>
+          </Children>
+        </Item>
+      </Children>
+    </Value>
+  </Item>
   <Item Key="Tree2019-02-02-14-06-40">
     <Value Name="&gt;">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -166,7 +240,7 @@
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
       <Children>
         <Item Name="SFlash">
-          <Bee __slot_101357="1.5" __slot_1421460="0.5" r:Type="VVVV.Beehive.FlashBee" />
+          <Bee r:Type="VVVV.Beehive.FlashBee" />
           <Properties>
             <Properties>
               <Item Key="Interval">
@@ -190,27 +264,60 @@
         <Item Name="PGatekeeper">
           <Bee r:Type="VVVV.Beehive.GatekeeperBee" />
           <Children>
-            <Item Name="DAssignGroup">
-              <Bee r:Type="VVVV.Beehive.AssignBee" />
-              <Properties>
-                <Properties>
-                  <Item Key="Tree">
-                    <Value r:Type="System.String">FlashQuick</Value>
-                  </Item>
-                  <Item Key="Transition">
-                    <Value r:Type="System.String">Fade</Value>
-                  </Item>
-                  <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
-                  </Item>
-                </Properties>
-              </Properties>
+            <Item Name="PIndexPick">
+              <Bee r:Type="VVVV.Beehive.IndexPickBee" />
+              <Children>
+                <Item Name="DAssignGroup">
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
+                  <Children>
+                    <Item Name="ICounter">
+                      <Bee r:Type="VVVV.Beehive.IndexCounterBee" />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Period">
+                            <Value r:Type="System.Int32">10</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                    </Item>
+                  </Children>
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">ExternalFlashChanging</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Dancefloor</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                </Item>
+                <Item Name="DAssignGroup">
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">FlashQuick</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Dancefloor</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                </Item>
+              </Children>
             </Item>
           </Children>
           <Properties>
             <Properties>
               <Item Key="Open">
-                <Value r:Type="System.Boolean">False</Value>
+                <Value r:Type="System.Boolean">True</Value>
               </Item>
             </Properties>
           </Properties>
