@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="1272">
    <BOUNDS type="Window" left="9544" top="1976" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -946,22 +946,6 @@
    </NODE>
    <LINK srcnodeid="230" srcpinname="Output" dstnodeid="261" dstpinname="State">
    </LINK>
-   <NODE systemname="WS2811Output" filename="modules\WS2811Output.v4p" nodename="modules\WS2811Output.v4p" componentmode="InAWindow" id="262">
-   <BOUNDS type="Node" left="1272" top="4232" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="5360" top="2680" width="9000" height="6000">
-   </BOUNDS>
-   <PIN pinname="Update Port List" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Port Name" slicecount="1" values="COM9">
-   </PIN>
-   <PIN pinname="Send" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="GetSpread (Color)" nodename="GetSpread (Color)" componentmode="Hidden" id="263">
    <BOUNDS type="Node" left="2104" top="3784" width="100" height="100">
    </BOUNDS>
@@ -974,8 +958,6 @@
    <PIN pinname="Offset" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="262" dstpinname="Input">
-   </LINK>
    <NODE systemname="GetSpread (Color)" nodename="GetSpread (Color)" componentmode="Hidden" id="264">
    <BOUNDS type="Node" left="2704" top="4152" width="100" height="100">
    </BOUNDS>
@@ -1008,28 +990,12 @@
    </LINK>
    <LINK srcnodeid="265" srcpinname="Y Output Value" dstnodeid="264" dstpinname="Offset">
    </LINK>
-   <NODE systemname="WS2811Output" filename="modules\WS2811Output.v4p" nodename="modules\WS2811Output.v4p" componentmode="Hidden" id="266">
-   <BOUNDS type="Node" left="1760" top="4720" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
-   </PIN>
-   <BOUNDS type="Window" left="312" top="3200" width="9000" height="6000">
-   </BOUNDS>
-   <PIN pinname="Update Port List" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Send" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enabled" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="264" srcpinname="Output" dstnodeid="266" dstpinname="Input">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="268">
    <BOUNDS type="Box" left="792" top="1808" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="792" top="1808" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1043,13 +1009,9 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="268" srcpinname="Y Output Value" dstnodeid="266" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="268" srcpinname="Y Output Value" dstnodeid="262" dstpinname="Enabled">
-   </LINK>
    <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="269">
    <BOUNDS type="Node" left="11336" top="5632" width="100" height="100">
    </BOUNDS>
@@ -1205,5 +1167,111 @@
    <LINK srcnodeid="282" srcpinname="Y Output Value" dstnodeid="281" dstpinname="Scalar">
    </LINK>
    <LINK srcnodeid="282" srcpinname="Y Output Value" dstnodeid="280" dstpinname="Scalar">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="284">
+   <BOUNDS type="Box" left="8392" top="3696" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8392" top="3696" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="COM11">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="285">
+   <BOUNDS type="Box" left="7024" top="3592" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7024" top="3592" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="COM5">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="266" systemname="WS2811OutputSync" filename="modules\WS2811OutputSync.v4p" nodename="modules\WS2811OutputSync.v4p" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="ComPort" visible="1" pintype="Input" slicecount="1" values="COM5">
+   </PIN>
+   <BOUNDS type="Node" left="1848" top="5648" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" pintype="Input" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <BOUNDS type="Window" left="312" top="3200" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Update Port List" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Send" visible="1" slicecount="1" pintype="Input" values="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" pintype="Input">
+   </PIN>
+   <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Connected" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="284" srcpinname="Output String" dstnodeid="266" dstpinname="ComPort">
+   </LINK>
+   <LINK srcnodeid="264" srcpinname="Output" dstnodeid="266" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="268" srcpinname="Y Output Value" dstnodeid="266" dstpinname="Enabled">
+   </LINK>
+   <NODE id="286" systemname="WS2811OutputSync" filename="modules\WS2811OutputSync.v4p" nodename="modules\WS2811OutputSync.v4p" componentmode="InAWindow" hiddenwhenlocked="0" managers="">
+   <PIN pinname="ComPort" visible="1" pintype="Input" slicecount="1" values="COM5">
+   </PIN>
+   <BOUNDS type="Node" left="1128" top="5120" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" pintype="Input" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <BOUNDS type="Window" left="4904" top="3696" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Update Port List" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Send" visible="1" slicecount="1" pintype="Input" values="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" pintype="Input" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Connected" pintype="Output" visible="1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="263" srcpinname="Output" dstnodeid="286" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="268" srcpinname="Y Output Value" dstnodeid="286" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="285" srcpinname="Output String" dstnodeid="286" dstpinname="ComPort">
    </LINK>
    </PATCH>
