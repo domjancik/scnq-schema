@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="195">
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="11760" top="3390" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -910,14 +910,6 @@
    </NODE>
    <LINK srcnodeid="236" srcpinname="Colors" dstnodeid="260" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="Editor (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Editor (Beehive)" componentmode="Hidden" id="261">
-   <BOUNDS type="Node" left="1342" top="910" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
-   </PIN>
-   </NODE>
    <NODE systemname="GetSpread (Color)" nodename="GetSpread (Color)" componentmode="Hidden" id="263">
    <BOUNDS type="Node" left="2568" top="5088" width="100" height="100">
    </BOUNDS>
@@ -1130,7 +1122,7 @@
    <PIN pinname="Output String" visible="1">
    </PIN>
    </NODE>
-   <NODE id="266" systemname="WS2811OutputSync" filename="modules\WS2811OutputSync.v4p" nodename="modules\WS2811OutputSync.v4p" componentmode="InAWindow" hiddenwhenlocked="0" managers="">
+   <NODE id="266" systemname="WS2811OutputSync" filename="modules\WS2811OutputSync.v4p" nodename="modules\WS2811OutputSync.v4p" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <PIN pinname="ComPort" visible="1" pintype="Input" slicecount="1" values="COM5">
    </PIN>
    <BOUNDS type="Node" left="1792" top="6072" width="100" height="100">
@@ -1220,30 +1212,6 @@
    </LINK>
    <LINK srcnodeid="288" srcpinname="Output" dstnodeid="259" dstpinname="Colors">
    </LINK>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="289">
-   <BOUNDS type="Box" left="1984" top="272" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1984" top="272" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Editor Enabled|">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="289" srcpinname="Y Output Value" dstnodeid="261" dstpinname="Enabled">
-   </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="290">
    <BOUNDS type="Box" left="8264" top="1274" width="2250" height="480">
    </BOUNDS>
@@ -1311,5 +1279,37 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="233" srcpinname="Color Output" dstnodeid="294" dstpinname="Input">
+   </LINK>
+   <NODE id="289" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="1984" top="272" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1984" top="272" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Editor Enabled|">
+   </PIN>
+   </NODE>
+   <NODE id="261" systemname="Editor (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Editor (Beehive)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1342" top="910" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="289" srcpinname="Y Output Value" dstnodeid="261" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
    </LINK>
    </PATCH>
