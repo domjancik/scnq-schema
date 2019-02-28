@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" systemname="AudioAnalysis" filename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" scrollx="1440" scrolly="3750">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" systemname="AudioAnalysis" filename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" scrollx="1216" scrolly="208">
    <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1732" top="1284" width="100" height="100">
    </BOUNDS>
@@ -55,13 +55,15 @@
    <NODE systemname="BeatDetector (Value)" filename="%VVVV%\lib\nodes\modules\Value\BeatDetector (Value).v4p" nodename="BeatDetector (Value)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="3820" top="3916" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="0.108938637157173">
    </PIN>
    <PIN pinname="BangOut" visible="1">
    </PIN>
-   <PIN pinname="Gain" slicecount="1" values="0.1">
+   <PIN pinname="Gain" slicecount="1" values="8.51" visible="1">
    </PIN>
    <PIN pinname="EnergyOut" visible="1">
+   </PIN>
+   <PIN pinname="EnergyBufferFrameCount" slicecount="1" values="11">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
@@ -228,7 +230,7 @@
    </LINK>
    <LINK srcnodeid="11" srcpinname="Center" dstnodeid="14" dstpinname="Y Input Value">
    </LINK>
-   <BOUNDS type="Window" left="12448" top="4096" width="9128" height="6736">
+   <BOUNDS type="Window" left="7005" top="2775" width="9120" height="6735">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -285,8 +287,6 @@
    <LINK srcnodeid="23" srcpinname="Output Enum" dstnodeid="24" dstpinname="AudioDriver">
    </LINK>
    <LINK srcnodeid="24" srcpinname="AsSpreadOut" dstnodeid="8" dstpinname="FFT">
-   </LINK>
-   <LINK srcnodeid="24" srcpinname="AsSpreadOut" dstnodeid="6" dstpinname="Input">
    </LINK>
    <NODE systemname="Metronom (Animation Advanced)" filename="..\..\..\..\..\..\Documentos\vvvv\vvvv-contrib\modules\Animation Advanced\Metronom (Animation Advanced).v4p" nodename="Metronom (Animation Advanced)" componentmode="Hidden" id="26">
    <BOUNDS type="Node" left="3900" top="6090" width="100" height="100">
@@ -553,5 +553,33 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="51" srcpinname="Output" dstnodeid="8" dstpinname="Period Power">
+   </LINK>
+   <NODE componentmode="InABox" id="53" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="100" left="4774" top="814" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="2064" left="4774" top="814" type="Box" width="576">
+   </BOUNDS>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0.351351351351351">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.167330677290837">
+   </PIN>
+   <PIN pinname="Slider Alignment" slicecount="1" values="Grid">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="AsSpreadOut" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Gain">
    </LINK>
    </PATCH>
