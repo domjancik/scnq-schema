@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PlaneSource.v4p" systemname="PlaneSource" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PlaneSource.v4p" scrollx="0" scrolly="1080">
-   <BOUNDS type="Window" left="1512" top="4760" width="9000" height="6000">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PlaneSource.v4p" systemname="PlaneSource" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PlaneSource.v4p" scrollx="0" scrolly="136">
+   <BOUNDS type="Window" left="1408" top="4088" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -73,9 +73,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
-   <BOUNDS type="Box" left="2835" top="2805" width="795" height="960">
+   <BOUNDS type="Box" left="2907" top="2165" width="795" height="960">
    </BOUNDS>
-   <BOUNDS type="Node" left="2835" top="2805" width="0" height="0">
+   <BOUNDS type="Node" left="2907" top="2165" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,0,0,1">
    </PIN>
@@ -87,9 +87,9 @@
    </PIN>
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Default InMinMax OutMinMaX">
-   </LINK>
    <LINK srcnodeid="3" srcpinname="Value Buffer" dstnodeid="2" dstpinname="ValueBuffer">
    </LINK>
    <NODE systemname="SimpleOperation (Value Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Value Buffer\SimpleOperation (Value Buffer)\SimpleOperation (Value Buffer).v4p" nodename="SimpleOperation (Value Buffer)" componentmode="Hidden" id="0">
@@ -225,6 +225,8 @@
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
+   <PIN pinname="Length" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Output Node" dstnodeid="17" dstpinname="Transform In">
    </LINK>
@@ -277,5 +279,39 @@
    <LINK srcnodeid="14" srcpinname="Color Output" dstnodeid="20" dstpinname="Color Off">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Color Output" dstnodeid="20" dstpinname="Color On">
+   </LINK>
+   <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="3216" top="3496" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="2" dstpinname="Default InMinMax OutMinMaX">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Spread">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24">
+   <BOUNDS type="Box" left="5232" top="704" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5232" top="704" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Radius">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Length">
    </LINK>
    </PATCH>
