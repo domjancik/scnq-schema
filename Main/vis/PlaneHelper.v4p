@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\vis\PlaneHelper.v4p" systemname="PlaneHelper" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\vis\PlaneHelper.v4p">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\vis\PlaneHelper.v4p" systemname="PlaneHelper" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\vis\PlaneHelper.v4p" scrollx="56" scrolly="512">
    <NODE systemname="Quad (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Layer)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1530" top="3120" width="100" height="100">
    </BOUNDS>
@@ -8,6 +8,8 @@
    <PIN pinname="Transform" visible="1">
    </PIN>
    <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,0.20430|">
    </PIN>
    </NODE>
    <NODE nodename="Group (DX11.Layer)" id="1" systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
@@ -67,8 +69,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="6" srcpinname="Render State" dstnodeid="4" dstpinname="Render State">
-   </LINK>
-   <LINK srcnodeid="4" srcpinname="Render State" dstnodeid="0" dstpinname="Render State">
    </LINK>
    <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform">
    </LINK>
@@ -183,5 +183,19 @@
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Input 2">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Output" dstnodeid="5" dstpinname="Direction">
+   </LINK>
+   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="864" top="2224" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="864" top="2224" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Mode" slicecount="1" values="Blend">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Render State" dstnodeid="14" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Render State" dstnodeid="0" dstpinname="Render State">
    </LINK>
    </PATCH>
