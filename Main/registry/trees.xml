@@ -373,6 +373,53 @@
       <Properties />
     </Value>
   </Item>
+  <Item Key="Test.Add.RGB">
+    <Value Name="Test.Add.RGB">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.FillColor">
+              <Bee r:Type="VVVV.Beehive.FillColorBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Color">
+                    <Value r:Type="SharpDX.Color4">1, 0.0001, 0.0001, 1</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="S.FillColor">
+              <Bee r:Type="VVVV.Beehive.FillColorBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Color">
+                    <Value r:Type="SharpDX.Color4">0.0001, 1, 0.0001, 1</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="S.FillColor">
+              <Bee r:Type="VVVV.Beehive.FillColorBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Color">
+                    <Value r:Type="SharpDX.Color4">0.0001, 0.0001, 1, 1</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+          </Children>
+          <Properties />
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
   <Item Key="LatinoFlashesDark">
     <Value Name="LatinoFlashesDark">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -1229,6 +1276,25 @@
       <Properties />
     </Value>
   </Item>
+  <Item Key="Test.Cyan">
+    <Value Name="Test.Cyan">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="S.FillColor">
+          <Bee r:Type="VVVV.Beehive.FillColorBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Color">
+                <Value r:Type="SharpDX.Color4">0.0001, 1, 1, 1</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
   <Item Key="Director.Techno">
     <Value Name="Director.Techno">
       <Children>
@@ -1527,7 +1593,7 @@
               <Bee r:Type="VVVV.Beehive.MultiplyBee" />
               <Children>
                 <Item Name="S.Flash">
-                  <Bee __slot_127490="3" __slot_127547="3" r:Type="VVVV.Beehive.FlashBee" />
+                  <Bee r:Type="VVVV.Beehive.FlashBee" />
                   <Children />
                   <Properties>
                     <Properties>
@@ -1904,45 +1970,39 @@
     <Value Name="Wave.Shake">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
       <Children>
-        <Item Name="O.Add">
-          <Bee r:Type="VVVV.Beehive.AddBee" />
-          <Children>
-            <Item Name="S.PosCenter">
-              <Bee r:Type="VVVV.Beehive.PosCenterBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-            <Item Name="S.RotShake">
-              <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Axis">
-                    <Value r:Type="System.Int32">0</Value>
-                  </Item>
-                  <Item Key="Time">
-                    <Value r:Type="System.Single">0.933</Value>
-                  </Item>
-                  <Item Key="Strength">
-                    <Value r:Type="System.Single">0.112</Value>
-                  </Item>
-                  <Item Key="Probability">
-                    <Value r:Type="System.Single">0.358</Value>
-                  </Item>
-                  <Item Key="Frequency">
-                    <Value r:Type="System.Int32">0</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-          </Children>
-          <Properties />
+        <Item Name="S.PosCenter">
+          <Bee r:Type="VVVV.Beehive.PosCenterBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Group">
+                <Value r:Type="System.String">Dancefloor</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+        <Item Name="S.RotShake">
+          <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">0</Value>
+              </Item>
+              <Item Key="Time">
+                <Value r:Type="System.Single">0.933</Value>
+              </Item>
+              <Item Key="Strength">
+                <Value r:Type="System.Single">0.112</Value>
+              </Item>
+              <Item Key="Probability">
+                <Value r:Type="System.Single">0.358</Value>
+              </Item>
+              <Item Key="Frequency">
+                <Value r:Type="System.Int32">0</Value>
+              </Item>
+            </Properties>
+          </Properties>
         </Item>
       </Children>
       <Properties />
@@ -1982,45 +2042,39 @@
     <Value Name="Wave.SideToSide">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
       <Children>
-        <Item Name="O.Add">
-          <Bee r:Type="VVVV.Beehive.AddBee" />
-          <Children>
-            <Item Name="S.PosSlide">
-              <Bee r:Type="VVVV.Beehive.PosSlideBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Speed Audio">
-                    <Value r:Type="System.Single">0.081</Value>
-                  </Item>
-                  <Item Key="Axis">
-                    <Value r:Type="System.Int32">2</Value>
-                  </Item>
-                  <Item Key="Reverse">
-                    <Value r:Type="System.Boolean">False</Value>
-                  </Item>
-                  <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
-                  </Item>
-                  <Item Key="Speed">
-                    <Value r:Type="System.Single">0.913</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-            <Item Name="S.RotPerpendicular">
-              <Bee r:Type="VVVV.Beehive.RotPerpendicularBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Axis">
-                    <Value r:Type="System.Int32">2</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-          </Children>
-          <Properties />
+        <Item Name="S.PosSlide">
+          <Bee r:Type="VVVV.Beehive.PosSlideBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Speed Audio">
+                <Value r:Type="System.Single">0.081</Value>
+              </Item>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">2</Value>
+              </Item>
+              <Item Key="Reverse">
+                <Value r:Type="System.Boolean">False</Value>
+              </Item>
+              <Item Key="Group">
+                <Value r:Type="System.String">Dancefloor</Value>
+              </Item>
+              <Item Key="Speed">
+                <Value r:Type="System.Single">0.913</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+        <Item Name="S.RotPerpendicular">
+          <Bee r:Type="VVVV.Beehive.RotPerpendicularBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">2</Value>
+              </Item>
+            </Properties>
+          </Properties>
         </Item>
       </Children>
       <Properties />
@@ -3238,45 +3292,39 @@
     <Value Name="Wave.Elevator">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
       <Children>
-        <Item Name="O.Add">
-          <Bee r:Type="VVVV.Beehive.AddBee" />
-          <Children>
-            <Item Name="S.PosSlide">
-              <Bee r:Type="VVVV.Beehive.PosSlideBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Speed Audio">
-                    <Value r:Type="System.Single">0.081</Value>
-                  </Item>
-                  <Item Key="Axis">
-                    <Value r:Type="System.Int32">1</Value>
-                  </Item>
-                  <Item Key="Reverse">
-                    <Value r:Type="System.Boolean">True</Value>
-                  </Item>
-                  <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
-                  </Item>
-                  <Item Key="Speed">
-                    <Value r:Type="System.Single">0.913</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-            <Item Name="S.RotPerpendicular">
-              <Bee r:Type="VVVV.Beehive.RotPerpendicularBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Axis">
-                    <Value r:Type="System.Int32">1</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
-          </Children>
-          <Properties />
+        <Item Name="S.PosSlide">
+          <Bee r:Type="VVVV.Beehive.PosSlideBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Speed Audio">
+                <Value r:Type="System.Single">0.081</Value>
+              </Item>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">1</Value>
+              </Item>
+              <Item Key="Reverse">
+                <Value r:Type="System.Boolean">True</Value>
+              </Item>
+              <Item Key="Group">
+                <Value r:Type="System.String">Dancefloor</Value>
+              </Item>
+              <Item Key="Speed">
+                <Value r:Type="System.Single">0.913</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+        <Item Name="S.RotPerpendicular">
+          <Bee r:Type="VVVV.Beehive.RotPerpendicularBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">1</Value>
+              </Item>
+            </Properties>
+          </Properties>
         </Item>
       </Children>
       <Properties />
@@ -3411,6 +3459,37 @@
       <Properties />
     </Value>
   </Item>
+  <Item Key="Test.PosRandom">
+    <Value Name="Test.PosRandom">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="S.PosRandom">
+          <Bee __slot_250133="0.07308888" r:Type="VVVV.Beehive.PosRandomBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Speed Audio">
+                <Value r:Type="System.Single">0</Value>
+              </Item>
+              <Item Key="Axis">
+                <Value r:Type="System.Int32">0</Value>
+              </Item>
+              <Item Key="Reverse">
+                <Value r:Type="System.Boolean">False</Value>
+              </Item>
+              <Item Key="Group">
+                <Value r:Type="System.String">Dancefloor</Value>
+              </Item>
+              <Item Key="Speed">
+                <Value r:Type="System.Single">1</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
   <Item Key="Director.Example.AudioPower">
     <Value Name="Director.Example.AudioPower">
       <Children>
@@ -3470,7 +3549,7 @@
     <Value Name="Director.House">
       <Children>
         <Item Name="D.SetPrimary">
-          <Bee __slot_135534="0.0001, 0.0001000166, 0.6791248, 1" r:Type="VVVV.Beehive.SetPrimaryBee" />
+          <Bee r:Type="VVVV.Beehive.SetPrimaryBee" />
           <Children>
             <Item Name="D.AssignGroup">
               <Bee r:Type="VVVV.Beehive.AssignBee" />
@@ -3482,7 +3561,7 @@
                       <Bee r:Type="VVVV.Beehive.AssignBee" />
                       <Children>
                         <Item Name="P.Alternate">
-                          <Bee __slot_135903="4" r:Type="VVVV.Beehive.CounterPickBee" />
+                          <Bee r:Type="VVVV.Beehive.CounterPickBee" />
                           <Children>
                             <Item Name="D.AssignGroup">
                               <Bee r:Type="VVVV.Beehive.AssignBee" />
@@ -4693,20 +4772,20 @@
     <Value Name="Wave.Rotate">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
       <Children>
+        <Item Name="S.PosCenter">
+          <Bee r:Type="VVVV.Beehive.PosCenterBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Group">
+                <Value r:Type="System.String">Dancefloor</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
         <Item Name="O.Add">
           <Bee r:Type="VVVV.Beehive.AddBee" />
           <Children>
-            <Item Name="S.PosCenter">
-              <Bee r:Type="VVVV.Beehive.PosCenterBee" />
-              <Children />
-              <Properties>
-                <Properties>
-                  <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
-                  </Item>
-                </Properties>
-              </Properties>
-            </Item>
             <Item Name="S.Rotate">
               <Bee r:Type="VVVV.Beehive.RotateBee" />
               <Children />
@@ -4829,6 +4908,25 @@
       <Properties />
     </Value>
   </Item>
+  <Item Key="Test.Purple">
+    <Value Name="Test.Purple">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="S.FillColor">
+          <Bee r:Type="VVVV.Beehive.FillColorBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Color">
+                <Value r:Type="SharpDX.Color4">1, 0.0001, 1, 1</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
   <Item Key="Worklight">
     <Value Name="Worklight">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -4843,6 +4941,71 @@
               </Item>
             </Properties>
           </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
+  <Item Key="Test.Add.Rotate">
+    <Value Name="Test.Add.Rotate">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.Rotate">
+              <Bee r:Type="VVVV.Beehive.RotateBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Speed Audio">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                  <Item Key="Axis">
+                    <Value r:Type="System.Int32">0</Value>
+                  </Item>
+                  <Item Key="Speed">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="S.Rotate">
+              <Bee r:Type="VVVV.Beehive.RotateBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Speed Audio">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                  <Item Key="Axis">
+                    <Value r:Type="System.Int32">1</Value>
+                  </Item>
+                  <Item Key="Speed">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="S.Rotate">
+              <Bee r:Type="VVVV.Beehive.RotateBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Speed Audio">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                  <Item Key="Axis">
+                    <Value r:Type="System.Int32">2</Value>
+                  </Item>
+                  <Item Key="Speed">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+          </Children>
+          <Properties />
         </Item>
       </Children>
       <Properties />
@@ -5153,19 +5316,71 @@
   <Item Key="Director">
     <Value Name="Director">
       <Children>
-        <Item Name="D.SetPrimary">
-          <Bee r:Type="VVVV.Beehive.SetPrimaryBee" />
-          <Children />
-          <Properties>
-            <Properties>
-              <Item Key="Color">
-                <Value r:Type="SharpDX.Color4">0.0001, 0.0001, 1, 1</Value>
-              </Item>
-              <Item Key="Fade Duration">
-                <Value r:Type="System.Single">1</Value>
-              </Item>
-            </Properties>
-          </Properties>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Techno.StrobeIndividual</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Dancefloor</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Techno.StrobeIndividual</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Bar</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Techno.StrobeIndividual</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Cloakroom</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+          </Children>
+          <Properties />
         </Item>
       </Children>
       <Properties />
