@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PointSource.v4p" systemname="PointSource" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PointSource.v4p" scrollx="675" scrolly="1620">
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PointSource.v4p" systemname="PointSource" filename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\Lightsource\PointSource.v4p" scrollx="30" scrolly="2985">
    <BOUNDS type="Window" left="4456" top="2856" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -129,6 +129,8 @@
    </PIN>
    <PIN pinname="Default" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="1" dstpinname="DefaultB">
    </LINK>
@@ -150,8 +152,6 @@
    <PIN pinname="4D Buffer" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Value Buffer" dstnodeid="10" dstpinname="Morph Buffer">
-   </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="13">
    <BOUNDS type="Box" left="7980" top="2310" width="2250" height="480">
    </BOUNDS>
@@ -345,5 +345,99 @@
    <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Vector 2 Default">
    </LINK>
    <LINK srcnodeid="32" srcpinname="Transform Out" dstnodeid="21" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Compare (Value Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Value Buffer\Compare (Value Buffer)\Compare (Value Buffer).v4p" nodename="Compare (Value Buffer)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="2235" top="6150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ValueBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Spreadcount" visible="1" slicecount="1" values="128">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Greater">
+   </PIN>
+   <PIN pinname="Comparison Value" slicecount="1" values="0.67">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Value Buffer" dstnodeid="33" dstpinname="ValueBuffer">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Spreadcount">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34">
+   <BOUNDS type="Box" left="6840" top="5190" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6840" top="5190" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Hard Point|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="SimpleOperation (Value Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Value Buffer\SimpleOperation (Value Buffer)\SimpleOperation (Value Buffer).v4p" nodename="SimpleOperation (Value Buffer)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="4440" top="7590" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1" slicecount="1" values="128">
+   </PIN>
+   <PIN pinname="Value Buffer A" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Value Buffer B" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Value Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Add">
+   </PIN>
+   <PIN pinname="DefaultB" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="ValueBuffer" dstnodeid="35" dstpinname="Value Buffer A">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Value Buffer" dstnodeid="10" dstpinname="Morph Buffer">
+   </LINK>
+   <NODE systemname="SimpleOperation (Value Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\Value Buffer\SimpleOperation (Value Buffer)\SimpleOperation (Value Buffer).v4p" nodename="SimpleOperation (Value Buffer)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="4410" top="7260" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1" slicecount="1" values="128">
+   </PIN>
+   <PIN pinname="Value Buffer A" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Value Buffer B" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Value Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Multiply">
+   </PIN>
+   <PIN pinname="DefaultB" visible="1" slicecount="1" values="0.51">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="36" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Value Buffer" dstnodeid="36" dstpinname="Value Buffer A">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Value Buffer" dstnodeid="35" dstpinname="Value Buffer B">
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="36" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Enabled">
    </LINK>
    </PATCH>

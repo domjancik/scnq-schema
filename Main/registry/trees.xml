@@ -3607,7 +3607,7 @@
           </Properties>
         </Item>
         <Item Name="S.RotFollow">
-          <Bee __slot_431119="18.34633, -0.4355667, 6.835417" r:Type="VVVV.Beehive.RotPTFollowBee" />
+          <Bee r:Type="VVVV.Beehive.RotPTFollowBee" />
           <Children />
           <Properties>
             <Properties>
@@ -4202,6 +4202,93 @@
               </Item>
             </Properties>
           </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
+  <Item Key="Director.Pong">
+    <Value Name="Director.Pong">
+      <Children>
+        <Item Name="D.SetPrimary">
+          <Bee __slot_135175="1, 0.5378611, 0, 1" r:Type="VVVV.Beehive.SetPrimaryBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Color">
+                <Value r:Type="SharpDX.Color4">1, 0.5378611, 0, 1</Value>
+              </Item>
+              <Item Key="Fade Duration">
+                <Value r:Type="System.Single">1</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="D.AssignGroup">
+              <Bee __slot_133980="All" r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Worklight</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">All</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee __slot_133980="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">External.Dual.FlashPrimary</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Dancefloor</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee __slot_133980="Lantern" r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Pong.Ball</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Lantern</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+            </Item>
+          </Children>
+          <Properties />
         </Item>
       </Children>
       <Properties />
@@ -5052,6 +5139,33 @@
             <Properties>
               <Item Key="Value">
                 <Value r:Type="System.Single">0.7</Value>
+              </Item>
+            </Properties>
+          </Properties>
+        </Item>
+      </Children>
+      <Properties />
+    </Value>
+  </Item>
+  <Item Key="Pong.Ball">
+    <Value Name="Pong.Ball">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="S.Pong.Position">
+          <Bee __slot_218226="10.87015, 0.6999999" __slot_226316="10.87015" __slot_239890="15.58743" r:Type="VVVV.Beehive.Pong.PosPongBee" />
+          <Children />
+          <Properties />
+        </Item>
+        <Item Name="S.Radius">
+          <Bee r:Type="VVVV.Beehive.RadiusBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Radius Audio">
+                <Value r:Type="System.Single">0</Value>
+              </Item>
+              <Item Key="Radius">
+                <Value r:Type="System.Single">0.407</Value>
               </Item>
             </Properties>
           </Properties>
