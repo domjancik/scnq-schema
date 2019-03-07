@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="4320" scrolly="0">
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2584" top="4168" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -29,7 +29,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1489" top="14359" width="2400" height="1800">
    </BOUNDS>
-   <BOUNDS type="Window" left="14328" top="0" width="6240" height="11048">
+   <BOUNDS type="Window" left="22335" top="1080" width="6240" height="11040">
    </BOUNDS>
    <PIN pinname="View" visible="1" slicecount="1" values="||">
    </PIN>
@@ -209,9 +209,11 @@
    </PIN>
    <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="Setup (Beehive.Model Split)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Setup (Beehive.Model Split)" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="289" top="2074" width="100" height="100">
+   <BOUNDS type="Node" left="289" top="3319" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -223,7 +225,7 @@
    <LINK srcnodeid="4" srcpinname="Setup" dstnodeid="6" dstpinname="Input">
    </LINK>
    <NODE systemname="Pixel (Beehive.Model Split)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Pixel (Beehive.Model Split)" componentmode="Hidden" id="7">
-   <BOUNDS type="Node" left="304" top="2464" width="100" height="100">
+   <BOUNDS type="Node" left="304" top="3709" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -285,7 +287,7 @@
    </PIN>
    </NODE>
    <NODE systemname="GetGlobalProperties (Beehive.Model.State)" filename="vl\VVVV.domj.Chapeau.vl" nodename="GetGlobalProperties (Beehive.Model.State)" componentmode="Hidden" id="227">
-   <BOUNDS type="Node" left="1309" top="2314" width="100" height="100">
+   <BOUNDS type="Node" left="1309" top="2614" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -294,8 +296,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="227" dstpinname="Input">
-   </LINK>
    <NODE systemname="SetGlobalProperties (Beehive.Model.State)" filename="vl\VVVV.domj.Chapeau.vl" nodename="SetGlobalProperties (Beehive.Model.State)" componentmode="Hidden" id="230">
    <BOUNDS type="Node" left="1309" top="3589" width="100" height="100">
    </BOUNDS>
@@ -1227,7 +1227,7 @@
    <NODE systemname="LPD8DirectorLoader (Beehive.Input)" filename="vl\VVVV.domj.Chapeau.vl" nodename="LPD8DirectorLoader (Beehive.Input)" componentmode="Hidden" id="379">
    <BOUNDS type="Node" left="5670" top="1590" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Trees" visible="1" slicecount="8" values="Director.Techno,Director.Techno.TopBack,Director.StrobeIndividual,,Director.Latino,Director.House,,Director.Worklight">
+   <PIN pinname="Trees" visible="1" slicecount="8" values="Director.Techno,Director.Techno.TopBack,Director.StrobeIndividual,,Director.Latino,Director.House,Director.Republic,Director.Worklight">
    </PIN>
    <PIN pinname="State" visible="1" slicecount="1" values="||">
    </PIN>
@@ -2157,5 +2157,91 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="444" srcpinname="Y Output Value" dstnodeid="240" dstpinname="Hard Point">
+   </LINK>
+   <NODE systemname="Keyboard (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Keyboard (Devices Desktop)" componentmode="Hidden" id="445">
+   <BOUNDS type="Node" left="3675" top="285" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3675" top="285" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   <PIN pinname="Key Name" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="445" srcpinname="Device" dstnodeid="4" dstpinname="Keyboard">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="446">
+   <BOUNDS type="Box" left="3870" top="690" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3870" top="690" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="445" srcpinname="Key Name" dstnodeid="446" dstpinname="Input String">
+   </LINK>
+   <NODE systemname="Controllers (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Controllers (Beehive)" componentmode="Hidden" id="447">
+   <BOUNDS type="Node" left="135" top="2175" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="Notifications" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="447" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="445" srcpinname="Device" dstnodeid="447" dstpinname="Keyboard">
+   </LINK>
+   <NODE systemname="ControllerDirectorLoader (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="ControllerDirectorLoader (Beehive)" componentmode="Hidden" id="448">
+   <BOUNDS type="Node" left="150" top="2910" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Director List" visible="1">
+   </PIN>
+   <PIN pinname="Notifications" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="447" srcpinname="Output" dstnodeid="448" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="448" srcpinname="Output" dstnodeid="227" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="449">
+   <BOUNDS type="Box" left="9600" top="1410" width="7500" height="1575">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9600" top="1410" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="16" visible="1" values="Director.Latino,Director.House,Director.Republic,Director.Techno,Director.Techno.TopBack,Director.StrobeIndividual,,,,,,,,,Director.Worklight,">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="449" srcpinname="Output String" dstnodeid="448" dstpinname="Director List">
+   </LINK>
+   <LINK srcnodeid="447" srcpinname="Notifications" dstnodeid="448" dstpinname="Notifications">
    </LINK>
    </PATCH>
