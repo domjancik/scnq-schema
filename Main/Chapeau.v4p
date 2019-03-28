@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\Chapeau.v4p" systemname="Chapeau" filename="E:\Dropbox\Projects\Work\Chapeau\Merta\Code\Import\Chapeau.v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="2584" top="4168" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -196,22 +196,6 @@
    </NODE>
    <LINK srcnodeid="157" srcpinname="Output" dstnodeid="33" dstpinname="DataXYZ">
    </LINK>
-   <NODE systemname="Main (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Main (Beehive)" componentmode="Hidden" id="4">
-   <BOUNDS type="Node" left="273" top="1963" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="State" visible="1">
-   </PIN>
-   <PIN pinname="Pixel Position Buffer" visible="1">
-   </PIN>
-   <PIN pinname="Setup" visible="1">
-   </PIN>
-   <PIN pinname="Strip Colors" visible="1">
-   </PIN>
-   <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Keyboard" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Setup (Beehive.Model Split)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Setup (Beehive.Model Split)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="273" top="3583" width="100" height="100">
    </BOUNDS>
@@ -222,8 +206,6 @@
    <PIN pinname="Strips" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Setup" dstnodeid="6" dstpinname="Input">
-   </LINK>
    <NODE systemname="Pixel (Beehive.Model Split)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Pixel (Beehive.Model Split)" componentmode="Hidden" id="7">
    <BOUNDS type="Node" left="288" top="3973" width="100" height="100">
    </BOUNDS>
@@ -344,8 +326,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Setup" dstnodeid="259" dstpinname="Setup">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="260">
    <BOUNDS type="Box" left="3393" top="2563" width="795" height="240">
    </BOUNDS>
@@ -603,8 +583,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="289" srcpinname="Y Output Value" dstnodeid="261" dstpinname="Enabled">
-   </LINK>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
    </LINK>
    <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="343">
    <BOUNDS type="Node" left="33217" top="12741" width="100" height="100">
@@ -2160,8 +2138,6 @@
    <PIN pinname="Key Name" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="445" srcpinname="Device" dstnodeid="4" dstpinname="Keyboard">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="446">
    <BOUNDS type="Box" left="3854" top="954" width="795" height="240">
    </BOUNDS>
@@ -2190,8 +2166,6 @@
    <PIN pinname="Controllers" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="447" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="445" srcpinname="Device" dstnodeid="447" dstpinname="Keyboard">
    </LINK>
    <NODE systemname="ControllerDirectorLoader (Beehive)" filename="vl\VVVV.domj.Chapeau.vl" nodename="ControllerDirectorLoader (Beehive)" componentmode="Hidden" id="448">
@@ -2469,5 +2443,31 @@
    <LINK srcnodeid="477" srcpinname="Y Output Value" dstnodeid="476" dstpinname="Scalar">
    </LINK>
    <LINK srcnodeid="224" srcpinname="Output" dstnodeid="288" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Runtime (Beehive.SiteSpecific.Chapeau)" filename="vl\VVVV.domj.Chapeau.vl" nodename="Runtime (Beehive.SiteSpecific.Chapeau)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="273" top="1963" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1">
+   </PIN>
+   <PIN pinname="Pixel Position Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Setup" visible="1">
+   </PIN>
+   <PIN pinname="Strip Colors" visible="1">
+   </PIN>
+   <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Setup" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Setup" dstnodeid="259" dstpinname="Setup">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
+   </LINK>
+   <LINK srcnodeid="445" srcpinname="Device" dstnodeid="4" dstpinname="Keyboard">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="447" dstpinname="Input">
    </LINK>
    </PATCH>
