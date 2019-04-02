@@ -541,6 +541,225 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="Spot.Shake.Beat.Dimmer.Rotating">
+    <Value Name="Spot.Shake.Beat.Dimmer.Rotating">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="P.Beat">
+              <Bee __slot_156830="0.103" __slot_156868="79" r:Type="VVVV.Beehive.BeatPickBee" />
+              <Children>
+                <Item Name="S.RotConstant">
+                  <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Rotation">
+                        <Value r:Type="SharpDX.Vector3">0, 0.4988212, 0.4963805</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="S.RotConstant">
+                  <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Rotation">
+                        <Value r:Type="SharpDX.Vector3">0, 0.2511562, 0.4963805</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties>
+                <Properties>
+                  <Item Key="Threshold">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                  <Item Key="Probability">
+                    <Value r:Type="System.Single">0.103</Value>
+                  </Item>
+                  <Item Key="Frequency">
+                    <Value r:Type="System.Int32">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="G.AudioPower">
+              <Bee __slot_153288="True" r:Type="VVVV.Beehive.AudioPowerGateBee" />
+              <Children>
+                <Item Name="S.RotShake">
+                  <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Axis">
+                        <Value r:Type="System.Int32">2</Value>
+                      </Item>
+                      <Item Key="Time">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                      <Item Key="Strength">
+                        <Value r:Type="System.Single">0.591</Value>
+                      </Item>
+                      <Item Key="Probability">
+                        <Value r:Type="System.Single">0.5</Value>
+                      </Item>
+                      <Item Key="Frequency">
+                        <Value r:Type="System.Int32">0</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers>
+                    <Item Key="Strength">
+                      <Value Name="Driver">
+                        <State>
+                          <Properties>
+                            <Item Key="Value">
+                              <Value r:Type="System.Single">0.5914194</Value>
+                            </Item>
+                          </Properties>
+                        </State>
+                        <Root_Node Name="Value">
+                          <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                          <Children>
+                            <Item Name="S.Value.Audio.Power">
+                              <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                              <Children />
+                              <Properties />
+                              <Drivers />
+                            </Item>
+                          </Children>
+                          <Properties />
+                          <Drivers />
+                        </Root_Node>
+                        <Mapping>
+                          <ToRange To="1" />
+                        </Mapping>
+                      </Value>
+                    </Item>
+                  </Drivers>
+                </Item>
+              </Children>
+              <Properties>
+                <Properties>
+                  <Item Key="Threshold">
+                    <Value r:Type="System.Single">0.498</Value>
+                  </Item>
+                  <Item Key="Below/Above">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.BeatFlash">
+              <Bee __slot_152701="2.274" __slot_152757="0.5" r:Type="VVVV.Beehive.BeatFlashBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Threshold">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                  <Item Key="Interval">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                  <Item Key="Decay">
+                    <Value r:Type="System.Single">2.274</Value>
+                  </Item>
+                  <Item Key="Attack">
+                    <Value r:Type="System.Single">0.057</Value>
+                  </Item>
+                  <Item Key="Probability">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                  <Item Key="Frequency">
+                    <Value r:Type="System.Int32">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0.591</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers>
+                <Item Key="Value">
+                  <Value Name="Driver">
+                    <State>
+                      <Properties>
+                        <Item Key="Value">
+                          <Value r:Type="System.Single">0.5914194</Value>
+                        </Item>
+                      </Properties>
+                    </State>
+                    <Root_Node Name="Value">
+                      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                      <Children>
+                        <Item Name="S.Value.Audio.Power">
+                          <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                          <Children />
+                          <Properties />
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties />
+                      <Drivers />
+                    </Root_Node>
+                    <Mapping>
+                      <ToRange To="1" />
+                    </Mapping>
+                  </Value>
+                </Item>
+              </Drivers>
+            </Item>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="S.Gobo">
+          <Bee r:Type="VVVV.Beehive.SetGoboBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Gobo">
+                <Value r:Type="System.Int32">0</Value>
+              </Item>
+            </Properties>
+          </Properties>
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="Latino">
     <Value Name="Latino">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -5593,7 +5812,7 @@
           <Bee r:Type="VVVV.Beehive.MultiplyBee" />
           <Children>
             <Item Name="S.BeatFlash">
-              <Bee __slot_60357="5.03937" __slot_60413="0.480315" r:Type="VVVV.Beehive.BeatFlashBee" />
+              <Bee r:Type="VVVV.Beehive.BeatFlashBee" />
               <Children />
               <Properties>
                 <Properties>
@@ -5911,7 +6130,7 @@
           <Bee r:Type="VVVV.Beehive.AddBee" />
           <Children>
             <Item Name="D.AssignGroup">
-              <Bee __slot_55095="Strobe" r:Type="VVVV.Beehive.AssignBee" />
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
               <Children />
               <Properties>
                 <Properties>
@@ -5935,10 +6154,10 @@
               <Drivers />
             </Item>
             <Item Name="P.Controller">
-              <Bee __slot_67489="2" r:Type="VVVV.Beehive.ControllerPickBee" />
+              <Bee r:Type="VVVV.Beehive.ControllerPickBee" />
               <Children>
                 <Item Name="D.AssignGroup">
-                  <Bee __slot_55095="New" r:Type="VVVV.Beehive.AssignBee" />
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
                   <Children />
                   <Properties>
                     <Properties>
@@ -5962,7 +6181,7 @@
                   <Drivers />
                 </Item>
                 <Item Name="D.AssignGroup">
-                  <Bee __slot_55095="New" r:Type="VVVV.Beehive.AssignBee" />
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
                   <Children />
                   <Properties>
                     <Properties>
@@ -5986,7 +6205,7 @@
                   <Drivers />
                 </Item>
                 <Item Name="D.AssignGroup">
-                  <Bee __slot_55095="New" r:Type="VVVV.Beehive.AssignBee" />
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
                   <Children />
                   <Properties>
                     <Properties>
@@ -6010,7 +6229,7 @@
                   <Drivers />
                 </Item>
                 <Item Name="D.AssignGroup">
-                  <Bee __slot_55095="New" r:Type="VVVV.Beehive.AssignBee" />
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
                   <Children />
                   <Properties>
                     <Properties>
@@ -7193,6 +7412,304 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="Spot.Shake.Beat">
+    <Value Name="Spot.Shake.Beat">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.RotConstant">
+              <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Rotation">
+                    <Value r:Type="SharpDX.Vector3">0, 0, 0.4963805</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="G.AudioPower">
+              <Bee __slot_153288="True" r:Type="VVVV.Beehive.AudioPowerGateBee" />
+              <Children>
+                <Item Name="S.RotShake">
+                  <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Axis">
+                        <Value r:Type="System.Int32">2</Value>
+                      </Item>
+                      <Item Key="Time">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                      <Item Key="Strength">
+                        <Value r:Type="System.Single">0.622</Value>
+                      </Item>
+                      <Item Key="Probability">
+                        <Value r:Type="System.Single">0.5</Value>
+                      </Item>
+                      <Item Key="Frequency">
+                        <Value r:Type="System.Int32">0</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers>
+                    <Item Key="Strength">
+                      <Value Name="Driver">
+                        <State>
+                          <Properties>
+                            <Item Key="Value">
+                              <Value r:Type="System.Single">0.6218975</Value>
+                            </Item>
+                          </Properties>
+                        </State>
+                        <Root_Node Name="Value">
+                          <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                          <Children>
+                            <Item Name="S.Value.Audio.Power">
+                              <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                              <Children />
+                              <Properties />
+                              <Drivers />
+                            </Item>
+                          </Children>
+                          <Properties />
+                          <Drivers />
+                        </Root_Node>
+                        <Mapping>
+                          <ToRange To="1" />
+                        </Mapping>
+                      </Value>
+                    </Item>
+                  </Drivers>
+                </Item>
+              </Children>
+              <Properties>
+                <Properties>
+                  <Item Key="Threshold">
+                    <Value r:Type="System.Single">0.498</Value>
+                  </Item>
+                  <Item Key="Below/Above">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers>
+                <Item Key="Value">
+                  <Value Name="Driver">
+                    <State>
+                      <Properties>
+                        <Item Key="Value">
+                          <Value r:Type="System.Single">0</Value>
+                        </Item>
+                      </Properties>
+                    </State>
+                    <Root_Node Name="Value">
+                      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                      <Children>
+                        <Item Name="S.Value.Audio.Power">
+                          <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                          <Children />
+                          <Properties />
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties />
+                      <Drivers />
+                    </Root_Node>
+                    <Mapping>
+                      <ToRange To="1" />
+                    </Mapping>
+                  </Value>
+                </Item>
+              </Drivers>
+            </Item>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
+  <Item Key="Spot.Shake.Beat.Dimmer">
+    <Value Name="Spot.Shake.Beat.Dimmer">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.RotConstant">
+              <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Rotation">
+                    <Value r:Type="SharpDX.Vector3">0, 0, 0.4963805</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="G.AudioPower">
+              <Bee __slot_153288="True" r:Type="VVVV.Beehive.AudioPowerGateBee" />
+              <Children>
+                <Item Name="S.RotShake">
+                  <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Axis">
+                        <Value r:Type="System.Int32">2</Value>
+                      </Item>
+                      <Item Key="Time">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                      <Item Key="Strength">
+                        <Value r:Type="System.Single">0.644</Value>
+                      </Item>
+                      <Item Key="Probability">
+                        <Value r:Type="System.Single">0.5</Value>
+                      </Item>
+                      <Item Key="Frequency">
+                        <Value r:Type="System.Int32">0</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers>
+                    <Item Key="Strength">
+                      <Value Name="Driver">
+                        <State>
+                          <Properties>
+                            <Item Key="Value">
+                              <Value r:Type="System.Single">0.643581</Value>
+                            </Item>
+                          </Properties>
+                        </State>
+                        <Root_Node Name="Value">
+                          <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                          <Children>
+                            <Item Name="S.Value.Audio.Power">
+                              <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                              <Children />
+                              <Properties />
+                              <Drivers />
+                            </Item>
+                          </Children>
+                          <Properties />
+                          <Drivers />
+                        </Root_Node>
+                        <Mapping>
+                          <ToRange To="1" />
+                        </Mapping>
+                      </Value>
+                    </Item>
+                  </Drivers>
+                </Item>
+              </Children>
+              <Properties>
+                <Properties>
+                  <Item Key="Threshold">
+                    <Value r:Type="System.Single">0.498</Value>
+                  </Item>
+                  <Item Key="Below/Above">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers>
+                <Item Key="Value">
+                  <Value Name="Driver">
+                    <State>
+                      <Properties>
+                        <Item Key="Value">
+                          <Value r:Type="System.Single">0</Value>
+                        </Item>
+                      </Properties>
+                    </State>
+                    <Root_Node Name="Value">
+                      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                      <Children>
+                        <Item Name="S.Value.Audio.Power">
+                          <Bee r:Type="VVVV.Beehive.ValueAudioLevelBee" />
+                          <Children />
+                          <Properties />
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties />
+                      <Drivers />
+                    </Root_Node>
+                    <Mapping>
+                      <ToRange To="1" />
+                    </Mapping>
+                  </Value>
+                </Item>
+              </Drivers>
+            </Item>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="Republic.Strobe.Interval">
     <Value Name="Republic.Strobe.Interval">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -7727,7 +8244,7 @@
           <Bee r:Type="VVVV.Beehive.MultiplyBee" />
           <Children>
             <Item Name="S.BeatFlash">
-              <Bee __slot_60357="5.03937" __slot_60413="0.480315" __slot_60435="3" r:Type="VVVV.Beehive.BeatFlashBee" />
+              <Bee r:Type="VVVV.Beehive.BeatFlashBee" />
               <Children />
               <Properties>
                 <Properties>
@@ -9321,6 +9838,80 @@
             <Properties>
               <Item Key="Shake">
                 <Value r:Type="System.Single">0.099</Value>
+              </Item>
+            </Properties>
+          </Properties>
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
+  <Item Key="Spot.Pulsing">
+    <Value Name="Spot.Pulsing">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.RotConstant">
+              <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Rotation">
+                    <Value r:Type="SharpDX.Vector3">0, 0.4988212, 0.4963805</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.Flash">
+              <Bee __slot_138186="3.655" r:Type="VVVV.Beehive.FlashBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Interval">
+                    <Value r:Type="System.Single">3.655</Value>
+                  </Item>
+                  <Item Key="Decay">
+                    <Value r:Type="System.Single">2.836</Value>
+                  </Item>
+                  <Item Key="Attack">
+                    <Value r:Type="System.Single">1.829</Value>
+                  </Item>
+                  <Item Key="Randomness">
+                    <Value r:Type="System.Single">0.962</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="S.Gobo">
+          <Bee r:Type="VVVV.Beehive.SetGoboBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Gobo">
+                <Value r:Type="System.Int32">0</Value>
               </Item>
             </Properties>
           </Properties>
