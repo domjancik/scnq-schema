@@ -1543,15 +1543,90 @@
   <Item Key="Director.Worklight">
     <Value Name="Director.Worklight">
       <Children>
-        <Item Name="D.AssignGroup">
-          <Bee r:Type="VVVV.Beehive.AssignBee" />
+        <Item Name="D.SetPrimary">
+          <Bee r:Type="VVVV.Beehive.SetPrimaryBee" />
           <Children>
             <Item Name="D.AssignGroup">
-              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Bee __slot_147992="Cloakroom" r:Type="VVVV.Beehive.AssignBee" />
               <Children>
                 <Item Name="D.AssignGroup">
-                  <Bee r:Type="VVVV.Beehive.AssignBee" />
-                  <Children />
+                  <Bee __slot_147992="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children>
+                    <Item Name="D.AssignGroup">
+                      <Bee __slot_147992="Bar" r:Type="VVVV.Beehive.AssignBee" />
+                      <Children>
+                        <Item Name="D.AssignGroup">
+                          <Bee __slot_147992="New" r:Type="VVVV.Beehive.AssignBee" />
+                          <Children>
+                            <Item Name="D.AssignGroup">
+                              <Bee __slot_147992="Heads" r:Type="VVVV.Beehive.AssignBee" />
+                              <Children />
+                              <Properties>
+                                <Properties>
+                                  <Item Key="Tree">
+                                    <Value r:Type="System.String">Spot.Base</Value>
+                                  </Item>
+                                  <Item Key="Transition">
+                                    <Value r:Type="System.String">T.Fade</Value>
+                                  </Item>
+                                  <Item Key="Group">
+                                    <Value r:Type="System.String">Heads</Value>
+                                  </Item>
+                                  <Item Key="Enabled">
+                                    <Value r:Type="System.Boolean">True</Value>
+                                  </Item>
+                                  <Item Key="Duration">
+                                    <Value r:Type="System.Single">2</Value>
+                                  </Item>
+                                </Properties>
+                              </Properties>
+                              <Drivers />
+                            </Item>
+                          </Children>
+                          <Properties>
+                            <Properties>
+                              <Item Key="Tree">
+                                <Value r:Type="System.String">PAR</Value>
+                              </Item>
+                              <Item Key="Transition">
+                                <Value r:Type="System.String">T.Fade</Value>
+                              </Item>
+                              <Item Key="Group">
+                                <Value r:Type="System.String">New</Value>
+                              </Item>
+                              <Item Key="Enabled">
+                                <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
+                            </Properties>
+                          </Properties>
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties>
+                        <Properties>
+                          <Item Key="Tree">
+                            <Value r:Type="System.String">Worklight</Value>
+                          </Item>
+                          <Item Key="Transition">
+                            <Value r:Type="System.String">T.Fade</Value>
+                          </Item>
+                          <Item Key="Group">
+                            <Value r:Type="System.String">Bar</Value>
+                          </Item>
+                          <Item Key="Enabled">
+                            <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                      <Drivers />
+                    </Item>
+                  </Children>
                   <Properties>
                     <Properties>
                       <Item Key="Tree">
@@ -1561,10 +1636,13 @@
                         <Value r:Type="System.String">T.Fade</Value>
                       </Item>
                       <Item Key="Group">
-                        <Value r:Type="System.String">Bar</Value>
+                        <Value r:Type="System.String">Dancefloor</Value>
                       </Item>
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
                       </Item>
                     </Properties>
                   </Properties>
@@ -1580,10 +1658,13 @@
                     <Value r:Type="System.String">T.Fade</Value>
                   </Item>
                   <Item Key="Group">
-                    <Value r:Type="System.String">Dancefloor</Value>
+                    <Value r:Type="System.String">Cloakroom</Value>
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
                   </Item>
                 </Properties>
               </Properties>
@@ -1592,17 +1673,11 @@
           </Children>
           <Properties>
             <Properties>
-              <Item Key="Tree">
-                <Value r:Type="System.String">Worklight</Value>
+              <Item Key="Color">
+                <Value r:Type="SharpDX.Color4">1, 1, 1, 1</Value>
               </Item>
-              <Item Key="Transition">
-                <Value r:Type="System.String">T.Fade</Value>
-              </Item>
-              <Item Key="Group">
-                <Value r:Type="System.String">Cloakroom</Value>
-              </Item>
-              <Item Key="Enabled">
-                <Value r:Type="System.Boolean">True</Value>
+              <Item Key="Fade Duration">
+                <Value r:Type="System.Single">1</Value>
               </Item>
             </Properties>
           </Properties>
@@ -2779,6 +2854,86 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="PAR">
+    <Value Name="PAR">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0.038</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">1</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers>
+                <Item Key="Value">
+                  <Value Name="Driver">
+                    <State>
+                      <Properties>
+                        <Item Key="Value">
+                          <Value r:Type="System.Single">1</Value>
+                        </Item>
+                      </Properties>
+                    </State>
+                    <Root_Node Name="Value">
+                      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                      <Children>
+                        <Item Name="S.Value.Controller.Value">
+                          <Bee r:Type="VVVV.Beehive.ValueControllerValueBee" />
+                          <Children />
+                          <Properties>
+                            <Properties>
+                              <Item Key="Index">
+                                <Value r:Type="System.Int32">2</Value>
+                              </Item>
+                            </Properties>
+                          </Properties>
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties />
+                      <Drivers />
+                    </Root_Node>
+                    <Mapping>
+                      <ToRange To="1" />
+                    </Mapping>
+                  </Value>
+                </Item>
+              </Drivers>
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="Test.Cyan">
     <Value Name="Test.Cyan">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -2898,6 +3053,9 @@
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
                   </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
                 </Properties>
               </Properties>
               <Drivers />
@@ -2918,6 +3076,9 @@
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
                   </Item>
                 </Properties>
               </Properties>
@@ -2940,6 +3101,9 @@
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
                   </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
                 </Properties>
               </Properties>
               <Drivers />
@@ -2961,6 +3125,9 @@
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
                   </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
                 </Properties>
               </Properties>
               <Drivers />
@@ -2981,6 +3148,57 @@
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">PAR</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">New</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Spot.Base</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Heads</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">False</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
                   </Item>
                 </Properties>
               </Properties>
@@ -3012,6 +3230,9 @@
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
                               </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
                             </Properties>
                           </Properties>
                           <Drivers />
@@ -3032,6 +3253,9 @@
                               </Item>
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
                               </Item>
                             </Properties>
                           </Properties>
@@ -3061,6 +3285,9 @@
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
                               </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
                             </Properties>
                           </Properties>
                           <Drivers />
@@ -3081,6 +3308,9 @@
                               </Item>
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
                               </Item>
                             </Properties>
                           </Properties>
@@ -3129,6 +3359,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -3149,6 +3382,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -3178,6 +3414,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -3199,6 +3438,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -3207,25 +3449,59 @@
                   <Properties />
                   <Drivers />
                 </Item>
-                <Item Name="D.AssignGroup">
-                  <Bee r:Type="VVVV.Beehive.AssignBee" />
-                  <Children />
-                  <Properties>
-                    <Properties>
-                      <Item Key="Tree">
-                        <Value r:Type="System.String">Techno.StrobeIndividual</Value>
-                      </Item>
-                      <Item Key="Transition">
-                        <Value r:Type="System.String">T.Fade</Value>
-                      </Item>
-                      <Item Key="Group">
-                        <Value r:Type="System.String">Dancefloor</Value>
-                      </Item>
-                      <Item Key="Enabled">
-                        <Value r:Type="System.Boolean">True</Value>
-                      </Item>
-                    </Properties>
-                  </Properties>
+                <Item Name="O.Add">
+                  <Bee r:Type="VVVV.Beehive.AddBee" />
+                  <Children>
+                    <Item Name="D.AssignGroup">
+                      <Bee r:Type="VVVV.Beehive.AssignBee" />
+                      <Children />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Tree">
+                            <Value r:Type="System.String">Techno.StrobeIndividual</Value>
+                          </Item>
+                          <Item Key="Transition">
+                            <Value r:Type="System.String">T.Fade</Value>
+                          </Item>
+                          <Item Key="Group">
+                            <Value r:Type="System.String">Dancefloor</Value>
+                          </Item>
+                          <Item Key="Enabled">
+                            <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                      <Drivers />
+                    </Item>
+                    <Item Name="D.AssignGroup">
+                      <Bee r:Type="VVVV.Beehive.AssignBee" />
+                      <Children />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Tree">
+                            <Value r:Type="System.String">Techno.StrobeIndividual.Spot</Value>
+                          </Item>
+                          <Item Key="Transition">
+                            <Value r:Type="System.String">T.Fade</Value>
+                          </Item>
+                          <Item Key="Group">
+                            <Value r:Type="System.String">Heads</Value>
+                          </Item>
+                          <Item Key="Enabled">
+                            <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                      <Drivers />
+                    </Item>
+                  </Children>
+                  <Properties />
                   <Drivers />
                 </Item>
               </Children>
@@ -3434,6 +3710,101 @@
               </Item>
               <Item Key="Frequency">
                 <Value r:Type="System.Int32">0</Value>
+              </Item>
+            </Properties>
+          </Properties>
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
+  <Item Key="Techno.StrobeIndividual.Spot">
+    <Value Name="Techno.StrobeIndividual.Spot">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.Flash">
+              <Bee __slot_138236="1.76" r:Type="VVVV.Beehive.FlashBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Interval">
+                    <Value r:Type="System.Single">1.76</Value>
+                  </Item>
+                  <Item Key="Decay">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                  <Item Key="Attack">
+                    <Value r:Type="System.Single">0.1</Value>
+                  </Item>
+                  <Item Key="Randomness">
+                    <Value r:Type="System.Single">0.5</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0.02362205</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers>
+                <Item Key="Value">
+                  <Value Name="Driver">
+                    <State>
+                      <Properties>
+                        <Item Key="Value">
+                          <Value r:Type="System.Single">0.02362205</Value>
+                        </Item>
+                      </Properties>
+                    </State>
+                    <Root_Node Name="Value">
+                      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+                      <Children>
+                        <Item Name="S.Value.Controller.Value">
+                          <Bee r:Type="VVVV.Beehive.ValueControllerValueBee" />
+                          <Children />
+                          <Properties>
+                            <Properties>
+                              <Item Key="Index">
+                                <Value r:Type="System.Int32">1</Value>
+                              </Item>
+                            </Properties>
+                          </Properties>
+                          <Drivers />
+                        </Item>
+                      </Children>
+                      <Properties />
+                      <Drivers />
+                    </Root_Node>
+                    <Mapping>
+                      <ToRange To="1" />
+                    </Mapping>
+                  </Value>
+                </Item>
+              </Drivers>
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="S.RotConstant">
+          <Bee r:Type="VVVV.Beehive.RotConstantBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Rotation">
+                <Value r:Type="SharpDX.Vector3">0, 0, 0.5329943</Value>
               </Item>
             </Properties>
           </Properties>
@@ -6613,6 +6984,30 @@
               <Properties>
                 <Properties>
                   <Item Key="Tree">
+                    <Value r:Type="System.String">PAR</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">New</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
                     <Value r:Type="System.String">Spot.Base</Value>
                   </Item>
                   <Item Key="Transition">
@@ -7316,8 +7711,8 @@
           </Properties>
           <Drivers />
         </Item>
-        <Item Name="P.Controller">
-          <Bee r:Type="VVVV.Beehive.ControllerPickBee" />
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
           <Children>
             <Item Name="D.AssignGroup">
               <Bee r:Type="VVVV.Beehive.AssignBee" />
@@ -7325,13 +7720,13 @@
               <Properties>
                 <Properties>
                   <Item Key="Tree">
-                    <Value r:Type="System.String">Rainbow</Value>
+                    <Value r:Type="System.String">PAR</Value>
                   </Item>
                   <Item Key="Transition">
                     <Value r:Type="System.String">T.Fade</Value>
                   </Item>
                   <Item Key="Group">
-                    <Value r:Type="System.String">All</Value>
+                    <Value r:Type="System.String">New</Value>
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
@@ -7349,13 +7744,13 @@
               <Properties>
                 <Properties>
                   <Item Key="Tree">
-                    <Value r:Type="System.String">Rainbow.Slow</Value>
+                    <Value r:Type="System.String">Spot.Base</Value>
                   </Item>
                   <Item Key="Transition">
                     <Value r:Type="System.String">T.Fade</Value>
                   </Item>
                   <Item Key="Group">
-                    <Value r:Type="System.String">All</Value>
+                    <Value r:Type="System.String">Heads</Value>
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
@@ -7365,6 +7760,61 @@
                   </Item>
                 </Properties>
               </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="P.Controller">
+              <Bee r:Type="VVVV.Beehive.ControllerPickBee" />
+              <Children>
+                <Item Name="D.AssignGroup">
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">Rainbow</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">All</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">Rainbow.Slow</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">All</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
               <Drivers />
             </Item>
           </Children>
@@ -7600,7 +8050,7 @@
               <Drivers />
             </Item>
             <Item Name="G.AudioPower">
-              <Bee __slot_156570="True" r:Type="VVVV.Beehive.AudioPowerGateBee" />
+              <Bee r:Type="VVVV.Beehive.AudioPowerGateBee" />
               <Children>
                 <Item Name="S.RotShake">
                   <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
@@ -7795,7 +8245,7 @@
               <Drivers />
             </Item>
             <Item Name="G.AudioPower">
-              <Bee __slot_156570="True" r:Type="VVVV.Beehive.AudioPowerGateBee" />
+              <Bee r:Type="VVVV.Beehive.AudioPowerGateBee" />
               <Children>
                 <Item Name="S.RotShake">
                   <Bee r:Type="VVVV.Beehive.RotBeatShakeBee" />
@@ -8878,6 +9328,30 @@
               <Properties>
                 <Properties>
                   <Item Key="Tree">
+                    <Value r:Type="System.String">PAR</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">New</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
                     <Value r:Type="System.String">Spot.Pulsing</Value>
                   </Item>
                   <Item Key="Transition">
@@ -9212,6 +9686,9 @@
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
                   </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
                 </Properties>
               </Properties>
               <Drivers />
@@ -9232,6 +9709,57 @@
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">PAR</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">New</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="D.AssignGroup">
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Tree">
+                    <Value r:Type="System.String">Spot.Base</Value>
+                  </Item>
+                  <Item Key="Transition">
+                    <Value r:Type="System.String">T.Fade</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Heads</Value>
+                  </Item>
+                  <Item Key="Enabled">
+                    <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
                   </Item>
                 </Properties>
               </Properties>
@@ -9263,6 +9791,9 @@
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
                               </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
                             </Properties>
                           </Properties>
                           <Drivers />
@@ -9283,6 +9814,9 @@
                               </Item>
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
                               </Item>
                             </Properties>
                           </Properties>
@@ -9311,6 +9845,9 @@
                               </Item>
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
                               </Item>
                             </Properties>
                           </Properties>
@@ -9333,6 +9870,9 @@
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
                               </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
                             </Properties>
                           </Properties>
                           <Drivers />
@@ -9361,6 +9901,9 @@
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
                               </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
+                              </Item>
                             </Properties>
                           </Properties>
                           <Drivers />
@@ -9381,6 +9924,9 @@
                               </Item>
                               <Item Key="Enabled">
                                 <Value r:Type="System.Boolean">True</Value>
+                              </Item>
+                              <Item Key="Duration">
+                                <Value r:Type="System.Single">2</Value>
                               </Item>
                             </Properties>
                           </Properties>
@@ -9407,6 +9953,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -9427,6 +9976,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -9449,6 +10001,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -9469,6 +10024,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -9510,6 +10068,9 @@
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
                       </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
                     </Properties>
                   </Properties>
                   <Drivers />
@@ -9530,6 +10091,9 @@
                       </Item>
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
                       </Item>
                     </Properties>
                   </Properties>
@@ -9552,6 +10116,9 @@
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
                       </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
                     </Properties>
                   </Properties>
                   <Drivers />
@@ -9572,6 +10139,9 @@
                       </Item>
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
                       </Item>
                     </Properties>
                   </Properties>
@@ -9594,6 +10164,9 @@
                       <Item Key="Enabled">
                         <Value r:Type="System.Boolean">True</Value>
                       </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
                     </Properties>
                   </Properties>
                   <Drivers />
@@ -9618,6 +10191,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -9638,6 +10214,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -9666,6 +10245,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -9688,6 +10270,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -9716,6 +10301,9 @@
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
                           </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
+                          </Item>
                         </Properties>
                       </Properties>
                       <Drivers />
@@ -9736,6 +10324,9 @@
                           </Item>
                           <Item Key="Enabled">
                             <Value r:Type="System.Boolean">True</Value>
+                          </Item>
+                          <Item Key="Duration">
+                            <Value r:Type="System.Single">2</Value>
                           </Item>
                         </Properties>
                       </Properties>
@@ -9766,6 +10357,9 @@
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
                   </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
+                  </Item>
                 </Properties>
               </Properties>
               <Drivers />
@@ -9786,6 +10380,9 @@
                   </Item>
                   <Item Key="Enabled">
                     <Value r:Type="System.Boolean">True</Value>
+                  </Item>
+                  <Item Key="Duration">
+                    <Value r:Type="System.Single">2</Value>
                   </Item>
                 </Properties>
               </Properties>
@@ -10166,7 +10763,7 @@
           <Properties>
             <Properties>
               <Item Key="Rotation">
-                <Value r:Type="SharpDX.Vector3">0, 0.4988212, 0.4963805</Value>
+                <Value r:Type="SharpDX.Vector3">0, 0.4988212, 0.5479726</Value>
               </Item>
             </Properties>
           </Properties>
@@ -10176,7 +10773,7 @@
           <Bee r:Type="VVVV.Beehive.MultiplyBee" />
           <Children>
             <Item Name="S.Flash">
-              <Bee __slot_141053="3.655" r:Type="VVVV.Beehive.FlashBee" />
+              <Bee r:Type="VVVV.Beehive.FlashBee" />
               <Children />
               <Properties>
                 <Properties>
