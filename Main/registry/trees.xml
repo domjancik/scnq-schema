@@ -820,6 +820,109 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="NightRiders.Entrance">
+    <Value Name="NightRiders.Entrance">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="E.Rainbow">
+              <Bee r:Type="VVVV.Beehive.RainbowBee" />
+              <Children>
+                <Item Name="S.FillPrimary">
+                  <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+                  <Children />
+                  <Properties />
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties>
+                <Properties>
+                  <Item Key="Axis">
+                    <Value r:Type="System.Int32">0</Value>
+                  </Item>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Bar</Value>
+                  </Item>
+                  <Item Key="Width">
+                    <Value r:Type="System.Single">0.141</Value>
+                  </Item>
+                  <Item Key="Offset">
+                    <Value r:Type="System.Single">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="O.Add">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="O.Multiply">
+                  <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+                  <Children>
+                    <Item Name="S.Flash">
+                      <Bee __slot_141322="5.656" r:Type="VVVV.Beehive.FlashBee" />
+                      <Children />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Interval">
+                            <Value r:Type="System.Single">5.656</Value>
+                          </Item>
+                          <Item Key="Decay">
+                            <Value r:Type="System.Single">5.144</Value>
+                          </Item>
+                          <Item Key="Attack">
+                            <Value r:Type="System.Single">2.305</Value>
+                          </Item>
+                          <Item Key="Randomness">
+                            <Value r:Type="System.Single">0.3</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                      <Drivers />
+                    </Item>
+                    <Item Name="S.Constant">
+                      <Bee r:Type="VVVV.Beehive.ConstantBee" />
+                      <Children />
+                      <Properties>
+                        <Properties>
+                          <Item Key="Value">
+                            <Value r:Type="System.Single">0.11</Value>
+                          </Item>
+                        </Properties>
+                      </Properties>
+                      <Drivers />
+                    </Item>
+                  </Children>
+                  <Properties />
+                  <Drivers />
+                </Item>
+                <Item Name="S.Constant">
+                  <Bee r:Type="VVVV.Beehive.ConstantBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0.1</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="Universe">
     <Value Name="Universe">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -1119,6 +1222,393 @@
         <Item Name="S.FillPrimary">
           <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
           <Children />
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
+  <Item Key="Director.NightRiders">
+    <Value Name="Director.NightRiders">
+      <Children>
+        <Item Name="D.SetPrimary">
+          <Bee __slot_152391="1, 0.0005999804, 0, 1" r:Type="VVVV.Beehive.SetPrimaryBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Color">
+                <Value r:Type="SharpDX.Color4">1, 0.0005999804, 0, 1</Value>
+              </Item>
+              <Item Key="Fade Duration">
+                <Value r:Type="System.Single">1.846</Value>
+              </Item>
+            </Properties>
+          </Properties>
+          <Drivers />
+        </Item>
+        <Item Name="P.Controller">
+          <Bee __slot_163444="2" r:Type="VVVV.Beehive.ControllerPickBee" />
+          <Children>
+            <Item Name="O.Add">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">Off</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Dancefloor</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Bar" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Bar</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Cloakroom" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Cloakroom</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
+              <Drivers />
+            </Item>
+            <Item Name="O.Add">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">Off</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Dancefloor</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Top" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.PrimaryDim</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Top</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Back" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.PrimaryDim</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Back</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Bar" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Bar</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Cloakroom" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Cloakroom</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
+              <Drivers />
+            </Item>
+            <Item Name="O.Add">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Wave" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Gradient.Wave</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Wave</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Gradient</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Dancefloor</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Top" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.PrimaryDim</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Top</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Back" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.PrimaryDim</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Back</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Bar" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Bar</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="D.AssignGroup">
+                  <Bee __slot_151078="Cloakroom" r:Type="VVVV.Beehive.AssignBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Tree">
+                        <Value r:Type="System.String">NightRiders.Entrance</Value>
+                      </Item>
+                      <Item Key="Transition">
+                        <Value r:Type="System.String">T.Fade</Value>
+                      </Item>
+                      <Item Key="Group">
+                        <Value r:Type="System.String">Cloakroom</Value>
+                      </Item>
+                      <Item Key="Enabled">
+                        <Value r:Type="System.Boolean">True</Value>
+                      </Item>
+                      <Item Key="Duration">
+                        <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
           <Properties />
           <Drivers />
         </Item>
@@ -1547,19 +2037,19 @@
           <Bee r:Type="VVVV.Beehive.SetPrimaryBee" />
           <Children>
             <Item Name="D.AssignGroup">
-              <Bee __slot_147992="Cloakroom" r:Type="VVVV.Beehive.AssignBee" />
+              <Bee r:Type="VVVV.Beehive.AssignBee" />
               <Children>
                 <Item Name="D.AssignGroup">
-                  <Bee __slot_147992="Dancefloor" r:Type="VVVV.Beehive.AssignBee" />
+                  <Bee r:Type="VVVV.Beehive.AssignBee" />
                   <Children>
                     <Item Name="D.AssignGroup">
-                      <Bee __slot_147992="Bar" r:Type="VVVV.Beehive.AssignBee" />
+                      <Bee r:Type="VVVV.Beehive.AssignBee" />
                       <Children>
                         <Item Name="D.AssignGroup">
-                          <Bee __slot_147992="New" r:Type="VVVV.Beehive.AssignBee" />
+                          <Bee r:Type="VVVV.Beehive.AssignBee" />
                           <Children>
                             <Item Name="D.AssignGroup">
-                              <Bee __slot_147992="Heads" r:Type="VVVV.Beehive.AssignBee" />
+                              <Bee r:Type="VVVV.Beehive.AssignBee" />
                               <Children />
                               <Properties>
                                 <Properties>
@@ -3728,7 +4218,7 @@
           <Bee r:Type="VVVV.Beehive.MultiplyBee" />
           <Children>
             <Item Name="S.Flash">
-              <Bee __slot_138236="1.76" r:Type="VVVV.Beehive.FlashBee" />
+              <Bee r:Type="VVVV.Beehive.FlashBee" />
               <Children />
               <Properties>
                 <Properties>
@@ -7458,6 +7948,52 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="NightRiders.Gradient">
+    <Value Name="NightRiders.Gradient">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+            <Item Name="S.FillExternal">
+              <Bee r:Type="VVVV.Beehive.FillExternalBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Slot">
+                    <Value r:Type="System.Int32">0</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.Constant">
+              <Bee r:Type="VVVV.Beehive.ConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Value">
+                    <Value r:Type="System.Single">0.191</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="FirstFlash">
     <Value Name="FirstFlash">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -7663,6 +8199,61 @@
       <Drivers />
     </Value>
   </Item>
+  <Item Key="NightRiders.Gradient.Wave">
+    <Value Name="NightRiders.Gradient.Wave">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Add">
+          <Bee r:Type="VVVV.Beehive.AddBee" />
+          <Children>
+            <Item Name="S.PosConstant">
+              <Bee r:Type="VVVV.Beehive.PosConstantBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Position">
+                    <Value r:Type="SharpDX.Vector3">0.5029628, 0.4465274, 0.499114</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+            <Item Name="S.PosCenter">
+              <Bee r:Type="VVVV.Beehive.PosCenterBee" />
+              <Children />
+              <Properties>
+                <Properties>
+                  <Item Key="Group">
+                    <Value r:Type="System.String">Dancefloor</Value>
+                  </Item>
+                </Properties>
+              </Properties>
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+        <Item Name="S.Radius">
+          <Bee r:Type="VVVV.Beehive.RadiusBee" />
+          <Children />
+          <Properties>
+            <Properties>
+              <Item Key="Radius Audio">
+                <Value r:Type="System.Single">0.133</Value>
+              </Item>
+              <Item Key="Radius">
+                <Value r:Type="System.Single">0.398</Value>
+              </Item>
+            </Properties>
+          </Properties>
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
   <Item Key="Techno.StrobeIndividual">
     <Value Name="Techno.StrobeIndividual">
       <Bee r:Type="VVVV.Beehive.PassthroughBee" />
@@ -7808,6 +8399,62 @@
                       </Item>
                       <Item Key="Duration">
                         <Value r:Type="System.Single">2</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+              </Children>
+              <Properties />
+              <Drivers />
+            </Item>
+          </Children>
+          <Properties />
+          <Drivers />
+        </Item>
+      </Children>
+      <Properties />
+      <Drivers />
+    </Value>
+  </Item>
+  <Item Key="NightRiders.PrimaryDim">
+    <Value Name="NightRiders.PrimaryDim">
+      <Bee r:Type="VVVV.Beehive.PassthroughBee" />
+      <Children>
+        <Item Name="O.Multiply">
+          <Bee r:Type="VVVV.Beehive.MultiplyBee" />
+          <Children>
+            <Item Name="S.FillPrimary">
+              <Bee r:Type="VVVV.Beehive.FillPrimaryBee" />
+              <Children />
+              <Properties />
+              <Drivers />
+            </Item>
+            <Item Name="O.Add">
+              <Bee r:Type="VVVV.Beehive.AddBee" />
+              <Children>
+                <Item Name="S.Constant">
+                  <Bee r:Type="VVVV.Beehive.ConstantBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0.101</Value>
+                      </Item>
+                    </Properties>
+                  </Properties>
+                  <Drivers />
+                </Item>
+                <Item Name="S.ALevelConstant">
+                  <Bee r:Type="VVVV.Beehive.FillLevelBee" />
+                  <Children />
+                  <Properties>
+                    <Properties>
+                      <Item Key="Invert Level">
+                        <Value r:Type="System.Boolean">False</Value>
+                      </Item>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0.044</Value>
                       </Item>
                     </Properties>
                   </Properties>
