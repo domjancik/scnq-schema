@@ -21,9 +21,9 @@
    </PIN>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
-   <BOUNDS type="Box" left="1968" top="1016" width="480" height="480">
+   <BOUNDS type="Box" left="2673" top="521" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="1968" top="1016" width="0" height="0">
+   <BOUNDS type="Node" left="2673" top="521" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -679,9 +679,9 @@
    <NODE systemname="SetGlobalProperties (Schema.Model.State)" filename="vl\VVVV.Schema.Core.vl" nodename="SetGlobalProperties (Schema.Model.State)" componentmode="Hidden" id="487">
    <BOUNDS type="Node" left="845" top="3714" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Global Properties" visible="1">
+   <PIN pinname="Global Properties" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -723,9 +723,9 @@
    <NODE systemname="SetAudio (Schema.PropertyBank)" filename="vl\VVVV.Schema.Core.vl" nodename="SetAudio (Schema.PropertyBank)" componentmode="Hidden" id="491">
    <BOUNDS type="Node" left="1807" top="3130" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Value" visible="1">
+   <PIN pinname="Value" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -752,7 +752,7 @@
    </NODE>
    <LINK srcnodeid="447" srcpinname="Output" dstnodeid="486" dstpinname="Input">
    </LINK>
-   <NODE id="4" systemname="Runtime (Schema.SiteSpecific.Genot)" filename="vl\VVVV.domj.bHiVE.vl" nodename="Runtime (Schema.SiteSpecific.Genot)" componentmode="Hidden">
+   <NODE id="4" systemname="Runtime (Schema.SiteSpecific.Ankali)" filename="vl\VVVV.Schema.Core.vl" nodename="Runtime (Schema.SiteSpecific.Ankali)" componentmode="Hidden">
    <BOUNDS type="Node" left="288" top="1438" width="100" height="100">
    </BOUNDS>
    <PIN pinname="State" visible="1">
@@ -767,13 +767,35 @@
    </PIN>
    <PIN pinname="Keyboard" visible="1">
    </PIN>
-   <PIN pinname="File Path" visible="1">
+   <PIN pinname="File Path" visible="1" slicecount="1" values="registry\Ankali.layout.xml">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="447" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="489" srcpinname="Output String" dstnodeid="4" dstpinname="File Path">
    </LINK>
    <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
+   </LINK>
+   <NODE systemname="Controllers (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Controllers (Schema)" componentmode="Hidden" id="492">
+   <BOUNDS type="Node" left="285" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="492" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Keyboard (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Keyboard (Devices Desktop)" componentmode="Hidden" id="493">
+   <BOUNDS type="Node" left="3705" top="645" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3705" top="645" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="493" srcpinname="Device" dstnodeid="492" dstpinname="Keyboard">
+   </LINK>
+   <LINK srcnodeid="492" srcpinname="Output" dstnodeid="447" dstpinname="Input">
    </LINK>
    </PATCH>
