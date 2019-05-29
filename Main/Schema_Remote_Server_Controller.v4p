@@ -1,0 +1,1095 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\Schema_Remote_Server_Controller.v4p" systemname="Schema_Remote_Server_Controller" filename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\Schema_Remote_Server_Controller.v4p" scrollx="80" scrolly="3360">
+   <BOUNDS type="Window" left="2576" top="4152" width="8592" height="5800">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
+   <BOUNDS type="Node" left="280" top="1505" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
+   </PIN>
+   <PIN pinname="Maximum Foreground FPS" slicecount="1" visible="1" values="30">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" slicecount="1" visible="1" values="30">
+   </PIN>
+   </NODE>
+   <NODE id="289" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="1953" top="1541" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1953" top="1541" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Editor Enabled|">
+   </PIN>
+   </NODE>
+   <NODE id="261" systemname="Editor (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Editor (Schema)" componentmode="Hidden">
+   <BOUNDS type="Node" left="1311" top="2179" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="289" srcpinname="Y Output Value" dstnodeid="261" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="343">
+   <BOUNDS type="Node" left="33217" top="12741" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RMS (DShow9)" nodename="RMS (DShow9)" componentmode="Hidden" id="342">
+   <BOUNDS type="Node" left="33369" top="13189" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="RMS" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="343" srcpinname="Audio" dstnodeid="342" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="341">
+   <BOUNDS type="Node" left="33233" top="13893" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" visible="1" values="0.03">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Clamp">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="0.02">
+   </PIN>
+   </NODE>
+   <NODE systemname="InputMorph (Color)" nodename="InputMorph (Color)" componentmode="Hidden" id="340">
+   <BOUNDS type="Node" left="33481" top="15309" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="|0.05838,0.05838,0.05838,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Spreads)" filename="" nodename="GetSlice (Spreads)" componentmode="Hidden" id="339">
+   <BOUNDS type="Node" left="34137" top="13437" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="342" srcpinname="RMS" dstnodeid="339" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="341" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="338">
+   <BOUNDS type="Node" left="34753" top="14325" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="34753" top="14325" width="696" height="208">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Decay (Animation)" nodename="Decay (Animation)" componentmode="Hidden" id="337">
+   <BOUNDS type="Node" left="33553" top="14701" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Decay" slicecount="1" values="0.97">
+   </PIN>
+   <PIN pinname="Attack" slicecount="1" values="0.08">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="341" srcpinname="Output" dstnodeid="337" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="337" srcpinname="Output" dstnodeid="340" dstpinname="Switch">
+   </LINK>
+   <NODE systemname="BeatDetector (Value)" filename="%VVVV%\lib\nodes\modules\Value\BeatDetector (Value).v4p" nodename="BeatDetector (Value)" componentmode="Hidden" id="336">
+   <BOUNDS type="Node" left="34873" top="15157" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="BangOut" visible="1">
+   </PIN>
+   <PIN pinname="Gain" slicecount="1" values="0.3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="336" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="335" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="34849" top="15557" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="34849" top="15557" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="336" srcpinname="BangOut" dstnodeid="335" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="AudioState (Schema.AudioState Join)" filename="vl\VVVV.Schema.Core.vl" nodename="AudioState (Schema.AudioState Join)" componentmode="Hidden" id="334">
+   <BOUNDS type="Node" left="32553" top="16229" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Beat" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Level" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period Power" visible="1" slicecount="1" values="0.988949937065562">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="335" srcpinname="Y Output Value" dstnodeid="334" dstpinname="Beat">
+   </LINK>
+   <LINK srcnodeid="337" srcpinname="Output" dstnodeid="334" dstpinname="Level">
+   </LINK>
+   <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="333">
+   <BOUNDS type="Node" left="36345" top="14509" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="36345" top="14509" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Frame Count" slicecount="1" values="40">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="332">
+   <BOUNDS type="Node" left="36529" top="13789" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Bounds (Spectral)" nodename="Bounds (Spectral)" componentmode="Hidden" id="331">
+   <BOUNDS type="Node" left="36537" top="15045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="333" srcpinname="Output" dstnodeid="331" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="333" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="330">
+   <BOUNDS type="Node" left="36849" top="15821" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="330" srcpinname="Position Out" dstnodeid="341" dstpinname="Source Maximum">
+   </LINK>
+   <NODE systemname="Max (Value)" nodename="Max (Value)" componentmode="Hidden" id="329">
+   <BOUNDS type="Node" left="36129" top="16381" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.03">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="331" srcpinname="Maximum" dstnodeid="329" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="329" srcpinname="Output" dstnodeid="330" dstpinname="Go To Position">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="328" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="38681" top="15165" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="38681" top="15165" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="331" srcpinname="Center" dstnodeid="328" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="327" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="38665" top="15509" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="38665" top="15509" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="331" srcpinname="Maximum" dstnodeid="327" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="326">
+   <BOUNDS type="Node" left="37977" top="16021" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="331" srcpinname="Maximum" dstnodeid="326" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="326" srcpinname="Output" dstnodeid="334" dstpinname="Period Power">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="325" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="38065" top="16397" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="38065" top="16397" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="326" srcpinname="Output" dstnodeid="325" dstpinname="Y Input Value">
+   <LINKPOINT x="38065" y="16397">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="324">
+   <BOUNDS type="Node" left="37335" top="14524" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="37335" top="14524" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Frame Count" slicecount="1" values="10000">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="339" srcpinname="Output" dstnodeid="324" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Bounds (Spectral)" nodename="Bounds (Spectral)" componentmode="Hidden" id="323">
+   <BOUNDS type="Node" left="37527" top="15060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="324" srcpinname="Output" dstnodeid="323" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="323" srcpinname="Maximum" dstnodeid="326" dstpinname="Source Maximum">
+   </LINK>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="322">
+   <BOUNDS type="Node" left="34633" top="16860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="335" srcpinname="Y Output Value" dstnodeid="322" dstpinname="Up">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="321" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="34918" top="18135" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="34918" top="18135" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="322" srcpinname="Output" dstnodeid="321" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="366">
+   <BOUNDS type="Node" left="34497" top="14221" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RMS (DShow9)" nodename="RMS (DShow9)" componentmode="Hidden" id="365">
+   <BOUNDS type="Node" left="34649" top="14669" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="RMS" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="366" srcpinname="Audio" dstnodeid="365" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="364">
+   <BOUNDS type="Node" left="34513" top="15373" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" visible="1" values="0.03">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Clamp">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="0.02">
+   </PIN>
+   </NODE>
+   <NODE systemname="InputMorph (Color)" nodename="InputMorph (Color)" componentmode="Hidden" id="363">
+   <BOUNDS type="Node" left="34761" top="16789" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="|0.05838,0.05838,0.05838,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Spreads)" filename="" nodename="GetSlice (Spreads)" componentmode="Hidden" id="362">
+   <BOUNDS type="Node" left="35417" top="14917" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="365" srcpinname="RMS" dstnodeid="362" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="362" srcpinname="Output" dstnodeid="364" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="361">
+   <BOUNDS type="Node" left="36033" top="15805" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="36033" top="15805" width="696" height="208">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Decay (Animation)" nodename="Decay (Animation)" componentmode="Hidden" id="360">
+   <BOUNDS type="Node" left="34833" top="16181" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Decay" slicecount="1" values="0.97">
+   </PIN>
+   <PIN pinname="Attack" slicecount="1" values="0.08">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="364" srcpinname="Output" dstnodeid="360" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="360" srcpinname="Output" dstnodeid="363" dstpinname="Switch">
+   </LINK>
+   <NODE systemname="BeatDetector (Value)" filename="%VVVV%\lib\nodes\modules\Value\BeatDetector (Value).v4p" nodename="BeatDetector (Value)" componentmode="Hidden" id="359">
+   <BOUNDS type="Node" left="36153" top="16637" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="BangOut" visible="1">
+   </PIN>
+   <PIN pinname="Gain" slicecount="1" values="0.3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="362" srcpinname="Output" dstnodeid="359" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="358" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="36129" top="17037" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="36129" top="17037" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="359" srcpinname="BangOut" dstnodeid="358" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="AudioState (Schema.AudioState Join)" filename="vl\VVVV.Schema.Core.vl" nodename="AudioState (Schema.AudioState Join)" componentmode="Hidden" id="357">
+   <BOUNDS type="Node" left="33833" top="17709" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Beat" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Level" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period Power" visible="1" slicecount="1" values="0.956948752938691">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="358" srcpinname="Y Output Value" dstnodeid="357" dstpinname="Beat">
+   </LINK>
+   <LINK srcnodeid="360" srcpinname="Output" dstnodeid="357" dstpinname="Level">
+   </LINK>
+   <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="356">
+   <BOUNDS type="Node" left="37625" top="15989" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="37625" top="15989" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Frame Count" slicecount="1" values="40">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="355">
+   <BOUNDS type="Node" left="37809" top="15269" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Bounds (Spectral)" nodename="Bounds (Spectral)" componentmode="Hidden" id="354">
+   <BOUNDS type="Node" left="37817" top="16525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="356" srcpinname="Output" dstnodeid="354" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="362" srcpinname="Output" dstnodeid="356" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="353">
+   <BOUNDS type="Node" left="38129" top="17301" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="353" srcpinname="Position Out" dstnodeid="364" dstpinname="Source Maximum">
+   </LINK>
+   <NODE systemname="Max (Value)" nodename="Max (Value)" componentmode="Hidden" id="352">
+   <BOUNDS type="Node" left="37409" top="17861" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.03">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="354" srcpinname="Maximum" dstnodeid="352" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="352" srcpinname="Output" dstnodeid="353" dstpinname="Go To Position">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="351" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="39961" top="16645" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="39961" top="16645" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="354" srcpinname="Center" dstnodeid="351" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="350" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="39945" top="16989" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="39945" top="16989" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="354" srcpinname="Maximum" dstnodeid="350" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="349">
+   <BOUNDS type="Node" left="39257" top="17501" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="354" srcpinname="Maximum" dstnodeid="349" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="349" srcpinname="Output" dstnodeid="357" dstpinname="Period Power">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="348" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="39345" top="17877" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="39345" top="17877" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="349" srcpinname="Output" dstnodeid="348" dstpinname="Y Input Value">
+   <LINKPOINT x="39345" y="17877">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="347">
+   <BOUNDS type="Node" left="38615" top="16004" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="38615" top="16004" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Insert" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Frame Count" slicecount="1" values="10000">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="362" srcpinname="Output" dstnodeid="347" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Bounds (Spectral)" nodename="Bounds (Spectral)" componentmode="Hidden" id="346">
+   <BOUNDS type="Node" left="38807" top="16540" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="347" srcpinname="Output" dstnodeid="346" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="346" srcpinname="Maximum" dstnodeid="349" dstpinname="Source Maximum">
+   </LINK>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="345">
+   <BOUNDS type="Node" left="35913" top="18340" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="358" srcpinname="Y Output Value" dstnodeid="345" dstpinname="Up">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="344" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="36198" top="19615" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="36198" top="19615" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="345" srcpinname="Output" dstnodeid="344" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="399" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="512" top="880" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="512" top="880" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="399" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
+   </LINK>
+   <LINK srcnodeid="399" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <NODE systemname="Controllers (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Controllers (Schema)" componentmode="Hidden" id="447">
+   <BOUNDS type="Node" left="224" top="3549" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Notifications" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Controllers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="ControllerDirectorLoader (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="ControllerDirectorLoader (Schema)" componentmode="Hidden" id="448">
+   <BOUNDS type="Node" left="255" top="4060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Director List" visible="1" slicecount="16" values="Director.Latino,Director.House,Director.Republic,Director.Techno,Director.Rainbow,,,,,,,,,,Director.Worklight,">
+   </PIN>
+   <PIN pinname="Notifications" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Controllers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Dimmer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="447" srcpinname="Output" dstnodeid="448" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="447" srcpinname="Notifications" dstnodeid="448" dstpinname="Notifications">
+   </LINK>
+   <LINK srcnodeid="447" srcpinname="Controllers" dstnodeid="448" dstpinname="Controllers">
+   </LINK>
+   <NODE systemname="Runtime (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Runtime (Schema)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="273" top="1963" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1">
+   </PIN>
+   <PIN pinname="Pixel Position Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Setup" visible="1">
+   </PIN>
+   <PIN pinname="Strip Colors" visible="1">
+   </PIN>
+   <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
+   </LINK>
+   <NODE systemname="Keyboard (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Keyboard (Devices Desktop)" componentmode="Hidden" id="478">
+   <BOUNDS type="Node" left="1672" top="616" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1672" top="616" width="1600" height="1600">
+   </BOUNDS>
+   <PIN pinname="Device" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="478" srcpinname="Device" dstnodeid="447" dstpinname="Keyboard">
+   </LINK>
+   <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="479">
+   <BOUNDS type="Node" left="1949" top="3184" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="frames per second" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="480" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2005" top="3808" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2005" top="3808" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="479" srcpinname="frames per second" dstnodeid="480" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Runtime (Schema.Remote)" filename="vl\VL.Schema.Remote.vl" nodename="Runtime (Schema.Remote)" componentmode="Hidden" id="481">
+   <BOUNDS type="Node" left="375" top="2625" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Receive" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="481" dstpinname="State">
+   </LINK>
+   <LINK srcnodeid="481" srcpinname="State" dstnodeid="447" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Controllers2 (Schema.Input)" filename="vl\VVVV.Schema.Core.vl" nodename="Controllers2 (Schema.Input)" componentmode="Hidden" id="482">
+   <BOUNDS type="Node" left="472" top="4728" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="MIDIMappingPosition" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="ControllerOverview (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="ControllerOverview (Schema)" componentmode="Hidden" id="484">
+   <BOUNDS type="Node" left="424" top="5224" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="MIDIMappingPosition" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="482" srcpinname="MIDIMappingPosition" dstnodeid="484" dstpinname="MIDIMappingPosition">
+   </LINK>
+   <LINK srcnodeid="482" srcpinname="Output" dstnodeid="484" dstpinname="State">
+   </LINK>
+   <NODE systemname="LIFXBulb (Home Automation)" filename="modules\HomeAutomation\LIFXBulb (Home Automation).v4p" nodename="LIFXBulb (Home Automation)" componentmode="InAWindow" id="486">
+   <BOUNDS type="Node" left="2752" top="6888" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Color" visible="1" slicecount="1" values="|0.40000,0.00000,0.00000,2.00000|">
+   </PIN>
+   <PIN pinname="Update" visible="1">
+   </PIN>
+   <PIN pinname="Remote Host" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="FilterFixturesByName (Schema.Fixtures)" filename="vl\VVVV.Schema.Core.vl" nodename="FilterFixturesByName (Schema.Fixtures)" componentmode="Hidden" id="487">
+   <BOUNDS type="Node" left="2312" top="5176" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Name" slicecount="1" values="LIFX">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Result" visible="1">
+   </PIN>
+   <PIN pinname="Fixtures" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetFixtures (Schema.Model.State State)" filename="vl\VVVV.Schema.Core.vl" nodename="GetFixtures (Schema.Model.State State)" componentmode="Hidden" id="488">
+   <BOUNDS type="Node" left="2288" top="4792" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Fixtures" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="488" srcpinname="Fixtures" dstnodeid="487" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="484" srcpinname="Output" dstnodeid="488" dstpinname="Input">
+   </LINK>
+   <NODE systemname="GetColors (Schema.PropertyBank)" filename="vl\VVVV.Schema.Core.vl" nodename="GetColors (Schema.PropertyBank)" componentmode="Hidden" id="489">
+   <BOUNDS type="Node" left="2736" top="5824" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Result" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetState (Schema.Fixture Fixture)" filename="vl\VVVV.Schema.Core.vl" nodename="GetState (Schema.Fixture Fixture)" componentmode="Hidden" id="490">
+   <BOUNDS type="Node" left="2416" top="5488" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="State" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="487" srcpinname="Result" dstnodeid="490" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="490" srcpinname="State" dstnodeid="489" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="489" srcpinname="Result" dstnodeid="486" dstpinname="Color">
+   </LINK>
+   <NODE systemname="Change (Color)" nodename="Change (Color)" componentmode="Hidden" id="491" filename="%VVVV%\lib\nodes\modules\Color\Change (Color).v4p">
+   <BOUNDS type="Node" left="3224" top="6400" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="|0.50196,0.50196,0.50196,1.00000|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="489" srcpinname="Result" dstnodeid="491" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="491" srcpinname="Output" dstnodeid="486" dstpinname="Update">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="492">
+   <BOUNDS type="Box" left="4104" top="6672" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4104" top="6672" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="192.168.10.229">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="localhost">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="IP">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="492" srcpinname="Output String" dstnodeid="486" dstpinname="Remote Host">
+   </LINK>
+   <NODE systemname="ArtNet (Network Sender)" filename="%VVVV%\lib\packs\VL.CoreLib.VVVV.0.94.50-gf563f1b382\vvvv\nodes\modules\ArtNet (Network Sender).v4p" nodename="ArtNet (Network Sender)" componentmode="Hidden" id="500">
+   <BOUNDS type="Node" left="6192" top="7856" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Remote Host" slicecount="1" values="192.168.10.101">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Send" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RGB (Color Split)" nodename="RGB (Color Split)" componentmode="Hidden" id="499">
+   <BOUNDS type="Node" left="6800" top="5440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="60" values="|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.22121,0.22121,0.22121,1.00000|,|0.97233,0.97233,0.97233,1.00000|,|0.16588,0.16588,0.16588,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.69251,0.69251,0.69251,1.00000|,|0.50105,0.50105,0.50105,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.56296,0.56296,0.56296,1.00000|,|0.63059,0.63059,0.63059,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.03286,0.03286,0.03286,1.00000|,|0.83932,0.83932,0.83932,1.00000|,|0.35423,0.35423,0.35423,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|,|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Red" visible="1">
+   </PIN>
+   <PIN pinname="Green" visible="1">
+   </PIN>
+   <PIN pinname="Blue" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="498">
+   <BOUNDS type="Node" left="6120" top="6144" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Z" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="497" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7144" top="7240" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7144" top="7240" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="497" srcpinname="Y Output Value" dstnodeid="500" dstpinname="Send">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="496">
+   <BOUNDS type="Node" left="5648" top="4592" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5648" top="4592" width="2064" height="640">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="60" values="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="60" values="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="499" srcpinname="Red" dstnodeid="498" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="499" srcpinname="Green" dstnodeid="498" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="499" srcpinname="Blue" dstnodeid="498" dstpinname="Z">
+   </LINK>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="495">
+   <BOUNDS type="Node" left="7128" top="6096" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y" visible="1" slicecount="60" values="9.96414892142639E-005,9.942713950295E-005,9.84957659966312E-005,9.75643997662701E-005,9.66330189839937E-005,9.57016527536325E-005,9.47702719713561E-005,9.3838905740995E-005,9.29075249587186E-005,9.19761587283574E-005,9.10447852220386E-005,9.01134189916775E-005,8.91820382094011E-005,8.82506719790399E-005,8.73192911967635E-005,8.63879176904447E-005,8.54565514600836E-005,8.45251779537648E-005,8.3593804447446E-005,8.26624309411272E-005,8.17310574348085E-005,8.07996912044473E-005,7.98683176981285E-005,7.89369369158521E-005,7.8005570685491E-005,7.70742044551298E-005,7.61428236728534E-005,7.52114501665346E-005,7.42800839361735E-005,7.33487104298547E-005,7.24173369235359E-005,7.14859561412595E-005,7.05545899108984E-005,6.96232164045796E-005,6.86918501742184E-005,6.7760469391942E-005,6.68291031615809E-005,6.58977296552621E-005,6.49663561489433E-005,6.40349826426245E-005,6.31036164122634E-005,6.21722429059446E-005,6.12408621236682E-005,6.03094922553282E-005,5.93781223869882E-005,5.84467525186483E-005,5.75153753743507E-005,5.65839982300531E-005,5.56526283617131E-005,5.47212584933732E-005,5.37898886250332E-005,5.28585114807356E-005,5.30728575540706E-005,5.40042274224106E-005,5.49355972907506E-005,5.5866978073027E-005,5.6798347941367E-005,5.77297178097069E-005,5.86611022299621E-005,5.95924611843657E-005">
+   </PIN>
+   <PIN pinname="Z" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="494">
+   <BOUNDS type="Node" left="6352" top="7288" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="360" values="9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005,9.99999974737875E-005">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="498" srcpinname="XYZ" dstnodeid="494" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="494" srcpinname="Output" dstnodeid="500" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="493">
+   <BOUNDS type="Node" left="5712" top="6800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="496" srcpinname="Y Output Value" dstnodeid="493" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="496" srcpinname="Y Output Value" dstnodeid="493" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="496" srcpinname="Y Output Value" dstnodeid="493" dstpinname="Z">
+   </LINK>
+   <LINK srcnodeid="493" srcpinname="XYZ" dstnodeid="494" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="495" srcpinname="XYZ" dstnodeid="494" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="499" srcpinname="Red" dstnodeid="495" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="499" srcpinname="Green" dstnodeid="495" dstpinname="Z">
+   </LINK>
+   <LINK srcnodeid="499" srcpinname="Blue" dstnodeid="495" dstpinname="X">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="501">
+   <BOUNDS type="Node" left="8144" top="4384" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="502">
+   <BOUNDS type="Node" left="8040" top="4896" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Lightness" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="501" srcpinname="Output" dstnodeid="502" dstpinname="Lightness">
+   </LINK>
+   <NODE systemname="OSCDevicesRuntime (Schema)" filename="vl\VVVV.Schema.OSCDevices.vl" nodename="OSCDevicesRuntime (Schema)" componentmode="Hidden" id="503">
+   <BOUNDS type="Node" left="464" top="6192" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="488" srcpinname="Output" dstnodeid="503" dstpinname="Input">
+   </LINK>
+   <NODE systemname="FilterFixturesByOutput (Schema.Fixtures)" filename="vl\VVVV.Schema.Core.vl" nodename="FilterFixturesByOutput (Schema.Fixtures)" componentmode="Hidden" id="504">
+   <BOUNDS type="Node" left="712" top="7248" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" slicecount="1" values="Strips">
+   </PIN>
+   <PIN pinname="Result" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="487" srcpinname="Fixtures" dstnodeid="504" dstpinname="Input">
+   </LINK>
+   <NODE systemname="GetColors (Schema.PropertyBank)" filename="vl\VVVV.Schema.Core.vl" nodename="GetColors (Schema.PropertyBank)" componentmode="Hidden" id="505">
+   <BOUNDS type="Node" left="1696" top="7936" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Result" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetState (Schema.Fixture Fixture)" filename="vl\VVVV.Schema.Core.vl" nodename="GetState (Schema.Fixture Fixture)" componentmode="Hidden" id="506">
+   <BOUNDS type="Node" left="1696" top="7584" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="506" srcpinname="State" dstnodeid="505" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="504" srcpinname="Result" dstnodeid="506" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="505" srcpinname="Result" dstnodeid="499" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AudioAnalysis" filename="modules\AudioAnalysis.v4p" nodename="modules\AudioAnalysis.v4p" componentmode="InAWindow" id="507">
+   <BOUNDS type="Node" left="5480" top="3416" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetGlobalProperties (Schema.Model.State)" filename="vl\VVVV.Schema.Core.vl" nodename="GetGlobalProperties (Schema.Model.State)" componentmode="Hidden" id="508">
+   <BOUNDS type="Node" left="248" top="4440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Global Properties" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="448" srcpinname="Output" dstnodeid="508" dstpinname="Input">
+   </LINK>
+   <NODE systemname="SetAudio (Schema.PropertyBank)" filename="vl\VVVV.Schema.Core.vl" nodename="SetAudio (Schema.PropertyBank)" componentmode="Hidden" id="509">
+   <BOUNDS type="Node" left="4704" top="4272" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="508" srcpinname="Global Properties" dstnodeid="509" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="507" srcpinname="Output" dstnodeid="509" dstpinname="Value">
+   </LINK>
+   <LINK srcnodeid="508" srcpinname="Output" dstnodeid="482" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="510">
+   <BOUNDS type="Box" left="4736" top="5360" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4736" top="5360" width="0" height="0">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="509" srcpinname="Output" dstnodeid="510" dstpinname="Input Node">
+   </LINK>
+   </PATCH>
