@@ -1,0 +1,41 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\_Test_OSCDevices_OSCLED.v4p" systemname="_Test_OSCDevices_OSCLED" filename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\_Test_OSCDevices_OSCLED.v4p">
+   <BOUNDS type="Window" left="6264" top="4648" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="Test_OSCLED (Schema)" filename="vl\VVVV.Schema.OSCDevices.vl" nodename="Test_OSCLED (Schema)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="795" top="3315" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Address" slicecount="1" values="192.168.10.111">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="20">
+   <BOUNDS type="Box" left="1890" top="1695" width="2250" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1890" top="1695" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.07266,0.10127,0.60138,1.00000|">
+   </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Resample (Color)" nodename="Resample (Color)" componentmode="Hidden" id="21" filename="%VVVV%\lib\nodes\modules\Color\Resample (Color).v4p">
+   <BOUNDS type="Node" left="2325" top="2415" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="7">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Color Output" dstnodeid="21" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   </PATCH>
