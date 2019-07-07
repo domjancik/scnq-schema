@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\IO\OpenVR.v4p" systemname="OpenVR" filename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\IO\OpenVR.v4p" scrollx="1695" scrolly="1920">
+   <PATCH nodename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\IO\OpenVR.v4p" systemname="OpenVR" filename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\IO\OpenVR.v4p" scrollx="1695" scrolly="1560">
    <BOUNDS type="Window" left="-9555" top="12105" width="9000" height="6000">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -26,6 +26,12 @@
    <PIN pinname="Controller" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Pose" visible="1">
+   </PIN>
+   <PIN pinname="Touchpad AxisXY" visible="1">
+   </PIN>
+   <PIN pinname="Touchpad Touch" visible="1">
+   </PIN>
+   <PIN pinname="Touchpad Press" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="TrackedDevices (OpenVR)" filename="%VVVV%\packs\VVVV.OpenVR\nodes\plugins\VVVV.OpenVR.dll" nodename="TrackedDevices (OpenVR)" componentmode="Hidden" id="6">
@@ -71,7 +77,7 @@
    </PIN>
    <PIN pinname="State" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Controller" visible="1">
+   <PIN pinname="Controller" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -105,8 +111,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="9" srcpinname="State" dstnodeid="11" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Right Controller" dstnodeid="9" dstpinname="Controller">
    </LINK>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="12">
    <BOUNDS type="Node" left="3840" top="7125" width="100" height="100">
@@ -261,7 +265,7 @@
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Record">
    </LINK>
    <NODE systemname="AvoidNIL (Node)" filename="%VVVV%\lib\nodes\modules\Node\AvoidNIL (Node).v4p" nodename="AvoidNIL (Node)" componentmode="Hidden" id="25">
-   <BOUNDS type="Node" left="4485" top="4275" width="100" height="100">
+   <BOUNDS type="Node" left="4200" top="4020" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -275,5 +279,33 @@
    <LINK srcnodeid="6" srcpinname="Left Controller" dstnodeid="7" dstpinname="Controller">
    </LINK>
    <LINK srcnodeid="7" srcpinname="Pose" dstnodeid="9" dstpinname="Controller Matrix">
+   </LINK>
+   <NODE systemname="Controller (Schema.OpenVR Join)" filename="vl\VVVV.Schema.OpenVR.vl" nodename="Controller (Schema.OpenVR Join)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="4275" top="4410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Controller Matrix" visible="1">
+   </PIN>
+   <PIN pinname="TouchpadXY" visible="1">
+   </PIN>
+   <PIN pinname="Touchpad Touch" visible="1">
+   </PIN>
+   <PIN pinname="Touchpad Press" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Output" dstnodeid="26" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="9" dstpinname="Controller">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Pose" dstnodeid="26" dstpinname="Controller Matrix">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Touchpad AxisXY" dstnodeid="26" dstpinname="TouchpadXY">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Touchpad Touch" dstnodeid="26" dstpinname="Touchpad Touch">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Touchpad Press" dstnodeid="26" dstpinname="Touchpad Press">
    </LINK>
    </PATCH>
