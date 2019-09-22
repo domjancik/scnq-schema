@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" systemname="AudioAnalysis" filename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\AudioAnalysis.v4p" systemname="AudioAnalysis" filename="C:\Users\magne\OneDrive\PROJECTS\vvvv\CHAPEAU\ChapeauControl\Main\modules\AudioAnalysis.v4p" scrollx="0" scrolly="0">
    <NODE systemname="AudioIn (DShow9)" nodename="AudioIn (DShow9)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1732" top="1284" width="100" height="100">
    </BOUNDS>
@@ -95,9 +95,11 @@
    </PIN>
    <PIN pinname="Period Power" visible="1" slicecount="1" values="0.506849315068493">
    </PIN>
-   <PIN pinname="FFT" visible="1">
+   <PIN pinname="FFT" visible="1" slicecount="256" values="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
    </PIN>
    <PIN pinname="BPM" visible="1">
+   </PIN>
+   <PIN pinname="Sample Rate" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Queue (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Queue (Spreads)" componentmode="Hidden" id="9">
@@ -255,7 +257,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2944" top="848" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Microphone (4- USB Audio Device)|">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Microphone Array (Realtek High Definition Audio(SST))|">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="|Microphone Array (Realtek High Definition Audio(SST))|">
    </PIN>
@@ -270,7 +272,7 @@
    </NODE>
    <LINK srcnodeid="23" srcpinname="Output Enum" dstnodeid="0" dstpinname="Driver">
    </LINK>
-   <NODE systemname="FFT (DShow9 4Channels)" filename="%VVVV%\lib\nodes\modules\DShow9\FFT (DShow9 4Channels).v4p" nodename="FFT (DShow9 4Channels)" componentmode="Hidden" id="24">
+   <NODE systemname="FFT (DShow9 4Channels)" filename="%VVVV%\lib\nodes\modules\DShow9\FFT (DShow9 4Channels).v4p" nodename="FFT (DShow9 4Channels)" componentmode="InAWindow" id="24">
    <BOUNDS type="Node" left="3075" top="1275" width="100" height="100">
    </BOUNDS>
    <PIN pinname="AudioDriver" slicecount="1" visible="1" values="|Microphone (USB Audio Device)|">
@@ -283,10 +285,10 @@
    </PIN>
    <PIN pinname="Gain" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="FFT" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="23" srcpinname="Output Enum" dstnodeid="24" dstpinname="AudioDriver">
-   </LINK>
-   <LINK srcnodeid="24" srcpinname="AsSpreadOut" dstnodeid="8" dstpinname="FFT">
    </LINK>
    <NODE systemname="Metronom (Animation Advanced)" filename="..\..\..\..\..\..\Documentos\vvvv\vvvv-contrib\modules\Animation Advanced\Metronom (Animation Advanced).v4p" nodename="Metronom (Animation Advanced)" componentmode="Hidden" id="26">
    <BOUNDS type="Node" left="3900" top="6090" width="100" height="100">
@@ -581,5 +583,35 @@
    <LINK srcnodeid="24" srcpinname="AsSpreadOut" dstnodeid="6" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="53" srcpinname="Y Output Value" dstnodeid="6" dstpinname="Gain">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="54">
+   <BOUNDS type="Box" left="1080" top="6720" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1080" top="6720" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="22050">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="Hz">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="54" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Sample Rate">
+   </LINK>
+   <NODE systemname="Resample (Spreads Gamma)" filename="%VVVV%\lib\nodes\modules\Spreads\Resample (Spreads Gamma).v4p" nodename="Resample (Spreads Gamma)" componentmode="Hidden" id="57">
+   <BOUNDS type="Node" left="3072" top="1704" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Bin Count" slicecount="1" values="32">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="FFT" dstnodeid="57" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="57" srcpinname="Output" dstnodeid="8" dstpinname="FFT">
    </LINK>
    </PATCH>
