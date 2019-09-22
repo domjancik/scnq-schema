@@ -1,0 +1,119 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\Render\Schema_Renderer_CraftLie.v4p" systemname="Schema_Renderer_CraftLie" filename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\modules\Render\Schema_Renderer_CraftLie.v4p" scrollx="56" scrolly="0">
+   <BOUNDS type="Window" left="4848" top="4400" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="Scene (Schema.Render.CraftLie)" filename="vl\VVVV.Schema.Render.CraftLie.Scene.vl" nodename="Scene (Schema.Render.CraftLie)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2472" top="688" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="Group (DX11.Layer)" id="3" systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="1992" top="1456" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1992" top="1456" width="2240" height="1680">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="6" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="5216" top="344" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5216" top="344" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Camera">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="13">
+   <BOUNDS type="Box" left="2000" top="2336" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2000" top="2336" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="SchemaBackgroundRenderer" filename="SchemaBackgroundRenderer.v4p" nodename="SchemaBackgroundRenderer.v4p" componentmode="InAWindow" id="19" stayontop="0">
+   <BOUNDS type="Node" left="1997" top="1850" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="272" width="5396" height="6948">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10432" top="3024" width="5392" height="6944">
+   </BOUNDS>
+   <PIN pinname="AA Samples per Pixel" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Layer Out" dstnodeid="19" dstpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="13" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="20">
+   <BOUNDS type="Box" left="2488" top="272" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2488" top="272" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Renderer (CraftLie)" filename="..\nodes\modules\Renderer (CraftLie).v4p" nodename="..\nodes\modules\Renderer (CraftLie).v4p" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="2032" top="1080" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1080" top="0" width="11685" height="13830">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1740" top="6510" width="21060" height="9135">
+   </BOUNDS>
+   <PIN pinname="Normalize" slicecount="1" visible="1" values="Height">
+   </PIN>
+   <PIN pinname="Vertical Align" slicecount="1" values="Center">
+   </PIN>
+   <PIN pinname="Horizontal Align" slicecount="1" values="Left">
+   </PIN>
+   <PIN pinname="Cull Mode" slicecount="1" values="None">
+   </PIN>
+   <PIN pinname="Fill Mode" slicecount="1" values="Solid">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Layer" dstnodeid="3" dstpinname="Layer 1">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="24">
+   <BOUNDS type="Box" left="3424" top="320" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3424" top="320" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="4">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|AA Samples per Pixel|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Output Enum" dstnodeid="19" dstpinname="AA Samples per Pixel">
+   </LINK>
+   </PATCH>
