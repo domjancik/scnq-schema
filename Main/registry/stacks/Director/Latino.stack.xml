@@ -2,14 +2,160 @@
 <!DOCTYPE ROOT PUBLIC "" ""[]>
 <StackFile xmlns:r="reflection">
   <Node Name="Director.Latino" Fold="False">
+    <Bee r:Type="VVVV.Schema.PassthroughBee" />
     <Children>
-      <Item Name="D.SetPrimary" Fold="False">
-        <Bee r:Type="VVVV.Schema.SetPrimaryBee" />
-        <Children />
+      <Item Name="Global.Set.Primary.FromColor" Fold="False">
+        <Bee __slot_469796="0.3484113, 0.0562181, 0, 1" r:Type="VVVV.Schema.Block.Behavior.Global.Set.PrimaryFromColor" />
+        <Children>
+          <Item Name="Effect.Color.Hue.Rotate" Fold="False">
+            <Bee r:Type="VVVV.Schema.Block.Behavior.Effect.Color.Hue.Rotate_1" />
+            <Children>
+              <Item Name="Effect.Color.Saturation.Set" Fold="False">
+                <Bee r:Type="VVVV.Schema.Block.Behavior.Effect.Color.Saturation.Set" />
+                <Children>
+                  <Item Name="Source.Color.Color" Fold="False">
+                    <Bee r:Type="VVVV.Schema.FillColorBee" />
+                    <Children />
+                    <Properties>
+                      <Properties>
+                        <Item Key="Color">
+                          <Value r:Type="SharpDX.Color4">0.3484113, 0.05621809, 0, 1</Value>
+                        </Item>
+                      </Properties>
+                    </Properties>
+                    <Drivers />
+                  </Item>
+                </Children>
+                <Properties>
+                  <Properties>
+                    <Item Key="Value">
+                      <Value r:Type="System.Single">1</Value>
+                    </Item>
+                  </Properties>
+                </Properties>
+                <Drivers>
+                  <Item Key="Value">
+                    <Value Name="Value">
+                      <State>
+                        <Properties>
+                          <Item Key="Value">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                        </Properties>
+                      </State>
+                      <Root_Node Name="Value" Fold="False">
+                        <Bee r:Type="VVVV.Schema.PassthroughBee" />
+                        <Children>
+                          <Item Name="Source.Value.Controller.Value" Fold="False">
+                            <Bee r:Type="VVVV.Schema.ValueControllerValueBee" />
+                            <Children />
+                            <Properties>
+                              <Properties>
+                                <Item Key="Label">
+                                  <Value r:Type="System.String">Saturation</Value>
+                                </Item>
+                                <Item Key="Learn">
+                                  <Value r:Type="System.Boolean">False</Value>
+                                </Item>
+                                <Item Key="Index">
+                                  <Value r:Type="System.Int32">5</Value>
+                                </Item>
+                              </Properties>
+                            </Properties>
+                            <Drivers />
+                          </Item>
+                        </Children>
+                        <Properties />
+                        <Drivers />
+                      </Root_Node>
+                      <Setup>
+                        <Properties>
+                          <Item Key="FromMax">
+                            <Value r:Type="System.Single">1</Value>
+                          </Item>
+                          <Item Key="FromMin">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                          <Item Key="ToMax">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                          <Item Key="ToMin">
+                            <Value r:Type="System.Single">1</Value>
+                          </Item>
+                        </Properties>
+                      </Setup>
+                    </Value>
+                  </Item>
+                </Drivers>
+              </Item>
+            </Children>
+            <Properties>
+              <Properties>
+                <Item Key="Value">
+                  <Value r:Type="System.Single">0</Value>
+                </Item>
+              </Properties>
+            </Properties>
+            <Drivers>
+              <Item Key="Value">
+                <Value Name="Value">
+                  <State>
+                    <Properties>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                    </Properties>
+                  </State>
+                  <Root_Node Name="Value" Fold="False">
+                    <Bee r:Type="VVVV.Schema.PassthroughBee" />
+                    <Children>
+                      <Item Name="Source.Value.Controller.Value" Fold="False">
+                        <Bee r:Type="VVVV.Schema.ValueControllerValueBee" />
+                        <Children />
+                        <Properties>
+                          <Properties>
+                            <Item Key="Label">
+                              <Value r:Type="System.String">Hue Rotate</Value>
+                            </Item>
+                            <Item Key="Learn">
+                              <Value r:Type="System.Boolean">False</Value>
+                            </Item>
+                            <Item Key="Index">
+                              <Value r:Type="System.Int32">4</Value>
+                            </Item>
+                          </Properties>
+                        </Properties>
+                        <Drivers />
+                      </Item>
+                    </Children>
+                    <Properties />
+                    <Drivers />
+                  </Root_Node>
+                  <Setup>
+                    <Properties>
+                      <Item Key="FromMax">
+                        <Value r:Type="System.Single">1</Value>
+                      </Item>
+                      <Item Key="FromMin">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                      <Item Key="ToMax">
+                        <Value r:Type="System.Single">1</Value>
+                      </Item>
+                      <Item Key="ToMin">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                    </Properties>
+                  </Setup>
+                </Value>
+              </Item>
+            </Drivers>
+          </Item>
+        </Children>
         <Properties>
           <Properties>
             <Item Key="Color">
-              <Value r:Type="SharpDX.Color4">0.3484113, 0.05621809, 0, 1</Value>
+              <Value r:Type="SharpDX.Color4">1, 1, 1, 1</Value>
             </Item>
             <Item Key="Fade Duration">
               <Value r:Type="System.Single">1</Value>
@@ -22,10 +168,13 @@
         <Bee r:Type="VVVV.Schema.AddBee" />
         <Children>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Wave.Rotate" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Wave.Rotate</Value>
                 </Item>
@@ -38,18 +187,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Techno.Chill" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Techno.Chill</Value>
                 </Item>
@@ -62,18 +211,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Techno.Chill" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Techno.Chill</Value>
                 </Item>
@@ -86,18 +235,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="PAR" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">PAR</Value>
                 </Item>
@@ -110,18 +259,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Spot.Pulsing" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Spot.Pulsing</Value>
                 </Item>
@@ -134,9 +283,6 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
@@ -145,16 +291,19 @@
             <Bee r:Type="VVVV.Schema.ControllerPickBee" />
             <Children>
               <Item Name="P.AudioPower" Fold="False">
-                <Bee r:Type="VVVV.Schema.AudioPowerPickBee" />
+                <Bee __slot_193243="0.511309" r:Type="VVVV.Schema.AudioPowerPickBee" />
                 <Children>
                   <Item Name="P.Alternate" Fold="False">
-                    <Bee r:Type="VVVV.Schema.CounterPickBee" />
+                    <Bee __slot_185168="32" __slot_185233="0.4743885" r:Type="VVVV.Schema.CounterPickBee" />
                     <Children>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">PrimaryExternal</Value>
                             </Item>
@@ -167,18 +316,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="SuperSmooth" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">SuperSmooth</Value>
                             </Item>
@@ -191,18 +340,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="Flashy" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">Flashy</Value>
                             </Item>
@@ -214,9 +363,6 @@
                             </Item>
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
-                            </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
                             </Item>
                           </Properties>
                         </Properties>
@@ -242,13 +388,16 @@
                     <Drivers />
                   </Item>
                   <Item Name="P.Alternate" Fold="False">
-                    <Bee r:Type="VVVV.Schema.CounterPickBee" />
+                    <Bee __slot_185168="1" __slot_185233="0.3426697" r:Type="VVVV.Schema.CounterPickBee" />
                     <Children>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="Audio.FlashLevelPrimarySoft" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">Audio.FlashLevelPrimarySoft</Value>
                             </Item>
@@ -261,18 +410,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="SuperSmooth" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">SuperSmooth</Value>
                             </Item>
@@ -284,9 +433,6 @@
                             </Item>
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
-                            </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
                             </Item>
                           </Properties>
                         </Properties>
@@ -325,10 +471,13 @@
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">PrimaryExternal</Value>
                     </Item>
@@ -340,9 +489,6 @@
                     </Item>
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
-                    </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
                     </Item>
                   </Properties>
                 </Properties>

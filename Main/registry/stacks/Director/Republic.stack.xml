@@ -2,14 +2,160 @@
 <!DOCTYPE ROOT PUBLIC "" ""[]>
 <StackFile xmlns:r="reflection">
   <Node Name="Director.Republic" Fold="False">
+    <Bee r:Type="VVVV.Schema.PassthroughBee" />
     <Children>
-      <Item Name="D.SetPrimary" Fold="False">
-        <Bee r:Type="VVVV.Schema.SetPrimaryBee" />
-        <Children />
+      <Item Name="Global.Set.Primary.FromColor" Fold="False">
+        <Bee __slot_469796="0.1723841, 0.0001034271, 0, 1" r:Type="VVVV.Schema.Block.Behavior.Global.Set.PrimaryFromColor" />
+        <Children>
+          <Item Name="Effect.Color.Hue.Rotate" Fold="False">
+            <Bee r:Type="VVVV.Schema.Block.Behavior.Effect.Color.Hue.Rotate_1" />
+            <Children>
+              <Item Name="Effect.Color.Saturation.Set" Fold="False">
+                <Bee r:Type="VVVV.Schema.Block.Behavior.Effect.Color.Saturation.Set" />
+                <Children>
+                  <Item Name="Source.Color.Color" Fold="False">
+                    <Bee r:Type="VVVV.Schema.FillColorBee" />
+                    <Children />
+                    <Properties>
+                      <Properties>
+                        <Item Key="Color">
+                          <Value r:Type="SharpDX.Color4">0.1723841, 0.0001288034, 2.539158E-05, 1</Value>
+                        </Item>
+                      </Properties>
+                    </Properties>
+                    <Drivers />
+                  </Item>
+                </Children>
+                <Properties>
+                  <Properties>
+                    <Item Key="Value">
+                      <Value r:Type="System.Single">1</Value>
+                    </Item>
+                  </Properties>
+                </Properties>
+                <Drivers>
+                  <Item Key="Value">
+                    <Value Name="Value">
+                      <State>
+                        <Properties>
+                          <Item Key="Value">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                        </Properties>
+                      </State>
+                      <Root_Node Name="Value" Fold="False">
+                        <Bee r:Type="VVVV.Schema.PassthroughBee" />
+                        <Children>
+                          <Item Name="Source.Value.Controller.Value" Fold="False">
+                            <Bee r:Type="VVVV.Schema.ValueControllerValueBee" />
+                            <Children />
+                            <Properties>
+                              <Properties>
+                                <Item Key="Label">
+                                  <Value r:Type="System.String">Saturation</Value>
+                                </Item>
+                                <Item Key="Learn">
+                                  <Value r:Type="System.Boolean">False</Value>
+                                </Item>
+                                <Item Key="Index">
+                                  <Value r:Type="System.Int32">5</Value>
+                                </Item>
+                              </Properties>
+                            </Properties>
+                            <Drivers />
+                          </Item>
+                        </Children>
+                        <Properties />
+                        <Drivers />
+                      </Root_Node>
+                      <Setup>
+                        <Properties>
+                          <Item Key="FromMax">
+                            <Value r:Type="System.Single">1</Value>
+                          </Item>
+                          <Item Key="FromMin">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                          <Item Key="ToMax">
+                            <Value r:Type="System.Single">0</Value>
+                          </Item>
+                          <Item Key="ToMin">
+                            <Value r:Type="System.Single">1</Value>
+                          </Item>
+                        </Properties>
+                      </Setup>
+                    </Value>
+                  </Item>
+                </Drivers>
+              </Item>
+            </Children>
+            <Properties>
+              <Properties>
+                <Item Key="Value">
+                  <Value r:Type="System.Single">0</Value>
+                </Item>
+              </Properties>
+            </Properties>
+            <Drivers>
+              <Item Key="Value">
+                <Value Name="Value">
+                  <State>
+                    <Properties>
+                      <Item Key="Value">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                    </Properties>
+                  </State>
+                  <Root_Node Name="Value" Fold="False">
+                    <Bee r:Type="VVVV.Schema.PassthroughBee" />
+                    <Children>
+                      <Item Name="Source.Value.Controller.Value" Fold="False">
+                        <Bee r:Type="VVVV.Schema.ValueControllerValueBee" />
+                        <Children />
+                        <Properties>
+                          <Properties>
+                            <Item Key="Label">
+                              <Value r:Type="System.String">Hue Rotate</Value>
+                            </Item>
+                            <Item Key="Learn">
+                              <Value r:Type="System.Boolean">False</Value>
+                            </Item>
+                            <Item Key="Index">
+                              <Value r:Type="System.Int32">4</Value>
+                            </Item>
+                          </Properties>
+                        </Properties>
+                        <Drivers />
+                      </Item>
+                    </Children>
+                    <Properties />
+                    <Drivers />
+                  </Root_Node>
+                  <Setup>
+                    <Properties>
+                      <Item Key="FromMax">
+                        <Value r:Type="System.Single">1</Value>
+                      </Item>
+                      <Item Key="FromMin">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                      <Item Key="ToMax">
+                        <Value r:Type="System.Single">1</Value>
+                      </Item>
+                      <Item Key="ToMin">
+                        <Value r:Type="System.Single">0</Value>
+                      </Item>
+                    </Properties>
+                  </Setup>
+                </Value>
+              </Item>
+            </Drivers>
+          </Item>
+        </Children>
         <Properties>
           <Properties>
             <Item Key="Color">
-              <Value r:Type="SharpDX.Color4">0.1723841, 0.0001288034, 2.539158E-05, 1</Value>
+              <Value r:Type="SharpDX.Color4">1, 1, 1, 1</Value>
             </Item>
             <Item Key="Fade Duration">
               <Value r:Type="System.Single">1</Value>
@@ -22,10 +168,13 @@
         <Bee r:Type="VVVV.Schema.AddBee" />
         <Children>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="SuperSmooth" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">SuperSmooth</Value>
                 </Item>
@@ -38,18 +187,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="SuperSmooth" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">SuperSmooth</Value>
                 </Item>
@@ -62,18 +211,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="PAR" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">PAR</Value>
                 </Item>
@@ -86,18 +235,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Spot.Base" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Spot.Base</Value>
                 </Item>
@@ -110,9 +259,6 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
@@ -121,16 +267,19 @@
             <Bee r:Type="VVVV.Schema.ControllerPickBee" />
             <Children>
               <Item Name="P.Alternate" Fold="False">
-                <Bee r:Type="VVVV.Schema.CounterPickBee" />
+                <Bee __slot_185168="5" __slot_185233="0.1753661" r:Type="VVVV.Schema.CounterPickBee" />
                 <Children>
                   <Item Name="O.Add" Fold="False">
                     <Bee r:Type="VVVV.Schema.AddBee" />
                     <Children>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">PrimaryExternal</Value>
                             </Item>
@@ -143,18 +292,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="Wave.Republic" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">Wave.Republic</Value>
                             </Item>
@@ -167,9 +316,6 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
@@ -182,10 +328,13 @@
                     <Bee r:Type="VVVV.Schema.AddBee" />
                     <Children>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">PrimaryExternal</Value>
                             </Item>
@@ -198,18 +347,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="Wave.Republic.Elevator" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">Wave.Republic.Elevator</Value>
                             </Item>
@@ -222,9 +371,6 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
@@ -237,10 +383,13 @@
                     <Bee r:Type="VVVV.Schema.AddBee" />
                     <Children>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">PrimaryExternal</Value>
                             </Item>
@@ -253,18 +402,18 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
                       </Item>
                       <Item Name="D.AssignGroup" Fold="False">
-                        <Bee r:Type="VVVV.Schema.AssignBee" />
+                        <Bee __slot_183231="Wave.Republic.RotateZ" r:Type="VVVV.Schema.AssignBee" />
                         <Children />
                         <Properties>
                           <Properties>
+                            <Item Key="Layer">
+                              <Value r:Type="System.Int32">0</Value>
+                            </Item>
                             <Item Key="Tree">
                               <Value r:Type="System.String">Wave.Republic.RotateZ</Value>
                             </Item>
@@ -277,9 +426,6 @@
                             <Item Key="Enabled">
                               <Value r:Type="System.Boolean">True</Value>
                             </Item>
-                            <Item Key="Duration">
-                              <Value r:Type="System.Single">2</Value>
-                            </Item>
                           </Properties>
                         </Properties>
                         <Drivers />
@@ -289,10 +435,13 @@
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Republic.Mid.Pulse.1" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Republic.Mid.Pulse.1</Value>
                         </Item>
@@ -305,18 +454,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Republic.Mid.Pulse.2" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Republic.Mid.Pulse.2</Value>
                         </Item>
@@ -329,18 +478,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Republic.Strobe.Beat" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Republic.Strobe.Beat</Value>
                         </Item>
@@ -353,18 +502,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Off" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Off</Value>
                         </Item>
@@ -376,9 +525,6 @@
                         </Item>
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
-                        </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
                         </Item>
                       </Properties>
                     </Properties>
@@ -404,10 +550,13 @@
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="Republic.Mid.Pulse.1" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">Republic.Mid.Pulse.1</Value>
                     </Item>
@@ -420,18 +569,18 @@
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
                     </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
-                    </Item>
                   </Properties>
                 </Properties>
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="Republic.Mid.Pulse.2" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">Republic.Mid.Pulse.2</Value>
                     </Item>
@@ -444,18 +593,18 @@
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
                     </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
-                    </Item>
                   </Properties>
                 </Properties>
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="Republic.Strobe.BPM" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">Republic.Strobe.BPM</Value>
                     </Item>
@@ -468,18 +617,18 @@
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
                     </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
-                    </Item>
                   </Properties>
                 </Properties>
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="Republic.Strobe.Beat" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">Republic.Strobe.Beat</Value>
                     </Item>
@@ -492,18 +641,18 @@
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
                     </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
-                    </Item>
                   </Properties>
                 </Properties>
                 <Drivers />
               </Item>
               <Item Name="D.AssignGroup" Fold="False">
-                <Bee r:Type="VVVV.Schema.AssignBee" />
+                <Bee __slot_183231="Off" r:Type="VVVV.Schema.AssignBee" />
                 <Children />
                 <Properties>
                   <Properties>
+                    <Item Key="Layer">
+                      <Value r:Type="System.Int32">0</Value>
+                    </Item>
                     <Item Key="Tree">
                       <Value r:Type="System.String">Off</Value>
                     </Item>
@@ -516,9 +665,6 @@
                     <Item Key="Enabled">
                       <Value r:Type="System.Boolean">True</Value>
                     </Item>
-                    <Item Key="Duration">
-                      <Value r:Type="System.Single">2</Value>
-                    </Item>
                   </Properties>
                 </Properties>
                 <Drivers />
@@ -527,10 +673,13 @@
                 <Bee r:Type="VVVV.Schema.AddBee" />
                 <Children>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">PrimaryExternal</Value>
                         </Item>
@@ -543,18 +692,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Wave.Republic" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Wave.Republic</Value>
                         </Item>
@@ -567,9 +716,6 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
@@ -582,10 +728,13 @@
                 <Bee r:Type="VVVV.Schema.AddBee" />
                 <Children>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">PrimaryExternal</Value>
                         </Item>
@@ -598,18 +747,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Wave.Republic.Elevator" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Wave.Republic.Elevator</Value>
                         </Item>
@@ -622,9 +771,6 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
@@ -637,10 +783,13 @@
                 <Bee r:Type="VVVV.Schema.AddBee" />
                 <Children>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="PrimaryExternal" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">PrimaryExternal</Value>
                         </Item>
@@ -653,18 +802,18 @@
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
                         </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
-                        </Item>
                       </Properties>
                     </Properties>
                     <Drivers />
                   </Item>
                   <Item Name="D.AssignGroup" Fold="False">
-                    <Bee r:Type="VVVV.Schema.AssignBee" />
+                    <Bee __slot_183231="Wave.Republic.RotateZ" r:Type="VVVV.Schema.AssignBee" />
                     <Children />
                     <Properties>
                       <Properties>
+                        <Item Key="Layer">
+                          <Value r:Type="System.Int32">0</Value>
+                        </Item>
                         <Item Key="Tree">
                           <Value r:Type="System.String">Wave.Republic.RotateZ</Value>
                         </Item>
@@ -676,9 +825,6 @@
                         </Item>
                         <Item Key="Enabled">
                           <Value r:Type="System.Boolean">True</Value>
-                        </Item>
-                        <Item Key="Duration">
-                          <Value r:Type="System.Single">2</Value>
                         </Item>
                       </Properties>
                     </Properties>
@@ -693,10 +839,13 @@
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Republic.Back" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Republic.Back</Value>
                 </Item>
@@ -709,18 +858,18 @@
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
                 </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
-                </Item>
               </Properties>
             </Properties>
             <Drivers />
           </Item>
           <Item Name="D.AssignGroup" Fold="False">
-            <Bee r:Type="VVVV.Schema.AssignBee" />
+            <Bee __slot_183231="Pulses.Chill" r:Type="VVVV.Schema.AssignBee" />
             <Children />
             <Properties>
               <Properties>
+                <Item Key="Layer">
+                  <Value r:Type="System.Int32">0</Value>
+                </Item>
                 <Item Key="Tree">
                   <Value r:Type="System.String">Pulses.Chill</Value>
                 </Item>
@@ -732,9 +881,6 @@
                 </Item>
                 <Item Key="Enabled">
                   <Value r:Type="System.Boolean">True</Value>
-                </Item>
-                <Item Key="Duration">
-                  <Value r:Type="System.Single">2</Value>
                 </Item>
               </Properties>
             </Properties>

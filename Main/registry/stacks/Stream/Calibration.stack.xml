@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE ROOT PUBLIC "" ""[]>
+<StackFile xmlns:r="reflection">
+  <Node Name="Stream.Calibration" Fold="False">
+    <Bee r:Type="VVVV.Schema.PassthroughBee" />
+    <Children>
+      <Item Name="Operator.Add" Fold="False">
+        <Bee r:Type="VVVV.Schema.AddBee" />
+        <Children>
+          <Item Name="Gate.Manual" Fold="False">
+            <Bee __slot_95486="True" r:Type="VVVV.Schema.GatekeeperBee" />
+            <Children>
+              <Item Name="Setup.Position.OpenVR.CalibratePixels" Fold="False">
+                <Bee r:Type="VVVV.Schema.Block.Behavior.Setup.Position.OpenVR.CalibratePixels" />
+                <Children />
+                <Properties />
+                <Drivers />
+              </Item>
+            </Children>
+            <Properties>
+              <Properties>
+                <Item Key="Open">
+                  <Value r:Type="System.Boolean">True</Value>
+                </Item>
+              </Properties>
+            </Properties>
+            <Drivers />
+          </Item>
+          <Item Name="Operator.Multiply" Fold="False">
+            <Bee r:Type="VVVV.Schema.MultiplyBee" />
+            <Children>
+              <Item Name="Source.Color.Pixel.Distance" Fold="False">
+                <Bee r:Type="VVVV.Schema.Block.Behavior.Source.Color.Pixel.Distance" />
+                <Children />
+                <Properties>
+                  <Properties>
+                    <Item Key="Target/Local">
+                      <Value r:Type="System.Boolean">True</Value>
+                    </Item>
+                    <Item Key="Radius">
+                      <Value r:Type="System.Single">0.259777</Value>
+                    </Item>
+                    <Item Key="Fixture">
+                      <Value r:Type="System.String">External</Value>
+                    </Item>
+                  </Properties>
+                </Properties>
+                <Drivers />
+              </Item>
+              <Item Name="Source.Color.Color" Fold="False">
+                <Bee r:Type="VVVV.Schema.FillColorBee" />
+                <Children />
+                <Properties>
+                  <Properties>
+                    <Item Key="Color">
+                      <Value r:Type="SharpDX.Color4">1, 0.0001, 0.0001, 1</Value>
+                    </Item>
+                  </Properties>
+                </Properties>
+                <Drivers />
+              </Item>
+            </Children>
+            <Properties />
+            <Drivers />
+          </Item>
+        </Children>
+        <Properties />
+        <Drivers />
+      </Item>
+    </Children>
+    <Properties />
+    <Drivers />
+  </Node>
+  <Descriptor Name="Stream.Calibration" />
+</StackFile>
