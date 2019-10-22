@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2019.1.0-0827-g397c3356f1" Version="0.128">
+  <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2019.1.0-827" />
+  <Patch Id="Gql5WLoCHdZMTNYgfAMR3o">
+    <Canvas Id="ONZw2kKUbs5NUJL83wygr9" DefaultCategory="Main" CanvasType="FullCategory">
+      <!--
+
+    ************************ RegisterEffects ************************
+
+-->
+      <Node Name="RegisterEffects" Bounds="446,281,286,275" Id="IQTPYzPLPaIPhTlN5pBlmX">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="OXtc7DjVkYAOtIjJH0k2b5">
+          <Node Bounds="515,384,74,77" Id="Sf0ojpOI66OQaRcHkZp6BC">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.BeeRegistry" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBee" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="SJoq9X9ivWdOKOii6aB5PX" Name="Input" Kind="StateInputPin" />
+            <Pin Id="O2iYBhYxwWYPsRfE0Vb6Gk" Name="Key" Kind="InputPin" />
+            <Pin Id="UGB0DBWdS9aLznvo2K0hxS" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="F4KzBbvu5WtMy2VY93FUd6" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="KABdNHaxYgpNu8NPC9L7PH" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="KCci7VAaxJEK9h2TYr1s0a" Bounds="519,454" />
+              <Node Bounds="531,407,46,26" Id="Mhztpa4VEQELROLF8MXHka">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Generic.Delay" LastSymbolSource="Schema.Blocks.Effects.Generic.Delay.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Delay" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="LcIFXBJ1lK9PMK7WxaMqIO" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="TtUV3w17MFoNr1qsgTk7UG" Comment="Key" Bounds="602,351,86,11" ShowValueBox="true" isIOBox="true" Value="Effect.Delay">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <ControlPoint Id="T3MzGc1BdtrNOPauI3me8f" Bounds="521,299" />
+          <ControlPoint Id="TOpdW4qrPPkLdZVfVb0vdL" Bounds="516,539" />
+          <Pin Id="OumCOfn3ba8OukJQF8Uygc" Name="Input" Kind="InputPin" Bounds="471,214" />
+          <Pin Id="VudVeKxHfyWOcRt6xBbSmg" Name="Output" Kind="OutputPin" Bounds="466,454" />
+          <Link Id="S6j2rXP3qrcOuWY3G5K46c" Ids="KCci7VAaxJEK9h2TYr1s0a,KABdNHaxYgpNu8NPC9L7PH" IsHidden="true" />
+          <Link Id="Ra3k0AyxvD1Ng4GZkYVfyS" Ids="TtUV3w17MFoNr1qsgTk7UG,O2iYBhYxwWYPsRfE0Vb6Gk" />
+          <Link Id="SX2gmPgIdi1NxLzXw8mCso" Ids="LcIFXBJ1lK9PMK7WxaMqIO,KCci7VAaxJEK9h2TYr1s0a" />
+          <Link Id="DOSiTJm9WUGPbUae7tLu2l" Ids="T3MzGc1BdtrNOPauI3me8f,SJoq9X9ivWdOKOii6aB5PX" />
+          <Link Id="IC68YqRgaEXMLS3biER0V6" Ids="OumCOfn3ba8OukJQF8Uygc,T3MzGc1BdtrNOPauI3me8f" IsHidden="true" />
+          <Link Id="NF8qeQ5idcMLtnjf17g8wN" Ids="UGB0DBWdS9aLznvo2K0hxS,TOpdW4qrPPkLdZVfVb0vdL" />
+          <Link Id="G0cxhRl0aW6M8nhOI0aFCm" Ids="TOpdW4qrPPkLdZVfVb0vdL,VudVeKxHfyWOcRt6xBbSmg" IsHidden="true" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="GFME3RLBExVQA2sYuCgBGw">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Jevz4DdfMREL7ntgE32g6m">
+        <Canvas Id="UiyrCOf9gOYN23Wk2hhPFT" CanvasType="Group" />
+        <Patch Id="HuXaZMhyzyZOb3T4eXtfax" Name="Create" />
+        <Patch Id="NTAEsGecPPrNv2QmLpddOG" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="OiE17YDNTIGLoNAnIkKFls">
+          <Fragment Id="B2qLSbPJUbfPTeK81N9A3G" Patch="HuXaZMhyzyZOb3T4eXtfax" Enabled="true" />
+          <Fragment Id="RrdIP9KxhroO794DbayhHn" Patch="NTAEsGecPPrNv2QmLpddOG" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="PTcZEXRi8TcPOvvsGetlkW" Location="VL.Skia" Version="2019.1.0-0827-g397c3356f1" />
+  <DocumentDependency Id="P8Xs5mtL9ecO9hagDgAIHh" Location="./Generic/Schema.Blocks.Effects.Generic.Delay.vl" />
+  <DocumentDependency Id="HWO9ABryUOWQRELmgBVldh" Location="../../VVVV.Schema.Core.vl" />
+</Document>
