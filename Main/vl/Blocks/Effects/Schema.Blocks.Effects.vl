@@ -67,7 +67,7 @@
     ************************ RegisterValueEffects ************************
 
 -->
-        <Node Name="RegisterValueEffects" Bounds="557,273,304,916" Id="FsZ5DdknippLu1EdnKL6GG">
+        <Node Name="RegisterValueEffects" Bounds="557,273,356,1045" Id="FsZ5DdknippLu1EdnKL6GG">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
@@ -99,7 +99,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="DnwrGmhHe4jMAP9INMIppI" Bounds="650,291" />
-            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="642,1172" />
+            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="644,1301" />
             <Pin Id="A5b9nePEBxOPOQdiCflIvY" Name="Input" Kind="InputPin" Bounds="471,214" />
             <Pin Id="HEzN3zPEIzjO9V302l1GxS" Name="Output" Kind="OutputPin" Bounds="466,454" />
             <Link Id="LpRBXypbJSXNBxsfNgvsJj" Ids="QIktyprcDa8Ob08kihe4rh,BNq0QovOc3GMmgZvm65ved" IsHidden="true" />
@@ -228,7 +228,37 @@
             <Link Id="Sya91WJhxhFNFHqOg0tT0W" Ids="K6HphSg1YhROLgMNbA9r9Q,O5AeFAmyd0uLzk9ilSpQj7" />
             <Link Id="Gv6R1rGCMm6OI3oFttEq50" Ids="CvUL5izj6sdPv88qnB246g,B8TFkh6G0bYLqy50PlWwqI" />
             <Link Id="EXKfysxTQldPIHCpIGxC4V" Ids="IZf6AE7x443Mz85fcS4xgM,NqVKgvq97azNBPsBrE5FAl" />
-            <Link Id="DZ7tbuXXrJ2Md7ZFt9iY42" Ids="CLGQOkvWxNcNxEN4FNqknT,DcRbVvazWQhPXJ5jtVYB8J" />
+            <Node Bounds="636,1145,88,77" Id="Jq49AzjhuJhL3nVdkK1knh">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="SfWKi93cqhvQBFiy9MrpNE" Name="Input" Kind="StateInputPin" />
+              <Pin Id="OY5jShiPOSuL5gtSlQzOgC" Name="Key" Kind="InputPin" />
+              <Pin Id="CkJT8qvmwfNLDEeqmcBnyQ" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="QAZ5cY6CH2MMtDxxmHHlAj" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="TbmuaJic3PiNHdXzHFhmNE" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="NgjF4HYpbADMJmdCMbjLZ3" Bounds="640,1215" />
+                <Node Bounds="652,1168,60,26" Id="VzGMO6KobydOtTqi0QoCrH">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.Schema.Blocks.Effects.Value.DamperApplication.DamperEffect" LastSymbolSource="Schema.Blocks.Effects.Value.Damper.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="DamperEffect" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="CkM4lrQtFLLLpTUz2re6gr" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="Ruz4ujc9xOkLMuG92qZ74p" Comment="Key" Bounds="738,1108,124,17" ShowValueBox="true" isIOBox="true" Value="Effect.Value.Damper">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="H9I5NC5xbzAQYDBzyxHlIN" Ids="NgjF4HYpbADMJmdCMbjLZ3,TbmuaJic3PiNHdXzHFhmNE" IsHidden="true" />
+            <Link Id="UJt5aCoGwzgQGfvu90Dfy3" Ids="Ruz4ujc9xOkLMuG92qZ74p,OY5jShiPOSuL5gtSlQzOgC" />
+            <Link Id="IlwEeYSFazSQaE8DvDC1vi" Ids="CkM4lrQtFLLLpTUz2re6gr,NgjF4HYpbADMJmdCMbjLZ3" />
+            <Link Id="FgvRWdlrju7QSBRnLAdjZ0" Ids="CLGQOkvWxNcNxEN4FNqknT,SfWKi93cqhvQBFiy9MrpNE" />
+            <Link Id="Di5KzBdjqJTLMxOb5PbGLB" Ids="CkJT8qvmwfNLDEeqmcBnyQ,DcRbVvazWQhPXJ5jtVYB8J" />
           </Patch>
         </Node>
       </Canvas>
@@ -261,4 +291,5 @@
   <DocumentDependency Id="HN1l7JBYm65OjYr56h2S1A" Location="./Value/Schema.Blocks.Effects.Value.Edge.vl" />
   <DocumentDependency Id="CFx7BuxecPaPdASzowKpdJ" Location="./Value/Schema.Blocks.Effects.Value.Steps.vl" />
   <DocumentDependency Id="VOEqy4fZBnvLNjjKYmYN1X" Location="./Value/Schema.Blocks.Effects.Value.Invert.vl" />
+  <DocumentDependency Id="Hvc5EA6QX69OXRahOOqiS0" Location="./Value/Schema.Blocks.Effects.Value.Damper.vl" />
 </Document>
