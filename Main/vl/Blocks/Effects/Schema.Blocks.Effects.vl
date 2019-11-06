@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2019.1.0-0899-g79975927c0" Version="0.128">
+<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2019.1.0-0930-g60a3dd6ea9" Version="0.128">
   <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2019.1.0-827" />
   <Patch Id="Gql5WLoCHdZMTNYgfAMR3o">
     <Canvas Id="ONZw2kKUbs5NUJL83wygr9" DefaultCategory="Schema.Blocks.Effects" CanvasType="FullCategory">
@@ -27,8 +27,8 @@
               <Node Bounds="531,407,46,26" Id="Mhztpa4VEQELROLF8MXHka">
                 <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Generic.Delay" LastSymbolSource="Schema.Blocks.Effects.Generic.Delay.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="ClassType" Name="Delay" />
                   <Choice Kind="OperationCallFlag" Name="Create" />
+                  <CategoryReference Kind="Category" Name="DelayEffect" />
                 </p:NodeReference>
                 <Pin Id="LcIFXBJ1lK9PMK7WxaMqIO" Name="Output" Kind="StateOutputPin" />
               </Node>
@@ -67,7 +67,7 @@
     ************************ RegisterValueEffects ************************
 
 -->
-        <Node Name="RegisterValueEffects" Bounds="567,273,294,275" Id="FsZ5DdknippLu1EdnKL6GG">
+        <Node Name="RegisterValueEffects" Bounds="557,273,304,916" Id="FsZ5DdknippLu1EdnKL6GG">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
@@ -99,7 +99,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="DnwrGmhHe4jMAP9INMIppI" Bounds="650,291" />
-            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="645,531" />
+            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="642,1172" />
             <Pin Id="A5b9nePEBxOPOQdiCflIvY" Name="Input" Kind="InputPin" Bounds="471,214" />
             <Pin Id="HEzN3zPEIzjO9V302l1GxS" Name="Output" Kind="OutputPin" Bounds="466,454" />
             <Link Id="LpRBXypbJSXNBxsfNgvsJj" Ids="QIktyprcDa8Ob08kihe4rh,BNq0QovOc3GMmgZvm65ved" IsHidden="true" />
@@ -107,8 +107,128 @@
             <Link Id="TcBLMjq3f0kL9ToD2gQSWn" Ids="VyCDGrzectYPo4E0FQU5Qx,QIktyprcDa8Ob08kihe4rh" />
             <Link Id="HzfjGQEDBtvNlO2vynbSbH" Ids="DnwrGmhHe4jMAP9INMIppI,OSg5NDlDJKfPt6PPftSG78" />
             <Link Id="U25oBjdpsZlPUR8I2Pbtxd" Ids="A5b9nePEBxOPOQdiCflIvY,DnwrGmhHe4jMAP9INMIppI" IsHidden="true" />
-            <Link Id="GzESLrNZ8k7Or2DeqNXHmV" Ids="CgDjpqm8ojvQLs4tUPbFPx,DcRbVvazWQhPXJ5jtVYB8J" />
             <Link Id="V2dc6gaLD7qO9IfBM3SwqV" Ids="DcRbVvazWQhPXJ5jtVYB8J,HEzN3zPEIzjO9V302l1GxS" IsHidden="true" />
+            <Node Bounds="641,529,88,77" Id="TokWCIOiVr2P9VZoz77EAc">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="BeTMTRGPZN4Od6OCF07FyN" Name="Input" Kind="StateInputPin" />
+              <Pin Id="AmnkdFiUwvNLRp7LGq4Uj6" Name="Key" Kind="InputPin" />
+              <Pin Id="DZEwxdCVMtXL5oVjiCUrzz" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="PzofWjobKYNNok6GGAllfv" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="EPpUnmirskeLnOyPOnm4ur" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="Qj7dD3PnIY7MkA5CiG3RB2" Bounds="645,599" />
+                <Node Bounds="657,552,60,26" Id="V7ruPdAZFUALEltsrsn00D">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.Edge.Rising" LastSymbolSource="Schema.Blocks.Effects.Value.Edge.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Rising" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="Vow38DXT9FtNd7vRNH49Jt" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="Q0XB6KBrzpSQIHVumeMXYP" Comment="Key" Bounds="728,496,86,15" ShowValueBox="true" isIOBox="true" Value="Effect.Value.Edge.Rising">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="FEjGq2V7jOZQGgBuulir5t" Ids="Qj7dD3PnIY7MkA5CiG3RB2,EPpUnmirskeLnOyPOnm4ur" IsHidden="true" />
+            <Link Id="DcQNr5qBv9HORfJrbW7PVT" Ids="Q0XB6KBrzpSQIHVumeMXYP,AmnkdFiUwvNLRp7LGq4Uj6" />
+            <Link Id="ROdeMLTIYN3LX5jDgfZcyb" Ids="Vow38DXT9FtNd7vRNH49Jt,Qj7dD3PnIY7MkA5CiG3RB2" />
+            <Link Id="SXBf7ViPEtHNwW2lfiAsKn" Ids="CgDjpqm8ojvQLs4tUPbFPx,BeTMTRGPZN4Od6OCF07FyN" />
+            <Node Bounds="641,682,88,77" Id="MUzSLmQBtfYO5tZ6dASJLD">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="DNclLjr1CmqM6FuLhAHhIo" Name="Input" Kind="StateInputPin" />
+              <Pin Id="HFjJjZTZbeLNuUaiWmli7s" Name="Key" Kind="InputPin" />
+              <Pin Id="O9BzDN8P0OrLwlGXL9nYsL" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="HOXKOaGvirrO2MLC5ZgS6F" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="Ugb5vcGo3bJNH8yDuC5QUt" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="OOj7KGRCkzaO8gHU9WiJ7K" Bounds="645,752" />
+                <Node Bounds="657,705,60,26" Id="QJHVL8cLasLOza5eB5Z08P">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.Edge.Falling" LastSymbolSource="Schema.Blocks.Effects.Value.Edge.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Falling" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="FCB3bF7svfSPL8UKRPWXtN" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="NIhTNY481MwLAaz6CxHhX3" Comment="Key" Bounds="728,649,86,15" ShowValueBox="true" isIOBox="true" Value="Effect.Value.Edge.Falling">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="SUatHJ7I9X1NS5dE8VndZ4" Ids="OOj7KGRCkzaO8gHU9WiJ7K,Ugb5vcGo3bJNH8yDuC5QUt" IsHidden="true" />
+            <Link Id="NeBT8zG4bZIN7o1pQobrJt" Ids="NIhTNY481MwLAaz6CxHhX3,HFjJjZTZbeLNuUaiWmli7s" />
+            <Link Id="S0QlboqlugcOlTcMm8GJKE" Ids="FCB3bF7svfSPL8UKRPWXtN,OOj7KGRCkzaO8gHU9WiJ7K" />
+            <Link Id="SXW3xzKMvgnMbOBnzAsyX3" Ids="DZEwxdCVMtXL5oVjiCUrzz,DNclLjr1CmqM6FuLhAHhIo" />
+            <Node Bounds="639,826,88,77" Id="VNrAbARLHG4MYtncTPQhZV">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="UgtS3dvWl7DPEzcNb80u7S" Name="Input" Kind="StateInputPin" />
+              <Pin Id="CqjktXvuocDOoQV0ro3PL3" Name="Key" Kind="InputPin" />
+              <Pin Id="IZf6AE7x443Mz85fcS4xgM" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="Gbq5uJsrt3BLYO1I6AYYGF" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="JgAbBHdgqDyPX5JZOkV1G9" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="KIYjwskt0CnODomGdyVSoD" Bounds="643,896" />
+                <Node Bounds="655,849,60,26" Id="NVIAhXR1FOINTGXziNWdpR">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.Steps" LastSymbolSource="Schema.Blocks.Effects.Value.Steps.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Steps" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="Na2CwfKKzhSNCIBK0CKUZ6" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="FRZAIPXMmjJLxqAZwT1azY" Comment="Key" Bounds="726,793,86,15" ShowValueBox="true" isIOBox="true" Value="Effect.Value.Steps">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="VzHjwdi7rGENL93RRxU4Ia" Ids="KIYjwskt0CnODomGdyVSoD,JgAbBHdgqDyPX5JZOkV1G9" IsHidden="true" />
+            <Link Id="SCCpeDnVrVcPEO1yuk81ts" Ids="FRZAIPXMmjJLxqAZwT1azY,CqjktXvuocDOoQV0ro3PL3" />
+            <Link Id="EX1kdaCYaSmORVRIrkcP2W" Ids="Na2CwfKKzhSNCIBK0CKUZ6,KIYjwskt0CnODomGdyVSoD" />
+            <Link Id="ILzTjSplzdULADnRW8sLFx" Ids="O9BzDN8P0OrLwlGXL9nYsL,UgtS3dvWl7DPEzcNb80u7S" />
+            <Node Bounds="634,989,88,77" Id="Jqy9J6TV33OL5Fh8LB1lHj">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="NqVKgvq97azNBPsBrE5FAl" Name="Input" Kind="StateInputPin" />
+              <Pin Id="O5AeFAmyd0uLzk9ilSpQj7" Name="Key" Kind="InputPin" />
+              <Pin Id="CLGQOkvWxNcNxEN4FNqknT" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="QLY0eGCkj1oLePNIr6vhek" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="P5UuP2S4Mj7MkhKw7Rsl9y" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="B8TFkh6G0bYLqy50PlWwqI" Bounds="638,1059" />
+                <Node Bounds="650,1012,60,26" Id="LfgdxVwTeeELUokJOecJgK">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.Invert" LastSymbolSource="Schema.Blocks.Effects.Value.Invert.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Invert" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="CvUL5izj6sdPv88qnB246g" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="K6HphSg1YhROLgMNbA9r9Q" Comment="Key" Bounds="717,947,86,15" ShowValueBox="true" isIOBox="true" Value="Effect.Value.Invert">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="BQPOzJSww69MQpJe7ZyMWI" Ids="B8TFkh6G0bYLqy50PlWwqI,P5UuP2S4Mj7MkhKw7Rsl9y" IsHidden="true" />
+            <Link Id="Sya91WJhxhFNFHqOg0tT0W" Ids="K6HphSg1YhROLgMNbA9r9Q,O5AeFAmyd0uLzk9ilSpQj7" />
+            <Link Id="Gv6R1rGCMm6OI3oFttEq50" Ids="CvUL5izj6sdPv88qnB246g,B8TFkh6G0bYLqy50PlWwqI" />
+            <Link Id="EXKfysxTQldPIHCpIGxC4V" Ids="IZf6AE7x443Mz85fcS4xgM,NqVKgvq97azNBPsBrE5FAl" />
+            <Link Id="DZ7tbuXXrJ2Md7ZFt9iY42" Ids="CLGQOkvWxNcNxEN4FNqknT,DcRbVvazWQhPXJ5jtVYB8J" />
           </Patch>
         </Node>
       </Canvas>
@@ -138,4 +258,7 @@
   <DocumentDependency Id="P8Xs5mtL9ecO9hagDgAIHh" Location="./Generic/Schema.Blocks.Effects.Generic.Delay.vl" />
   <DocumentDependency Id="HWO9ABryUOWQRELmgBVldh" Location="../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="HeW9GZQLCbuLDiLfp4D69f" Location="./Value/Schema.Blocks.Effects.Value.AttackDecay.vl" />
+  <DocumentDependency Id="HN1l7JBYm65OjYr56h2S1A" Location="./Value/Schema.Blocks.Effects.Value.Edge.vl" />
+  <DocumentDependency Id="CFx7BuxecPaPdASzowKpdJ" Location="./Value/Schema.Blocks.Effects.Value.Steps.vl" />
+  <DocumentDependency Id="VOEqy4fZBnvLNjjKYmYN1X" Location="./Value/Schema.Blocks.Effects.Value.Invert.vl" />
 </Document>
