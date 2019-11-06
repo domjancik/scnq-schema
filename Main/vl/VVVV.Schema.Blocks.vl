@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="VR6u1Nf0rXUMak9mctVWEI" LanguageVersion="2019.1.0-0930-g60a3dd6ea9" Version="0.128">
+  <NugetDependency Id="M90ChlWC2SrPuBH67mMTIc" Location="VL.CoreLib" Version="2019.1.0-930" />
+  <Patch Id="DG4zEHOBd3HMpEfeLL5l4I">
+    <Canvas Id="Jia3VTQUwoRM9HlA7slai5" DefaultCategory="VVVV.Schema" CanvasType="FullCategory">
+      <!--
+
+    ************************ Blocks ************************
+
+-->
+      <Node Name="Blocks" Bounds="430,278" Id="DLl9v7eyOkqQK43e7la8ny">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="UaDaNvl7Ol8MM7TPiPDkj5">
+          <Canvas Id="JMzNAwpaBQpPBEUVTVPUTh" CanvasType="Group">
+            <Node Bounds="465,266" Id="OJyyQfm7qxWOOwxWff6DRM">
+              <p:NodeReference LastCategoryFullName="Schema" LastSymbolSource="Schema.Blocks.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="Blocks" />
+                <CategoryReference Kind="Category" Name="Schema" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="OaBwoE3e9y0PONZ1Fttf0l" Name="Input" Kind="InputPin" />
+              <Pin Id="Gjqp6R2sUpvPIlPsmEzzHc" Name="Output" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="U1fqWLZIxInN5qfK3dzrMe" Bounds="465,236" />
+            <ControlPoint Id="A8s8CME6xMtNkADo9CFcTV" Bounds="465,315" />
+          </Canvas>
+          <Patch Id="JXuyV6vRTbGMQQx9UYFWaF" Name="Create" />
+          <Patch Id="ScFrhHCb267L678xJ3PfD7" Name="Update">
+            <Pin Id="VCDOcPjx933MW1dBN9ULUs" Name="Input" Kind="InputPin" />
+            <Pin Id="DK73EIIXMcDQEyLgHfEIGj" Name="Output" Kind="OutputPin" />
+          </Patch>
+          <!--
+
+    ************************  ************************
+
+-->
+          <ProcessDefinition Id="NnSKlczA4arPhTUYgGKGuJ">
+            <Fragment Id="Fsgq76VDxkRMmoDPVmuY3n" Patch="JXuyV6vRTbGMQQx9UYFWaF" Enabled="true" />
+            <Fragment Id="NGHETa6CaHdLdJ3ThUF8y2" Patch="ScFrhHCb267L678xJ3PfD7" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="M1w1nlFGBGVLFz51xD3shk" Ids="VCDOcPjx933MW1dBN9ULUs,U1fqWLZIxInN5qfK3dzrMe" IsHidden="true" />
+          <Link Id="BcAmHBAtq7YPkkGp9LxJ9V" Ids="U1fqWLZIxInN5qfK3dzrMe,OaBwoE3e9y0PONZ1Fttf0l" />
+          <Link Id="PBLsy4PddiNNfdUVAjHAFQ" Ids="A8s8CME6xMtNkADo9CFcTV,DK73EIIXMcDQEyLgHfEIGj" IsHidden="true" />
+          <Link Id="VvblbZaC8fmQIOAd5VCmZx" Ids="Gjqp6R2sUpvPIlPsmEzzHc,A8s8CME6xMtNkADo9CFcTV" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="K203x73ZewkMoVuM1iazUj">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="KBcJetykCDrPwRSIYgvCOc">
+        <Canvas Id="BQoGEZ405GxOOYmJoXpgd5" CanvasType="Group" />
+        <Patch Id="PkwPDforRzmQNjxGIxsTyg" Name="Create" />
+        <Patch Id="KqaoqHlTNbrOg13qwavPky" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="RrmjF342cI4NfNs8eo6WXM">
+          <Fragment Id="GO3DLygreAmNzYXaGA0Ql4" Patch="PkwPDforRzmQNjxGIxsTyg" Enabled="true" />
+          <Fragment Id="Jbiq4qNoDs8NKphwY4BmnN" Patch="KqaoqHlTNbrOg13qwavPky" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="LeEgqOQwP0tN40c4HwxUTO" Location="VL.Skia" Version="2019.1.0-0930-g60a3dd6ea9" />
+  <DocumentDependency Id="QPVRlFZNjajMNkqGVS9p8q" Location="./Blocks/Schema.Blocks.vl" />
+</Document>
