@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="F1ulV9K0ScQLNunYyq3GDb" Version="0.94">
+<Document xmlns:p="property" Id="F1ulV9K0ScQLNunYyq3GDb" LanguageVersion="2019.1.0-0859-g8ccf4eac04" Version="0.128">
   <Patch Id="OKcH1wKvx8YOKkm0fsfnMx">
     <Canvas Id="Ccmsxnl38WLM16XNJ3FIdW" DefaultCategory="VL.Schema.Config" CanvasType="FullCategory">
       <!--
@@ -20,7 +20,7 @@
             <Node Bounds="370,194,220,290" Id="BCqZuyhibVBNaQr2l8gFcJ">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                <Choice Kind="ApplicationStatefulRegion" Name="Cache" />
+                <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:NodeReference>
               <Pin Id="Sj9HkDl0qkVMySzFyEWLDQ" Name="Force" Kind="InputPin" />
@@ -104,12 +104,12 @@
                 <Node Bounds="484,442" Id="D41MqXqKRlcQYA1fJ3U5eM">
                   <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="Switch" />
-                    <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationNode" Name="Switch (Boolean)" />
+                    <FullNameCategoryReference ID="Control" />
                   </p:NodeReference>
                   <Pin Id="QGeZX1lLkyFOgU4iy4EfEa" Name="Condition" Kind="InputPin" />
-                  <Pin Id="GgNK2vBVTYiLqJpDBahnvl" Name="False" Kind="InputPin" />
-                  <Pin Id="M7V7K6ApB41M5rWKmGqoRf" Name="True" Kind="InputPin" />
+                  <Pin Id="GgNK2vBVTYiLqJpDBahnvl" Name="Input" Kind="InputPin" />
+                  <Pin Id="M7V7K6ApB41M5rWKmGqoRf" Name="Input 2" Kind="InputPin" />
                   <Pin Id="Nms0lCV1YNbN40g3SaGLvs" Name="Output" Kind="OutputPin" />
                 </Node>
               </Patch>
@@ -198,23 +198,23 @@
                 <ControlPoint Id="OsxjTvycUJxMOnj9UXRPyo" Bounds="85,423" />
                 <Link Id="Lc8WHdlxLVjOoWNlUsLxdr" Ids="FM0SGTBnThCNsp7KkMHPZg,OsxjTvycUJxMOnj9UXRPyo" />
                 <Link Id="BOGWgZjwv1tQPv6StlNQg6" Ids="OsxjTvycUJxMOnj9UXRPyo,L8xx4hUispVP0378yfYrSr" IsHidden="true" />
-                <Pin Id="R1cPwmMMRMAM8hvq5dsesd" Name="Result" Kind="OutputPin" />
+                <Link Id="HYgDg6XokqVNuciVErhdnc" Ids="EIOUeE0wWybOqjUyisFEBX,SpeSBXsdWXoOYWXUD5H3yO" />
                 <Pin Id="VjlCZku8eUxL3uc823kEwN" Name="Input" Kind="InputPin" />
                 <Pin Id="TbY51af5pIKLfUA9st3FLS" Name="Name" Kind="InputPin" />
-                <Pin Id="L8xx4hUispVP0378yfYrSr" Name="Found" Kind="OutputPin" Bounds="-240,426" />
                 <Pin Id="Im2dev2WxPUPSMFIkF2YBi" Name="All Descendants" Kind="InputPin" />
                 <Pin Id="KFaOhvAlv25OMqZhXLuT9L" Name="Default Value" Kind="InputPin" Bounds="24,418" />
-                <Link Id="HYgDg6XokqVNuciVErhdnc" Ids="EIOUeE0wWybOqjUyisFEBX,SpeSBXsdWXoOYWXUD5H3yO" />
+                <Pin Id="R1cPwmMMRMAM8hvq5dsesd" Name="Result" Kind="OutputPin" />
+                <Pin Id="L8xx4hUispVP0378yfYrSr" Name="Found" Kind="OutputPin" Bounds="-240,426" />
               </Patch>
             </Node>
           </Canvas>
           <Patch Id="UABPwPDaJlrMS84xLyYXGr" Name="Create" />
           <Patch Id="Lc1bmJzi0KSLO56zY5RsJD" Name="Update">
             <Pin Id="LNGTwN21GGqMcRpMDtWIRQ" Name="Input" Kind="InputPin" Bounds="382,112" />
-            <Pin Id="E2LiukJdm1vOaAYn4ku1yc" Name="Value" Kind="OutputPin" Bounds="553,430" />
             <Pin Id="OWJdE93j92JP2FmAHPDuAP" Name="Path" Kind="InputPin" Bounds="510,113" />
-            <Pin Id="LFD5JnD5L48NCc0kwIHdgd" Name="Found" Kind="OutputPin" Bounds="543,570" />
             <Pin Id="CIgy2WTWeW4PaMSjuJB5tH" Name="Default" Kind="InputPin" Bounds="618,129" />
+            <Pin Id="E2LiukJdm1vOaAYn4ku1yc" Name="Value" Kind="OutputPin" Bounds="553,430" />
+            <Pin Id="LFD5JnD5L48NCc0kwIHdgd" Name="Found" Kind="OutputPin" Bounds="543,570" />
           </Patch>
           <ProcessDefinition Id="Shv5VJOdmtxNG2RnUevQ7J">
             <Fragment Id="BIH6sv5eGvMQPBlDvulgeT" Patch="UABPwPDaJlrMS84xLyYXGr" Enabled="true" />
@@ -278,7 +278,7 @@
             <Node Bounds="317,224,244,206" Id="P6yfXHLRQjKOnxkRWao0XO">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                <Choice Kind="ApplicationStatefulRegion" Name="Cache" />
+                <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:NodeReference>
               <Pin Id="PjFu3NEub1XPYAnP4ZiFZ1" Name="Force" Kind="InputPin" />
@@ -337,10 +337,10 @@
           <Patch Id="Is6uih9iQk0MvMNrb6WTkU" Name="Create" />
           <Patch Id="RuSFg2oFn8SOjhvhej5B9y" Name="Update">
             <Pin Id="TMh0nqpJKJvOXLh7kHGa2z" Name="Input" Kind="InputPin" Bounds="382,112" />
-            <Pin Id="BkL8EtVj7X5LOySf7pn7IR" Name="Value" Kind="OutputPin" Bounds="553,430" />
-            <Pin Id="IdGn9EdS0YoNMVqKnXkjtx" Name="Found" Kind="OutputPin" Bounds="494,475" />
             <Pin Id="RJubWconJzJLJ9P6NEHkuQ" Name="Path" Kind="InputPin" Bounds="510,113" />
             <Pin Id="JeIa6pfy90BLVbvBdlYcy2" Name="Default" Kind="InputPin" Bounds="626,106" />
+            <Pin Id="BkL8EtVj7X5LOySf7pn7IR" Name="Value" Kind="OutputPin" Bounds="553,430" />
+            <Pin Id="IdGn9EdS0YoNMVqKnXkjtx" Name="Found" Kind="OutputPin" Bounds="494,475" />
           </Patch>
           <ProcessDefinition Id="DbywGYnHwT6Pj8kRCOOEEP">
             <Fragment Id="Ja8vgqIK2MVMe1sZhLgyjc" Patch="Is6uih9iQk0MvMNrb6WTkU" Enabled="true" />
@@ -382,7 +382,7 @@
         </p:NodeReference>
         <Patch Id="Cz2jFac02LlLP4OEm8OsBl">
           <Canvas Id="LkCDYU2fvhpP0QnihtdFQP" CanvasType="Group">
-            <Pad Id="UOthwy1kU79PuKRXpxwRda" Comment="Deserialize Root Element Name" Bounds="266,346,128,20" ShowValueBox="true" isIOBox="true" Value="Root">
+            <Pad Id="UOthwy1kU79PuKRXpxwRda" Comment="Deserialize Root Element Name" Bounds="266,343,128,20" ShowValueBox="true" isIOBox="true" Value="Root">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -493,8 +493,8 @@
           <Patch Id="EPqo1KQnuwrNqyJ6dLmgZG" Name="Create" />
           <Patch Id="IXJEHgb2gxoPoY2j6kBBSi" Name="Update">
             <Pin Id="CxgqCyNZWsELCIV1Bpm8Ni" Name="Configlist Path" Kind="InputPin" Bounds="157,101" />
-            <Pin Id="IELt6A7cNBMMdh9SFbR030" Name="Output" Kind="OutputPin" Bounds="430,424" />
             <Pin Id="M3J5iIY9JrbPCJFI1AJ3DG" Name="Read" Kind="InputPin" Bounds="354,102" />
+            <Pin Id="IELt6A7cNBMMdh9SFbR030" Name="Output" Kind="OutputPin" Bounds="430,424" />
           </Patch>
           <ProcessDefinition Id="IKF7uYYuDZgM4NcNiUxUiQ">
             <Fragment Id="QoevWsIXKYMOucACNotnlj" Patch="EPqo1KQnuwrNqyJ6dLmgZG" Enabled="true" />
@@ -520,6 +520,31 @@
         </Patch>
       </Node>
     </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="DVCfw73XLVyLzyDq8AP4YC">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="I8FkIQb2vbDPpSYH6VouhR">
+        <Canvas Id="AkGu7edsOGqLItFcMTeuxq" BordersChecked="false" CanvasType="Group" />
+        <Patch Id="HkdLq8uYupIPGF7QDsQTQT" Name="Create" />
+        <Patch Id="L6LjmoHcn2HLznrppzXwYZ" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="BMn2Cqe3q2qQd0CmOLKIsm">
+          <Fragment Id="PDCqEoVsNlpNSxKgkLpXtY" Patch="HkdLq8uYupIPGF7QDsQTQT" Enabled="true" />
+          <Fragment Id="BfRMK75VlfiPsAUoZBc9qL" Patch="L6LjmoHcn2HLznrppzXwYZ" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
   </Patch>
   <NugetDependency Id="KHm8gcs6xEeM9OxniREHlv" Location="VL.Core" Version="0.94.50-gf563f1b382" />
   <NugetDependency Id="AfOalBU7DPVOkLSFhwqPW9" Location="VL.CoreLib" Version="0.94.50-gf563f1b382" />
