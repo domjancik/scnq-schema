@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="FMUKEN3y1yYQbDGVMkfcTH" LanguageVersion="2019.1.0-0975-gbe94390fc5" Version="0.128">
+  <NugetDependency Id="DQ52f8UeCbmPBA0UNMuAQA" Location="VL.CoreLib" Version="2019.1.0-975" />
+  <Patch Id="Pbx3Esw0PwPMK4AmoL5F2n">
+    <Canvas Id="FbHhy98xF0KLrKSRzeQFwC" DefaultCategory="Main" CanvasType="FullCategory">
+      <!--
+
+    ************************ RegisterAudioBlocks ************************
+
+-->
+      <Node Name="RegisterAudioBlocks" Bounds="493,305,376,789" Id="FB9sUDaECZMMY5GypsxLEy">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="TujpZ03Lfi6PXFV3Ec4efS">
+          <Node Bounds="600,365,107,90" Id="VaiQ9JCHeX4QA5b1pIWqeG">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="APFl1PIBx2aPWLaxQrsuwi" Name="Input" Kind="StateInputPin" />
+            <Pin Id="FxrfHrfIJjXOYC52Zc8l8a" Name="Key" Kind="InputPin" />
+            <Pin Id="QLsJQxbFfL2NonkKig4pdO" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="HKD65jwL35TO40Fgkr73pN" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="EkD00b7sNuAQOy7FGdCKSj" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="HGXrxbyThw0L6xLmZEqmHN" Bounds="606,448" />
+              <Node Bounds="612,388,83,26" Id="Rn5V7WRAWijQRsXNCyB8Ae">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator.Audio.AudioAddOperator" LastSymbolSource="Schema.Blocks.Operator.Audio.Add.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                  <CategoryReference Kind="Category" Name="AddAudioOperator" />
+                </p:NodeReference>
+                <Pin Id="RpiMgNtnQhVLjjVnP3O0Nd" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="PNQH643y0ruMxlodFxu4cv" Comment="Key" Bounds="704,333,106,15" ShowValueBox="true" isIOBox="true" Value="Operator.Audio.Add">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="583,518,107,90" Id="LPYBcEHSlooLIwvxoCkar2">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="OyZ7qMzDOKEMs4A5TkqJPf" Name="Input" Kind="StateInputPin" />
+            <Pin Id="GwZhxqz1ANVP2tF0Ahj1ad" Name="Key" Kind="InputPin" />
+            <Pin Id="HU5CHP8TwrVQd31U6eVQ7d" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="Rzrn5cXZ1GdO9hqoiV6vl3" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="ERpTIS1ANzoO0r3ZJpQvqC" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="OTmtqufs54KPXAAbixPk2Q" Bounds="589,601" />
+              <Node Bounds="595,541,83,26" Id="JGv2TX4nZXxLQpEr8XO7os">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Source.Audio.OSCAudioSource" LastSymbolSource="Schema.Blocks.Source.Audio.OSC.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="OSCAudioSource" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="BlEHo1wERqZQVlsoKCM40g" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="VNBo2SyK4mlODKeZ5L6Yg6" Comment="Key" Bounds="687,486,106,15" ShowValueBox="true" isIOBox="true" Value="Source.Audio.OSC">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="LlBvjptKGSuMUrOBH6fvRB" Ids="HGXrxbyThw0L6xLmZEqmHN,EkD00b7sNuAQOy7FGdCKSj" IsHidden="true" />
+          <Link Id="KIF8yhfJH2MOFxiiSStwpq" Ids="PNQH643y0ruMxlodFxu4cv,FxrfHrfIJjXOYC52Zc8l8a" />
+          <Link Id="VGBIsw9OtqKLGuwlOVXWFe" Ids="RpiMgNtnQhVLjjVnP3O0Nd,HGXrxbyThw0L6xLmZEqmHN" />
+          <Link Id="RgCdtlvTiRtPK8I5WUC2zi" Ids="OTmtqufs54KPXAAbixPk2Q,ERpTIS1ANzoO0r3ZJpQvqC" IsHidden="true" />
+          <Link Id="DWH4mqETJ2pPBz23J5ghD6" Ids="VNBo2SyK4mlODKeZ5L6Yg6,GwZhxqz1ANVP2tF0Ahj1ad" />
+          <Link Id="Jh2iO9eWYw4LcXVdjOp7V0" Ids="BlEHo1wERqZQVlsoKCM40g,OTmtqufs54KPXAAbixPk2Q" />
+          <Link Id="JvbtziyhnS5MMXDnQo9IFL" Ids="QLsJQxbFfL2NonkKig4pdO,OyZ7qMzDOKEMs4A5TkqJPf" />
+          <Pin Id="KEuXTt62tAKNb625xtPmf9" Name="Input" Kind="InputPin" />
+          <ControlPoint Id="RSsNGgu56VqMUiS08oBEXY" Bounds="600,335" />
+          <Link Id="KuTsy99SI1yQAQtBxG75BX" Ids="KEuXTt62tAKNb625xtPmf9,RSsNGgu56VqMUiS08oBEXY" IsHidden="true" />
+          <Link Id="BTRhKptdbdHPov55LDHFHH" Ids="RSsNGgu56VqMUiS08oBEXY,APFl1PIBx2aPWLaxQrsuwi" />
+          <Node Bounds="584,681,119,90" Id="Lteop0Jm8d5Of6euU4IqUD">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="AWOC5WhUA3FN6G0hYdCjN0" Name="Input" Kind="StateInputPin" />
+            <Pin Id="DxgX8zXrajzLxYBWZYXg9T" Name="Key" Kind="InputPin" />
+            <Pin Id="Mtvn6ONwtUxQPWOSt04fDj" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="QuOnn2jXVEKMQS17ztwkEm" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="JkoQ505fvZqMg917itbD2e" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="EmmrHSvUBMQMSPPqCFuzp8" Bounds="590,764" />
+              <Node Bounds="596,704,83,26" Id="S3jROJIqxi5OZr4QzjHu8f">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator.Audio.MultiplyAudioOperator" LastSymbolSource="Schema.Blocks.Operator.Audio.Multiply.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="MultiplyAudioOperator" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="VpFeSPVI7PCP7ODjtXThYm" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="ELYTRDGehcoMTg7Nsl5gq2" Comment="Key" Bounds="688,649,130,10" ShowValueBox="true" isIOBox="true" Value="Operator.Audio.Multiply">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pin Id="VoqmvQCQz2FLzcDWbvKA6o" Name="Output" Kind="OutputPin" />
+          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="596,1077" />
+          <Link Id="GEyzEHYQJfBLKBMGn2P956" Ids="EmmrHSvUBMQMSPPqCFuzp8,JkoQ505fvZqMg917itbD2e" IsHidden="true" />
+          <Link Id="PzjRz0ftbrlLpokRmBX3yF" Ids="ELYTRDGehcoMTg7Nsl5gq2,DxgX8zXrajzLxYBWZYXg9T" />
+          <Link Id="RpO5T81c1udMk19qAPiFya" Ids="VpFeSPVI7PCP7ODjtXThYm,EmmrHSvUBMQMSPPqCFuzp8" />
+          <Link Id="MwiF4dPEHWnM5aGER08Fub" Ids="Ve87I013pMiMJIb9YMyjVM,VoqmvQCQz2FLzcDWbvKA6o" IsHidden="true" />
+          <Link Id="DLDFyUGA0OzMWFpGY5ZeKR" Ids="HU5CHP8TwrVQd31U6eVQ7d,AWOC5WhUA3FN6G0hYdCjN0" />
+          <Node Bounds="570,865,121,90" Id="F5qbzlxdWI3N8JGJWyunoW">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="Aoxdh6iWpfrLEnImz1QZkK" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Ln5DphTTGQcPhiMLX2u917" Name="Key" Kind="InputPin" />
+            <Pin Id="NynbMxfIWQBM2YYynRtjQo" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="UI7DdFTqZgrO9AQfrrlbLw" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="UtVsQ6jUXKwO4kJ2Uzig5a" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="MRRnbODv4VhOavDqXBXJHL" Bounds="576,948" />
+              <Node Bounds="582,888,97,26" Id="PWcEAnmXQuVM8mlJr626I0">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator.Audio.AudioMeterConvert" LastSymbolSource="Schema.Blocks.Convert.AudioMeter.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="AudioMeterConvert" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="N8IbO8qns8vLraj5knnGcf" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="D4iDEruq4TlNd1V83GBjuV" Comment="Key" Bounds="674,833,130,15" ShowValueBox="true" isIOBox="true" Value="Convert.Audio.Meter">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="IxwSl1Bzj8eLBJSeFXslHw" Ids="MRRnbODv4VhOavDqXBXJHL,UtVsQ6jUXKwO4kJ2Uzig5a" IsHidden="true" />
+          <Link Id="Gvm0CYQw8zDMj8bkNixncV" Ids="D4iDEruq4TlNd1V83GBjuV,Ln5DphTTGQcPhiMLX2u917" />
+          <Link Id="CYBKnrLJ5v8OS0qX1We81w" Ids="N8IbO8qns8vLraj5knnGcf,MRRnbODv4VhOavDqXBXJHL" />
+          <Link Id="R6X4Upfp8woLI1ik6J8RLd" Ids="Mtvn6ONwtUxQPWOSt04fDj,Aoxdh6iWpfrLEnImz1QZkK" />
+          <Link Id="QD3uowaFU72LRxXOvrzd7J" Ids="NynbMxfIWQBM2YYynRtjQo,Ve87I013pMiMJIb9YMyjVM" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Ko9xc9aZJWWP3JoE9k7D7V">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="BRF0KzAXQXGP2iWlZffGkO">
+        <Canvas Id="LxU6cOdsto5QPYN2d93xue" CanvasType="Group" />
+        <Patch Id="C2I1rzK3uwnNKmPzZfbwKQ" Name="Create" />
+        <Patch Id="Ft48G11MmcaLRWZFSVL7Z5" Name="Update" />
+        <ProcessDefinition Id="MrPjlcOoPl5O0rJ6BswNQJ">
+          <Fragment Id="REiX7hYvC6PMRIZqWF2x1u" Patch="C2I1rzK3uwnNKmPzZfbwKQ" Enabled="true" />
+          <Fragment Id="AycXwefGWacOdYdcTIiQZo" Patch="Ft48G11MmcaLRWZFSVL7Z5" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="SUM7WUj0LU7NW99eKaiAci" Location="VL.Skia" Version="2019.1.0-0975-gbe94390fc5" />
+  <DocumentDependency Id="OvcQSkMHpM2NXVoHzYkTyH" Location="./Operator/Audio/Schema.Blocks.Operator.Audio.Add.vl" />
+  <DocumentDependency Id="Psod7YM1HHkLkGttlJhlfC" Location="./Source/Audio/Schema.Blocks.Source.Audio.OSC.vl" />
+  <DocumentDependency Id="M5YsaEU3hmEPmE9YpaSB58" Location="../../../VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="BVC8qosfuBCLdJA2iVYEo8" Location="./Operator/Audio/Schema.Blocks.Operator.Audio.Multiply.vl" />
+  <DocumentDependency Id="COK6bUA5fFcNKldrhbefO6" Location="./Convert/Schema.Blocks.Convert.AudioMeter.vl" />
+</Document>
