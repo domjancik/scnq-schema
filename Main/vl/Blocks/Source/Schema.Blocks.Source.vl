@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2019.1.0-0930-g60a3dd6ea9" Version="0.128">
+<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2019.1.0-0975-gbe94390fc5" Version="0.128">
   <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2019.1.0-827" />
   <Patch Id="Gql5WLoCHdZMTNYgfAMR3o">
     <Canvas Id="ONZw2kKUbs5NUJL83wygr9" DefaultCategory="Schema.Blocks" CanvasType="FullCategory">
@@ -76,7 +76,16 @@
             <Pin Id="TWR6sKHkyKBLIA352DIh9G" Name="Input" Kind="InputPin" />
             <Pin Id="TdQL6ABOmAKMc66ptb6sES" Name="Output" Kind="OutputPin" />
           </Node>
-          <Link Id="Q8wqqveyaclNfsnupRrS6B" Ids="TdQL6ABOmAKMc66ptb6sES,TOpdW4qrPPkLdZVfVb0vdL" />
+          <Node Bounds="517,596,146,19" Id="LEUzs41vPXlNW3Onhns4Mw">
+            <p:NodeReference LastCategoryFullName="Schema.Blocks" LastSymbolSource="Schema.Blocks.Source.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="RegisterSystemValueSources" />
+            </p:NodeReference>
+            <Pin Id="NyJ8utZ1DvPOIGhKi7kGwl" Name="Input" Kind="InputPin" />
+            <Pin Id="MULLXJmxpn6NlkpEyLnNw0" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="UyzSFfkX7zfL6BLaKsByyU" Ids="TdQL6ABOmAKMc66ptb6sES,NyJ8utZ1DvPOIGhKi7kGwl" />
+          <Link Id="K45embhVkyPLCWFuwarwUX" Ids="MULLXJmxpn6NlkpEyLnNw0,TOpdW4qrPPkLdZVfVb0vdL" />
         </Patch>
       </Node>
       <!--
@@ -159,7 +168,7 @@
           <Node Bounds="957,601,140,19" Id="Jlhp5OOf53oNwI3iV6LV7l">
             <p:NodeReference LastCategoryFullName="Schema.Blocks" LastSymbolSource="Schema.Blocks.Source.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="OperationCallFlag" Name="RegisterAudioValueSources" />
+              <Choice Kind="OperationNode" Name="RegisterAudioValueSources" />
             </p:NodeReference>
             <Pin Id="JhOwvz07AaxMIym4ktwch2" Name="Input" Kind="InputPin" />
             <Pin Id="Isx6ojrRb6KMZLbwbGth2h" Name="Output" Kind="OutputPin" />
@@ -374,6 +383,55 @@
           <Link Id="N9Ns68ERGi5M3j4mFEbiOD" Ids="QR0icPYr3yFOS4OmrRa7mK,FVmonfNnoh3Ortdd9Rsjtz" />
         </Patch>
       </Node>
+      <!--
+
+    ************************ RegisterSystemValueSources (Internal) ************************
+
+-->
+      <Node Name="RegisterSystemValueSources (Internal)" Bounds="862,1164,374,181" Id="Ci7l4e56BoMPVrFOeC8bY8">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="FAjnnvVCEGcLvchZfy7eNG">
+          <Node Bounds="939,1222,118,76" Id="CKU25mfcDj5PAOShtm1VBN">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+            </p:NodeReference>
+            <Pin Id="K4i1ItGoEFBMrHEcb0jwcx" Name="Input" Kind="StateInputPin" />
+            <Pin Id="PEUt5IvcrwwMkTBr63G1iW" Name="Key" Kind="InputPin" />
+            <Pin Id="AgkcHZBAu1QOURT9dJzb5w" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="VTbISp09nDyOJ0JBtAgADQ" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="R3aqMwawRs3LG9v7bzOrwO" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="PZ6Sprrog3eM4klUtgwDo2" Bounds="943,1291" />
+              <Node Bounds="952,1245,93,26" Id="GXrQYtdwkxxLAfJRuKQjOo">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Source.Value.System.FileExistsValueSource" LastSymbolSource="Schema.Blocks.Source.System.FileExists.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="FileExistsValueSource" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="I1xbgY4QgeIMAobsKIsLKU" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="QBvCYOdZ2RFQcaeyuUtwUx" Comment="Key" Bounds="1021,1192,164,15" ShowValueBox="true" isIOBox="true" Value="Source.Value.System.FileExists">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <ControlPoint Id="TFlU0x5hpJMNA4l6ZMUPv6" Bounds="939,1328" />
+          <Link Id="QRvhS4bqgSEMFpaexyibW2" Ids="PZ6Sprrog3eM4klUtgwDo2,R3aqMwawRs3LG9v7bzOrwO" IsHidden="true" />
+          <Link Id="V7IkIlZV1yONuFMlB8b6Fm" Ids="QBvCYOdZ2RFQcaeyuUtwUx,PEUt5IvcrwwMkTBr63G1iW" />
+          <Link Id="AKZwrX6kfF8PFUAaquo9fU" Ids="I1xbgY4QgeIMAobsKIsLKU,PZ6Sprrog3eM4klUtgwDo2" />
+          <Link Id="Uf1dOY5v6iFN4Cq8O17YLD" Ids="TFlU0x5hpJMNA4l6ZMUPv6,Pb4MJK1czpZQI6R76ChxbR" IsHidden="true" />
+          <Link Id="KQO6mkCeW4pMNwD3FUBLNc" Ids="AgkcHZBAu1QOURT9dJzb5w,TFlU0x5hpJMNA4l6ZMUPv6" />
+          <ControlPoint Id="QG0NmZZji7fMd4qCbzSwpJ" Bounds="941,1183" />
+          <Link Id="VPgrmhPqcJuOPUGYBBVrwq" Ids="QG0NmZZji7fMd4qCbzSwpJ,K4i1ItGoEFBMrHEcb0jwcx" />
+          <Link Id="BLcSUiWWSjdLRmYJfmaYRn" Ids="DExprZqXojlMBtPLfiUOt3,QG0NmZZji7fMd4qCbzSwpJ" IsHidden="true" />
+          <Pin Id="DExprZqXojlMBtPLfiUOt3" Name="Input" Kind="InputPin" Bounds="962,1231" />
+          <Pin Id="Pb4MJK1czpZQI6R76ChxbR" Name="Output" Kind="OutputPin" />
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
@@ -406,4 +464,5 @@
   <DocumentDependency Id="OAkJc7BJJNbPPNHxdKJvB6" Location="./Color/Pixel/Schema.Blocks.Source.Color.Pixel.PulseManual.vl" />
   <DocumentDependency Id="U1b6kWT75PpPKQsuuIXQzU" Location="./Value/Audio/Schema.Blocks.Source.Value.Audio.PeakPower.vl" />
   <DocumentDependency Id="Kk6xA5epyjTLsntS7czmSa" Location="./Value/Audio/Schema.Blocks.Source.Value.Audio.Pitch.vl" />
+  <DocumentDependency Id="BqqeG3P0ksbObdQeWrZxpj" Location="./Value/System/Schema.Blocks.Source.System.FileExists.vl" />
 </Document>
