@@ -8,7 +8,7 @@
     ************************ RegisterAudioBlocks ************************
 
 -->
-      <Node Name="RegisterAudioBlocks" Bounds="493,305,376,789" Id="FB9sUDaECZMMY5GypsxLEy">
+      <Node Name="RegisterAudioBlocks" Bounds="493,305,378,834" Id="FB9sUDaECZMMY5GypsxLEy">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -103,7 +103,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Pin Id="VoqmvQCQz2FLzcDWbvKA6o" Name="Output" Kind="OutputPin" />
-          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="596,1077" />
+          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="575,1122" />
           <Link Id="GEyzEHYQJfBLKBMGn2P956" Ids="EmmrHSvUBMQMSPPqCFuzp8,JkoQ505fvZqMg917itbD2e" IsHidden="true" />
           <Link Id="PzjRz0ftbrlLpokRmBX3yF" Ids="ELYTRDGehcoMTg7Nsl5gq2,DxgX8zXrajzLxYBWZYXg9T" />
           <Link Id="RpO5T81c1udMk19qAPiFya" Ids="VpFeSPVI7PCP7ODjtXThYm,EmmrHSvUBMQMSPPqCFuzp8" />
@@ -130,7 +130,7 @@
               </Node>
             </Patch>
           </Node>
-          <Pad Id="D4iDEruq4TlNd1V83GBjuV" Comment="Key" Bounds="674,833,130,15" ShowValueBox="true" isIOBox="true" Value="Convert.Audio.Meter">
+          <Pad Id="D4iDEruq4TlNd1V83GBjuV" Comment="Key" Bounds="688,837,130,15" ShowValueBox="true" isIOBox="true" Value="Convert.Audio.Meter">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -139,7 +139,37 @@
           <Link Id="Gvm0CYQw8zDMj8bkNixncV" Ids="D4iDEruq4TlNd1V83GBjuV,Ln5DphTTGQcPhiMLX2u917" />
           <Link Id="CYBKnrLJ5v8OS0qX1We81w" Ids="N8IbO8qns8vLraj5knnGcf,MRRnbODv4VhOavDqXBXJHL" />
           <Link Id="R6X4Upfp8woLI1ik6J8RLd" Ids="Mtvn6ONwtUxQPWOSt04fDj,Aoxdh6iWpfrLEnImz1QZkK" />
-          <Link Id="QD3uowaFU72LRxXOvrzd7J" Ids="NynbMxfIWQBM2YYynRtjQo,Ve87I013pMiMJIb9YMyjVM" />
+          <Node Bounds="572,1004,121,90" Id="Fg06bPfXLUlL5Dt9lLldX7">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="P7BB1DMo5OeLfqCjxlNs8X" Name="Input" Kind="StateInputPin" />
+            <Pin Id="TreiKKDcInhN6GjMvZlOGD" Name="Key" Kind="InputPin" />
+            <Pin Id="KW7QSbKlKjNLG8w7zh2MB0" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="KeINxZTYIVDPgpPhRllpS0" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="Skfh8A3SA1LNNermOMadOu" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="TTTwfDDA986LWsgN2yE4uq" Bounds="578,1087" />
+              <Node Bounds="584,1027,97,26" Id="CrijcFiBGmBOLen2SdtjdW">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Source.Audio.SampleAudioSource" LastSymbolSource="Schema.Blocks.Source.Audio.Sample.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="SampleAudioSource" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="Du5zNnmi4uPPM8XfCKPyay" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="EGmYfZxBrIKPLwKIaK6aVT" Comment="Key" Bounds="690,982,130,15" ShowValueBox="true" isIOBox="true" Value="Source.Audio.Sample">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="LvzGVTkPeVUO0MmHadgsDO" Ids="TTTwfDDA986LWsgN2yE4uq,Skfh8A3SA1LNNermOMadOu" IsHidden="true" />
+          <Link Id="DmZDmGyWAOzOvt6xIL4JxB" Ids="EGmYfZxBrIKPLwKIaK6aVT,TreiKKDcInhN6GjMvZlOGD" />
+          <Link Id="Tt7fWjAT2m5L4EYy6FLPlb" Ids="Du5zNnmi4uPPM8XfCKPyay,TTTwfDDA986LWsgN2yE4uq" />
+          <Link Id="BwoyVbwOi22L56cS7arANg" Ids="NynbMxfIWQBM2YYynRtjQo,P7BB1DMo5OeLfqCjxlNs8X" />
+          <Link Id="JatMJ9jdLFANTkEjjPktm3" Ids="KW7QSbKlKjNLG8w7zh2MB0,Ve87I013pMiMJIb9YMyjVM" />
         </Patch>
       </Node>
     </Canvas>
@@ -170,4 +200,5 @@
   <DocumentDependency Id="M5YsaEU3hmEPmE9YpaSB58" Location="../../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="BVC8qosfuBCLdJA2iVYEo8" Location="./Operator/Audio/Schema.Blocks.Operator.Audio.Multiply.vl" />
   <DocumentDependency Id="COK6bUA5fFcNKldrhbefO6" Location="./Convert/Schema.Blocks.Convert.AudioMeter.vl" />
+  <DocumentDependency Id="UkqFCCziWEYLUgpBv3Bssa" Location="./Source/Audio/Schema.Blocks.Source.Audio.Sample.vl" />
 </Document>
