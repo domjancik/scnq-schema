@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="SHxiFZYubfxOUsNVjN0GZe" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
+<Document xmlns:p="property" Id="SHxiFZYubfxOUsNVjN0GZe" LanguageVersion="2019.2.0-0125-246fa2a747" Version="0.128">
   <Patch Id="PGXSf9JpNCyMXJGsXJWgXj">
     <Canvas Id="E4w50ZuK8vDQZ6Vx6hnLAu" DefaultCategory="domj.Skia.UI" CanvasType="FullCategory">
       <Canvas Id="DTE7VYE9nS6M7slrQY4eKX" Name="Behaviors" Position="338,325">
@@ -1791,6 +1791,59 @@
             <Link Id="MWCsmBlmGC7Py2YjD9IEIS" Ids="E4NzBlpKtdsNsGY65TMZa0,CmvfQETQ0kMLhviYqgTAgO" IsHidden="true" />
           </Patch>
         </Node>
+        <!--
+
+    ************************ ConsumeNotificationBehavior ************************
+
+-->
+        <Node Name="ConsumeNotificationBehavior" Bounds="392,557" Id="ClU1KWusclcLZ38Lfz5t89">
+          <p:NodeReference>
+            <Choice Kind="ClassDefinition" Name="Class" />
+            <FullNameCategoryReference ID="Primitive" />
+          </p:NodeReference>
+          <p:Interfaces>
+            <TypeReference LastCategoryFullName="VL.Skia" LastSymbolSource="VL.Skia.dll">
+              <Choice Kind="MutableInterfaceType" Name="IBehavior" />
+            </TypeReference>
+          </p:Interfaces>
+          <Patch Id="Nz8gVjcJgKGNs85h28oZSy">
+            <Canvas Id="QWqZ7FkE4bZO2LRDpGyBva">
+              <ControlPoint Id="RJSIyVDQxo8OUAVEG31tuU" Bounds="514,67" />
+              <ControlPoint Id="OpG8P8uujEONsSZt2kh5eY" Bounds="515,188" />
+              <ControlPoint Id="CqMivpGh63QQJkkI7kO4aK" Bounds="639,67" />
+              <Pad Id="Tm7Ez0uv50hQVSZQzAxYUG" Bounds="550,190,65,21" ShowValueBox="true" isIOBox="true" Value="handled">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:fontsize p:Type="Int32">9</p:fontsize>
+                  <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+                </p:ValueBoxSettings>
+              </Pad>
+              <Pad Id="FX4lJqvpeCwO4l0ZVCWmTl" Comment="" Bounds="502,122,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pad>
+            </Canvas>
+            <Patch Id="GZEUxlnenbIOTfUCiYgRku" Name="Create (Hidden)" />
+            <Patch Id="BOLnlWY0VEjM7UzR4TVMes" Name="Update (Hidden)" />
+            <ProcessDefinition Id="JpcdBCnWkexO3genL5XcnU" HasStateOut="true">
+              <Fragment Id="Q9m3GgXun0PNJVKd5PDnfI" Patch="GZEUxlnenbIOTfUCiYgRku" Enabled="true" />
+              <Fragment Id="IXgXZHm8GwvNuSEzJRN5A7" Patch="BOLnlWY0VEjM7UzR4TVMes" Enabled="true" />
+              <Fragment Id="PlXtWqC8RxmO1Z7QX8dZbG" Patch="JtMTthAHsqHNZn2ZFlJCvF" />
+            </ProcessDefinition>
+            <Patch Id="JtMTthAHsqHNZn2ZFlJCvF" Name="Notify (Hidden)">
+              <Pin Id="UEb0SJdvghLMAl6cIaFdDG" Name="Notification" Kind="InputPin" />
+              <Pin Id="JYHhUTzvRVYQWQlROvUoUQ" Name="Caller" Kind="InputPin" />
+              <Pin Id="HZaLSprMuOCNLJxDV1KzAf" Name="Result" Kind="OutputPin" />
+            </Patch>
+            <Link Id="OzVAj07xVvoM9g8mRPZgWw" Ids="UEb0SJdvghLMAl6cIaFdDG,RJSIyVDQxo8OUAVEG31tuU" IsHidden="true" />
+            <Link Id="MqnZvhsaLMgP0XUZes8eV8" Ids="OpG8P8uujEONsSZt2kh5eY,HZaLSprMuOCNLJxDV1KzAf" IsHidden="true" />
+            <Link Id="BCXkcgaYdUUOsbhFGSKekV" Ids="JYHhUTzvRVYQWQlROvUoUQ,CqMivpGh63QQJkkI7kO4aK" IsHidden="true" />
+            <Link Id="APIlorCDi0FODiP9qNXpYy" Ids="FX4lJqvpeCwO4l0ZVCWmTl,OpG8P8uujEONsSZt2kh5eY" />
+          </Patch>
+        </Node>
       </Canvas>
       <Canvas Id="UUJppE7YW0mNSIz4W9kNxa" Name="Layers" Position="337,378">
         <!--
@@ -2631,8 +2684,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="HRDMJl4gna4ORHyfEPTFna" Location="VL.Core" Version="2019.2.0-0081-g9750350a10" />
-  <NugetDependency Id="FcoNU9lZhFhLFVCisqJXi0" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+  <NugetDependency Id="HRDMJl4gna4ORHyfEPTFna" Location="VL.Core" Version="2019.2.0-0125-g246fa2a747" />
+  <NugetDependency Id="FcoNU9lZhFhLFVCisqJXi0" Location="VL.CoreLib" Version="2019.2.0-0125-g246fa2a747" />
   <NugetDependency Id="Rr0wuZEB2kePpvml9qafGy" Location="VL.CoreLib.VVVV" Version="0.94.50-gf563f1b382" />
-  <NugetDependency Id="RhplA0sPQkMMua9kXvL1my" Location="VL.Skia" Version="2019.2.0-0081-g9750350a10" />
+  <NugetDependency Id="RhplA0sPQkMMua9kXvL1my" Location="VL.Skia" Version="2019.2.0-0125-g246fa2a747" />
 </Document>
