@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="UH9bED6sZfDOlmVGDjBXgZ" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
+  <NugetDependency Id="LLB1IHit6hNMEvz69qHLvr" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+  <Patch Id="IPWlzC2QtPSNiG391gJ5Ua">
+    <Canvas Id="NIqZGrxK6UjP0K4QvoMRZ1" DefaultCategory="Schema.UI.Closing" CanvasType="FullCategory">
+      <!--
+
+    ************************ ShowExitDialog ************************
+
+-->
+      <Node Name="ShowExitDialog" Bounds="257,580,170,221" Id="NO1ePdppkiPM2FoPB3rjvM">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="JRfmjz3vuh2OGho5aTt26C">
+          <Node Bounds="270,675" Id="MI5R2l4gO2dONpzWXcKKbf">
+            <p:NodeReference LastCategoryFullName="System.Windows.Forms.MessageBox" LastSymbolSource="System.Windows.Forms.dll">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="AssemblyCategory" Name="MessageBox" />
+              <Choice Kind="OperationCallFlag" Name="Show" />
+              <PinReference Kind="InputPin" Name="Buttons" />
+            </p:NodeReference>
+            <Pin Id="Pwa05uISE48LL1sNFj8VwU" Name="Text" Kind="InputPin" />
+            <Pin Id="GWzkUx9dNqnQKUwXsvSTIA" Name="Caption" Kind="InputPin" />
+            <Pin Id="G1kMBHkqCcvMowNrRmnuFM" Name="Buttons" Kind="InputPin" DefaultValue="YesNo">
+              <p:TypeAnnotation LastCategoryFullName="System.Windows.Forms" LastSymbolSource="System.Windows.Forms.dll">
+                <Choice Kind="TypeFlag" Name="MessageBoxButtons" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="AJhVvtIzYaYLiOd1nYh8xg" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="271,746,25,19" Id="JP6rLLjYM9BMrNSIrW81QC">
+            <p:NodeReference LastCategoryFullName="System.Windows.Forms.DialogResult" LastSymbolSource="System.Windows.Forms.dll">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="=" />
+              <CategoryReference Kind="AssemblyCategory" Name="DialogResult" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="B0S6egtn3aPPdpZKreVB4G" Name="Input" Kind="InputPin" />
+            <Pin Id="ITY1042QG47Qbm3x890NqA" Name="Input 2" Kind="InputPin" DefaultValue="Yes">
+              <p:TypeAnnotation LastCategoryFullName="System.Windows.Forms" LastSymbolSource="System.Windows.Forms.dll">
+                <Choice Kind="TypeFlag" Name="DialogResult" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Q5XqWZd61lePWga3xrH8kR" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Pad Id="G2It6QhWObsPom3SxKxNCy" Comment="Caption" Bounds="291,640,66,10" ShowValueBox="true" isIOBox="true" Value="Quitting?">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="IjA9AthTZGWMgqY8NdERPf" Ids="AJhVvtIzYaYLiOd1nYh8xg,B0S6egtn3aPPdpZKreVB4G" />
+          <Link Id="ElYRlzhGDlBMLrgnUPzZMq" Ids="G2It6QhWObsPom3SxKxNCy,GWzkUx9dNqnQKUwXsvSTIA" />
+          <ControlPoint Id="I55SDjkOG1oLuDf5j4myMR" Bounds="273,784" />
+          <Link Id="UBkTp4sX6rrPaIvhBn3efX" Ids="Q5XqWZd61lePWga3xrH8kR,I55SDjkOG1oLuDf5j4myMR" />
+          <Pin Id="MIshmFbbme4O7gsvfQKbFY" Name="Result" Kind="OutputPin" Bounds="761,704" />
+          <Link Id="Nu09Re5e88xOCNp8wrDMj4" Ids="I55SDjkOG1oLuDf5j4myMR,MIshmFbbme4O7gsvfQKbFY" IsHidden="true" />
+          <Node Bounds="269,603,16,19" Id="L2WJJVePfBGMwYV5w49SVW">
+            <p:NodeReference LastCategoryFullName="Schema.UI.Closing" LastSymbolSource="Schema.UI.Closing.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetExitMessage" />
+            </p:NodeReference>
+            <Pin Id="IpKPBVn3KyuN3eSbhUwTk0" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="FglXqRYNImDOfEvai8NoKg" Ids="IpKPBVn3KyuN3eSbhUwTk0,Pwa05uISE48LL1sNFj8VwU" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ GetExitMessage ************************
+
+-->
+      <Node Name="GetExitMessage" Bounds="253,259,152,221" Id="MYMW09JaNcxLJRWdnGbiTl">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="U6TpmQjXyQvOsGpL5N12sw">
+          <Pad Id="QZiSTfwplVJOEnNLsMZ3HF" Comment="Text" Bounds="269,287,35,15" ShowValueBox="true" isIOBox="true" Value="Press No to save the world.&#xD;&#xA;Press Yes to abandon it in its hour of need.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="277,374,54,19" Id="NR5sYaKwiooM9YigTvxZvw">
+            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Random" />
+            </p:NodeReference>
+            <Pin Id="AO8sdkI4fFUMN1eWo3uWW3" Name="From" Kind="InputPin" />
+            <Pin Id="Fg4rfCICxlgPw5iDpakMnz" Name="To" Kind="InputPin" DefaultValue="2">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="VrfWBAxD9IpM00I5zVy5QJ" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="281,420,45,19" Id="FC415CeR7KePTeao0g1qTM">
+            <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Switch" />
+              <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="AqM0aVG0kx0MaYlNzELR3O" Name="Index" Kind="InputPin" />
+            <Pin Id="NCmy9TGyJB1NgHFdLwnMN4" Name="Input" Kind="InputPin" />
+            <Pin Id="MSzRFAx5MQpOfljUCmJa6d" Name="Input 2" Kind="InputPin" />
+            <Pin Id="VjEuhQITNIDPNr6wdLMQ3L" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="UheLMwVUAIhP1XW2YLv08F" Ids="VrfWBAxD9IpM00I5zVy5QJ,AqM0aVG0kx0MaYlNzELR3O" />
+          <Link Id="F2A5cszCifcM5GK7GzX3OE" Ids="QZiSTfwplVJOEnNLsMZ3HF,NCmy9TGyJB1NgHFdLwnMN4" />
+          <Pad Id="NefQ2YxJP88PdxakKD5qqm" Comment="Text" Bounds="302,320,48,15" ShowValueBox="true" isIOBox="true" Value="For lights and glory press No.&#xD;&#xA;For work and worry, press Yes.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="S44fIIDwizyL4UTbhTFfJA" Ids="NefQ2YxJP88PdxakKD5qqm,MSzRFAx5MQpOfljUCmJa6d" />
+          <ControlPoint Id="Ibx66aVhgRfNuQE0vFNw0d" Bounds="287,463" />
+          <Link Id="HZEjPFYskUYMdnR0FgxjRO" Ids="VjEuhQITNIDPNr6wdLMQ3L,Ibx66aVhgRfNuQE0vFNw0d" />
+          <Pin Id="SGBtdWBBl4YQdcV2UDOxBA" Name="Output" Kind="OutputPin" Bounds="833,369" />
+          <Link Id="U8tUKhxxlkUOtwYf23aggQ" Ids="Ibx66aVhgRfNuQE0vFNw0d,SGBtdWBBl4YQdcV2UDOxBA" IsHidden="true" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ FormClosingPrompt ************************
+
+-->
+      <Node Name="FormClosingPrompt" Bounds="522,296" Id="Ec4DuVQPx0LM2nFdPsrH82">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="Jsv279kj3I2QHr21Z0QOr4">
+          <Canvas Id="Nz92llk5MtdMboH2sCXvLS" CanvasType="Group">
+            <Node Bounds="307,400,181,196" Id="RBTj6ez8xxXNgtXSweVLQB">
+              <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="ForEach" />
+                <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="OIcGH78eHxbPmPkvSEV4FT" Name="Messages" Kind="InputPin" />
+              <Pin Id="Fu5g8Z1LJBTOL73TcvexFx" Name="Reset" Kind="InputPin" />
+              <Pin Id="OHt7y5qYtkaMpRaEBnPGyC" Name="Result" Kind="OutputPin" />
+              <Patch Id="DC0EbsWQnCWNX3zbm7BQs7" ManuallySortedPins="true">
+                <Patch Id="B6h9gLuVGcXLK4qlqUlS3v" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="Tb7Nptl8QKFNFNGqhVhWo8" Name="Update" ManuallySortedPins="true">
+                  <Pin Id="HUham7izpUnMbEdkCRTRXV" Name="Input 1" Kind="InputPin" />
+                  <Pin Id="U76u7fbzzSpO3Zh5Be7axo" Name="Output" Kind="OutputPin" />
+                </Patch>
+                <ControlPoint Id="VUFqWWXC1zALK9gFLGHkwq" Bounds="316,408" />
+                <ControlPoint Id="Ju84uOZRtLkPNRgDf2HHhN" Bounds="320,589" />
+                <Node Bounds="319,454,62,26" Id="Rm7si6QBGlBLU49C0oFECn">
+                  <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastSymbolSource="VL.Reactive.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="RecordType" Name="EventPattern" />
+                    <Choice Kind="OperationCallFlag" Name="EventArgs" />
+                  </p:NodeReference>
+                  <Pin Id="SsseZ9LzNR9MKMw3M4W0YP" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="AvXhGEFOfzTLeGgFF6K4lO" Name="Event Args" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="319,528,76,26" Id="JCjaufEbm0NOg1fSCVfYaZ">
+                  <p:NodeReference LastCategoryFullName="System.ComponentModel.CancelEventArgs" LastSymbolSource="System.ComponentModel.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="CancelEventArgs" />
+                    <Choice Kind="OperationCallFlag" Name="SetCancel" />
+                  </p:NodeReference>
+                  <Pin Id="RPGWp80dXwxPQGOVbw3Qdy" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="NfZ1LHW2cX3LunUOZzorev" Name="Value" Kind="InputPin" DefaultValue="True">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                      <Choice Kind="TypeFlag" Name="Boolean" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="GX2kj4oiOw7OFFtrg5r72d" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="390,458,86,19" Id="QaQoFPAValzMI0kJVyQGYO">
+                  <p:NodeReference LastCategoryFullName="Schema.UI.Closing" LastSymbolSource="Schema.UI.Closing.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="ShowExitDialog" />
+                  </p:NodeReference>
+                  <Pin Id="R9BPGNtBmnZQSzYuUlGiKT" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="390,489,37,19" Id="SX4IqyelRhRMpPFnpqN4HT">
+                  <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="NOT" />
+                  </p:NodeReference>
+                  <Pin Id="OaUFkOEkfDwOZLovLmi2vK" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="TZxCrxaIXUYLoi1xZCEZYL" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Node Bounds="307,344,74,26" Id="QHbPk2DreJPMJr1lPvq4FK">
+              <p:NodeReference LastCategoryFullName="System.Windows.Forms.Form" LastSymbolSource="System.Windows.Forms.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="FormClosing" />
+              </p:NodeReference>
+              <Pin Id="It9DCcKNjEHLGKrhNkrKKO" Name="Input" Kind="StateInputPin" />
+              <Pin Id="Gj4Ovf5XjMeNVE7bAzlIDA" Name="Result" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="InBVD68pELYNr8fZBjoZMg" Bounds="309,306" />
+            <ControlPoint Id="CXXGXzxRiPzMnDSSIMXktv" Bounds="285,649" />
+          </Canvas>
+          <Patch Id="JClvyuRnLY3PepqnEph436" Name="Create" />
+          <Patch Id="Ok2ONWuh4QzOBrYZx0Q9Gl" Name="Update">
+            <Pin Id="APC4d2UinhBQPWmmItSuIg" Name="Input" Kind="InputPin" Bounds="406,284" />
+            <Pin Id="VXhgOWvGcmpMhEZuXDR7tB" Name="Output" Kind="OutputPin" Bounds="285,649" />
+          </Patch>
+          <!--
+
+    ************************  ************************
+
+-->
+          <ProcessDefinition Id="FiQyAGISvJ0PDjBFoETlUK">
+            <Fragment Id="AR3zcsRoLNfMjCPTB1tgwK" Patch="JClvyuRnLY3PepqnEph436" Enabled="true" />
+            <Fragment Id="DD0Z5rBWiQcNAR8201IPkc" Patch="Ok2ONWuh4QzOBrYZx0Q9Gl" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="Nd8DfzKf8gJPHlQOwExlfl" Ids="HUham7izpUnMbEdkCRTRXV,VUFqWWXC1zALK9gFLGHkwq" IsHidden="true" />
+          <Link Id="ExGvS7FYpnINLwW1i3yJgi" Ids="Ju84uOZRtLkPNRgDf2HHhN,U76u7fbzzSpO3Zh5Be7axo" IsHidden="true" />
+          <Link Id="Rk1g9P4ZUooQNQ1BCwZW2g" Ids="GX2kj4oiOw7OFFtrg5r72d,Ju84uOZRtLkPNRgDf2HHhN" />
+          <Link Id="LdYliJDHGzFOpPe8o2Arrz" Ids="Gj4Ovf5XjMeNVE7bAzlIDA,OIcGH78eHxbPmPkvSEV4FT" />
+          <Link Id="IkLJPqbQ2mROPEnkP8DEN0" Ids="VUFqWWXC1zALK9gFLGHkwq,SsseZ9LzNR9MKMw3M4W0YP" />
+          <Link Id="FVKkv1CO28cNB56mRchmii" Ids="AvXhGEFOfzTLeGgFF6K4lO,RPGWp80dXwxPQGOVbw3Qdy" />
+          <Link Id="VYE4ls0wZigL30ShiNrTXn" Ids="R9BPGNtBmnZQSzYuUlGiKT,OaUFkOEkfDwOZLovLmi2vK" />
+          <Link Id="SdNtQrVfG8sOBfLjXiqI5U" Ids="TZxCrxaIXUYLoi1xZCEZYL,NfZ1LHW2cX3LunUOZzorev" />
+          <Link Id="QaBWztI8skmMoYeTiZa20Y" Ids="InBVD68pELYNr8fZBjoZMg,It9DCcKNjEHLGKrhNkrKKO" />
+          <Link Id="GW93wtDoONbMrI1S70AYLn" Ids="APC4d2UinhBQPWmmItSuIg,InBVD68pELYNr8fZBjoZMg" IsHidden="true" />
+          <Link Id="IA9ep19BnJZMzxYFRRhKTR" Ids="InBVD68pELYNr8fZBjoZMg,CXXGXzxRiPzMnDSSIMXktv" />
+          <Link Id="LLXA4mq2NH4QcjtKmw6Lp1" Ids="CXXGXzxRiPzMnDSSIMXktv,VXhgOWvGcmpMhEZuXDR7tB" IsHidden="true" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="DG7Z7TiBnoILfHcRfCD3gw">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="AIEhfHdO6nuLHQnawht6vt">
+        <Canvas Id="SydXk5Owy0rOu0gNFL0DuM" CanvasType="Group" />
+        <Patch Id="NfVXB1uxPz6OL75PGbGKpX" Name="Create" />
+        <Patch Id="OV8USiETnPaPog7fBSplzS" Name="Update" />
+        <ProcessDefinition Id="VqqaXbAZ7PoQVTuLK7Yokc">
+          <Fragment Id="C0MbtdE6jRIQDd67YVRiAo" Patch="NfVXB1uxPz6OL75PGbGKpX" Enabled="true" />
+          <Fragment Id="AjpEKTGvnXKMeBpaNCfVld" Patch="OV8USiETnPaPog7fBSplzS" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="K7WaYN8QnpiPEyHJyiBaat" Location="VL.Skia" Version="2019.2.0-0081-g9750350a10" />
+  <PlatformDependency Id="BydzRlORHsMMBOxvORjIGO" Location="System.ComponentModel" />
+  <PlatformDependency Id="RK7ggdMmYIML3xQ94l34TH" Location="System.Windows.Forms" />
+</Document>
