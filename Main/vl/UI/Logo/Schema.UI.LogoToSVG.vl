@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="P2d1stjggC9MKGgU8HLXkr" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
+  <NugetDependency Id="BWaUbPt0lwFOpDsdFfrWV1" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+  <Patch Id="K85ZMciz4QEOKMIiF1ZaJQ">
+    <Canvas Id="F8FgLSOgtJNPszQ5mbQXo9" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Kse4wqpFPtDM1HXe4eombP">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="OtmJ58AOaQtNLQU3CPn0oA">
+        <Canvas Id="C3rBQj1VCzeLXkhLYvMrD9" CanvasType="Group">
+          <Node Bounds="290,214" Id="T9UdGAheibPMaw8KRcRIHF">
+            <p:NodeReference LastCategoryFullName="Schema.UI.Logo" LastSymbolSource="Schema.UI.Logo.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LogoOverlay" />
+            </p:NodeReference>
+            <Pin Id="NAfVU0HzVErNlxhZewMurM" Name="Position" Kind="InputPin" />
+            <Pin Id="D3ufJsULpi6MKUhS7OVFsc" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="290,281,125,19" Id="ACqEBtdqSDoLFdcPIAxdk4">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.IO" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SVGWriter" />
+            </p:NodeReference>
+            <Pin Id="KsRQIwdm2gTNbzRjgqUhQM" Name="Input" Kind="InputPin" />
+            <Pin Id="GkmXmRUb8ZCPMmpP0SsRpc" Name="Path" Kind="InputPin" />
+            <Pin Id="GfOyQAa5v8pO1zGN3TZncA" Name="Color" Kind="InputPin" />
+            <Pin Id="ObInmT1dif3M07J7u3gq87" Name="Space" Kind="InputPin" />
+            <Pin Id="OleqsN4eLI0LDzO2xpkZKQ" Name="Width" Kind="InputPin" />
+            <Pin Id="Kwg5UVu9jDmP8rkfL4xaqP" Name="Height" Kind="InputPin" />
+            <Pin Id="GcCBDmiqud7Orb4RTjqJAw" Name="Write" Kind="InputPin" />
+          </Node>
+          <Pad Id="SVJRl7apxwwLtTGicibiz9" Comment="Path" Bounds="411,234,35,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\..\Resources\SchemaLogo.svg">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="PRWA8mi36TdOSW9ZznIObl" Comment="Write" Bounds="454,263,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="TETbYuZOuj5PrnHcFCAFnQ" Name="Create" />
+        <Patch Id="QFrRP2OKifxQK3jPeIsZmP" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="TsD0SGdJPXtP11CIbM5XCF">
+          <Fragment Id="RwFKrBECcMjNeO9ADE2AY6" Patch="TETbYuZOuj5PrnHcFCAFnQ" Enabled="true" />
+          <Fragment Id="TdPVr64DYjCNZzYKoQGlR8" Patch="QFrRP2OKifxQK3jPeIsZmP" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="HfCK46xwzAnNaxgl8jbMrX" Ids="D3ufJsULpi6MKUhS7OVFsc,KsRQIwdm2gTNbzRjgqUhQM" />
+        <Link Id="LdOX06Dp32uMe4R60HZtBk" Ids="SVJRl7apxwwLtTGicibiz9,GkmXmRUb8ZCPMmpP0SsRpc" />
+        <Link Id="Hwlya7SB8EpM9rq1JrzucB" Ids="PRWA8mi36TdOSW9ZznIObl,GcCBDmiqud7Orb4RTjqJAw" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="IyJ7M9nmXsrQSBickL3usU" Location="VL.Skia" Version="2019.2.0-0081-g9750350a10" />
+  <DocumentDependency Id="MvKAjPfRB90LZEUtH1WFvj" Location="./Schema.UI.Logo.vl" />
+</Document>
