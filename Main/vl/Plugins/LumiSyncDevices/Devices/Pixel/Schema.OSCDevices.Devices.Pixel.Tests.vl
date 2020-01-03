@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="R1QWIHarpBALb7fGMVcN12" LanguageVersion="2019.1.0-0913-g8d9ebb2ca6" Version="0.128">
+  <NugetDependency Id="DunhFonYUjJNphDTGaZgIS" Location="VL.CoreLib" Version="2019.1.0-913" />
+  <Patch Id="QeUGCuR15yYMtalEcpoW6l">
+    <Canvas Id="LMDcxQafQAlLdkxN6ELjZ3" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="IHhrGCctibYQBfUx1qmd7Y">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Hq78sit4AanNZHUlrRCteJ">
+        <Canvas Id="Bp7XibDPizSLNCTQNnTP0r" CanvasType="Group">
+          <Node Bounds="228,200,95,19" Id="QpE4dzNy5mXMFQgRa0kv99">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema" LastSymbolSource="VVVV.Schema.OSCDevices.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Test_OSCLED" />
+            </p:NodeReference>
+            <Pin Id="U5lx3D8f44qNgL8hQHcoGO" Name="Channel" Kind="InputPin" />
+            <Pin Id="LxOd90KApgKPEHSmT5p3U1" Name="Address" Kind="InputPin" DefaultValue="192.168.11.114">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="CrTqfuHVgUvNcwE6KXkCqr" Name="Input" Kind="InputPin">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
+          </Node>
+          <Pad Id="CgfKXyEPL9OMoJxpv4RRPg" Comment="" Bounds="320,69,247,97" ShowValueBox="true" isIOBox="true">
+            <p:TypeAnnotation LastCategoryFullName="Collections" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="TypeFlag" Name="Spread" />
+              <p:TypeArguments>
+                <TypeReference LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="RGBA" />
+                </TypeReference>
+              </p:TypeArguments>
+            </p:TypeAnnotation>
+            <p:Value>
+              <Item>0.07999998, 0.01919999, 0, 1</Item>
+            </p:Value>
+          </Pad>
+          <Node Bounds="318,170" Id="NvsIcqUyYaxLwr1tYVcoGd">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="ResamplePoint" />
+            </p:NodeReference>
+            <Pin Id="FjKt9L4y4Q0Ns1Ld0YJVoW" Name="Input" Kind="InputPin" />
+            <Pin Id="GtXRZ58cZirMNBEU7aGpQg" Name="Count" Kind="InputPin" DefaultValue="7">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Ueq8XW83gwmLTLYc2ceapI" Name="Output" Kind="OutputPin" />
+            <Pin Id="EIVJh0jlJw9MgfovjHxm4z" Name="Interval" Kind="OutputPin" />
+          </Node>
+          <Pad Id="EVbvjmJQPasMaEDhRarNEV" Comment="Channel" Bounds="175,95,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="JTjj0aDb641PF4ocFS2i4T" Comment="Address" Bounds="172,69,82,15" ShowValueBox="true" isIOBox="true" Value="192.168.11.114">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <ControlPoint Id="BJw6jcGifd0QJCQW2QoVUQ" Bounds="274,142" />
+          <ControlPoint Id="NtFFIyjt6BUM5zbrPYdTSA" Bounds="230,139" />
+        </Canvas>
+        <Patch Id="DnhFjK01KSkPNjenjaJwYV" Name="Create" />
+        <Patch Id="SM4jcDUj8Y5QYlvZM3Clx0" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="M8MIZk4t8SkLjeGZDk1tec">
+          <Fragment Id="JNeuHQ8RmkFO65aFcQ7Rt6" Patch="DnhFjK01KSkPNjenjaJwYV" Enabled="true" />
+          <Fragment Id="NN0EJsxZnK7MqoTlNZJYcl" Patch="SM4jcDUj8Y5QYlvZM3Clx0" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="PzLtvsH27UHLdzj9EgDWuM" Ids="CgfKXyEPL9OMoJxpv4RRPg,FjKt9L4y4Q0Ns1Ld0YJVoW" />
+        <Link Id="RBitBEY3YcdNxdEGweBnIt" Ids="Ueq8XW83gwmLTLYc2ceapI,CrTqfuHVgUvNcwE6KXkCqr" />
+        <Link Id="CYjSCrI4ssWOTrpDFFFman" Ids="EVbvjmJQPasMaEDhRarNEV,NtFFIyjt6BUM5zbrPYdTSA,U5lx3D8f44qNgL8hQHcoGO" />
+        <Link Id="UEqws7pqXZFOz2uummnpkv" Ids="JTjj0aDb641PF4ocFS2i4T,BJw6jcGifd0QJCQW2QoVUQ,LxOd90KApgKPEHSmT5p3U1" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="SfwvsqSZUifOHdWJdJSPE7" Location="VL.Skia" Version="2019.1.0-0913-g8d9ebb2ca6" />
+  <DocumentDependency Id="LXf6R0JBItALD9I8srjxYY" Location="../../../../VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="HiEihIZhUh1NirSt87nPia" Location="../../../../VVVV.Schema.OSCDevices.vl" />
+</Document>
