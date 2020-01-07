@@ -8,13 +8,13 @@
     ************************ RegisterAssignBlocks ************************
 
 -->
-      <Node Name="RegisterAssignBlocks" Bounds="464,298,364,493" Id="IaV0XHPFxw9LAyqxHQPdg6">
+      <Node Name="RegisterAssignBlocks" Bounds="464,298,364,509" Id="IaV0XHPFxw9LAyqxHQPdg6">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
         <Patch Id="OSM2Tl66QlpQGuhWrQaSfB">
           <ControlPoint Id="G6WQkKlOmhOPOqkLsI0gqv" Bounds="547,316" />
-          <ControlPoint Id="EzjQxaVzdpmPdztvNyRHL2" Bounds="539,774" />
+          <ControlPoint Id="EzjQxaVzdpmPdztvNyRHL2" Bounds="548,790" />
           <Pin Id="Gg9xEXpcNDGOFHYVL1RJRd" Name="Input" Kind="InputPin" Bounds="471,214" />
           <Pin Id="UthyxRSmeHKNOLYv9ZER76" Name="Output" Kind="OutputPin" Bounds="466,454" />
           <Link Id="Sz1tYfIG33wQQFOJopf4sd" Ids="Gg9xEXpcNDGOFHYVL1RJRd,G6WQkKlOmhOPOqkLsI0gqv" IsHidden="true" />
@@ -102,7 +102,7 @@
           <Link Id="B8Etu9v5J8aMeaJQcSyMD8" Ids="C68OhqAd76yNWOMYVXnlVk,Ibs8yX3lRQ7NV8SoxtITWm" />
           <Link Id="VefGKVDg5R8QbNxpZn7Dfx" Ids="HF5i0UQ558nNlxWH3aVsOa,A6PTNaXL2cWNRxuq0LgsLS" />
           <Link Id="QiIzmVFwlrTO7KdXQgRhRw" Ids="QZ8QagNGTDfPTy1wJMuCwE,IGtgMWIGA0YNiXPv87ugpS" />
-          <Link Id="HgksOs4oo7cNi7U0HGSL48" Ids="QruHOJ4fTrwOjlSiSR6WYK,EzjQxaVzdpmPdztvNyRHL2" />
+          <Link Id="HgksOs4oo7cNi7U0HGSL48" Ids="QruHOJ4fTrwOjlSiSR6WYK,SNxKz6mV0VkQJEv5O35rti" />
           <Pad Id="TtSKXfX6hd7OSGnIHbltR8" Comment="Key" Bounds="661,453,74,12" ShowValueBox="true" isIOBox="true" Value="Assign.Fixture">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -115,6 +115,64 @@
             </p:TypeAnnotation>
           </Pad>
           <Link Id="FE2A1rvJFC1OiFF90ARVLh" Ids="Inmwy6AlXYGQJz6ZhjCILZ,LYVAj2RCqjsPLqOQk58MOj" />
+          <Node Bounds="546,731" Id="DBT8oWZiIBsLp3XoOjKdRj">
+            <p:NodeReference LastCategoryFullName="Schema.Blocks" LastSymbolSource="Schema.Blocks.Assign.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="RegisterGlobalAssignBlocks" />
+            </p:NodeReference>
+            <Pin Id="SNxKz6mV0VkQJEv5O35rti" Name="Input" Kind="InputPin" />
+            <Pin Id="NOfNnvmJ0xkOPpJe5At09G" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="G0Uafjl5ujyNTWFDJxfQ09" Ids="NOfNnvmJ0xkOPpJe5At09G,EzjQxaVzdpmPdztvNyRHL2" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ RegisterGlobalAssignBlocks (Internal) ************************
+
+-->
+      <Node Name="RegisterGlobalAssignBlocks (Internal)" Bounds="951,286,80,80" Id="Jut5IDgGf1KM3okfX6mAjt">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="SlvnzGLYtNFOBHfUd6Mpw0">
+          <Node Bounds="955,342,106,78" Id="Oihmwn9xpJNNCZA0TEDQ3J">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="Bnm77VbGZ4vLfH729xDxf5" Name="Input" Kind="StateInputPin" />
+            <Pin Id="PnJv5xyk6sZP53IrDCX6DJ" Name="Key" Kind="InputPin" />
+            <Pin Id="CD8hvfOksi7Lcm7tRvnFMB" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="FtL14I9KtCVNuS0BupWvdk" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="EhrKXN8b0q9NzYhx6t4vKG" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="SjYAzFWba2fNT4gqpIIql0" Bounds="962,413" />
+              <Node Bounds="967,365,82,26" Id="NRnOwbBhbVdNrUUx9gNf8x">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Assign.Global.GlobalColorAssign" LastSymbolSource="Schema.Blocks.Assign.Global.Color.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="GlobalColorAssign" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="NC7XnJUT4v9LJUln9mqm76" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Link Id="Jbo26PYYwI4LQCU04FGm0Q" Ids="SjYAzFWba2fNT4gqpIIql0,EhrKXN8b0q9NzYhx6t4vKG" IsHidden="true" />
+          <Pad Id="NPqtf3t8WwBOtJawNUdCie" Comment="Key" Bounds="1041,307,35,15" ShowValueBox="true" isIOBox="true" Value="Assign.Global.Color">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="S88IBU6jcncOQHadTgGlai" Ids="NPqtf3t8WwBOtJawNUdCie,PnJv5xyk6sZP53IrDCX6DJ" />
+          <Link Id="LTAWklihwdRLtgcio1BkDa" Ids="NC7XnJUT4v9LJUln9mqm76,SjYAzFWba2fNT4gqpIIql0" />
+          <Pin Id="KBr1bvarXJXPtMBlGzq2Ei" Name="Input" Kind="InputPin" />
+          <ControlPoint Id="F3GEUdiyAmmLm5owyhs4hR" Bounds="955,312" />
+          <Link Id="MHTGYQ4EjFsMu3E3TZlvSF" Ids="KBr1bvarXJXPtMBlGzq2Ei,F3GEUdiyAmmLm5owyhs4hR" IsHidden="true" />
+          <Link Id="MManoykBQrgPw2HfTiegOK" Ids="F3GEUdiyAmmLm5owyhs4hR,Bnm77VbGZ4vLfH729xDxf5" />
+          <Pin Id="SUPc46QWDVRPYrF8cix5n9" Name="Output" Kind="OutputPin" />
+          <ControlPoint Id="BzheDWSsFrEM8Ozsgzh5I0" Bounds="955,450" />
+          <Link Id="RJJNHntdKgbQUhr90lVvPj" Ids="BzheDWSsFrEM8Ozsgzh5I0,SUPc46QWDVRPYrF8cix5n9" IsHidden="true" />
+          <Link Id="VjXmKNioF3jMkKIRDLOXXK" Ids="CD8hvfOksi7Lcm7tRvnFMB,BzheDWSsFrEM8Ozsgzh5I0" />
         </Patch>
       </Node>
     </Canvas>
@@ -132,11 +190,6 @@
         <Canvas Id="OcIFgJRpY0hPG0FbnQ8ay2" CanvasType="Group" />
         <Patch Id="FerzXUHqB3SNAB0fygfl5D" Name="Create" />
         <Patch Id="OF4qKnIiQcxMeAuu1njxI3" Name="Update" />
-        <!--
-
-    ************************  ************************
-
--->
         <ProcessDefinition Id="SGKj1xp1xUoPJ2yb5uAgp5">
           <Fragment Id="PKRcLygxDBEPrXDZocaBlf" Patch="FerzXUHqB3SNAB0fygfl5D" Enabled="true" />
           <Fragment Id="IlthBFQJDmsMGlAXR0TdJM" Patch="OF4qKnIiQcxMeAuu1njxI3" Enabled="true" />
@@ -149,4 +202,5 @@
   <DocumentDependency Id="MNQz3i008LPM0EsdHsI41H" Location="./Schema.Blocks.Assign.Director.vl" />
   <DocumentDependency Id="FTjlrnmKDofLn41uDjBnsw" Location="./Schema.Blocks.Assign.Group.vl" />
   <DocumentDependency Id="QqQpV6RBLbEPH7rl2VMBtM" Location="./Schema.Blocks.Assign.Single.vl" />
+  <DocumentDependency Id="UeSvd2RSzpNLILWP8q2MFV" Location="./Global/Schema.Blocks.Assign.Global.Color.vl" />
 </Document>
