@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="UGWA9u2933hLrj1joNu7sI" LanguageVersion="2019.2.0-0125-246fa2a747" Version="0.128">
+  <NugetDependency Id="EydK18RNhmlQAtoDb5hQ58" Location="VL.CoreLib" Version="2019.2.0-0125-g246fa2a747" />
+  <Patch Id="E98c582Xi7TOxKjVdnIe8G">
+    <Canvas Id="VMObSfAEwvjONKC7wkofuH" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="TjKMlQMHNJaNkzcFaJrIVX">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="UyXzi4qHiFlMhKOI4KOY6Z">
+        <Canvas Id="VhchJdKM4ELPWXMeHA9m8y" CanvasType="Group">
+          <Node Bounds="251,269" Id="KQ3ML6EeZlZNkvzYAS3klx">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Renderer" />
+            </p:NodeReference>
+            <Pin Id="HOetXObGgX9MWV2u1Lm0yY" Name="Bounds" Kind="InputPin" DefaultValue="430, 190, 600, 400">
+              <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
+                <Choice Kind="TypeFlag" Name="Rectangle" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="BdydXD8aSlzN7Ga93JD7H0" Name="Input" Kind="InputPin" />
+            <Pin Id="D8bfMDfHi1WQLdvofFWGpI" Name="Color" Kind="InputPin" />
+            <Pin Id="KyxppOX2CrcQIAnbj5W8xn" Name="Clear" Kind="InputPin" />
+            <Pin Id="MmpIvVwkJlmLdmFY7npJPm" Name="Space" Kind="InputPin" />
+            <Pin Id="Ol5SahevcU9P5HPnj8rI00" Name="Show Cursor" Kind="InputPin" />
+            <Pin Id="Dn3Q7ohwTsENJ6RJLDoKgD" Name="VSync" Kind="InputPin" />
+            <Pin Id="P8yDouAx4AyQaOQBYHaWzC" Name="Enabled" Kind="InputPin" />
+            <Pin Id="UOQKsOUIS0pMnSR6kUK60R" Name="Form" Kind="OutputPin" />
+            <Pin Id="MGFrC5SfIEvLhnd0Ilc56z" Name="ClientBounds" Kind="OutputPin" />
+            <Pin Id="Rnv26L1qOH7PEc9xqnbpk3" Name="Render Time" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="253,348,49,19" Id="Ru8LWgzH5zNNtt8HSMeh0M">
+            <p:NodeReference LastCategoryFullName="SchemaIcon.IconSetter" LastSymbolSource="SchemaIcon.dll">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="SetIcon" />
+            </p:NodeReference>
+            <Pin Id="C4D9uwAnJ7YPYarFflmp8J" Name="Form" Kind="InputPin" />
+            <Pin Id="Nkc0KCZwz6lOhmduvONCBR" Name="Apply" Kind="InputPin" DefaultValue="False">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+          </Node>
+          <Node Bounds="297,313,54,19" Id="UQ38DzRlRPVLqYYThFVTno">
+            <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="OnOpen" />
+            </p:NodeReference>
+            <Pin Id="J1m53zUngtBLAyaG0TW6Ab" Name="Simulate" Kind="InputPin" />
+            <Pin Id="OeP33daUo1uQQoltgvrnDk" Name="Output" Kind="OutputPin" />
+          </Node>
+        </Canvas>
+        <Patch Id="ICjGmgYDSEZNxmCcwsEsDi" Name="Create" />
+        <Patch Id="PlTaWfyt1ptQF1EDuVQY0v" Name="Update" />
+        <!--
+
+    ************************  ************************
+
+-->
+        <ProcessDefinition Id="F3P53C8E1ojQGEjJ8iDqK6">
+          <Fragment Id="Gz2OKJY2kSlOFYTb9v7tmF" Patch="ICjGmgYDSEZNxmCcwsEsDi" Enabled="true" />
+          <Fragment Id="E6BhegqhH8HMt8YcS4iSAA" Patch="PlTaWfyt1ptQF1EDuVQY0v" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="E3RoyLVDVv6PnCIsDXVh4W" Ids="UOQKsOUIS0pMnSR6kUK60R,C4D9uwAnJ7YPYarFflmp8J" />
+        <Link Id="Jrw8gagZNpwNnGqGhLYwAl" Ids="OeP33daUo1uQQoltgvrnDk,Nkc0KCZwz6lOhmduvONCBR" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="QVrMUzvTuXELvLVztC6VGf" Location="VL.Skia" Version="2019.2.0-0125-g246fa2a747" />
+  <PlatformDependency Id="HfMadT3Ur9hMdiCbQUK6dT" Location="../../lib/SchemaIcon.dll" />
+</Document>

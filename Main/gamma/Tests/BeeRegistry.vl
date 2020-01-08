@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="A9wJhQB4wOZQchMjXMPv71" LanguageVersion="2019.2.0-0026-560cab28a5" Version="0.128">
+  <NugetDependency Id="VFuENR48UmAMjkjtEfRpy2" Location="VL.CoreLib" Version="2019.2.0-26" />
+  <Patch Id="UmotcyebODSMlccuMqeD6m">
+    <Canvas Id="ELv7MgveTrNPA9HkyLOg6j" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="DsmYNS6vAx6L7NxBqNbQmP">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="QDxRcHoSlIyLiSl4ZBi3oG">
+        <Canvas Id="ThVAZ7ahtM6NO9srKZVxaO" CanvasType="Group">
+          <Node Bounds="747,233,58,26" Id="JWpmEl9Jdk6QaDRB4RvPVx">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.BeeRegistry" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+              <CategoryReference Kind="ClassType" Name="BeeRegistry" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="ToxG2ROAqeVPgIN9cNZyE1" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="745,462,58,26" Id="SodtFqY96NhOgM1ptb7P3E">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.BeeRegistry" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="BeeRegistry" />
+              <Choice Kind="OperationCallFlag" Name="List" />
+            </p:NodeReference>
+            <Pin Id="E4OHCKG0I8aP89QAPmgmOF" Name="Input" Kind="StateInputPin" />
+            <Pin Id="RlEefPv8ImJNU1elK4LVBD" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="HHmpq6tYSuNOmO4nUkhKBP" Name="Keys" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Pwcwmwmti7EOk9ILEju9BG" Comment="Keys" Bounds="800,500,35,17" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="747,327,80,80" Id="N6ogOVRQgBTLX73NlD3vdz">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.BeeRegistry" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBee" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="GaHzOYjmufJOCGy1jGiaQe" Name="Input" Kind="StateInputPin" />
+            <Pin Id="D5GGzOJehRLMNr4aVhmtwK" Name="Key" Kind="InputPin" />
+            <Pin Id="Gz1zsVKB3xSPFGWche1ZDx" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="EdKTX6BBMttMGgq1k5zBoD" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="DBLEjhVW1mFMCdPJJmovrZ" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="I1Z1Oy81PA0LA4KvODrEDX" Bounds="769,378" />
+            </Patch>
+          </Node>
+          <Pad Id="VWrD8ZWnBoTPrgM5km8u1z" Comment="Key" Bounds="826,298,35,15" ShowValueBox="true" isIOBox="true" Value="Test">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="716,554,53,26" Id="ESnxN7IZ1N4MQDYIBapP2e">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Count" />
+              <CategoryReference Kind="RecordType" Name="Spread" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="R8oly8L8OXzLw6ZXN3kWEK" Name="Input" Kind="StateInputPin" />
+            <Pin Id="HJela7hGbaNMtoFWa373HU" Name="Count" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="716,621,45,19" Id="AXlQFdVFGBoN3ivExyGqtT">
+            <p:NodeReference LastCategoryFullName="System.Test" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Assert" />
+            </p:NodeReference>
+            <Pin Id="D3jDmXNoiEQLkHus9Rc8Kl" Name="Condition" Kind="InputPin" />
+            <Pin Id="IFIiWL7HVSCPsIJXFkz8b4" Name="Message" Kind="InputPin" DefaultValue="BeeRegistry count mismatch after registering a Bee">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+          </Node>
+          <Node Bounds="716,590,25,19" Id="ByGGvSpRlyILjM6xdb0fbh">
+            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="=" />
+            </p:NodeReference>
+            <Pin Id="ImzKvjDuzmgOUNySHseZuf" Name="Input" Kind="InputPin" />
+            <Pin Id="NFT9QmhJOStPREFUkWtZTk" Name="Input 2" Kind="InputPin" DefaultValue="1">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="APKn82sCXKJLGrfUNiIhLw" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="813,564" Id="NM9Ps15Zj6HOaI1SHj077L">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetSlice" />
+              <CategoryReference Kind="RecordType" Name="Spread" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="PlfcJvujC16PhgHYeHNuMz" Name="Input" Kind="StateInputPin" />
+            <Pin Id="P8Sjzii8ODRM9CnweRDkZN" Name="Default Value" Kind="InputPin" />
+            <Pin Id="NSIEyQDBk10LdOoYImW1zz" Name="Index" Kind="InputPin" />
+            <Pin Id="RchKq57532UQbMoYyD1LaU" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="819,617" Id="B7EZ3NtEIw9PM6pzN5Qr0j">
+            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="=" />
+            </p:NodeReference>
+            <Pin Id="HlE46XB38qtO6neORtDCCr" Name="Input" Kind="InputPin" />
+            <Pin Id="R6vJeY971jCMYPPdY2g9qz" Name="Input 2" Kind="InputPin" />
+            <Pin Id="ONCeDMFEBP3QAQNAYWYXJf" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="818,648,45,19" Id="JpqhzZRQsksNCJS4D77TsY">
+            <p:NodeReference LastCategoryFullName="System.Test" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Assert" />
+            </p:NodeReference>
+            <Pin Id="ByenARrVy6FN1Z3Vjbn284" Name="Condition" Kind="InputPin" />
+            <Pin Id="LqyVm19liLIOYNHRC8w67I" Name="Message" Kind="InputPin" DefaultValue="BeeRegistry Name mismatch">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+          </Node>
+        </Canvas>
+        <Patch Id="NQmAnU9u8f9M7UONAFLQRt" Name="Create" />
+        <Patch Id="TZLCMZ66kEWNGISfyyaE4G" Name="Update" />
+        <ProcessDefinition Id="LFddpuyS7spPlj4m5aK5tF">
+          <Fragment Id="VouYhe7YieTP2B05OeZf8H" Patch="NQmAnU9u8f9M7UONAFLQRt" Enabled="true" />
+          <Fragment Id="Ey2AJWS60TLOlXJeY2Y3X0" Patch="TZLCMZ66kEWNGISfyyaE4G" Enabled="true" />
+          <Fragment Id="UdHEo9uJKdaOiAPEdxOOi2" Patch="O1rg7Qil3j5MaRzP8kXkAa" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="LBFtwLn11fHPd1ON5J1LGg" Ids="HHmpq6tYSuNOmO4nUkhKBP,Pwcwmwmti7EOk9ILEju9BG" />
+        <Link Id="RTCHePRfejeLc0lDwZe6oN" Ids="ToxG2ROAqeVPgIN9cNZyE1,GaHzOYjmufJOCGy1jGiaQe" />
+        <Link Id="DBkPfVE4kCWO7fjN9qZWI9" Ids="I1Z1Oy81PA0LA4KvODrEDX,DBLEjhVW1mFMCdPJJmovrZ" IsHidden="true" />
+        <Link Id="SeJDkN086t4O7AFsc7wSJu" Ids="Gz1zsVKB3xSPFGWche1ZDx,E4OHCKG0I8aP89QAPmgmOF" />
+        <Link Id="JDUAIKF7OP1PycK0EgM2NO" Ids="VWrD8ZWnBoTPrgM5km8u1z,D5GGzOJehRLMNr4aVhmtwK" />
+        <Patch Id="O1rg7Qil3j5MaRzP8kXkAa" Name="List" />
+        <Link Id="LUA4S3SpHPKO9ynO10L1YY" Ids="HHmpq6tYSuNOmO4nUkhKBP,R8oly8L8OXzLw6ZXN3kWEK" />
+        <Link Id="E0X9NNGxqPGOMzdCjicM3S" Ids="HJela7hGbaNMtoFWa373HU,ImzKvjDuzmgOUNySHseZuf" />
+        <Link Id="D0DZ8I0I6P5PK52MNXGVse" Ids="APKn82sCXKJLGrfUNiIhLw,D3jDmXNoiEQLkHus9Rc8Kl" />
+        <Link Id="G388FGYMJ34MCo2CmYRZu5" Ids="Pwcwmwmti7EOk9ILEju9BG,PlfcJvujC16PhgHYeHNuMz" />
+        <Link Id="M3CuqtyG0CsLWOIm8tsXfr" Ids="RchKq57532UQbMoYyD1LaU,HlE46XB38qtO6neORtDCCr" />
+        <Link Id="NiSGJbgKAfwNDQDPedeiUR" Ids="VWrD8ZWnBoTPrgM5km8u1z,R6vJeY971jCMYPPdY2g9qz" />
+        <Link Id="TZgCvDHIkRQLDoCF0KLEze" Ids="ONCeDMFEBP3QAQNAYWYXJf,ByenARrVy6FN1Z3Vjbn284" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="FxbBD2NTPqmMRIHzKLjLRT" Location="VL.Skia" Version="2019.2.0-0026-g560cab28a5" />
+  <DocumentDependency Id="OMnvl1VyiDiQaDP5qZPgbO" Location="../../vl/VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="GDA8qz42PEdPDmSwQhpCNl" Location="../../vl/UI/Schema.UI.2019.2c.vl" />
+</Document>

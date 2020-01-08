@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="A9wJhQB4wOZQchMjXMPv71" LanguageVersion="2019.2.0-0026-560cab28a5" Version="0.128">
+  <NugetDependency Id="VFuENR48UmAMjkjtEfRpy2" Location="VL.CoreLib" Version="2019.2.0-26" />
+  <Patch Id="UmotcyebODSMlccuMqeD6m">
+    <Canvas Id="ELv7MgveTrNPA9HkyLOg6j" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="DsmYNS6vAx6L7NxBqNbQmP">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="QDxRcHoSlIyLiSl4ZBi3oG">
+        <Canvas Id="ThVAZ7ahtM6NO9srKZVxaO" CanvasType="Group">
+          <Node Bounds="423,365,85,19" Id="UptpDZPULbpMawYLJHpx8d">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="EvaluateNode" />
+            </p:NodeReference>
+            <Pin Id="UyWAjMlWeQSNXUmoTxmZnY" Name="Root Node" Kind="InputPin" />
+            <Pin Id="CDM7P5ULvCJPmbb0ZhBp1u" Name="Setup" Kind="InputPin" />
+            <Pin Id="UJ90hnxf8UCQDBSkF9F4xq" Name="Global" Kind="InputPin" />
+            <Pin Id="UHMObUsvnlzQchtLkCpb7v" Name="State" Kind="InputPin" />
+            <Pin Id="JBcp8Z4CZ6NOHsgipf7umr" Name="Previous Layer States" Kind="InputPin" />
+            <Pin Id="NxuTXz2aNPELckWHfT4tjB" Name="State" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="422,272,105,26" Id="DIOSsGU2ehHO1H30wiUVC8">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Node" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+              <CategoryReference Kind="ClassType" Name="Node" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="UTVXtIAFRitMbNKsZoXycH" Name="Bee" Kind="InputPin" />
+            <Pin Id="SerGFbL7dQ9LlfMvsLrBnQ" Name="Properties" Kind="InputPin" />
+            <Pin Id="Sv8N2FS6WqQMrxaDF4DA6C" Name="Name" Kind="InputPin" />
+            <Pin Id="PYqbze6vTeLNv1CcUDnRD1" Name="Children" Kind="InputPin" />
+            <Pin Id="PoUKh2aZ02LN4UJWSOXhfv" Name="Drivers" Kind="InputPin" />
+            <Pin Id="UgvhvOcoeHlL3n7L1r6wNJ" Name="Fold" Kind="InputPin" />
+            <Pin Id="CS9EbhHc4A2L4IWutrB16t" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="422,222,73,26" Id="IiMjuxRNCsMO11cMOK6tjW">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.PassthroughBee" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="PassthroughBee" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+            </p:NodeReference>
+            <Pin Id="Dl8wOZydu91QUK1qV2Eviy" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="421,411,78,26" Id="CKfyWTZCzgXMLxXEtjysbY">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.PropertyBank" LastSymbolSource="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetProperties" />
+              <CategoryReference Kind="ClassType" Name="PropertyBank" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="IXlcG1QLfZ5M49TnKdofv2" Name="Input" Kind="StateInputPin" />
+            <Pin Id="BlPSRZykIpXOwzPBA2vvSf" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="LsRqMRrcBS9LLVTDiVY77v" Name="Properties" Kind="OutputPin" />
+          </Node>
+          <Pad Id="U1xLK7yY4J1O2rKEtLeQL1" Comment="Properties" Bounds="494,470,353,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="JGlztWGgwddOKEIVLznt8O" Bounds="425,331" />
+        </Canvas>
+        <Patch Id="NQmAnU9u8f9M7UONAFLQRt" Name="Create" ParticipatingElements="DIOSsGU2ehHO1H30wiUVC8,IiMjuxRNCsMO11cMOK6tjW" />
+        <Patch Id="TZLCMZ66kEWNGISfyyaE4G" Name="Update" />
+        <ProcessDefinition Id="LFddpuyS7spPlj4m5aK5tF">
+          <Fragment Id="VouYhe7YieTP2B05OeZf8H" Patch="NQmAnU9u8f9M7UONAFLQRt" Enabled="true" />
+          <Fragment Id="Ey2AJWS60TLOlXJeY2Y3X0" Patch="TZLCMZ66kEWNGISfyyaE4G" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="IMR4epxegyvPCbvTcidZkw" Ids="CS9EbhHc4A2L4IWutrB16t,JGlztWGgwddOKEIVLznt8O" />
+        <Link Id="LT3VvdoO0gNLb8HXZ3RBrI" Ids="Dl8wOZydu91QUK1qV2Eviy,UTVXtIAFRitMbNKsZoXycH" />
+        <Link Id="PJ5bpdw4C5KPM5o1O3Qh6P" Ids="NxuTXz2aNPELckWHfT4tjB,IXlcG1QLfZ5M49TnKdofv2" />
+        <Link Id="JyXUlDZ9VJ5Oj0EnSm6aF2" Ids="LsRqMRrcBS9LLVTDiVY77v,U1xLK7yY4J1O2rKEtLeQL1" />
+        <Link Id="L5NkPXgIv1PK9tfeaLdt2d" Ids="JGlztWGgwddOKEIVLznt8O,UyWAjMlWeQSNXUmoTxmZnY" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="FxbBD2NTPqmMRIHzKLjLRT" Location="VL.Skia" Version="2019.2.0-0026-g560cab28a5" />
+  <DocumentDependency Id="OMnvl1VyiDiQaDP5qZPgbO" Location="../../vl/VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="GDA8qz42PEdPDmSwQhpCNl" Location="../../vl/UI/Schema.UI.2019.2c.vl" />
+</Document>
