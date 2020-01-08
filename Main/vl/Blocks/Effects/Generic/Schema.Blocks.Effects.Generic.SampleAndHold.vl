@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="OP8AxvRzHeVOqTOl5JfNZl" LanguageVersion="2019.2.0-0125-246fa2a747" Version="0.128">
+  <NugetDependency Id="INqpSsk6NEtLZ3C9KZp72c" Location="VL.CoreLib" Version="2019.2.0-0125-g246fa2a747" />
+  <Patch Id="V2VqazQNLeiNDyUcDGJZMS">
+    <Canvas Id="UOOml8HrTuBO6FF8usCDpX" DefaultCategory="Schema.Blocks.Effects.Generic" CanvasType="FullCategory">
+      <!--
+
+    ************************ SampleAndHoldEffect ************************
+
+-->
+      <Node Name="SampleAndHoldEffect" Bounds="240,163" Id="VOgEKd6UtPWQYEIqAt5XDI">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="ClassDefinition" Name="Class" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="VVVV.Schema" LastSymbolSource="VVVV.Schema.Core.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IBee" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="O8XlAmpKUMJNeREnXIwqYV">
+          <Canvas Id="Kn7mZTUTSOYLEr0fFBpugW" CanvasType="Group">
+            <ControlPoint Id="Fhpf3ssskrmQUAesYg5IM1" Bounds="464,176" />
+            <ControlPoint Id="MR2uCKdvcujOz8iBKIcUQl" Bounds="464,322" />
+            <ControlPoint Id="LJ7JscPYeGlOc5VUwn947F" Bounds="387,176" />
+            <ControlPoint Id="QUXQpUC6KIcMoyZLO4qWF1" Bounds="319,320" />
+            <Node Bounds="245,206,89,19" Id="MAEBWgoEFohQC0ZuHLXhxA">
+              <p:NodeReference LastCategoryFullName="Collections.Builder.DictionaryBuilder" LastSymbolSource="VL.Collections.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="CreateDefault" />
+                <CategoryReference Kind="ClassType" Name="DictionaryBuilder" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="LJeIhV7g4dQOCYut9A5eqD" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Node Bounds="245,270,77,26" Id="AuyRfCCgk4LLe84SWfKy10">
+              <p:NodeReference LastCategoryFullName="Collections.Builder.DictionaryBuilder" LastSymbolSource="VL.Collections.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="ToImmutable" />
+                <CategoryReference Kind="ClassType" Name="DictionaryBuilder" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="TD3ztcd3evcPnQ3o1wNfRl" Name="Input" Kind="StateInputPin" />
+              <Pin Id="EznVWADcB5pNQZA0lKiCkq" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="MLnxPqulvsxPCVmAnicULM" Name="Result" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="462,207,45,19" Id="JG3eLrsliLfO5bDXjg4tVJ">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.PropertyBank" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="Merge" />
+                <CategoryReference Kind="ClassType" Name="PropertyBank" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="A7pmQ5WWHOwLvD86i4E4hN" Name="Input" Kind="InputPin" />
+              <Pin Id="QJVavqRqhjIO9XXhJQimD2" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="462,286,36,19" Id="H0Fb4SOUoNIO3MAx3Oib9z">
+              <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="S+H" />
+                <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="BRYfdgp83IJOHnRXwomQFr" Name="Value" Kind="InputPin" />
+              <Pin Id="VgB1zprw9ADO3P6cozykNU" Name="Sample" Kind="InputPin" />
+              <Pin Id="JeXvwap086ZMYRSpCvV9Gs" Name="Value" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="245,237,145,19" Id="GIogEwqG6tNLcvT50kQEyX">
+              <p:NodeReference LastCategoryFullName="Schema.PropertyDefinition.Helpers" LastSymbolSource="Schema.PropertyDefinition.Helpers.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="Boolean" />
+              </p:NodeReference>
+              <Pin Id="Knsx4voAmW1L8zyp62uyJk" Name="Input" Kind="InputPin" />
+              <Pin Id="FPqziFZYB2COX9RPpaIuMj" Name="Key" Kind="InputPin" DefaultValue="Sample">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="MoHZdXUcKYROxM7JO0nSwE" Name="Default" Kind="InputPin" />
+              <Pin Id="H07RcX70A4JPmgh4F45GQf" Name="Between Spread" Kind="InputPin" />
+              <Pin Id="D9FnQ4O4PvIPeqB5nqIQnr" Name="Children Spread" Kind="InputPin" />
+              <Pin Id="Dn6PFtCt0jnQOvJ8bXnKq7" Name="Type" Kind="InputPin" />
+              <Pin Id="AlAQDpM8FPWPvYsvXaye2b" Name="Tooltip" Kind="InputPin" />
+              <Pin Id="DJcnOQkO9WsNci2ZcSn4SI" Name="Properties" Kind="InputPin" />
+              <Pin Id="CdIdYvxPlasMFKrpowboyg" Name="Properties" Kind="OutputPin" />
+              <Pin Id="G5dt7Ac0895O1NxoY3qmDr" Name="Output" Kind="OutputPin" />
+              <Pin Id="TQR0o9gvVxvLMQTzboIhgb" Name="Result" Kind="OutputPin" />
+            </Node>
+          </Canvas>
+          <Patch Id="Afcg82ldhQ7LeqnxazjFql" Name="Create" />
+          <ProcessDefinition Id="NUe3FZq4N0DPWJmbW495Gy" IsHidden="true">
+            <Fragment Id="Q6ORi7Mi2hbP91EtMvq4Bo" Patch="Afcg82ldhQ7LeqnxazjFql" Enabled="true" />
+            <Fragment Id="H9crJjgNDNXMlgpVK7fjZM" Patch="MfXloNKNFEdPNw5rJRlloK" Enabled="true" />
+            <Fragment Id="RudyRaOkEF6N0qob03EFwF" Patch="O7yP0mthJbLPfgUc7FZVyT" Enabled="true" />
+            <Fragment Id="BWY2IbagYbkMs4PWUN8YwT" Patch="IrpIyOQag9MQSRsjlKrEFl" Enabled="true" />
+            <Fragment Id="VWvBpDtTNOWOrmj1eNkMoe" Patch="HFujskCorsSPUbPM44LIv6" Enabled="true" />
+          </ProcessDefinition>
+          <Patch Id="MfXloNKNFEdPNw5rJRlloK" Name="Update">
+            <Pin Id="B97QeE0p0KQMCDyGkiBbyw" Name="Setup" Kind="InputPin" />
+            <Pin Id="P9KgXVAYGsvLfMBPTRv9i6" Name="State" Kind="InputPin" />
+            <Pin Id="IZjuBLq9mIiNwir4o5EBqU" Name="Previous Layer States" Kind="InputPin" />
+            <Pin Id="VOw6gTkuJ0XNPxwYtOxxcq" Name="Global" Kind="InputPin" />
+            <Pin Id="DJrr9Aax9WrOgQ1YR3Vyih" Name="Properties" Kind="InputPin" />
+            <Pin Id="BiZGr45cPfgNLy3WpA2IGZ" Name="New State" Kind="OutputPin" />
+            <Pin Id="LcvksDYab36Misv5Viz5Ci" Name="Node Operation" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="O7yP0mthJbLPfgUc7FZVyT" Name="Provides">
+            <Pin Id="L5Dg8xbNnCENmSfY2WCSaB" Name="Color" Kind="OutputPin" />
+            <Pin Id="ItbO2J5ZrWfQMXcMXbkqqK" Name="Pick" Kind="OutputPin" />
+            <Pin Id="Tqff0nUdo8rOi6Xd6EtVSJ" Name="Gate" Kind="OutputPin" />
+            <Pin Id="GBdSh2k3YL8QR6gocuTsaZ" Name="Own Color" Kind="OutputPin" />
+            <Pin Id="Q0ZHreRi45dPvC6B7rr768" Name="Text" Kind="OutputPin" />
+            <Pin Id="PniGISh0izzLYtPUPrDZqX" Name="Progress" Kind="OutputPin" />
+            <Pin Id="BD24687fMR9Lgn5RiM3W6u" Name="Levels" Kind="OutputPin" />
+            <Pin Id="L6M895kf2hGQExXfClbdMX" Name="Active Levels" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="IrpIyOQag9MQSRsjlKrEFl" Name="GetPropertyDefinitions">
+            <Pin Id="MvkyQMy8U2gN4XlvXInCy9" MergeId="735802" Name="Properties" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="HFujskCorsSPUbPM44LIv6" Name="GetProgress">
+            <Pin Id="OszfI6JGYuqOOtGVAfCvHw" Name="Progress" Kind="OutputPin" />
+          </Patch>
+          <Link Id="A5wffol2ncKOXriTNP5PMC" Ids="P9KgXVAYGsvLfMBPTRv9i6,Fhpf3ssskrmQUAesYg5IM1" IsHidden="true" />
+          <Link Id="KVurw71UDOKLJSinbcuHS0" Ids="DJrr9Aax9WrOgQ1YR3Vyih,LJ7JscPYeGlOc5VUwn947F" IsHidden="true" />
+          <Link Id="JBYKDN2l3hRMRf9pEG3iQ4" Ids="QUXQpUC6KIcMoyZLO4qWF1,MvkyQMy8U2gN4XlvXInCy9" IsHidden="true" />
+          <Link Id="SEq3NytdKThK93k4VvU5OQ" Ids="MLnxPqulvsxPCVmAnicULM,QUXQpUC6KIcMoyZLO4qWF1" />
+          <Link Id="VXkJ2t0edp7QSN0QdFfAhO" Ids="Fhpf3ssskrmQUAesYg5IM1,A7pmQ5WWHOwLvD86i4E4hN" />
+          <Link Id="EHl2cU9RWI9QWjtAQfBHVL" Ids="MR2uCKdvcujOz8iBKIcUQl,BiZGr45cPfgNLy3WpA2IGZ" IsHidden="true" />
+          <Link Id="ClP5DsUVPoELR9AXd9mfXo" Ids="QJVavqRqhjIO9XXhJQimD2,BRYfdgp83IJOHnRXwomQFr" />
+          <Link Id="SBfNVsd4drXPcpDGHkK0t5" Ids="LJeIhV7g4dQOCYut9A5eqD,Knsx4voAmW1L8zyp62uyJk" />
+          <Link Id="KvLdIesys0JN5b2eioM3Dd" Ids="CdIdYvxPlasMFKrpowboyg,TD3ztcd3evcPnQ3o1wNfRl" />
+          <Link Id="Qa8OURpwVdEMp5XRQ2I0mX" Ids="TQR0o9gvVxvLMQTzboIhgb,VgB1zprw9ADO3P6cozykNU" />
+          <Link Id="O2oa2JmJ6k2Prd2fKkk328" Ids="LJ7JscPYeGlOc5VUwn947F,DJcnOQkO9WsNci2ZcSn4SI" />
+          <Link Id="L8X4dfAfaKMPsSg2TRgoKS" Ids="JeXvwap086ZMYRSpCvV9Gs,MR2uCKdvcujOz8iBKIcUQl" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="CbzLOdv9vRBLeBjxl8q4JK">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="RwlzD79FNGVPobpNiiB4ip">
+        <Canvas Id="NH0t7X3n8LcLY9CrpMQMXD" CanvasType="Group" />
+        <Patch Id="RrYbsfcpk8TMsSvhRgPGzZ" Name="Create" />
+        <Patch Id="AyIqb24qne0PJdYXJR638p" Name="Update" />
+        <ProcessDefinition Id="Rc6Gp8PuZCnM7hlkSgFgY5">
+          <Fragment Id="BViO65jrBMcQHcor2pM8Jv" Patch="RrYbsfcpk8TMsSvhRgPGzZ" Enabled="true" />
+          <Fragment Id="KHwux4FxsGcONBvdYK5bmW" Patch="AyIqb24qne0PJdYXJR638p" Enabled="true" />
+          <Fragment Id="Bs7tczOpGeyNVKrqeoaTvE" Patch="Co1D9NDwLV2L4UYRAFzekL" Enabled="true" />
+          <Fragment Id="QQq1iZSE18NPOJ7VQCznjH" Patch="Kcu5Oo2kGxNNVP7nS4AS6M" Enabled="true" />
+          <Fragment Id="S0Sf4sWhZW6PagxeuVguc6" Patch="A6YIi9spVbZPEvuvQM0dk5" Enabled="true" />
+        </ProcessDefinition>
+        <Patch Id="Co1D9NDwLV2L4UYRAFzekL" Name="Provides" />
+        <Patch Id="Kcu5Oo2kGxNNVP7nS4AS6M" Name="GetPropertyDefinitions" />
+        <Patch Id="A6YIi9spVbZPEvuvQM0dk5" Name="GetProgress" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="NNtUUV9Kt8zQb3iVa85PaX" Location="VL.Skia" Version="2019.2.0-0125-g246fa2a747" />
+  <DocumentDependency Id="AFQ2QacVINqOXmXZdcYeh6" Location="../../../VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="ThgZBHMhYqgMQ6A7YPBTGx" Location="../../../PropertyDefinition/Schema.PropertyDefinition.Helpers.vl" />
+</Document>
