@@ -377,18 +377,39 @@
                 </Node>
               </Patch>
             </Node>
-            <Node Bounds="1295,-11,109,80" Id="F2bMtJhpcICLOF132iialN">
+            <Node Bounds="1300,-35,83,140" Id="F2bMtJhpcICLOF132iialN">
               <p:NodeReference>
                 <Choice Kind="ApplicationRegion" Name="Delegate" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:NodeReference>
               <Pin Id="LEXJmv0SAzcO5Un5MMVP4B" Name="Functionality" Kind="OutputPin" />
               <Patch Id="DSTXvEkt7ToPxJNqHhJL44" ManuallySortedPins="true">
-                <Node Bounds="1307,21,16,19" Id="N23pCZXVflsOYpvQdElcXM">
-                  <p:NodeReference LastCategoryFullName="Schema.UI.Actions" LastSymbolSource="Schema.UI.Actions.vl">
+                <Node Bounds="1313,59,51,26" Id="HaU6vQafPGuMMqzQ5iTYOd">
+                  <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="LaunchSettings" />
+                    <Choice Kind="OperationCallFlag" Name="SetData" />
                   </p:NodeReference>
+                  <Pin Id="RBpvwXxHpEvNwoYIhOwtJg" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Lxkp9pKKwfUMXjRSaCbvey" Name="Data" Kind="InputPin" />
+                  <Pin Id="LQBrFyp63RQMgIngAHx0TF" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="1312,-12,53,26" Id="Ad7GVrz2BcfOkv95XOwpko">
+                  <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="Data" />
+                    <CategoryReference Kind="ClassType" Name="Reference" NeedsToBeDirectParent="true" />
+                  </p:NodeReference>
+                  <Pin Id="BglhCbEqztLPXxAmBNjwqu" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="R6nqyfpt6nkMloo0EBvcPd" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="CO3wlVX8mOcPuPveEtay2Y" Name="Data" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="1334,24,37,19" Id="E2PAHAYi4ZoPLHchEFO0gF">
+                  <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="NOT" />
+                  </p:NodeReference>
+                  <Pin Id="B3FWReUjzokPfQRSaawJc9" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Pzg3wQ5iEuaPknlgxHWzpS" Name="Output" Kind="StateOutputPin" />
                 </Node>
               </Patch>
             </Node>
@@ -440,6 +461,7 @@
               <Pin Id="DAkBBckulfiLU8WwNq4GQH" Name="Input" Kind="InputPin" />
               <Pin Id="Vs3LutN7KPnQdlVBQaEA7s" Name="Input 2" Kind="InputPin" />
               <Pin Id="QByRqieT8yxQNmJ2818KGx" Name="Output" Kind="OutputPin" />
+              <Pin Id="NZ0xHuZRnyCNmRI9m7eW44" Name="Input 3" Kind="InputPin" />
             </Node>
             <Node Bounds="580,216,81,19" Id="OXr2sqm3leEOpLEQ8nyY7O">
               <p:NodeReference LastCategoryFullName="IO.Keyboard" LastSymbolSource="CoreLibBasics.vl">
@@ -450,16 +472,51 @@
               <Pin Id="O28TVIp1E8MPTXQsyOaZTq" Name="Pressed Keys" Kind="OutputPin" />
             </Node>
             <Pad Id="HHOGtPnX7qZMrvo3X409BG" Comment="Pressed Keys" Bounds="597,301,90,111" ShowValueBox="true" isIOBox="true" />
+            <Pad Id="LjbBBm6wef1LlgHna9LlGe" Bounds="1265,-199,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Node Bounds="1236,-161,51,26" Id="HXX96qDQ3xiPKuH9GFYPqW">
+              <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="ClassType" Name="Reference" />
+                <Choice Kind="OperationCallFlag" Name="Create" />
+              </p:NodeReference>
+              <Pin Id="TlqOpNKQtgZLFgJn1dQ5Ke" Name="Data" Kind="InputPin" />
+              <Pin Id="JXLkY2BC7VAOT6f1wpDNLv" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Pad Id="Metx9ye3FnZNbWbT5MK80f" SlotId="NK98hX6KQNtOGQ1PxUKrhg" Bounds="1239,-113" />
+            <Node Bounds="554,858,114,19" Id="EcsKafPYkL4PjRtcobNGri">
+              <p:NodeReference LastCategoryFullName="Schema.UI.PluginSelector" LastSymbolSource="Schema.UI.PluginSelector.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="PluginSelectorOverlay" />
+              </p:NodeReference>
+              <Pin Id="MB4FE5ipq3SMsqEVVQ49T1" Name="Input" Kind="InputPin" />
+              <Pin Id="E6ZqMl0zqfSQdZkKYdo6Di" Name="Enabled" Kind="InputPin" />
+              <Pin Id="AIjCqJT9A0NLlCGxMK18Pn" Name="Output" Kind="OutputPin" />
+              <Pin Id="JQvlJ7OqR18QS3R9tSFywn" Name="Layer" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="589,800,51,26" Id="MzMq16gtmU6MowfUI9g0fz">
+              <p:NodeReference LastCategoryFullName="Primitive.Reference" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="Data" />
+                <CategoryReference Kind="ClassType" Name="Reference" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="R7hO9MYAzBEQFUO1qmvGDB" Name="Input" Kind="StateInputPin" />
+              <Pin Id="NHfsdwIzwaOPTKBc37xYM6" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="HPyZQMpvFQ8O308YDiRksQ" Name="Data" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="Cz1c75TnACzMAtzHrjKjEQ" Bounds="554,828" />
+            <ControlPoint Id="Ur5modJIiARO1pbn86ZJfm" Bounds="554,907" />
+            <Pad Id="JBEvFcAOGN0OsNRKwFUjuB" Comment="Data" Bounds="892,912,35,35" ShowValueBox="true" isIOBox="true" />
           </Canvas>
-          <Patch Id="CK6WR2hCst3Nz69h8IUqlM" Name="Create" />
+          <Patch Id="CK6WR2hCst3Nz69h8IUqlM" Name="Create" ParticipatingElements="HXX96qDQ3xiPKuH9GFYPqW" />
           <Patch Id="BSlovr4e7J5QLAZcMecHlI" Name="Update">
-            <Pin Id="PvvmPHaF6IfO3A5RpXnybv" Name="Output" Kind="OutputPin" Bounds="744,458" />
+            <Pin Id="PvvmPHaF6IfO3A5RpXnybv" Name="Layer" Kind="OutputPin" Bounds="744,458" />
+            <Pin Id="Sa5lI3ydmovLFJhN6x2Dy7" Name="Input" Kind="InputPin" />
+            <Pin Id="QAHLDJdvXScOenVN6jCTfy" Name="Output" Kind="OutputPin" />
           </Patch>
-          <!--
-
-    ************************  ************************
-
--->
           <ProcessDefinition Id="M2N0VsoP9OtMLaIwmfmav3">
             <Fragment Id="SXyTmNbzPO2ODC6AhiTk63" Patch="CK6WR2hCst3Nz69h8IUqlM" Enabled="true" />
             <Fragment Id="S9yx7cqH22xNtjb87N42tD" Patch="BSlovr4e7J5QLAZcMecHlI" Enabled="true" />
@@ -513,6 +570,21 @@
           <Link Id="DnEOXOoSE60PlJVmtPvbrk" Ids="O28TVIp1E8MPTXQsyOaZTq,HHOGtPnX7qZMrvo3X409BG" />
           <Link Id="RSWfy5rYAORPwJJf8shSGE" Ids="Bul2W7A5j7fLIIcCrvuUUk,S2y1m9LxAkOMXTn4Hkj3HS" />
           <Link Id="JNCvImnIYlGL67kOv0kF10" Ids="Kmq8eNYIyNyNVjtYv6yBby,EAZ0YDsGB6MQKL6jWWdk5b" />
+          <Link Id="RJLXCFXzYjvQRef4IymDue" Ids="LjbBBm6wef1LlgHna9LlGe,TlqOpNKQtgZLFgJn1dQ5Ke" />
+          <Link Id="Ksfey4LUHwBLP3P9YFztCW" Ids="Pzg3wQ5iEuaPknlgxHWzpS,Lxkp9pKKwfUMXjRSaCbvey" />
+          <Link Id="KLnj23pqpZ6Lgv5xjGb2VB" Ids="CO3wlVX8mOcPuPveEtay2Y,B3FWReUjzokPfQRSaawJc9" />
+          <Link Id="OVuqbFT16XkPELHQ620Loi" Ids="R6nqyfpt6nkMloo0EBvcPd,RBpvwXxHpEvNwoYIhOwtJg" />
+          <Slot Id="NK98hX6KQNtOGQ1PxUKrhg" Name="Settings Open" />
+          <Link Id="GPUoyG6O3zaMZOr6ui81tD" Ids="JXLkY2BC7VAOT6f1wpDNLv,Metx9ye3FnZNbWbT5MK80f" />
+          <Link Id="G0l5WMRNe0KMxMICy5f1Tp" Ids="Metx9ye3FnZNbWbT5MK80f,BglhCbEqztLPXxAmBNjwqu" />
+          <Link Id="NVs7WvbsYi4QUq9PpyHjw9" Ids="Metx9ye3FnZNbWbT5MK80f,R7hO9MYAzBEQFUO1qmvGDB" />
+          <Link Id="PaJovVDJcDRMy2WNULFI6F" Ids="HPyZQMpvFQ8O308YDiRksQ,E6ZqMl0zqfSQdZkKYdo6Di" />
+          <Link Id="RxiQNkk35IpLifKbaTSYog" Ids="JQvlJ7OqR18QS3R9tSFywn,NZ0xHuZRnyCNmRI9m7eW44" />
+          <Link Id="Aq84aLhMFihLuIQRut7CUp" Ids="Sa5lI3ydmovLFJhN6x2Dy7,Cz1c75TnACzMAtzHrjKjEQ" IsHidden="true" />
+          <Link Id="O2XwM3kmHQhMqbNg8ltFQn" Ids="Cz1c75TnACzMAtzHrjKjEQ,MB4FE5ipq3SMsqEVVQ49T1" />
+          <Link Id="Ap4TsLBWx99LXXKBaqxf5N" Ids="Ur5modJIiARO1pbn86ZJfm,QAHLDJdvXScOenVN6jCTfy" IsHidden="true" />
+          <Link Id="D3Ra0vlvhskL8GwkMOlfND" Ids="AIjCqJT9A0NLlCGxMK18Pn,Ur5modJIiARO1pbn86ZJfm" />
+          <Link Id="C5foeM6RIZENQ0XBw1fu16" Ids="HPyZQMpvFQ8O308YDiRksQ,JBEvFcAOGN0OsNRKwFUjuB" />
         </Patch>
       </Node>
     </Canvas>
@@ -530,11 +602,6 @@
         <Canvas Id="KAi4x2A7s9wMBH8bELNL74" CanvasType="Group" />
         <Patch Id="D760OpP5QOVO1EbwDSNS76" Name="Create" />
         <Patch Id="JeZXmBP5BuTOy3rtE9P3V9" Name="Update" />
-        <!--
-
-    ************************  ************************
-
--->
         <ProcessDefinition Id="Qk3k449aqO1NvG9SvGT3lE">
           <Fragment Id="NCIuDGOQaKVNRXgMINRafR" Patch="D760OpP5QOVO1EbwDSNS76" Enabled="true" />
           <Fragment Id="GOYDfAIBOmjM6qRpn6hCGq" Patch="JeZXmBP5BuTOy3rtE9P3V9" Enabled="true" />
@@ -545,4 +612,5 @@
   <NugetDependency Id="FvyCBWxKuJoOOhidQqSfUI" Location="VL.Skia" Version="2020.1.0" />
   <DocumentDependency Id="R3jPBYcQYUTMpNoTSZXzb9" Location="./Icons/Schema.UI.Icons.vl" />
   <DocumentDependency Id="G3IS1aeKUFuLMuz7aAMANi" Location="./Schema.UI.Actions.vl" />
+  <DocumentDependency Id="FUImoqebp09Oqt0yWXh3Gu" Location="./Schema.UI.PluginSelector.vl" />
 </Document>
