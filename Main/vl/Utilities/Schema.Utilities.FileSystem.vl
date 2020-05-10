@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="R7VFolrK5NDMn1hHcdeqtw" LanguageVersion="2020.1.0.53" Version="0.128">
+  <NugetDependency Id="LBVQBQjo4ybL5JDOTGld65" Location="VL.CoreLib" Version="2020.1.0" />
+  <Patch Id="C9OwtwNnGR1Mq7D9AMKIDR">
+    <Canvas Id="Pag6QXw8UweNvfXyhTj2Y5" DefaultCategory="Schema.Utilities.FileSystem" CanvasType="FullCategory">
+      <!--
+
+    ************************ FileSystemWatcher ************************
+
+-->
+      <Node Name="FileSystemWatcher" Bounds="651,338" Id="Nj9QgM1M9xMPN4l2AK06kv">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="Ttc3sWH3VKKLYBJyInjjRT">
+          <Canvas Id="DLbY4EWCAnEMK2tsIxqwCP" CanvasType="Group">
+            <Node Bounds="712,487,82,26" Id="SsH11JPKDlKL9OyLDt4Dp0">
+              <p:NodeReference LastCategoryFullName="System.IO.FileSystemWatcher" LastSymbolSource="System.IO.FileSystem.Watcher.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="System" />
+                <CategoryReference Kind="AssemblyCategory" Name="IO" />
+                <CategoryReference Kind="AssemblyCategory" Name="FileSystemWatcher" />
+                <Choice Kind="OperationCallFlag" Name="Changed" />
+              </p:NodeReference>
+              <Pin Id="Ob6D2KIdtRaOlpG4QRu63x" Name="Input" Kind="StateInputPin" />
+              <Pin Id="NLe2E01hSRgNjvBTSrNvlh" Name="Result" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="667,561,65,19" Id="OuKY33mBI5nPyNBlntCSSK">
+              <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+              </p:NodeReference>
+              <Pin Id="Fai48zGChUDOWADUPCVpll" Name="Initial Result" Kind="InputPin" />
+              <Pin Id="AnDPTi3KFtxPdwwFrFXIwd" Name="Async Notifications" Kind="InputPin" />
+              <Pin Id="LGnfumERsjtM6BakgYeLfs" Name="Reset" Kind="InputPin" />
+              <Pin Id="HEhfjfCVGqzOsfoeDTABTo" Name="Value" Kind="OutputPin" />
+              <Pin Id="Rl7QoTlgSlcPuGW59mfKle" Name="On Data" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="697,525,56,19" Id="MFHlFw7uQQtMu8XC9jKbmj">
+              <p:NodeReference LastCategoryFullName="Schema.Utilities.Reactive" LastSymbolSource="Schema.Utilities.Reactive.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="Throttle (Reactive Seconds)" />
+              </p:NodeReference>
+              <Pin Id="Rq15O7dveP4L4NQCUQ4XyE" Name="Input" Kind="StateInputPin" />
+              <Pin Id="CwGexS4YrolPS989AdzYry" Name="Seconds" Kind="InputPin" />
+              <Pin Id="SwEYj539g0DL42sFDwvcuI" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <ControlPoint Id="PkCsH7TUH2gNqBZaXYTESO" Bounds="730,619" />
+            <ControlPoint Id="OV1BQPnd1yrNkKrHU6dN9T" Bounds="697,244" />
+            <Node Bounds="683,279,181,184" Id="VkQFxVoz1F5Pg5KFH9FVVp">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+              </p:NodeReference>
+              <Pin Id="Ept7UDKFDG0LKtAHGfrUR8" Name="Force" Kind="InputPin" />
+              <Pin Id="D60KNXZHEi9NB4c3ugJN6K" Name="Dispose Cached Outputs" Kind="InputPin" DefaultValue="True">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="UiTZ7EQSjjLNXBG0j3n5MG" Name="Has Changed" Kind="OutputPin" />
+              <Patch Id="N7gBvNwwJpYNQCpvlvam9r" ManuallySortedPins="true">
+                <Patch Id="OwF0p2jkwD4OCdypbDrSYn" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="N08NcLqZHdrPVlwYpYWugm" Name="Then" ParticipatingElements="EROsPv2uwb1Pmdg7HK8Jta,NHRNQapKux2Ngs6Eb8Tvin,Oj37QjJ9x8yPmY5wIY4GtF,KtCYCZ9A2JWLmMdfYEadEF,NiYnjQ0JOcSOFJ0hiCwmy2" ManuallySortedPins="true" />
+                <Node Bounds="703,345,82,26" Id="EROsPv2uwb1Pmdg7HK8Jta">
+                  <p:NodeReference LastCategoryFullName="System.IO.FileSystemWatcher" LastSymbolSource="System.IO.FileSystem.Watcher.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="FileSystemWatcher" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                    <PinReference Kind="InputPin" Name="Path" />
+                    <PinReference Kind="InputPin" Name="Filter" />
+                  </p:NodeReference>
+                  <Pin Id="BVk3yfkGOUMLosHD5WGHdD" Name="Path" Kind="InputPin" />
+                  <Pin Id="ALt2pMBlqc0LWPfvMcmrbb" Name="Filter" Kind="InputPin" DefaultValue="*.*">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="TLUmRhuBsO0PMHbdRS5TEA" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="703,317,57,19" Id="NHRNQapKux2Ngs6Eb8Tvin">
+                  <p:NodeReference LastCategoryFullName="IO.Path" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="RecordType" Name="Path" />
+                    <Choice Kind="OperationCallFlag" Name="Filename (Split)" />
+                  </p:NodeReference>
+                  <Pin Id="QEEnqZz9bPTMEfV95zZ0ld" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="KuSp3lHyGC6NIBfapNFwBk" Name="Directory" Kind="OutputPin" />
+                  <Pin Id="Iys1VigGP0lNGCKmZVVeAL" Name="Filename" Kind="OutputPin" />
+                  <Pin Id="CYLcfdYcRZ1O7UBMPRKLho" Name="Extension" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="703,416,122,26" Id="Oj37QjJ9x8yPmY5wIY4GtF">
+                  <p:NodeReference LastCategoryFullName="System.IO.FileSystemWatcher" LastSymbolSource="System.IO.FileSystem.Watcher.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="SetEnableRaisingEvents" />
+                  </p:NodeReference>
+                  <Pin Id="BqtjEfXThmbLO3fcdSlh3R" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="A96vpIzxR4NQL7R7ri7EjN" Name="Value" Kind="InputPin" DefaultValue="True">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                      <Choice Kind="TypeFlag" Name="Boolean" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="Nmssywyq5ldPYKoyIyXAnO" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="703,382,82,26" Id="KtCYCZ9A2JWLmMdfYEadEF">
+                  <p:NodeReference LastCategoryFullName="System.IO.FileSystemWatcher" LastSymbolSource="System.IO.FileSystem.Watcher.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="SetNotifyFilter" />
+                  </p:NodeReference>
+                  <Pin Id="FsLRJIPkcBFMTiZXArlaAH" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="NBxnydtkGIyL7lysiFgfZI" Name="Value" Kind="InputPin" DefaultValue="LastWrite">
+                    <p:TypeAnnotation LastCategoryFullName="System.IO" LastSymbolSource="System.dll">
+                      <Choice Kind="TypeFlag" Name="NotifyFilters" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="CjjXUrlW6O4MGdg7L6JJnp" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="787,353,65,19" Id="NiYnjQ0JOcSOFJ0hiCwmy2">
+                  <p:NodeReference LastCategoryFullName="System.IO.NotifyFilters" LastSymbolSource="System.IO.FileSystem.Watcher.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="NotifyFilters" />
+                    <Choice Kind="OperationCallFlag" Name="|" />
+                  </p:NodeReference>
+                  <Pin Id="DtPhaisQRUyLtZ6oDzGodj" Name="Input" Kind="InputPin" DefaultValue="LastAccess">
+                    <p:TypeAnnotation LastCategoryFullName="System.IO" LastSymbolSource="System.dll">
+                      <Choice Kind="TypeFlag" Name="NotifyFilters" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="HtqccpVPxLdNT4ouNRcG8p" Name="Input 2" Kind="InputPin" DefaultValue="LastWrite">
+                    <p:TypeAnnotation LastCategoryFullName="System.IO" LastSymbolSource="System.dll">
+                      <Choice Kind="TypeFlag" Name="NotifyFilters" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="UQypiLZzhuCQNJiEFl0Q8D" Name="Input 3" Kind="InputPin" DefaultValue="FileName">
+                    <p:TypeAnnotation LastCategoryFullName="System.IO" LastSymbolSource="System.dll">
+                      <Choice Kind="TypeFlag" Name="NotifyFilters" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="UbXT5URtIZqMXqOUiCkh3s" Name="Input 4" Kind="InputPin" DefaultValue="Size">
+                    <p:TypeAnnotation LastCategoryFullName="System.IO" LastSymbolSource="System.dll">
+                      <Choice Kind="TypeFlag" Name="NotifyFilters" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="ItzYmHIT4giPHdjsRl4JLp" Name="Output" Kind="OutputPin" />
+                </Node>
+              </Patch>
+              <ControlPoint Id="P0lr3EH7yNDLeVtcVjA532" Bounds="695,285" Alignment="Top" />
+              <ControlPoint Id="LXw8L3BfFiDP4K1emiOLwy" Bounds="715,458" Alignment="Bottom" />
+            </Node>
+          </Canvas>
+          <Patch Id="QH4dRVlTd1hPKEPOIl1inQ" Name="Create" />
+          <Patch Id="RiVwn4k21VONp0ThRYfbZk" Name="Update">
+            <Pin Id="RuFvD5xX0pXPEdboyEOkQ1" Name="Changed" Kind="OutputPin" Bounds="712,641" />
+            <Pin Id="NOrIGrmEdzYMzZwdeWwzzY" Name="Input" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="HcBfJL8bRoQOO6pgdD9fpj">
+            <Fragment Id="B7c2aNpH7uELUj7KifAB54" Patch="QH4dRVlTd1hPKEPOIl1inQ" Enabled="true" />
+            <Fragment Id="QTZmE47kVzPQWpSXUx98tI" Patch="RiVwn4k21VONp0ThRYfbZk" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="OQ5F1vzOdqBOU9JlGY1CAc" Ids="NLe2E01hSRgNjvBTSrNvlh,Rq15O7dveP4L4NQCUQ4XyE" />
+          <Link Id="CbND7HgaEfgPG6HBZcrSGb" Ids="SwEYj539g0DL42sFDwvcuI,AnDPTi3KFtxPdwwFrFXIwd" />
+          <Link Id="JWgIVeP2m5oLonLVNCrInZ" Ids="Rl7QoTlgSlcPuGW59mfKle,PkCsH7TUH2gNqBZaXYTESO" />
+          <Link Id="ImcLOgwKDneMUUx85vnVcu" Ids="PkCsH7TUH2gNqBZaXYTESO,RuFvD5xX0pXPEdboyEOkQ1" IsHidden="true" />
+          <Link Id="I3suHPdOeCVOKSvn9PZpRt" Ids="NOrIGrmEdzYMzZwdeWwzzY,OV1BQPnd1yrNkKrHU6dN9T" IsHidden="true" />
+          <Link Id="MHG07FFJEQqQJmN8qPCa57" Ids="OV1BQPnd1yrNkKrHU6dN9T,P0lr3EH7yNDLeVtcVjA532" />
+          <Link Id="FcSfcvmVG5RQNpg5sBwqxT" Ids="KuSp3lHyGC6NIBfapNFwBk,BVk3yfkGOUMLosHD5WGHdD" />
+          <Link Id="AtHOQXJhehvLUF3TmjV6Wr" Ids="TLUmRhuBsO0PMHbdRS5TEA,FsLRJIPkcBFMTiZXArlaAH" />
+          <Link Id="Oan8xGlEArtMhYtBsKKQZV" Ids="CjjXUrlW6O4MGdg7L6JJnp,BqtjEfXThmbLO3fcdSlh3R" />
+          <Link Id="PV0rWBhkzPGNCyTvNBj7n8" Ids="ItzYmHIT4giPHdjsRl4JLp,NBxnydtkGIyL7lysiFgfZI" />
+          <Link Id="VYZkvWkfXTFO0eC9DMpaMW" Ids="P0lr3EH7yNDLeVtcVjA532,QEEnqZz9bPTMEfV95zZ0ld" />
+          <Link Id="VgGAwxzzrl1NXKOMKOZ7dr" Ids="Nmssywyq5ldPYKoyIyXAnO,LXw8L3BfFiDP4K1emiOLwy" />
+          <Link Id="KyajBvmEtzePdwHefcAB7H" Ids="LXw8L3BfFiDP4K1emiOLwy,Ob6D2KIdtRaOlpG4QRu63x" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="KPcpaOWYrHLNhdtX88xs7t">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="BsqMx6fmsstPcPthiCHbdd">
+        <Canvas Id="N4St6Y5EXasPjxXEzDlWvN" CanvasType="Group" />
+        <Patch Id="KR0IQs1sKfrLZHYTgwbTp9" Name="Create" />
+        <Patch Id="Lm9ca9ppuF0MzdlfwoMKWa" Name="Update" />
+        <ProcessDefinition Id="T4RYJ8T60ePNAj3nqzZB0p">
+          <Fragment Id="OWLmUfQebCpQI3NFPJpuMQ" Patch="KR0IQs1sKfrLZHYTgwbTp9" Enabled="true" />
+          <Fragment Id="TravhMimDEMLIbRpNG4HMl" Patch="Lm9ca9ppuF0MzdlfwoMKWa" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="Ox8BM7VSvK6OdniW8vGkmE" Location="VL.Skia" Version="2020.1.0" />
+  <PlatformDependency Id="MLiR3tME1hzNwUF12wG4Bo" Location="System.IO.FileSystem.Watcher" />
+  <DocumentDependency Id="QfT48SirEbkNvmP7pymCcw" Location="./Schema.Utilities.Reactive.vl" />
+</Document>
