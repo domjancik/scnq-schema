@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="FfzNYZ66YsVP7CT1r4VtPy" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
-  <NugetDependency Id="VdqrKXxI7J6OFE2rF5qxjt" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+<Document xmlns:p="property" Id="FfzNYZ66YsVP7CT1r4VtPy" LanguageVersion="2020.1.0.53" Version="0.128">
+  <NugetDependency Id="VdqrKXxI7J6OFE2rF5qxjt" Location="VL.CoreLib" Version="2020.1.0" />
   <Patch Id="Lw8LWeY7t0VOzRf1O4GswF">
     <Canvas Id="BDSYEdn7AywMQEV6RjlPNr" DefaultCategory="Schema.UI.Introduction" CanvasType="FullCategory">
       <!--
@@ -118,6 +118,7 @@
                     </p:NodeReference>
                     <Pin Id="BvfRkNAIxgjNy0ldPYIih3" Name="Font" Kind="OutputPin" />
                     <Pin Id="BxgA5LgnGnRQdcGvsLhQ0C" Name="Radius" Kind="OutputPin" />
+                    <Pin Id="BSAQvqzWiTiMvZp5Vvkzbp" Name="Highlight" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="656,497" Id="MBFuBaV3rIONzhQnVmO05O">
                     <p:NodeReference LastCategoryFullName="2D.Rectangle" LastSymbolSource="CoreLibBasics.vl">
@@ -244,27 +245,22 @@
                           <Pin Id="T9pVMOVyrVLPud3PbOos4H" Name="Paint" Kind="InputPin" />
                           <Pin Id="UkAfHzIBZCOOenO5Uj99Dz" Name="Enabled" Kind="InputPin" />
                           <Pin Id="HF4eWfjU72VMnr9BlCIj6B" Name="Output" Kind="OutputPin" />
+                          <Pin Id="FYsS70TkP0oMTarJ7LCBXF" Name="Baseline Position" Kind="OutputPin" />
                         </Node>
                         <Pad Id="QwXiA3fOJvbNnrUAAUii8e" Comment="Text" Bounds="600,437,95,21" ShowValueBox="true" isIOBox="true" Value="Hi there!">
                           <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                             <Choice Kind="TypeFlag" Name="String" />
                           </p:TypeAnnotation>
                         </Pad>
-                        <Node Bounds="780,404,56,19" Id="AVoyapXBx8vL0qrCWTu4rD">
-                          <p:NodeReference LastCategoryFullName="Schema.UI" LastSymbolSource="Schema.UI.vl">
-                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="ProcessAppFlag" Name="SkiaStyle" />
-                          </p:NodeReference>
-                          <Pin Id="AFuJtkVCSjNPoV326SbMLK" Name="Font" Kind="OutputPin" />
-                          <Pin Id="MKRhftuf9DLPDnrm1ahcu7" Name="Radius" Kind="OutputPin" />
-                        </Node>
                         <Node Bounds="760,440,165,19" Id="HWowrVDLJNLNaicFmU0LPc">
-                          <p:NodeReference LastCategoryFullName="Graphics.Skia.Text" LastSymbolSource="VL.Skia.vl">
+                          <p:NodeReference LastCategoryFullName="Schema.UI" LastSymbolSource="Schema.UI.FontAndParagraph.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="ProcessAppFlag" Name="FontAndParagraph" />
+                            <CategoryReference Kind="Category" Name="UI" NeedsToBeDirectParent="true">
+                              <p:OuterCategoryReference Kind="Category" Name="Schema" NeedsToBeDirectParent="true" />
+                            </CategoryReference>
                           </p:NodeReference>
                           <Pin Id="UkM8Q9LcVDEOLC0vsyDySL" Name="Input" Kind="InputPin" />
-                          <Pin Id="E3h4UXXZAnGQQn7RfiLoOU" Name="Family Name" Kind="InputPin" />
                           <Pin Id="HEgONp0UhIQOQtK8XO8Kgx" Name="Style" Kind="InputPin" DefaultValue="Bold">
                             <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastSymbolSource="VL.Skia.vl">
                               <Choice Kind="TypeFlag" Name="SKTypefaceStyle" />
@@ -314,7 +310,6 @@
                       </ProcessDefinition>
                       <Link Id="E4HIchkoPAlMF41K8Xs0sY" Ids="QwXiA3fOJvbNnrUAAUii8e,Um20ZSBdVkRLFt8HPOGrXU" />
                       <Link Id="Hf0TpL7W6g7K9tfVzxpYa9" Ids="DazMXY5KQdAQMZlrT4EQjt,T9pVMOVyrVLPud3PbOos4H" />
-                      <Link Id="LxN3ghDdAwFP1bAKkQpirC" Ids="AFuJtkVCSjNPoV326SbMLK,E3h4UXXZAnGQQn7RfiLoOU" />
                       <Link Id="RaVH4ShbrRIMb9XM4WufXc" Ids="HF4eWfjU72VMnr9BlCIj6B,A0owDs6gImYNZzVe0Pd0q8" />
                       <Link Id="T3ojXctp7U5OZ4UiKAx09f" Ids="A0owDs6gImYNZzVe0Pd0q8,FRURCAFGPMBOlsYuvUuJ4Q" IsHidden="true" />
                       <Link Id="Q9CLT4jYPmjOUic6pgZC0K" Ids="VfFhK2auzAGLv21gvYFtb5,Ql2gaFdZwr8NVypaQ1ncxH" />
@@ -347,22 +342,17 @@
                           <Pin Id="PaNbPiFz8jnLrjBSvegezx" Name="Paint" Kind="InputPin" />
                           <Pin Id="DCChuZOakkXOmLtXVLB2su" Name="Enabled" Kind="InputPin" />
                           <Pin Id="BPO2ul8KVjuOf0LqpToe5B" Name="Output" Kind="OutputPin" />
-                        </Node>
-                        <Node Bounds="981,385,56,19" Id="PRbAulAbUpCNgMknLz6tC3">
-                          <p:NodeReference LastCategoryFullName="Schema.UI" LastSymbolSource="Schema.UI.vl">
-                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                            <Choice Kind="ProcessAppFlag" Name="SkiaStyle" />
-                          </p:NodeReference>
-                          <Pin Id="EjlePXbG2MlOZUHCNcfYtX" Name="Font" Kind="OutputPin" />
-                          <Pin Id="TUNLOFaXLcMMkzcsmD89IJ" Name="Radius" Kind="OutputPin" />
+                          <Pin Id="Tc82v2BQFwFQAUdGLcDivq" Name="Baseline Position" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="960,546,165,19" Id="QygsEoExCnPMZiz8b383uw">
-                          <p:NodeReference LastCategoryFullName="Graphics.Skia.Text" LastSymbolSource="VL.Skia.vl">
+                          <p:NodeReference LastCategoryFullName="Schema.UI" LastSymbolSource="Schema.UI.FontAndParagraph.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="ProcessAppFlag" Name="FontAndParagraph" />
+                            <CategoryReference Kind="Category" Name="UI" NeedsToBeDirectParent="true">
+                              <p:OuterCategoryReference Kind="Category" Name="Schema" NeedsToBeDirectParent="true" />
+                            </CategoryReference>
                           </p:NodeReference>
                           <Pin Id="Ov6bOCD80JyQRAswvBG9S2" Name="Input" Kind="InputPin" />
-                          <Pin Id="GIOmplrWTeePDCMjJ9UtnF" Name="Family Name" Kind="InputPin" />
                           <Pin Id="HXBzf8LsLdCPOF05oxPEnk" Name="Style" Kind="InputPin">
                             <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastSymbolSource="VL.Skia.vl">
                               <Choice Kind="TypeFlag" Name="SKTypefaceStyle" />
@@ -519,7 +509,6 @@
                         <Fragment Id="EWRzZr1A9ClOaqu5rTkceV" Patch="E3lF2HcttVAOJ1EwMLhcBq" Enabled="true" />
                       </ProcessDefinition>
                       <Link Id="ASDS8jkhFFgMDUFFHaC24b" Ids="CFxIJNVZo71Lih2GkDE6Fy,PaNbPiFz8jnLrjBSvegezx" />
-                      <Link Id="FzBeEJ2Y8cVMV8NgwjoYb3" Ids="EjlePXbG2MlOZUHCNcfYtX,GIOmplrWTeePDCMjJ9UtnF" />
                       <Link Id="KFtcDfb18OQMcpyqdcOH6T" Ids="MuokacgwO36N6LYCdHwHT6,AwH4RKVVZuVLWKtJPIn8SU" />
                       <Link Id="SCXImkKVE6uP4jPF6YxyTn" Ids="Jhmm9H23QhALvwALsMgaFA,Mt54NfvcDHdLQuCHTxGv0W" IsHidden="true" />
                       <Link Id="KKrca7JMHP7QQC7kT1trNQ" Ids="BPO2ul8KVjuOf0LqpToe5B,JQl0wSmwgdmOi3nGL8IROX" />
@@ -571,7 +560,7 @@
                   <ControlPoint Id="CzvOlAWXiP2MPBveu4AYuz" Bounds="945,190" />
                   <Pad Id="VLV6Ss1WoYxMB7sjKie6kt" Comment="" Bounds="914,429,70,15" ShowValueBox="true" isIOBox="true" />
                   <Node Bounds="947,375" Id="QSsf1SRKAhQOQdqgzCJSmq">
-                    <p:NodeReference LastCategoryFullName="2D.Rectangle" LastSymbolSource="Schema.UI.vl">
+                    <p:NodeReference LastCategoryFullName="2D.Rectangle" LastSymbolSource="Schema.UI.Utilities.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Inflate (Relative)" />
                     </p:NodeReference>
@@ -649,7 +638,8 @@
                   <Node Bounds="1053,156,63,19" Id="U3ZNMhSj9xJQFBCOYm9zf2">
                     <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="CoreLibBasics.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
+                      <Choice Kind="ProcessNode" Name="Stopwatch (Old)" />
+                      <FullNameCategoryReference ID="Animation" />
                     </p:NodeReference>
                     <Pin Id="Eill9Oy3pFKLQPxdpMWVMo" Name="Enabled" Kind="InputPin" />
                     <Pin Id="I2cSy6XfCKUNjpdh0qvrCk" Name="Initial Time" Kind="InputPin" />
@@ -719,7 +709,8 @@
             <Node Bounds="866,298,65,19" Id="Pnxaa9VL9avM14r63K6RSy">
               <p:NodeReference LastCategoryFullName="Animation" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                <Choice Kind="ProcessAppFlag" Name="Stopwatch" />
+                <Choice Kind="ProcessNode" Name="Stopwatch (Old)" />
+                <FullNameCategoryReference ID="Animation" />
               </p:NodeReference>
               <Pin Id="FHeN3CP0ClANU5oXRGc4Tr" Name="Enabled" Kind="InputPin" />
               <Pin Id="LIA9Msh1VnYPUjB1fcZE53" Name="Initial Time" Kind="InputPin" />
@@ -1369,8 +1360,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Px1l7jtXJuFNPmmeyfC1cR" Location="VL.Skia" Version="2019.2.0-0081-g9750350a10" />
+  <NugetDependency Id="Px1l7jtXJuFNPmmeyfC1cR" Location="VL.Skia" Version="2020.1.0" />
   <DocumentDependency Id="UJ05ve6hkKtMWY53DG9zwt" Location="../../domj.Skia.UI.vl" />
   <DocumentDependency Id="JbErMgz64CLNIDEWIiIkKK" Location="../Schema.UI.vl" />
   <DocumentDependency Id="K1njyWzI2JNP4ZVS5Mep7G" Location="../../VL.LinearSpread.vl" />
+  <DocumentDependency Id="F8dufQFZXGzLditl7dZhmQ" Location="../Schema.UI.Utilities.vl" />
 </Document>
