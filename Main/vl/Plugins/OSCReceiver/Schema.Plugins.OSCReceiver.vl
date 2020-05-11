@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="Hx4gA59Ae2GPzYPte94HbC" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
-  <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+<Document xmlns:p="property" Id="Hx4gA59Ae2GPzYPte94HbC" LanguageVersion="2019.2.0-0140-63c55fb825" Version="0.128">
+  <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="2019.2.0-0140-g63c55fb825" />
   <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
   <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
     <Canvas Id="NtZT52Xp5qNOXK0fF2H7kv" DefaultCategory="Schema.Plugins.OSCReceiver" CanvasType="FullCategory">
@@ -941,6 +941,7 @@
                         <Pin Id="DN5J5V3CRnOPqeiTkML49T" Name="Arguments" Kind="OutputPin" />
                         <Pin Id="LyixQJQZdiDMWdcPeJAgNo" Name="TypeTags" Kind="OutputPin" />
                         <Pin Id="AYX8HCnbhGxN027u3QunoT" Name="Address" Kind="OutputPin" />
+                        <Pin Id="CI1E6zEMc9TNOCwlvryY5Y" Name="Timestamp" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="870,273,46,22" Id="CAwObTUoniUOsipRAoWK7W">
                         <p:NodeReference LastCategoryFullName="Collections.Spread" LastSymbolSource="VL.Collections.vl">
@@ -1395,6 +1396,24 @@
                 <Pin Id="CGXmMrKH7R1NfbUj315I8k" Name="Value" Kind="OutputPin" />
                 <Pin Id="A4JmBWFKQbBQDQqvjpFDyM" Name="Success" Kind="OutputPin" />
               </Node>
+              <Node Bounds="1348,-367" Id="RUdag4shXRXLa8is4WGSR4">
+                <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="Switch (Boolean)" />
+                </p:NodeReference>
+                <Pin Id="DiehbRLAIqkOyaWnvwvaYE" Name="Condition" Kind="InputPin" />
+                <Pin Id="C5oz3UTSthwPX8K2cDkfO7" Name="Input" Kind="InputPin" DefaultValue="false">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="RFqjVpWOGwCMrhrx7V2w1W" Name="Input 2" Kind="InputPin" DefaultValue="true">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="MOEU6hErzA2NcvWlqNJav3" Name="Output" Kind="OutputPin" />
+              </Node>
             </Canvas>
             <Patch Id="J8OSVO6bfzxOnBfoozo5qG" Name="Create" ParticipatingElements="IuMtsflM7PoP4fh6xkyjH3" />
             <Patch Id="OdtnMHftIUnNiqJwIoNDrd" Name="Update">
@@ -1471,7 +1490,7 @@
             <Link Id="L3zL4VLm6UvNqx10PteFU1" Ids="Pp967dTBzuUOYp09MMB6JL,RIFMajrnSq9NdYOxzJj0Eq" />
             <Link Id="OXvMgKrhRO6MUBjwf8M0Zk" Ids="OARcbscscZsPX13i0TAewB,HbnhobJ1dLmOIJdoiBddDN" />
             <Link Id="QeLjOejcUF1PzP8TQ3061B" Ids="Cnm4vRyNf3jLIYn8PjHkOB,QlYhrVEqADALUwh7W99Fke" />
-            <Link Id="HEeA5hjgXbYMPLn7njZWJF" Ids="KU2KttjZQhDO9yccJYcgr5,Qbqnt5jqeNqOBtKilJfzRn" />
+            <Link Id="HEeA5hjgXbYMPLn7njZWJF" Ids="KU2KttjZQhDO9yccJYcgr5,DiehbRLAIqkOyaWnvwvaYE" />
             <Link Id="NuJMKvneFATNWEzR76XY1x" Ids="QZ04qKtyPbGPdFKTWnNPa3,Qz1zHnRjWCfOB2cw5wjDlv" />
             <Link Id="RgLBIYsAEcsPPU0xTWDZwq" Ids="VuIYGLSjuixLoluiVjFGi3,Of8KbqQPjXiQYVDBa3rG3J" />
             <Link Id="Q85PzMk9mv2OoswjxJxXns" Ids="LwpoN3YiwsXNWYM42kmbNd,TwCySJ9EP5oNIUJJcsbJWh" />
@@ -1504,6 +1523,7 @@
             <Link Id="QPU5EUgW811PeYv2ibFJOQ" Ids="PRd4ax1PR0wLH1eFTNg9xO,EwIzkhZVBYwOKtmuYocshS" />
             <Link Id="UT3PdxAOUDPLuqh62b9W2T" Ids="OdeMa2yMwEOOg2c1xCUZjl,VkhpwKquk21OeKgcyaNy2O" />
             <Link Id="NZExos1dI8yMaWmocZ2bCc" Ids="CGXmMrKH7R1NfbUj315I8k,TYsEBFp7SO8Mw06eTFm8MF" />
+            <Link Id="SmKlsFerbi3MmASewbOtPS" Ids="MOEU6hErzA2NcvWlqNJav3,Qbqnt5jqeNqOBtKilJfzRn" />
           </Patch>
         </Node>
       </Canvas>
@@ -1530,6 +1550,6 @@
     </Node>
   </Patch>
   <DocumentDependency Id="VfR0N0EgIyQNqB5IA1Jntc" Location="../../VVVV.Schema.Core.vl" />
-  <NugetDependency Id="STZFs2cDR4EMhd6EhXxvXk" Location="VL.IO.OSC" Version="2019.2.0-0081-g9750350a10" />
+  <NugetDependency Id="STZFs2cDR4EMhd6EhXxvXk" Location="VL.IO.OSC" Version="2019.2.0-0140-g63c55fb825" />
   <DocumentDependency Id="ETiJvGx8i15OnhOUbS6eRy" Location="../../PropertyDefinition/Schema.PropertyDefinition.Helpers.vl" />
 </Document>
