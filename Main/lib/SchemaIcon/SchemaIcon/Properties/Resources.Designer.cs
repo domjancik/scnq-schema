@@ -63,6 +63,16 @@ namespace SchemaIcon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
+        internal static System.Drawing.Icon SchemaLogo_01 {
+            get {
+                object obj = ResourceManager.GetObject("SchemaLogo_01", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
         internal static System.Drawing.Icon SchemaLogo2_01 {
             get {
                 object obj = ResourceManager.GetObject("SchemaLogo2_01", resourceCulture);
