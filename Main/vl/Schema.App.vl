@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="ChVmkF4mHOWMFyheJQAIh5" LanguageVersion="2020.1.1.108" Version="0.128">
-  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2020.1.1" />
+<Document xmlns:p="property" Id="ChVmkF4mHOWMFyheJQAIh5" LanguageVersion="2020.1.2.135" Version="0.128">
+  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2020.1.2" />
   <Patch Id="Ep2iriBhATjLXxcs4iOjXi">
     <Canvas Id="LgcqCAAEeisOEqqW9H5Ak2" DefaultCategory="Schema.App" CanvasType="FullCategory">
       <Canvas Id="EIiZwMdicMuOQ0IX1nwULz" Name="Utilities" Position="348,269">
@@ -535,7 +535,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="JuqDfQPIlPcN1PMpsanYqO" Bounds="523,207" />
-            <ControlPoint Id="PdTG6zzOrweQVvmKwAxTi1" Bounds="519,1489" />
+            <ControlPoint Id="PdTG6zzOrweQVvmKwAxTi1" Bounds="519,1694" />
             <Node Bounds="506,1371,125,80" Id="OBh7xajlkE5NYch6GekIK3">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
@@ -663,6 +663,49 @@
               <Pin Id="Iyy0dAB0P3NOEVphdlMkp1" Name="Output" Kind="OutputPin" />
               <Pin Id="QUnHlh5YxQvMiDj45YJfMr" Name="Value" Kind="OutputPin" />
             </Node>
+            <Node Bounds="507,1544,136,82" Id="JoHYcGInnZQOeBfSpuzSvA">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                <FullNameCategoryReference ID="Primitive" />
+              </p:NodeReference>
+              <Pin Id="KFWiIezBLHBLi7wE8m8E1l" Name="Condition" Kind="InputPin" />
+              <ControlPoint Id="IlPA4aj2ZLAOLcs3HqCgon" Bounds="529,1551" Alignment="Top" />
+              <ControlPoint Id="JzhlpIFee0XMjdV8kpQp4T" Bounds="529,1620" Alignment="Bottom" />
+              <Patch Id="DCUkv3294hNP8KvWRYnhbm" ManuallySortedPins="true">
+                <Patch Id="KO54Txc4SvCOoezWw7mXlW" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="HVqHBAeTY5LMwyjWD0NCTu" Name="Then" ManuallySortedPins="true" />
+                <Node Bounds="519,1576,112,19" Id="KqBubXHP6z0O3KExf5Grty">
+                  <p:NodeReference LastCategoryFullName="Schema.Plugins.DALInetOutput" LastSymbolSource="Schema.Plugins.DALInetOutput.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="DALInetOutputPlugin" />
+                  </p:NodeReference>
+                  <Pin Id="IUDGngSrL8QMZJ29ueSlmU" Name="Input" Kind="InputPin" />
+                  <Pin Id="EFM1zoWAXBQNVmZH2ULRgC" Name="Name" Kind="InputPin" />
+                  <Pin Id="OIHIWm2JAezLl7Bb41hsLo" Name="Remote Host Default" Kind="InputPin" />
+                  <Pin Id="QsrjS3XsmfDPeG7x42Qh2x" Name="Output" Kind="OutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Node Bounds="524,1506,96,19" Id="Ohnk3NZffx7QSZrU8EuVfv">
+              <p:NodeReference LastCategoryFullName="Schema.App.Utilities" LastSymbolSource="Schema.App.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="GetPluginEnabled" />
+              </p:NodeReference>
+              <Pin Id="OC9okGKYDt1NwOlOhSi3Vw" Name="Input" Kind="InputPin" />
+              <Pin Id="NI1GbpccNfNOH2LjmoO7MF" Name="Plugin Name" Kind="InputPin" DefaultValue="DALInet">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="QaluovqtD9jMRdZWaHJK1S" Name="Default" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="DN0pdvaW9rSLvQef4ysapy" Name="Output" Kind="OutputPin" />
+              <Pin Id="Pf8Vx0momyzMGzX0hVJjjN" Name="Value" Kind="OutputPin" />
+            </Node>
           </Canvas>
           <Patch Id="BUzxkW6EGgrQHWi4keZsvM" Name="Create" />
           <Patch Id="Q7mYzErptQILPJPLUUIAwI" Name="Update">
@@ -723,7 +766,6 @@
           <Link Id="QFxu2rOjZEEPP39wHNQgCv" Ids="UNtbUfJm5OHM0Ylx6E4wJE,Qas9Cgr3qwJQEs6T9m7CCx" IsFeedback="true" />
           <Link Id="DZF1LVbDr3WMmLjWbkwCxW" Ids="UNtbUfJm5OHM0Ylx6E4wJE,FUDsrDkZUI3PaAle6aizTt" />
           <Link Id="NYUU2sb4aQUPAmq22vf8fT" Ids="DQyVqxOkFGiQOtrFBi8nvN,Qas9Cgr3qwJQEs6T9m7CCx" />
-          <Link Id="VwKXXCTBdCsNE2MuvQImBm" Ids="Qas9Cgr3qwJQEs6T9m7CCx,PdTG6zzOrweQVvmKwAxTi1" />
           <Link Id="Iso6IMSSR1iNzHLtjz38YA" Ids="Ur5BFY1fsjENltgyEcPYTP,CoIFWphYiroOmmAZp15EJE" />
           <Link Id="HsLOdu2zAc8Psgx0vS01uH" Ids="JMtANMegB4MNuVdU1z8wUI,Ur5BFY1fsjENltgyEcPYTP" />
           <Link Id="V265pUMkEFgLphPOzZ8bjO" Ids="H5sY9B4LBc6N9leG4H1wd1,GmhTtNxRbAzNzo83P9uuYp" />
@@ -737,6 +779,13 @@
           <Link Id="BawEISV89NCMvC1nlODgSX" Ids="Iyy0dAB0P3NOEVphdlMkp1,MjehCoUx68eNNnXyuhyP2O" />
           <Link Id="RPzbbTJg2ELOWD6xzul4Wo" Ids="HmUCAhoqw3pLcVYZZ1r0mS,PVdLOJxmCa4PgR7I6iHcJW" />
           <Link Id="VEcjO0qSWqxPNa3YEpDbOw" Ids="QUnHlh5YxQvMiDj45YJfMr,I8JjFW5wkCrLvQfaYokXU8" />
+          <Link Id="QpWyBbWGRMGQNlu1ncVdGw" Ids="IlPA4aj2ZLAOLcs3HqCgon,JzhlpIFee0XMjdV8kpQp4T" IsFeedback="true" />
+          <Link Id="NYgG2eb8aiTPNvicQee6CJ" Ids="IlPA4aj2ZLAOLcs3HqCgon,IUDGngSrL8QMZJ29ueSlmU" />
+          <Link Id="FiHbUFNow2LOjeKCkErPOk" Ids="QsrjS3XsmfDPeG7x42Qh2x,JzhlpIFee0XMjdV8kpQp4T" />
+          <Link Id="A4esvoKKR9qNYdCK6Dwhhq" Ids="DN0pdvaW9rSLvQef4ysapy,IlPA4aj2ZLAOLcs3HqCgon" />
+          <Link Id="A8luBg5olNFQO5pYkmb1iW" Ids="Pf8Vx0momyzMGzX0hVJjjN,KFWiIezBLHBLi7wE8m8E1l" />
+          <Link Id="D1CDcQTfOuvNHt4EkUuuRf" Ids="Qas9Cgr3qwJQEs6T9m7CCx,OC9okGKYDt1NwOlOhSi3Vw" />
+          <Link Id="P3ucqNM1oTZMnFfTwqHE37" Ids="JzhlpIFee0XMjdV8kpQp4T,PdTG6zzOrweQVvmKwAxTi1" />
         </Patch>
       </Node>
       <!--
@@ -1106,7 +1155,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2020.1.1" />
+  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2020.1.2" />
   <DocumentDependency Id="AIZZPl56EDgLMbYWA5MQcV" Location="./VVVV.Schema.Core.vl" />
   <DocumentDependency Id="LxWQRtP0OlsOmBcYssV78H" Location="./Blocks/Schema.Blocks.vl" />
   <DocumentDependency Id="EQvzUt9U4aQL4pH4TLv5MM" Location="./UI/Schema.UI.vl" />
@@ -1122,4 +1171,5 @@
   <DocumentDependency Id="MLzRFgZxeUuOmA47TZDoGU" Location="./Plugins/Controllers/Schema.Plugins.Controllers.vl" />
   <DocumentDependency Id="Sl8AjBsOAifLFK9ZLkIFgu" Location="./Plugins/OSCSender/Schema.Plugins.OSCSender.vl" />
   <DocumentDependency Id="L4qKm5qC9WIPBWfkeNzQft" Location="./Plugins/OSCAudioReceiver/Schema.Plugins.OSCAudioReceiver.vl" />
+  <DocumentDependency Id="TguT2hazYUkL3hCr2dBPop" Location="./Plugins/DALInetOutput/Schema.Plugins.DALInetOutput.vl" />
 </Document>
