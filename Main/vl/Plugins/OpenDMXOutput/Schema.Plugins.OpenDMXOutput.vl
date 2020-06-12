@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="D6SdF81yeDdNJsrQrJhOUy" LanguageVersion="2020.1.2.135" Version="0.128">
+  <NugetDependency Id="DTd774zLcseLGBRmr2yH0M" Location="VL.CoreLib" Version="2020.1.2" />
+  <Patch Id="Eny9LQLNx9uLh7Foc0vhnV">
+    <Canvas Id="RzIPJGd57R3QRCbNzjSDjn" DefaultCategory="Schema.Plugins.OpenDMXOutput" CanvasType="FullCategory">
+      <!--
+
+    ************************ RegisterOpenDMXOutput ************************
+
+-->
+      <Node Name="RegisterOpenDMXOutput" Bounds="395,247" Id="TyXXVBZGJpwPiyGshcCK8P">
+        <p:NodeReference>
+          <Choice Kind="ContainerDefinition" Name="Patch" />
+          <FullNameCategoryReference ID="Primitive" />
+        </p:NodeReference>
+        <Patch Id="KSalX0lQxMHOtwNeBeFqHn">
+          <Patch Id="Vr6tZ8WTGRFQc85HFZfvk7" Name="Create" />
+          <Patch Id="DaVcjDcCxKOMMzB2JqsWK8" Name="Update">
+            <Pin Id="FLELnbFCSQGPcv4FoJNd6O" Name="Input" Kind="InputPin" Bounds="204,-24" />
+            <Pin Id="DZATLwPjyirMzXk0CnBLf2" Name="Output" Kind="OutputPin" Bounds="211,318" />
+          </Patch>
+          <Canvas Id="GlWGdRc4RYWPcCo7IQWzuf" CanvasType="Group">
+            <Node Bounds="201,59" Id="AIc9i6sDgWOLqeDfOlJyxI">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="IsReloadingOutputs" />
+              </p:NodeReference>
+              <Pin Id="TtxhtshNnbzO1LqT3kBoNX" Name="Input" Kind="StateInputPin" />
+              <Pin Id="R3dSLH7xuCTL1oLVirZMqZ" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="EGcu8xuXCA6Ok7FWji9JCP" Name="Result" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="HkD4XTmZTQrOUM8Z93qcA8" Bounds="204,-24" />
+            <Node Bounds="182,122,172,117" Id="ACGu8h1r83pMLtnbFUtBMM">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+              </p:NodeReference>
+              <Pin Id="NOG2z31pFulPf1Y7PGKtVu" Name="Condition" Kind="InputPin" />
+              <ControlPoint Id="INKEJMV1YOdPtILwC3wKhH" Bounds="205,128" Alignment="Top" />
+              <ControlPoint Id="OtIpwWi23RYNYaJpXtp48Y" Bounds="197,233" Alignment="Bottom" />
+              <Patch Id="HOBnBHwVfv5PEAJ6bLRQQY" ManuallySortedPins="true">
+                <Patch Id="IBT6iyVgJncPFJSCb4NC36" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="LAaUUnbEHrRN8L7CWffD5h" Name="Then" ManuallySortedPins="true" />
+                <Node Bounds="194,185,96,22" Id="DeeDwicy2AGMkuQjVSRYmM">
+                  <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="RegisterOutput" />
+                  </p:NodeReference>
+                  <Pin Id="HvSo3voR2GeNntefY3Q1eO" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="HvNr5Lp1T4fNKf1bAShOLh" Name="Key" Kind="InputPin" DefaultValue="OpenDMX">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="NLd74dSXvFMOyfC2gnsuzn" Name="Value" Kind="InputPin" />
+                  <Pin Id="PPe9rhSuBi4LPDqG8Ep5GM" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="285,145,57,22" Id="GVyh5losP00LFmPuWnBz9a">
+                  <p:NodeReference>
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                    <CategoryReference Kind="ClassType" Name="OpenDMXOutput" NeedsToBeDirectParent="true" />
+                  </p:NodeReference>
+                  <Pin Id="HzU9vKVwuoSPgo9mIV4DsM" Name="Name" Kind="InputPin" />
+                  <Pin Id="QZvOjuDD13IMsmUagPevxX" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <ControlPoint Id="MbX70fg1i9IMuLcmUvaXXy" Bounds="196,269" />
+          </Canvas>
+          <ProcessDefinition Id="GXI6bnW8sybM7CrT7zfqNK">
+            <Fragment Id="M0d2g0W3abvPSAg1DDkakX" Patch="Vr6tZ8WTGRFQc85HFZfvk7" Enabled="true" />
+            <Fragment Id="NETdkV7FkJoQKobG08WKRx" Patch="DaVcjDcCxKOMMzB2JqsWK8" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="JnW53oFOaDEQGGi0YbXrss" Ids="HkD4XTmZTQrOUM8Z93qcA8,TtxhtshNnbzO1LqT3kBoNX" />
+          <Link Id="CkXIwt9Q2kMOsVNCen6n4v" Ids="FLELnbFCSQGPcv4FoJNd6O,HkD4XTmZTQrOUM8Z93qcA8" IsHidden="true" />
+          <Link Id="Mjf54zuqYyZLs8EZcTx0MI" Ids="EGcu8xuXCA6Ok7FWji9JCP,NOG2z31pFulPf1Y7PGKtVu" />
+          <Link Id="VHNkuYwpDETPHac3ePjVyI" Ids="MbX70fg1i9IMuLcmUvaXXy,DZATLwPjyirMzXk0CnBLf2" IsHidden="true" />
+          <Link Id="HjjsSalvZb6QIq4qlC6mQF" Ids="QZvOjuDD13IMsmUagPevxX,NLd74dSXvFMOyfC2gnsuzn" />
+          <Link Id="O5Rv0cvJsQSNOHtVEIdAHJ" Ids="INKEJMV1YOdPtILwC3wKhH,OtIpwWi23RYNYaJpXtp48Y" IsFeedback="true" />
+          <Link Id="RnN3axs8VNHLBFJSeORhr0" Ids="INKEJMV1YOdPtILwC3wKhH,HvSo3voR2GeNntefY3Q1eO" />
+          <Link Id="GS7oLPLCux3POXxvjUcUun" Ids="R3dSLH7xuCTL1oLVirZMqZ,INKEJMV1YOdPtILwC3wKhH" />
+          <Link Id="ElCZcmtcUFVPHQxvPIHLzj" Ids="PPe9rhSuBi4LPDqG8Ep5GM,OtIpwWi23RYNYaJpXtp48Y" />
+          <Link Id="IPW9tte2u2rNv39XyZ8QVG" Ids="OtIpwWi23RYNYaJpXtp48Y,MbX70fg1i9IMuLcmUvaXXy" />
+        </Patch>
+      </Node>
+      <Canvas Id="CVPzQyfaWS0NA2uMaYWZM6" Name="Output" Position="391,297">
+        <!--
+
+    ************************ OpenDMXOutput ************************
+
+-->
+        <Node Name="OpenDMXOutput" Bounds="555,283" Id="NiAiYxH5TexNSEJ9hikukf">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+            <Choice Kind="ClassDefinition" Name="Class" />
+          </p:NodeReference>
+          <p:Interfaces>
+            <TypeReference LastCategoryFullName="VVVV.Beehive.Output" LastSymbolSource="VVVV.domj.Chapeau.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="IOutput" />
+            </TypeReference>
+          </p:Interfaces>
+          <Patch Id="M7eCxMtrXPLPB6MAZYuqAv">
+            <Canvas Id="B1FPWMCqE9aPROj3XFQ5NI" CanvasType="Group">
+              <Pad Id="MwgPNwrTr43P4lUrJ0ahhn" SlotId="RXHvXB7lCniPR8iQEpmPPd" Bounds="71,79,35,15" ShowValueBox="true" />
+              <ControlPoint Id="DJdSJHkf101MgCZUMm8ueo" Bounds="71,42" />
+              <ControlPoint Id="AzxAhBkVpYWPYxli5Mfh7e" Bounds="71,102" />
+              <Node Bounds="171,59,180,19" Id="VuLbkUlbbefPYMXkYXEEAB">
+                <p:NodeReference LastCategoryFullName="Schema.Plugins.DMXOutput.Output" LastSymbolSource="Schema.Plugins.DMXOutput.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="DMXOutput" />
+                </p:NodeReference>
+                <Pin Id="IBtGxpKVMYpMe4CYtRm6P2" Name="Fixtures" Kind="InputPin" />
+                <Pin Id="VhS51MC3EbHNhnLTmb19N8" Name="Split" Kind="ApplyPin" />
+                <Pin Id="IDYiOwCptuZLSshtPwsiUJ" Name="Reload" Kind="ApplyPin" />
+                <Pin Id="AmuZqic5cyKLp95JsAyAMt" Name="Output" Kind="OutputPin" />
+                <Pin Id="QIfwIfZn6xEQWURtOUUwB2" Name="Supported Models" Kind="OutputPin" />
+                <Pin Id="B4f4nrJw21mL9c0rTfE5xw" Name="Status" Kind="OutputPin" />
+              </Node>
+              <ControlPoint Id="FIFQhgod9nRNbq0ME9QVXF" Bounds="171,28" />
+              <ControlPoint Id="SEHaua1fGbRPtBxafRrt7h" Bounds="262,106" />
+              <ControlPoint Id="ErYJViuUZyHM9wUdfGVhfK" Bounds="349,107" />
+              <Node Bounds="173,99,61,19" Id="KKdJtWz28wwPTFcINHCgoA">
+                <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.Devices.OpenDMX.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="OpenDMX" />
+                </p:NodeReference>
+                <Pin Id="HdgGY0rJNdgMZ7VFGlhNyw" Name="Input" Kind="InputPin" />
+              </Node>
+            </Canvas>
+            <ProcessDefinition Id="RDcgcWa9BRmPjtXvK2A87l" IsHidden="true">
+              <Fragment Id="JKjRyNIEUqJLT6FQk5kWP0" Patch="L5mCEi7jwNPMDrmIDmu2r6" Enabled="true" />
+              <Fragment Id="TDL7UT9lLurOGlRc1HtLQD" Patch="Jw7yjM8TIXrPwVN9ECUBbL" Enabled="true" />
+              <Fragment Id="JzibAiwHlXZPx9r0g89ZUD" Patch="Tj0qgaL7YRqPSVkxczG9tB" Enabled="true" />
+              <Fragment Id="Kzw1H77WssJONb5a9eyPJs" Patch="SLzyraq0Wm1L3QF5oYYh6f" Enabled="true" />
+              <Fragment Id="F05gyiDzblPNUiKmgCcj7k" Patch="PoWqHiRGHX1Lau63JVsUzX" Enabled="true" />
+              <Fragment Id="PUljw9PH1gdM2we3dBRvUP" Patch="Nqv817xO5L7MNRObsoINMe" Enabled="true" />
+            </ProcessDefinition>
+            <Slot Id="RXHvXB7lCniPR8iQEpmPPd" Name="Name">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="UtSFkfP5IFqQBJVjqxFB48" Ids="JHqQVZJTTkkMaRTk1Ex2jO,DJdSJHkf101MgCZUMm8ueo" IsHidden="true" />
+            <Link Id="D0IblP8TikENfQksGcjA0h" Ids="DJdSJHkf101MgCZUMm8ueo,MwgPNwrTr43P4lUrJ0ahhn" />
+            <Link Id="Ncm2kagfIFoNLyrHubeqjH" Ids="AzxAhBkVpYWPYxli5Mfh7e,SKqx66B3A2bOFELMW3vrAW" IsHidden="true" />
+            <Link Id="KMoXN95mwQnMka5fIMmjQf" Ids="MwgPNwrTr43P4lUrJ0ahhn,AzxAhBkVpYWPYxli5Mfh7e" />
+            <Link Id="BwuzcNY3z07PIf8mn70j0V" Ids="FIFQhgod9nRNbq0ME9QVXF,IBtGxpKVMYpMe4CYtRm6P2" />
+            <Link Id="PCwIy072ZkyNFdjgr0Kx0C" Ids="QIfwIfZn6xEQWURtOUUwB2,SEHaua1fGbRPtBxafRrt7h" />
+            <Link Id="Pxn02lxCUZRNxzh4kVz94C" Ids="ErYJViuUZyHM9wUdfGVhfK,IVElTe0cdIEL87fY8vaWQJ" IsHidden="true" />
+            <Link Id="EmTPJXoYvMFNveqO3I27Yt" Ids="B4f4nrJw21mL9c0rTfE5xw,ErYJViuUZyHM9wUdfGVhfK" />
+            <Link Id="PdddUTvyEf6M46Uz2x4jaK" Ids="R6Z968HSQ8lLqzgypsc8St,FIFQhgod9nRNbq0ME9QVXF" IsHidden="true" />
+            <Link Id="PDBPDkngIc3MaSASfnz9x2" Ids="SEHaua1fGbRPtBxafRrt7h,AHTWqRwqZUCN2qdtvqAKyr" IsHidden="true" />
+            <Link Id="JiHRQ1DeNYhOUY8DJJnyFB" Ids="AmuZqic5cyKLp95JsAyAMt,HdgGY0rJNdgMZ7VFGlhNyw" />
+            <Patch Id="L5mCEi7jwNPMDrmIDmu2r6" Name="Create">
+              <Pin Id="JHqQVZJTTkkMaRTk1Ex2jO" Name="Name" Kind="InputPin" DefaultValue="OpenDMX">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Patch Id="Jw7yjM8TIXrPwVN9ECUBbL" Name="Update">
+              <Pin Id="R6Z968HSQ8lLqzgypsc8St" Name="Fixtures" Kind="InputPin" />
+              <Pin Id="FVW89nJBzCdNpHgItagsGZ" Name="Configuration" Kind="InputPin" />
+            </Patch>
+            <Patch Id="Tj0qgaL7YRqPSVkxczG9tB" Name="Split">
+              <Pin Id="SKqx66B3A2bOFELMW3vrAW" Name="Name" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="SLzyraq0Wm1L3QF5oYYh6f" Name="ListSupportedModels">
+              <Pin Id="AHTWqRwqZUCN2qdtvqAKyr" Name="Output" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="PoWqHiRGHX1Lau63JVsUzX" Name="Reload" />
+            <Patch Id="Nqv817xO5L7MNRObsoINMe" Name="GetStatus">
+              <Pin Id="IVElTe0cdIEL87fY8vaWQJ" Name="Status" Kind="OutputPin" />
+            </Patch>
+          </Patch>
+        </Node>
+      </Canvas>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="KBveEatU23qNL5bcYjwCMd">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="UEuB7C5RiC6MZwaSB3mdCA">
+        <Canvas Id="R8D1Z6Utk7TMMYc306sCEs" CanvasType="Group" />
+        <Patch Id="UyHYBZqH65DLuyV1hKTEGr" Name="Create" />
+        <Patch Id="Coa3xI5LWxbOgjCUGHXRmx" Name="Update" />
+        <ProcessDefinition Id="UcMa3sZxWnwMHZl0iZ5bkM">
+          <Fragment Id="GKqDU4eogK3P1i8gsVjqqp" Patch="UyHYBZqH65DLuyV1hKTEGr" Enabled="true" />
+          <Fragment Id="FEj7oaoJaWNLF9HLVxRvXQ" Patch="Coa3xI5LWxbOgjCUGHXRmx" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="VedtIDoRe4uNPx3COdWpHC" Location="VL.Skia" Version="2020.1.2" />
+  <DocumentDependency Id="SMtEvYqQ0XBNcOrpsTh0oI" Location="../../VVVV.Schema.Core.vl" />
+  <NugetDependency Id="ULkdtBZTTq5PNxOQrRYqVY" Location="ncalc" Version="1.3.8" />
+  <DocumentDependency Id="Hhe6QFox9lIOM4DkseNEL1" Location="../DMXOutput/Schema.Plugins.DMXOutput.vl" />
+  <DocumentDependency Id="Ecf33yKFz5vL0Qp7y0mjJO" Location="./lib/VL.Devices.OpenDMX.vl" />
+</Document>
