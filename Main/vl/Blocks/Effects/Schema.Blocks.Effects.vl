@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2020.1.0.53" Version="0.128">
-  <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2020.1.0" />
+<Document xmlns:p="property" Id="LMjFZ2ADiYMN3H7wQWarqE" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="Gql5WLoCHdZMTNYgfAMR3o">
     <Canvas Id="ONZw2kKUbs5NUJL83wygr9" DefaultCategory="Schema.Blocks.Effects" CanvasType="FullCategory">
       <!--
@@ -55,7 +55,7 @@
     ************************ RegisterValueEffects ************************
 
 -->
-        <Node Name="RegisterValueEffects" Bounds="557,273,369,1601" Id="FsZ5DdknippLu1EdnKL6GG">
+        <Node Name="RegisterValueEffects" Bounds="557,273,390,1845" Id="FsZ5DdknippLu1EdnKL6GG">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
@@ -87,7 +87,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="DnwrGmhHe4jMAP9INMIppI" Bounds="650,291" />
-            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="646,1857" />
+            <ControlPoint Id="DcRbVvazWQhPXJ5jtVYB8J" Bounds="646,2101" />
             <Pin Id="A5b9nePEBxOPOQdiCflIvY" Name="Input" Kind="InputPin" Bounds="471,214" />
             <Pin Id="HEzN3zPEIzjO9V302l1GxS" Name="Output" Kind="OutputPin" Bounds="466,454" />
             <Link Id="LpRBXypbJSXNBxsfNgvsJj" Ids="QIktyprcDa8Ob08kihe4rh,BNq0QovOc3GMmgZvm65ved" IsHidden="true" />
@@ -366,7 +366,37 @@
             <Link Id="PGnpKxDykqOMcHD99pUW0w" Ids="NzidHORv07SLIsaYhHniXV,NfC7SIji4JXQDdII3x5yfu" />
             <Link Id="FMSKklVj4HYMVgmwPQV6Oo" Ids="QGthvwyXyYDP95RFll8GRU,KywchjHwEm4MU1hdS62N4S" />
             <Link Id="OyZpdnzKy87LlHcDEJryl3" Ids="SaUevymxbrgPcEPuFbXyEN,BR0O4rwnjiROFPCUme30ZB" />
-            <Link Id="EEIHgVISapnPnJLo099PFS" Ids="UI1am7MXe0TLjTzeyS8TZP,DcRbVvazWQhPXJ5jtVYB8J" />
+            <Node Bounds="654,1865,126,77" Id="RmGAABHXjpzPGFrtCSh5Lc">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              </p:NodeReference>
+              <Pin Id="AYw9hhaL2zsPO5WFO7glaa" Name="Input" Kind="StateInputPin" />
+              <Pin Id="O3bYJPoK2P4O0N58NrDYrQ" Name="Key" Kind="InputPin" />
+              <Pin Id="PKXWCysgd05OwrTmrZ3Vm7" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="FJp1ccQQUGJN090a6VubOZ" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="GdNcHSqE8JmLinkjo9lCsw" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="CeyZpNDKuGXNSQW8rPH4Zw" Bounds="658,1935" />
+                <Node Bounds="670,1888,98,26" Id="DIdBuuPqjolMFS2oUDEtMn">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Effects.Value.ShapeValueModify" LastSymbolSource="Schema.Blocks.Effects.Value.Shape.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                    <CategoryReference Kind="ClassType" Name="ShapeValueModify" NeedsToBeDirectParent="true" />
+                  </p:NodeReference>
+                  <Pin Id="LEW1fyqIKwmOFHT9ApoPbl" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Pad Id="G9I5Qe30JnaNIVSjGlPKPD" Comment="Key" Bounds="772,1832,124,17" ShowValueBox="true" isIOBox="true" Value="Modify.Value.Shape">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="I54efvNLMsUPbAUNQi2cnT" Ids="CeyZpNDKuGXNSQW8rPH4Zw,GdNcHSqE8JmLinkjo9lCsw" IsHidden="true" />
+            <Link Id="A2JJAZ5nOBhO4sg61DoH5y" Ids="G9I5Qe30JnaNIVSjGlPKPD,O3bYJPoK2P4O0N58NrDYrQ" />
+            <Link Id="J1284t2MuRYPUwMfTgyeSg" Ids="LEW1fyqIKwmOFHT9ApoPbl,CeyZpNDKuGXNSQW8rPH4Zw" />
+            <Link Id="PqPprg7ikkbMsodQ0gA1ue" Ids="UI1am7MXe0TLjTzeyS8TZP,AYw9hhaL2zsPO5WFO7glaa" />
+            <Link Id="PFcmbSaRrxoNjkEZrqqhoE" Ids="PKXWCysgd05OwrTmrZ3Vm7,DcRbVvazWQhPXJ5jtVYB8J" />
           </Patch>
         </Node>
         <!--
@@ -640,7 +670,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="PTcZEXRi8TcPOvvsGetlkW" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="PTcZEXRi8TcPOvvsGetlkW" Location="VL.Skia" Version="2020.1.7" />
   <DocumentDependency Id="P8Xs5mtL9ecO9hagDgAIHh" Location="./Generic/Schema.Blocks.Effects.Generic.Delay.vl" />
   <DocumentDependency Id="HWO9ABryUOWQRELmgBVldh" Location="../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="HeW9GZQLCbuLDiLfp4D69f" Location="./Value/Schema.Blocks.Effects.Value.AttackDecay.vl" />
@@ -657,4 +687,5 @@
   <DocumentDependency Id="NmiGOvCl0UNL2J1dp8wqZO" Location="./Generic/Schema.Blocks.Effects.Generic.SampleAndHold.vl" />
   <DocumentDependency Id="S1uk4icbXyrM3lwzukfvFo" Location="./Value/Schema.Blocks.Effects.Value.Map.vl" />
   <DocumentDependency Id="Rk6bqHIeTNkQbAmmXLeRuI" Location="./Color/Schema.Blocks.Effects.Color.Clamp.vl" />
+  <DocumentDependency Id="HN8lslLPNISOMtWR1QpKZ3" Location="./Value/Schema.Blocks.Effects.Value.Shape.vl" />
 </Document>
