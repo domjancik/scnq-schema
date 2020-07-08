@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="SEZp2QoOKtvQYCy8GcjOBZ" LanguageVersion="2020.1.2.135" Version="0.128">
-  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2020.1.2" />
+<Document xmlns:p="property" Id="SEZp2QoOKtvQYCy8GcjOBZ" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="Ep2iriBhATjLXxcs4iOjXi">
     <Canvas Id="LgcqCAAEeisOEqqW9H5Ak2" DefaultCategory="Schema.App" CanvasType="FullCategory" />
     <!--
@@ -136,10 +136,11 @@
             <Pin Id="NdPvourTZxoNRgwIB0zBZ7" Name="Overlays" Kind="OutputPin" />
           </Node>
           <Node Bounds="204,51,130,19" Id="G0szRZ3tJKPMVXaNC3u3Yo">
-            <p:NodeReference LastCategoryFullName="Schema.App" LastSymbolSource="Schema.App.vl">
+            <p:NodeReference LastCategoryFullName="Schema.Projects" LastSymbolSource="Schema.Projects.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="GetOrInitProjectDirectory" />
             </p:NodeReference>
+            <Pin Id="UeD5oxhXGSZOdt9O8GirSc" Name="Project Name" Kind="InputPin" />
             <Pin Id="LisSR7ua5euPdpI9dqtKgY" Name="Update" Kind="ApplyPin" />
             <Pin Id="E1tYQLNkVjlM0NL6QvXc8v" Name="Output" Kind="OutputPin" />
           </Node>
@@ -168,7 +169,39 @@
             <Pin Id="E0DrVwrn9AUMcwKdOAnzCK" Name="Input" Kind="InputPin" />
             <Pin Id="AV7QPCRJu2wQAYNx6SkFZ2" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="T2qk89RIZj9MdAn0avdbsx" Comment="Initial Director" Bounds="187,27,45,15" ShowValueBox="true" isIOBox="true" Value="Director">
+          <Pad Id="T2qk89RIZj9MdAn0avdbsx" Comment="Initial Director" Bounds="187,-52,45,15" ShowValueBox="true" isIOBox="true" Value="Director">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="204,3,97,19" Id="BYcl8eydKM4NrfaVYY5d0i">
+            <p:NodeReference LastCategoryFullName="Schema.Projects" LastSymbolSource="Schema.Projects.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="GetCurrentProject" />
+            </p:NodeReference>
+            <Pin Id="PHseXyZ3IkYOmLkY1hDFSJ" Name="Read" Kind="InputPin" DefaultValue="True">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="DBG6tJWCxZMOJRnQnGBeY8" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="V7AzaqWh3eNMPSnmj56Tvf" SlotId="BA7AYrY3KDAQLUrrSCuJTK" Bounds="430,270" />
+          <Node Bounds="388,336" Id="PlKaS8Gj1I6Nbd2V9QLOY0">
+            <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="+" />
+            </p:NodeReference>
+            <Pin Id="RWtXF5SNzlzNKV9v02BzxD" Name="Input" Kind="InputPin" />
+            <Pin Id="BxCgOtOv56LQCin3oFKEWx" Name="Input 2" Kind="InputPin" DefaultValue=" - ">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="OmNfg9UzhBAN1nNsQaRPwF" Name="Output" Kind="OutputPin" />
+            <Pin Id="LT4CptEHoQeMStv09hdbMN" Name="Input 3" Kind="InputPin" />
+          </Node>
+          <Pad Id="MEsbDI2OtWJOYbBcEjemqz" Comment="Title" Bounds="390,301,102,14" ShowValueBox="true" isIOBox="true" Value="scenic.tools Schéma">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -195,13 +228,20 @@
         <Link Id="MxRmVERXx7bOa4mO5lzbzS" Ids="DQSTCFVPhnaLF89izjSn6e,E0DrVwrn9AUMcwKdOAnzCK" />
         <Link Id="OqpZKG64tKAMjKSGJgZ61F" Ids="AV7QPCRJu2wQAYNx6SkFZ2,AjvC0pPjHOPOreQStcGS6s" />
         <Link Id="UtXeMq8ufoFN9rLGXqQhfl" Ids="T2qk89RIZj9MdAn0avdbsx,TcA2ajeqJzULnDI6FPDiFl" />
+        <Link Id="KMyHD3VNIH0QJQ4UZu6VH5" Ids="DBG6tJWCxZMOJRnQnGBeY8,UeD5oxhXGSZOdt9O8GirSc" />
+        <Slot Id="BA7AYrY3KDAQLUrrSCuJTK" Name="Project Name" />
+        <Link Id="PirPqJlBo73Pmw7OJC0Oqq" Ids="DBG6tJWCxZMOJRnQnGBeY8,V7AzaqWh3eNMPSnmj56Tvf" />
+        <Link Id="EqNUr44NgIGNueqtjKBWwh" Ids="MEsbDI2OtWJOYbBcEjemqz,RWtXF5SNzlzNKV9v02BzxD" />
+        <Link Id="PR1dSuIH8kSP7MrZG4cTwL" Ids="OmNfg9UzhBAN1nNsQaRPwF,JYqyNAsW8dJL12k8BFkZB5" />
+        <Link Id="Rwu7nXJqSBfLWxgKT1SvdQ" Ids="V7AzaqWh3eNMPSnmj56Tvf,LT4CptEHoQeMStv09hdbMN" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2020.1.2" />
+  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2020.1.7" />
   <DocumentDependency Id="AIZZPl56EDgLMbYWA5MQcV" Location="../vl/VVVV.Schema.Core.vl" />
   <DocumentDependency Id="LxWQRtP0OlsOmBcYssV78H" Location="../vl/Blocks/Schema.Blocks.vl" />
   <DocumentDependency Id="EQvzUt9U4aQL4pH4TLv5MM" Location="../vl/UI/Schema.UI.vl" />
   <DocumentDependency Id="MLzRFgZxeUuOmA47TZDoGU" Location="../vl/Plugins/Controllers/Schema.Plugins.Controllers.vl" />
   <DocumentDependency Id="PGfhivXukngOFaWILNWxTW" Location="../vl/Schema.App.vl" />
+  <DocumentDependency Id="BrfGLl6uZS1LhBac9eidMN" Location="../vl/Schema.Projects.vl" />
 </Document>
