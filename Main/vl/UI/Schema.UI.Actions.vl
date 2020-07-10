@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="D7pUulfaFqNOSUkpVaKSgz" LanguageVersion="2020.1.0.53" Version="0.128">
-  <NugetDependency Id="NLDlfXsXztmMT2NGLWav5v" Location="VL.CoreLib" Version="2020.1.0" />
+<Document xmlns:p="property" Id="D7pUulfaFqNOSUkpVaKSgz" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="NLDlfXsXztmMT2NGLWav5v" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="Ppwbi80ruVVMZwEzY9Pu1m">
     <Canvas Id="UgfJqrPUZ90LuMrH1d46Wz" DefaultCategory="Schema.UI.Actions" CanvasType="FullCategory">
       <!--
@@ -211,6 +211,10 @@
             <Pin Id="LVzzjD6MaHUMziBibg69pQ" Name="Result" Kind="OutputPin" />
           </Node>
           <Link Id="MUuCDv2vuT1LOCsHOvYETI" Ids="LVzzjD6MaHUMziBibg69pQ,EKY1vadS6p5Lyt4nURn14Z" />
+          <ControlPoint Id="O036bFJEwUcMGMTS7NqKVD" Bounds="962,550" />
+          <Link Id="RUhWbQFrhIcM3JLVEhyYbd" Ids="O036bFJEwUcMGMTS7NqKVD,P5JRlJgLs20LDZLIbFLEZN" />
+          <Pin Id="RR1Cq6STwDCOn2sFFPfPwj" Name="Project Name" Kind="InputPin" Bounds="962,550" />
+          <Link Id="KmlvQlWPYdTLRFpnu54Rko" Ids="RR1Cq6STwDCOn2sFFPfPwj,O036bFJEwUcMGMTS7NqKVD" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -263,6 +267,51 @@
           <Link Id="D12k51b1ch0QJ1n6N6BN5j" Ids="FsCpXxVjxh0MvIIzBjCIYg,PWFMqFdGBsiOn3cXkA4Lq8" />
         </Patch>
       </Node>
+      <!--
+
+    ************************ LaunchCurrentProjectSettings ************************
+
+-->
+      <Node Name="LaunchCurrentProjectSettings" Bounds="442,592" Id="JPFNshfS8KqLo9wfZP2N5S">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="HVBhe1xLLc8Pt31yiNiGaX">
+          <Canvas Id="K2HIBJCgEMXP3KjvI22SGx" CanvasType="Group">
+            <Node Bounds="343,340" Id="D1CffeRBaJwLZhD5N4GIpG">
+              <p:NodeReference LastCategoryFullName="Schema.Projects" LastSymbolSource="Schema.Projects.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="ProcessAppFlag" Name="GetCurrentProject" />
+              </p:NodeReference>
+              <Pin Id="OBirHIinZweMIhNmTmSDv9" Name="Read" Kind="InputPin" DefaultValue="True">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="ONenVdxkwB0NHRNPFJjsS8" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="343,386,85,19" Id="DsWQXX92GmCN4bV25OTZie">
+              <p:NodeReference LastCategoryFullName="Schema.UI.Actions" LastSymbolSource="Schema.UI.Actions.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="LaunchSettings" />
+              </p:NodeReference>
+              <Pin Id="KNwtEZE8MqkLX2D3qNHZIr" Name="Project Name" Kind="InputPin" />
+            </Node>
+          </Canvas>
+          <Patch Id="B2hW92DWLMsNnPpd6TK7CW" Name="Create" />
+          <Patch Id="LIB8FxZfXNUQBoN6aQywCx" Name="Update" />
+          <!--
+
+    ************************  ************************
+
+-->
+          <ProcessDefinition Id="Bi5sVYtmZYwPSL8Zwtb8TB">
+            <Fragment Id="L4oD7fJDQAsOQBNAtPlUm4" Patch="B2hW92DWLMsNnPpd6TK7CW" Enabled="true" />
+            <Fragment Id="TYc4aknKAhvPzNchiuapXU" Patch="LIB8FxZfXNUQBoN6aQywCx" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="H5YWbtmEqViO0YbhQyGM6U" Ids="ONenVdxkwB0NHRNPFJjsS8,KNwtEZE8MqkLX2D3qNHZIr" />
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
@@ -278,11 +327,6 @@
         <Canvas Id="BgenUAuH2mUPbYW4yLzhVZ" CanvasType="Group" />
         <Patch Id="J9w8mVEnUAROjxSZVwMeMK" Name="Create" />
         <Patch Id="SSp50CbGlMRL5nl49Lt9ly" Name="Update" />
-        <!--
-
-    ************************  ************************
-
--->
         <ProcessDefinition Id="LxIbIC5i7XLNdCnG0hTqGy">
           <Fragment Id="OVLXA2QrceuOyS8b2futp0" Patch="J9w8mVEnUAROjxSZVwMeMK" Enabled="true" />
           <Fragment Id="DPWshjVkI2DNjKyT3qJIlD" Patch="SSp50CbGlMRL5nl49Lt9ly" Enabled="true" />
@@ -290,6 +334,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="RPBhjyUJNAbMISRTlvEHQN" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="RPBhjyUJNAbMISRTlvEHQN" Location="VL.Skia" Version="2020.1.7" />
   <PlatformDependency Id="IUHLyeSUjpQM6JKT5tvgJj" Location="System.Diagnostics.Process" />
+  <DocumentDependency Id="NEUaoYnChWXO8GbbkMCIFW" Location="../Schema.Projects.vl" />
 </Document>
