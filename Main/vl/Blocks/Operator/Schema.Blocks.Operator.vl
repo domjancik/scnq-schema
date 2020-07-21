@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="B6wchGGMIPHOLPZE24BlgV" LanguageVersion="2019.2.0-0081-9750350a10" Version="0.128">
-  <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2019.2.0-0081-g9750350a10" />
+<Document xmlns:p="property" Id="B6wchGGMIPHOLPZE24BlgV" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="QembXq2tNpmL3uWveSCIMM" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="Gql5WLoCHdZMTNYgfAMR3o">
     <Canvas Id="ONZw2kKUbs5NUJL83wygr9" DefaultCategory="Schema.Blocks.Operator" CanvasType="FullCategory">
       <!--
@@ -27,8 +27,17 @@
             <Pin Id="SPwzSLcxskANUsmRGJZKQH" Name="Input" Kind="InputPin" />
             <Pin Id="KAg01cWUNXBMe9RTqq0zCD" Name="Output" Kind="OutputPin" />
           </Node>
-          <Link Id="BoZmQX24XyWMa6CRfDuePq" Ids="KAg01cWUNXBMe9RTqq0zCD,TOpdW4qrPPkLdZVfVb0vdL" />
+          <Link Id="BoZmQX24XyWMa6CRfDuePq" Ids="KAg01cWUNXBMe9RTqq0zCD,H5oC5gaE1XiNq7lZEQvYLR" />
           <Link Id="HapIzYNG9lBNJ1xwjO46H8" Ids="T3MzGc1BdtrNOPauI3me8f,SPwzSLcxskANUsmRGJZKQH" />
+          <Node Bounds="523,420" Id="Ah0Q9OnTSr4OA2SCldcGIa">
+            <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator" LastSymbolSource="Schema.Blocks.Operator.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="RegisterValueOperators" />
+            </p:NodeReference>
+            <Pin Id="H5oC5gaE1XiNq7lZEQvYLR" Name="Input" Kind="InputPin" />
+            <Pin Id="SL1fG6Ll2NGP35qACZie0K" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="K6RwfkUXISDPGwJkIMYZ0m" Ids="SL1fG6Ll2NGP35qACZie0K,TOpdW4qrPPkLdZVfVb0vdL" />
         </Patch>
       </Node>
       <Canvas Id="JjFdlqGWlKdP0Q7D6r09Ch" Name="Internal" Position="860,294">
@@ -84,6 +93,85 @@
             <Link Id="V2dc6gaLD7qO9IfBM3SwqV" Ids="DcRbVvazWQhPXJ5jtVYB8J,HEzN3zPEIzjO9V302l1GxS" IsHidden="true" />
           </Patch>
         </Node>
+        <!--
+
+    ************************ RegisterValueOperators ************************
+
+-->
+        <Node Name="RegisterValueOperators" Bounds="876,268,357,437" Id="G25kI3UAF9KNjbBXARskIj">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+            <Choice Kind="OperationDefinition" Name="Operation" />
+          </p:NodeReference>
+          <Patch Id="JYWMIJwP21yOxzeluPqTz7">
+            <Node Bounds="953,342,100,81" Id="KXEGFnV4NdkOMsGzg3oLCL">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+              </p:NodeReference>
+              <Pin Id="BbNWO2m6L9CMNcK2VbRzAA" Name="Input" Kind="StateInputPin" />
+              <Pin Id="Tt7yCVZFhnJQZNB1d6ANk3" Name="Key" Kind="InputPin" />
+              <Pin Id="UH2ro0E5o2jN4nJf5Iuh3p" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="NEgQJbqlFs4M4rtiW5f53U" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="B2uKL4h0PcbQYsm3KW8Ll6" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="RkUGLPmr1ncM8pKtb3zdqO" Bounds="958,416" />
+                <Node Bounds="965,365,76,26" Id="EwS8jYnoU1yN6rwzbjgYtW">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator.Color.BooleanCombine" LastSymbolSource="Schema.Blocks.Operator.Value.Boolean.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="BooleanCombine" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="N9M43sYLvAiNKzXr1002KN" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Link Id="EFqX5Wr8vLNL4CTP9YzB38" Ids="RkUGLPmr1ncM8pKtb3zdqO,B2uKL4h0PcbQYsm3KW8Ll6" IsHidden="true" />
+            <Pad Id="A7aO2D6wDxdPTEdqXx0U5G" Comment="Key" Bounds="1036,310,141,15" ShowValueBox="true" isIOBox="true" Value="Combine.Value.Boolean">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="RGEWooHiWCVLXuc0WIq4J3" Ids="A7aO2D6wDxdPTEdqXx0U5G,Tt7yCVZFhnJQZNB1d6ANk3" />
+            <ControlPoint Id="BDpugpaspa8Ou4SZ2L6o8G" Bounds="938,286" />
+            <Link Id="Uf64SOxebQYMnjsNc0C2qf" Ids="BDpugpaspa8Ou4SZ2L6o8G,BbNWO2m6L9CMNcK2VbRzAA" />
+            <Pin Id="GrSejuNfIiSOECD7NvNuLp" Name="Input" Kind="InputPin" Bounds="938,286" />
+            <Link Id="Pur7phPqie8PZhkd7Jyaog" Ids="GrSejuNfIiSOECD7NvNuLp,BDpugpaspa8Ou4SZ2L6o8G" IsHidden="true" />
+            <Link Id="CiMsGb0VLaWPxpOzdGeMBH" Ids="UH2ro0E5o2jN4nJf5Iuh3p,GmkqDkSs0WoOpIVGThShUL" />
+            <ControlPoint Id="Gb8conwUpp3PUYyjl8FZlO" Bounds="956,688" />
+            <Pin Id="H4ihuJQCQZxMB5R7FadbCu" Name="Output" Kind="OutputPin" Bounds="934,535" />
+            <Link Id="Rhb3rn29CajO18FZXCUfgR" Ids="Gb8conwUpp3PUYyjl8FZlO,H4ihuJQCQZxMB5R7FadbCu" IsHidden="true" />
+            <Link Id="FQyOUzLntKPN7aZjwsbd3z" Ids="N9M43sYLvAiNKzXr1002KN,RkUGLPmr1ncM8pKtb3zdqO" />
+            <Node Bounds="963,499,104,79" Id="JOrdbsygV2BOkf5K7Ik5Ab">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastSymbolSource="VVVV.Schema.Core.vl">
+                <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+                <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+              </p:NodeReference>
+              <Pin Id="GmkqDkSs0WoOpIVGThShUL" Name="Input" Kind="StateInputPin" />
+              <Pin Id="SRzC5Nu1SuANYxedycoMB1" Name="Key" Kind="InputPin" />
+              <Pin Id="HLOc2K5hhQXMxjtRFeN8AE" Name="Output" Kind="StateOutputPin" />
+              <Patch Id="VMlnDVYFXtUPaU3GugiIwk" Name="Constructor" ManuallySortedPins="true">
+                <Pin Id="BG1QuoGKCG5P8pOmSQdikD" Name="Result" Kind="OutputPin" />
+                <ControlPoint Id="DeP1QrqGiNJOwDmkIQk73o" Bounds="975,571" />
+                <Node Bounds="975,522,80,26" Id="HFYXDhrNfvCNIsjshfyd2x">
+                  <p:NodeReference LastCategoryFullName="Schema.Blocks.Operator.Value.CompareCombine" LastSymbolSource="Schema.Blocks.Operator.Value.Comparison.vl" LastDependency="Schema.Blocks.Operator.Value.Compare.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                    <CategoryReference Kind="ClassType" Name="CompareCombine" NeedsToBeDirectParent="true" />
+                  </p:NodeReference>
+                  <Pin Id="JobHQqnioY5NTzp6cZnDZU" Name="Output" Kind="StateOutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Link Id="IK3nZ35NnTIMHd7hzHZ670" Ids="DeP1QrqGiNJOwDmkIQk73o,BG1QuoGKCG5P8pOmSQdikD" IsHidden="true" />
+            <Link Id="QNla1yDh7mBNtVZ0QyLIVd" Ids="HLOc2K5hhQXMxjtRFeN8AE,Gb8conwUpp3PUYyjl8FZlO" />
+            <Pad Id="UGCMDSzufOkPyc5l8QB6lq" Comment="Key" Bounds="1056,462,126,11" ShowValueBox="true" isIOBox="true" Value="Combine.Value.Compare">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Link Id="H2GarvcdlYtMPleWxBGXO5" Ids="UGCMDSzufOkPyc5l8QB6lq,SRzC5Nu1SuANYxedycoMB1" />
+            <Link Id="P9qoNkPqQj1OH4SB9SVYvS" Ids="JobHQqnioY5NTzp6cZnDZU,DeP1QrqGiNJOwDmkIQk73o" />
+          </Patch>
+        </Node>
       </Canvas>
     </Canvas>
     <!--
@@ -107,7 +195,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="PTcZEXRi8TcPOvvsGetlkW" Location="VL.Skia" Version="2019.2.0-0081-g9750350a10" />
+  <NugetDependency Id="PTcZEXRi8TcPOvvsGetlkW" Location="VL.Skia" Version="2020.1.7" />
   <DocumentDependency Id="HWO9ABryUOWQRELmgBVldh" Location="../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="P6PKSdFLHzBPQA9jBuwxDA" Location="./Color/Schema.Blocks.Operator.Color.Distance.vl" />
+  <DocumentDependency Id="CNHHcvBox6NLcUua3Ye05q" Location="./Value/Schema.Blocks.Operator.Value.Boolean.vl" />
+  <DocumentDependency Id="TAZoPVmFOf3K9YTvthdW3u" Location="./Value/Schema.Blocks.Operator.Value.Compare.vl" />
 </Document>
