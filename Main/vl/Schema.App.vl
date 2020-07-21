@@ -225,8 +225,9 @@
                   </p:NodeReference>
                   <Pin Id="Qi5lzNNGVLHNVnWTHGHGig" Name="Input" Kind="StateInputPin" />
                   <Pin Id="I5NcchGku3XL51DQSlw0OL" Name="File Path" Kind="InputPin" />
-                  <Pin Id="Mj8Utnyo4t6M8mVfiWPkKs" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="DOGEhlKjrrEL8LeMwmuPVp" Name="Group" Kind="InputPin" />
                   <Pin Id="O2ro91LuEJjPIEPmhNznJI" Name="Apply" Kind="InputPin" />
+                  <Pin Id="Mj8Utnyo4t6M8mVfiWPkKs" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <Node Bounds="568,416,60,19" Id="MnymLlQpo5HPCK70MYWezS">
                   <p:NodeReference LastCategoryFullName="VVVV.Schema.Tools.File" LastSymbolSource="VVVV.Schema.Core.vl">
@@ -583,7 +584,7 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="JuqDfQPIlPcN1PMpsanYqO" Bounds="523,47" />
-            <ControlPoint Id="PdTG6zzOrweQVvmKwAxTi1" Bounds="519,2146" />
+            <ControlPoint Id="PdTG6zzOrweQVvmKwAxTi1" Bounds="527,2321" />
             <Node Bounds="506,1553,125,82" Id="OBh7xajlkE5NYch6GekIK3">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
@@ -930,6 +931,47 @@
               <Pin Id="A9PZlLBsg4rN90eXfe8LPY" Name="Output" Kind="OutputPin" />
               <Pin Id="EjWREkkokTfNKH5qW4du9v" Name="Value" Kind="OutputPin" />
             </Node>
+            <Node Bounds="516,2177,148,85" Id="R02642EKFQdQa45URq8P5M">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ApplicationStatefulRegion" Name="If" />
+                <FullNameCategoryReference ID="Primitive" />
+              </p:NodeReference>
+              <Pin Id="QGR5eTRLMf6PeP08LvEnsq" Name="Condition" Kind="InputPin" />
+              <ControlPoint Id="SsceG7WKdXUOwQ5FDcNzsI" Bounds="538,2183" Alignment="Top" />
+              <ControlPoint Id="HIWHTZi75lINLByesXNZzU" Bounds="538,2256" Alignment="Bottom" />
+              <Patch Id="Grtm3OvSSTGO2w7SgB5EXw" ManuallySortedPins="true">
+                <Patch Id="DpvLpsMer8HQB2RMWXs3tc" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="I3nJKnZ8cIWPMfl6u0yCWV" Name="Then" ManuallySortedPins="true" />
+                <Node Bounds="528,2210,124,19" Id="EJ8mSaJ6kboOQdMCzwOJ8f">
+                  <p:NodeReference LastCategoryFullName="Schema.Plugins.RemoteController" LastSymbolSource="Schema.Plugins.RemoteController.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="RemoteControllerPlugin" />
+                  </p:NodeReference>
+                  <Pin Id="AzMzNyBtBAhQUyn5mVYIsZ" Name="Input" Kind="InputPin" />
+                  <Pin Id="KMBU2LfIpojQSMQFPwH1CL" Name="Output" Kind="OutputPin" />
+                </Node>
+              </Patch>
+            </Node>
+            <Node Bounds="533,2140,96,19" Id="KZJE9tP8hInO0OEXvE17VM">
+              <p:NodeReference LastCategoryFullName="Schema.App.Utilities" LastSymbolSource="Schema.App.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="GetPluginEnabled" />
+              </p:NodeReference>
+              <Pin Id="KiQMYW38KNnN1ILP7EjJJG" Name="Input" Kind="InputPin" />
+              <Pin Id="VnCgxNgrTbpPU3bUvW5Fvn" Name="Plugin Name" Kind="InputPin" DefaultValue="RemoteController">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="TxVXd9HyioKMMlrTuUt2hJ" Name="Default" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="KFuA6DfP1oyLgNRF41ASNb" Name="Output" Kind="OutputPin" />
+              <Pin Id="NLvZIBDo8Y9OyJ5MAuM3kL" Name="Value" Kind="OutputPin" />
+            </Node>
           </Canvas>
           <Patch Id="BUzxkW6EGgrQHWi4keZsvM" Name="Create" />
           <Patch Id="Q7mYzErptQILPJPLUUIAwI" Name="Update">
@@ -1033,7 +1075,13 @@
           <Link Id="EkCQCDpirEBPGmy4uFsCmd" Ids="EjWREkkokTfNKH5qW4du9v,BjpRKABsVJRPEHqC1hDZek" />
           <Link Id="H18NfgGLQDJMZ5tqAiBUMM" Ids="JzhlpIFee0XMjdV8kpQp4T,IfwfVfICCo9P1goKQtjHGI" />
           <Link Id="PF9WaJrW75xNvWuyUoPVzx" Ids="LzXQqsLlFCqPLnFixBmyKg,HIKvkPOS8SEMXiiyEhvygD" />
-          <Link Id="ID98jyNxLqqN9pjl58MtoJ" Ids="S7dCvOYYHrELvDhr7cNLah,PdTG6zzOrweQVvmKwAxTi1" />
+          <Link Id="DIxF6yDUK9FLMS9AYU1iBn" Ids="SsceG7WKdXUOwQ5FDcNzsI,HIWHTZi75lINLByesXNZzU" IsFeedback="true" />
+          <Link Id="GnmRKmUNTHsNghnFecQ8Rj" Ids="SsceG7WKdXUOwQ5FDcNzsI,AzMzNyBtBAhQUyn5mVYIsZ" />
+          <Link Id="UFpFK9fIm0CP1ywQI9ekxY" Ids="KMBU2LfIpojQSMQFPwH1CL,HIWHTZi75lINLByesXNZzU" />
+          <Link Id="PlmPhiigWaCN0uY8wdk37d" Ids="KFuA6DfP1oyLgNRF41ASNb,SsceG7WKdXUOwQ5FDcNzsI" />
+          <Link Id="IMoMEZ1j2mdLDkz2l2XtNv" Ids="NLvZIBDo8Y9OyJ5MAuM3kL,QGR5eTRLMf6PeP08LvEnsq" />
+          <Link Id="GIfVuNEEA9FO5DdoiJrdYy" Ids="S7dCvOYYHrELvDhr7cNLah,KiQMYW38KNnN1ILP7EjJJG" />
+          <Link Id="KshMvKJZDMLM4FK7VKFKZD" Ids="HIWHTZi75lINLByesXNZzU,PdTG6zzOrweQVvmKwAxTi1" />
         </Patch>
       </Node>
       <!--
@@ -1204,4 +1252,5 @@
   <DocumentDependency Id="TguT2hazYUkL3hCr2dBPop" Location="./Plugins/DALInetOutput/Schema.Plugins.DALInetOutput.vl" />
   <DocumentDependency Id="DKHG7xQggp2MyaQepyj7k6" Location="./Plugins/OpenDMXOutput/Schema.Plugins.OpenDMXOutput.vl" />
   <DocumentDependency Id="B6TETCnC5SmPbo2x4egDUb" Location="./Plugins/EnttecDMXUSBProOutput/Schema.Plugins.EnttecDMXUSBProOutput.vl" />
+  <DocumentDependency Id="SxHvcyR7U76MNts2z6lZzz" Location="./Plugins/RemoteController/Schema.Plugins.RemoteController.vl" />
 </Document>
