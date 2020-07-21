@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="Az83zEMQas6PalhCDmcNvs" LanguageVersion="2020.1.0.53" Version="0.128">
-  <NugetDependency Id="LoyyYKrKuSXPfX3Lah8AIP" Location="VL.CoreLib" Version="2020.1.0" />
+<Document xmlns:p="property" Id="Az83zEMQas6PalhCDmcNvs" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="LoyyYKrKuSXPfX3Lah8AIP" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="KIuo9zXXD8bL9yhDvUhVi0">
     <Canvas Id="F2RQ43fFVplLpaxJMkCcWf" DefaultCategory="Schema.UI.Logo" CanvasType="FullCategory">
       <!--
@@ -19,7 +19,11 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="ActivityDetector" />
               </p:NodeReference>
-              <Pin Id="Sn0ElbTiiTfODaTWP7Bfh9" Name="Timeout" Kind="InputPin" />
+              <Pin Id="Sn0ElbTiiTfODaTWP7Bfh9" Name="Timeout" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Float32" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="K0I20L9lxNXP6aMxoRdR93" Name="Output" Kind="OutputPin" />
               <Pin Id="ELvPALkKRD0MrARq0PwtKx" Name="Active" Kind="OutputPin" />
               <Pin Id="PeEDNtjYXu5NHDx69pc993" Name="Inactive" Kind="OutputPin" />
@@ -42,10 +46,12 @@
               <Pin Id="OaahBr0ecI6MMtVvqmRczu" Name="Output" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="OD3J5PDkXILMHiauFPHRBJ" Bounds="537,505" />
+            <ControlPoint Id="NRPve3LwhKPLWIP0vTGOQB" Bounds="541,284" />
           </Canvas>
           <Patch Id="BNClxxL7q6XLnOKSG6hd5L" Name="Create" />
           <Patch Id="NGE3DgYMP8pNPPDOiSdBO3" Name="Update">
             <Pin Id="IdNQsYmRLFTQANbFMACbLR" Name="Output" Kind="OutputPin" Bounds="538,512" />
+            <Pin Id="DIPC7ajhh2GLZTRoP6AmK7" Name="Timeout" Kind="InputPin" Bounds="516,292" />
           </Patch>
           <ProcessDefinition Id="RGocTjNPHSXNg1Vq3e2FRK">
             <Fragment Id="OaoLpueWYLVNZtoBwPLRhI" Patch="BNClxxL7q6XLnOKSG6hd5L" Enabled="true" />
@@ -56,6 +62,8 @@
           <Link Id="K70yIDIcpFwNiQqRaaSBqJ" Ids="FPHppcVGS4JPw27R7qGfgh,IQVkkHzv1bWLwiiLLC6CLE" />
           <Link Id="VfTlQboQEVGLPgvivFVda7" Ids="OaahBr0ecI6MMtVvqmRczu,OD3J5PDkXILMHiauFPHRBJ" />
           <Link Id="RS3xYKNUVWwNFAPQGvpIrF" Ids="OD3J5PDkXILMHiauFPHRBJ,IdNQsYmRLFTQANbFMACbLR" IsHidden="true" />
+          <Link Id="TlKnPpEbOzwM0wr11drNDv" Ids="NRPve3LwhKPLWIP0vTGOQB,Sn0ElbTiiTfODaTWP7Bfh9" />
+          <Link Id="K8knkuwomuINzY2lMpi6Ox" Ids="DIPC7ajhh2GLZTRoP6AmK7,NRPve3LwhKPLWIP0vTGOQB" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -891,7 +899,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="OjVb0e5miCfLmdxuVnWiQX" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="OjVb0e5miCfLmdxuVnWiQX" Location="VL.Skia" Version="2020.1.7" />
   <DocumentDependency Id="LdGZ8KqTomuPy9kBo4qRhK" Location="../Schema.UI.FontAndParagraph.vl" />
   <DocumentDependency Id="TuMARIS8JbfNRPE4u6PorS" Location="../Schema.UI.SVG.vl" />
   <DocumentDependency Id="AWtgi84b1oaNBTcwNgodoa" Location="../Schema.UI.Style.vl" />
