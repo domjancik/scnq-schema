@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50alpha38.2.dtd" >
    <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\_DEMO_01_Schema_Audio.v4p" systemname="Schema_Ankali" filename="C:\Users\MagNet\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\Schema_Ankali.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2576" top="4152" width="4616" height="6480">
    </BOUNDS>
@@ -6,16 +6,6 @@
    </PACK>
    <PACK Name="addonpack" Version="38.1.0">
    </PACK>
-   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
-   <BOUNDS type="Node" left="295" top="444" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Time Mode" slicecount="1" values="Filtered">
-   </PIN>
-   <PIN pinname="Maximum Foreground FPS" slicecount="1" visible="1" values="30">
-   </PIN>
-   <PIN pinname="Maximum Background FPS" slicecount="1" visible="1" values="30">
-   </PIN>
-   </NODE>
    <NODE id="289" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
@@ -626,26 +616,6 @@
    </NODE>
    <LINK srcnodeid="345" srcpinname="Output" dstnodeid="344" dstpinname="Y Input Value">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="399" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="527" top="171" width="696" height="208">
-   </BOUNDS>
-   <BOUNDS type="Node" left="527" top="171" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="399" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
-   </LINK>
-   <LINK srcnodeid="399" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
-   </LINK>
    <NODE systemname="Timing (Debug)" nodename="Timing (Debug)" componentmode="Hidden" id="479">
    <BOUNDS type="Node" left="245" top="7082" width="100" height="100">
    </BOUNDS>
@@ -721,7 +691,7 @@
    <LINK srcnodeid="486" srcpinname="Global Properties" dstnodeid="491" dstpinname="Input">
    </LINK>
    <NODE systemname="Controllers2 (Schema.Input)" filename="vl\VVVV.Schema.Core.vl" nodename="Controllers2 (Schema.Input)" componentmode="Hidden" id="447">
-   <BOUNDS type="Node" left="253" top="3176" width="100" height="100">
+   <BOUNDS type="Node" left="253" top="2621" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -734,50 +704,6 @@
    <PIN pinname="Controllers" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="447" srcpinname="Output" dstnodeid="486" dstpinname="Input">
-   </LINK>
-   <NODE systemname="Controllers (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Controllers (Schema)" componentmode="Hidden" id="492">
-   <BOUNDS type="Node" left="269" top="2867" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Keyboard" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Keyboard (Devices Desktop)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Keyboard (Devices Desktop)" componentmode="Hidden" id="493">
-   <BOUNDS type="Node" left="761" top="2533" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="761" top="2533" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Device" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="493" srcpinname="Device" dstnodeid="492" dstpinname="Keyboard">
-   </LINK>
-   <LINK srcnodeid="492" srcpinname="Output" dstnodeid="447" dstpinname="Input">
-   </LINK>
-   <NODE id="4" systemname="Runtime (Schema)" filename="vl\VVVV.Schema.Core.vl" nodename="Runtime (Schema)" componentmode="Hidden">
-   <BOUNDS type="Node" left="280" top="990" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="State" visible="1">
-   </PIN>
-   <PIN pinname="Pixel Position Buffer" visible="1">
-   </PIN>
-   <PIN pinname="Setup" visible="1">
-   </PIN>
-   <PIN pinname="Strip Colors" visible="1">
-   </PIN>
-   <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Keyboard" visible="1">
-   </PIN>
-   <PIN pinname="File Path" visible="1" slicecount="1" values="registry\Ankali.layout.xml">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="4" srcpinname="State" dstnodeid="261" dstpinname="State">
-   </LINK>
    <LINK srcnodeid="491" srcpinname="Output" dstnodeid="487" dstpinname="Global Properties">
    </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="497">
@@ -808,8 +734,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <LINK srcnodeid="261" srcpinname="State" dstnodeid="492" dstpinname="Input">
-   </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="499">
    <BOUNDS type="Node" left="200" top="1384" width="2040" height="216">
    </BOUNDS>
@@ -824,4 +748,38 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <LINK srcnodeid="261" srcpinname="State" dstnodeid="447" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="447" srcpinname="Output" dstnodeid="486" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Blocks (Schema)" filename="vl\VVVV.Schema.Blocks.vl" nodename="Blocks (Schema)" componentmode="Hidden" id="500">
+   <BOUNDS type="Node" left="300" top="1005" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="500" srcpinname="Output" dstnodeid="261" dstpinname="State">
+   </LINK>
+   <NODE id="4" systemname="Runtime (Schema.SiteSpecific.Generic)" filename="vl\VVVV.Schema.Core.vl" nodename="Runtime (Schema.SiteSpecific.Generic)" componentmode="Hidden">
+   <BOUNDS type="Node" left="280" top="600" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="State" visible="1">
+   </PIN>
+   <PIN pinname="Pixel Position Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Setup" visible="1">
+   </PIN>
+   <PIN pinname="Strip Colors" visible="1">
+   </PIN>
+   <PIN pinname="External Colors" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Keyboard" visible="1">
+   </PIN>
+   <PIN pinname="File Path" visible="1" slicecount="1" values="registry\Ankali.layout.xml">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="State" dstnodeid="500" dstpinname="Input">
+   </LINK>
    </PATCH>
