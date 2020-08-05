@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="KZfrIJMP8G5NndQglyQGOz" LanguageVersion="2019.1.0-0703-g2ca4a704b6" Version="0.128">
+  <NugetDependency Id="L3a5TKjSwkrNNSSjLSXOHi" Location="VL.CoreLib" Version="2019.1.0-703" />
+  <Patch Id="NB6xCkWjEzcNO597daU7EN">
+    <Canvas Id="LDXhgIbEu74OA602oiiGQz" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="AtGzKerToBXLNnInhPPaKu">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="PnCP78uZcILLtdDcUjnxon">
+        <Canvas Id="RlNR4gST6mmO4CXeP2nxFk" CanvasType="Group">
+          <Node Bounds="398,398" Id="FdmoeWYGSg1NTA4FeJdBR8">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Renderer (OffScreen)" />
+            </p:NodeReference>
+            <Pin Id="A4OG32rDa2xPnWoUiVkSkZ" Name="Layer" Kind="InputPin" />
+            <Pin Id="BYsOvQgGWBlNRQYifakqIS" Name="Color" Kind="InputPin" DefaultValue="1, 1, 1, 0">
+              <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="RGBA" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="J9chqJlt9rfO3hyM5a2NPE" Name="Mouse" Kind="InputPin" />
+            <Pin Id="AMqkJxBLA3XQXbC5rl1grR" Name="Keyboard" Kind="InputPin" />
+            <Pin Id="T9cSfnIpsfDNCPGv9bL4io" Name="Space" Kind="InputPin" />
+            <Pin Id="UoDtX5aR7ZZQKxSpDy3nBZ" Name="Width" Kind="InputPin" />
+            <Pin Id="Od9c5ehIsmYPGibe6gQuUD" Name="Height" Kind="InputPin" />
+            <Pin Id="NqyEkuBJHyIQG3s5h5SEQp" Name="Enabled" Kind="InputPin" />
+            <Pin Id="QfCFFeG6y9pNZyO7g3zuFl" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="353,334" Id="OPyYk6bRwnyNYE5IbPtilg">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Circle" />
+            </p:NodeReference>
+            <Pin Id="C6AV8eHEGuCORtAdfMM6aG" Name="Position" Kind="InputPin" />
+            <Pin Id="UpTFHAYiuL7NPhTcY7NAJA" Name="Radius" Kind="InputPin" DefaultValue="1">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="DlcMTmSGsTRLqd9Ep2Pdek" Name="Anchor" Kind="InputPin" />
+            <Pin Id="RSmz618jT1dLpDOsJUhBhx" Name="Paint" Kind="InputPin" />
+            <Pin Id="O9UBBGfyWS6OA12J20p1m3" Name="Enabled" Kind="InputPin" />
+            <Pin Id="IyFPIDvKAW5LpsojgQmisB" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="QCHMvWwJa6ULy7P1n6DFHU" Comment="Width" Bounds="514,326,35,15" ShowValueBox="true" isIOBox="true" Value="64">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="418,511" Id="BxdxxNZ4es7NmzJRPBzIFF">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.IO" LastSymbolSource="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Skia" />
+              <CategoryReference Kind="Category" Name="IO" />
+              <Choice Kind="ProcessAppFlag" Name="ImageWriter" />
+            </p:NodeReference>
+            <Pin Id="OLC7HuPR7rHNPxQ77mlK3y" Name="Input" Kind="InputPin" />
+            <Pin Id="IH0AbbdXlNTMzqNDN5bj2C" Name="Path" Kind="InputPin" DefaultValue="..\..\Main\modules\Render\images\LEDSprite.png">
+              <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Path" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="HlQ11qZ6XfnPx7BtUcxR2g" Name="Format" Kind="InputPin" />
+            <Pin Id="T1ltT6k2wUYPPEY0PciQFC" Name="Quality" Kind="InputPin" />
+            <Pin Id="AR91G53ForVMC7K1Fdmw7T" Name="Write" Kind="InputPin" />
+          </Node>
+          <Pad Id="Aq3xcsWOTphMWEFXtPpWLd" Comment="Write" Bounds="502,455,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="NHx0T8PGT1oPxtYnFLNwWZ" Name="Create" />
+        <Patch Id="MCn2GK2A7LNMB4FapbcSkX" Name="Update" />
+        <ProcessDefinition Id="GjprSADY1tfLDPpbvPt7vQ">
+          <Fragment Id="JECLpbVbf1lPJr5El3G9b4" Patch="NHx0T8PGT1oPxtYnFLNwWZ" Enabled="true" />
+          <Fragment Id="GZKL1TaKGzrLVBc3HjSFN9" Patch="MCn2GK2A7LNMB4FapbcSkX" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="P9AWvDuTBS6MWS12fVHdnk" Ids="IyFPIDvKAW5LpsojgQmisB,A4OG32rDa2xPnWoUiVkSkZ" />
+        <Link Id="GDWapvd4x6LPbdGah9CM5Z" Ids="QCHMvWwJa6ULy7P1n6DFHU,UoDtX5aR7ZZQKxSpDy3nBZ" />
+        <Link Id="GAj2ZlEFz9DOzNUbpDpJYD" Ids="QCHMvWwJa6ULy7P1n6DFHU,Od9c5ehIsmYPGibe6gQuUD" />
+        <Link Id="GtXDpqZe0eXNxoZzVxmDxg" Ids="QfCFFeG6y9pNZyO7g3zuFl,OLC7HuPR7rHNPxQ77mlK3y" />
+        <Link Id="Co22xVWsqc2PFQW1NvbCze" Ids="Aq3xcsWOTphMWEFXtPpWLd,AR91G53ForVMC7K1Fdmw7T" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="DPzA99QfFa4M3l5Egkxlf0" Location="VL.Skia" Version="2019.1.0-0703-g2ca4a704b6" />
+</Document>
