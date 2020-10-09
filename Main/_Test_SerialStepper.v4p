@@ -1,0 +1,365 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\_Test_SerialStepper.v4p" systemname="_Test_SerialStepper" filename="C:\Users\magne\OneDrive\PROJECTS\Schéma\Program\SchemaControl\Main\_Test_SerialStepper.v4p" scrollx="176" scrolly="0">
+   <BOUNDS type="Window" left="8200" top="4424" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="0">
+   <BOUNDS type="Node" left="424" top="1496" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="1">
+   <BOUNDS type="Box" left="688" top="376" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="688" top="376" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Speed">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2">
+   <BOUNDS type="Box" left="496" top="2136" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="496" top="2136" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="2" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="3">
+   <BOUNDS type="Box" left="1144" top="1064" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1144" top="1064" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM8">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output Enum" dstnodeid="0" dstpinname="Port Name">
+   </LINK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="9">
+   <BOUNDS type="Node" left="2656" top="1504" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8">
+   <BOUNDS type="Box" left="2728" top="2144" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2728" top="2144" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="8" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="7">
+   <BOUNDS type="Box" left="3376" top="1072" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3376" top="1072" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM9">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output Enum" dstnodeid="9" dstpinname="Port Name">
+   </LINK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="12">
+   <BOUNDS type="Node" left="4696" top="1520" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11">
+   <BOUNDS type="Box" left="4768" top="2160" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4768" top="2160" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="11" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="10">
+   <BOUNDS type="Box" left="5416" top="1088" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5416" top="1088" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM11">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Enum" dstnodeid="12" dstpinname="Port Name">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Speed">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Speed">
+   </LINK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="15">
+   <BOUNDS type="Node" left="6808" top="1560" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14">
+   <BOUNDS type="Box" left="6880" top="2200" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6880" top="2200" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="14" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="13">
+   <BOUNDS type="Box" left="7528" top="1128" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7528" top="1128" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Output Enum" dstnodeid="15" dstpinname="Port Name">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Speed">
+   </LINK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="18">
+   <BOUNDS type="Node" left="9000" top="1592" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17">
+   <BOUNDS type="Box" left="9072" top="2232" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9072" top="2232" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="17" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="16">
+   <BOUNDS type="Box" left="9720" top="1160" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9720" top="1160" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM14">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output Enum" dstnodeid="18" dstpinname="Port Name">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Speed">
+   </LINK>
+   <NODE systemname="SerialStepper" filename="modules\IO\SerialStepper.v4p" nodename="modules\IO\SerialStepper.v4p" componentmode="InAWindow" id="21">
+   <BOUNDS type="Node" left="11296" top="1648" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="2056" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="Port Name" slicecount="1" visible="1" values="COM13">
+   </PIN>
+   <PIN pinname="Speed" visible="1" slicecount="1" values="0.58">
+   </PIN>
+   <PIN pinname="Update Port List" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
+   <BOUNDS type="Box" left="11368" top="2288" width="696" height="208">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11368" top="2288" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="20" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="19">
+   <BOUNDS type="Box" left="12016" top="1216" width="1392" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12016" top="1216" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="COM15">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="COM8">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Output Enum" dstnodeid="21" dstpinname="Port Name">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Speed">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22">
+   <BOUNDS type="Box" left="3216" top="48" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3216" top="48" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Update Port List">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Update Port List">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Update Port List">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Update Port List">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Update Port List">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Update Port List">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23">
+   <BOUNDS type="Box" left="5296" top="0" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5296" top="0" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Enabled">
+   </LINK>
+   </PATCH>
