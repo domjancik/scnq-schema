@@ -17,3 +17,6 @@ https://docs.scenic.tools/
 
 # Read mildly entertaining front page
 https://schema.scenic.tools/
+
+# Propose ridiculous changes
+https://discord.gg/Q27rcfd
