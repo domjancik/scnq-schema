@@ -2,12 +2,15 @@
 Intuitive realtime programming of physical devices such as lights, motors and more, I'll make it into an mmo game one day I promise
 
 # Open with vvvv gamma
-Last version I checked it with is 2020.1 iirc
+
+Last tested version: 2021.4.9 stable
 http://visualprogramming.net/
 
-Go to gamma, open schema_preview.vl
+- Go to the `gamma` folder and open `Schema_Minimal.vl` (no extra blocks, plugins, basic startup experience) or `Schema_Preview.vl` (all available blocks, plugins and project selection)
+- If you see red, open patches and install missing dependencies. These include `ncalc`, `csv`, `VL.IO.Xbox360Controller`, ...
+- Dig around! Feel free to raise questions/issues/requests in Github issues here or on Discord
 
-dig around, feel free to cleanup and PR, it's a bit dusty under the rugs
+As a sidenote, some patches are objectively messy, some quite nice. You're in for a ride.
 
 # Save time and donate at itch
 https://domj.itch.io/schema
