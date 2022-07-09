@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="CNc0glbSb7RQBeL7GQ8HbV" LanguageVersion="2020.1.2.135" Version="0.128">
-  <NugetDependency Id="DTd774zLcseLGBRmr2yH0M" Location="VL.CoreLib" Version="2020.1.2" />
+<Document xmlns:p="property" Id="CNc0glbSb7RQBeL7GQ8HbV" LanguageVersion="2021.4.9.982" Version="0.128">
+  <NugetDependency Id="DTd774zLcseLGBRmr2yH0M" Location="VL.CoreLib" Version="2021.4.9" />
   <Patch Id="Eny9LQLNx9uLh7Foc0vhnV">
     <Canvas Id="RzIPJGd57R3QRCbNzjSDjn" DefaultCategory="Schema.Plugins.ArtNetOutput" CanvasType="FullCategory">
       <!--
@@ -42,7 +42,7 @@
             </Node>
             <ControlPoint Id="HkD4XTmZTQrOUM8Z93qcA8" Bounds="204,-24" />
             <Node Bounds="182,122,172,117" Id="ACGu8h1r83pMLtnbFUtBMM">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="If" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -135,11 +135,9 @@
                 <Pin Id="MPaqrp1XraXNO3LKOq6uKI" Name="Remote Port" Kind="InputPin" />
                 <Pin Id="LWXXVeXV4fbLrNdq8hQU6i" Name="Value" Kind="InputPin" />
                 <Pin Id="EOYQC7ynxa0Pw1rpyemsVQ" Name="Universe" Kind="InputPin" />
-                <Pin Id="Pg48LSQ1pX7NMFfnkdN4iT" Name="Send" Kind="InputPin">
-                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                    <Choice Kind="TypeFlag" Name="Boolean" />
-                  </p:TypeAnnotation>
-                </Pin>
+                <Pin Id="Pg48LSQ1pX7NMFfnkdN4iT" Name="Send" Kind="InputPin" />
+                <Pin Id="HtWcBfXRRXuNCpZL6UZQjf" Name="Enabled" Kind="InputPin" />
+                <Pin Id="Mi7WkIKOMH5LzzuTfgZ8sV" Name="Is Open" Kind="OutputPin" />
               </Node>
               <Pad Id="QW4KcTqJbUOLBkACthMGsX" SlotId="I0aeBfKEUQxN871uSSdUML" Bounds="193,198" />
               <Pad Id="Ux3aSUSUyMZPpybSrcTNGA" SlotId="UCZ3NKymX3qMSZQZFdFqIa" Bounds="282,199" />
@@ -164,11 +162,7 @@
                     <Choice Kind="TypeFlag" Name="String" />
                   </p:TypeAnnotation>
                 </Pin>
-                <Pin Id="HQdetTKnCpQN91M3RXsfbz" Name="Default" Kind="InputPin">
-                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                    <Choice Kind="TypeFlag" Name="String" />
-                  </p:TypeAnnotation>
-                </Pin>
+                <Pin Id="HQdetTKnCpQN91M3RXsfbz" Name="Default" Kind="InputPin" />
                 <Pin Id="ALb7w8fjRlvPK6VOBgtBXx" Name="Value" Kind="OutputPin" />
                 <Pin Id="CifC6WpussRO7rSs2Rf8Qa" Name="Found" Kind="OutputPin" />
               </Node>
@@ -310,7 +304,7 @@
             <Link Id="EERcIFetVdVLmqQIGgSSeo" Ids="PC1mkBepXaiLOecj1nwyrN,KunbDrWGpGYQR26I3juFRD" />
             <Link Id="V7h2PbWXTgxNoVrPFZNDH7" Ids="ToSZycCZpDLNUWgNmg6OoO,VbEgsvRbUS9NWpXhXcCrIq" />
             <Slot Id="RXHvXB7lCniPR8iQEpmPPd" Name="Name">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Slot>
@@ -396,8 +390,8 @@
                   <CategoryReference Kind="ClassType" Name="ArtNetOutput" NeedsToBeDirectParent="true" />
                 </p:NodeReference>
                 <Pin Id="HFJCTTL22EfNCNZJYmLYmX" Name="Input" Kind="StateInputPin" />
-                <Pin Id="CAZadU6MKdeMHF4W2EqVFw" Name="Configuration" Kind="InputPin" />
                 <Pin Id="FgyE3WWRlQALwf4qc7TDic" Name="Fixtures" Kind="InputPin" />
+                <Pin Id="CAZadU6MKdeMHF4W2EqVFw" Name="Configuration" Kind="InputPin" />
                 <Pin Id="A0bmZRWmzAtPb3RPUNTAiH" Name="Output" Kind="StateOutputPin" />
               </Node>
               <Pad Id="V41hx6FUrOJQCZiUMy8Vsm" SlotId="AxCVGB7Wf5XMNBNemulyTE" Bounds="261,445" />
@@ -518,11 +512,7 @@
                 </p:NodeReference>
                 <Pin Id="IzMDVaGH7sMPSxAhXVEkQk" Name="Input" Kind="InputPin" />
                 <Pin Id="GLVhB1yTCz8LW997P5ncUJ" Name="Slot" Kind="InputPin" />
-                <Pin Id="Cqg3NqAk0x4L3Yj3JNudBg" Name="Value" Kind="InputPin">
-                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                    <Choice Kind="TypeFlag" Name="Float32" />
-                  </p:TypeAnnotation>
-                </Pin>
+                <Pin Id="Cqg3NqAk0x4L3Yj3JNudBg" Name="Value" Kind="InputPin" />
                 <Pin Id="OTL0ts3sB3aM11oTEtDhgu" Name="Output" Kind="OutputPin" />
               </Node>
               <Pad Id="McmQKLhEeTkO9fYMeSshqm" Comment="" Bounds="772,379,33,19" ShowValueBox="true" isIOBox="true" Value="0">
@@ -597,8 +587,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="VedtIDoRe4uNPx3COdWpHC" Location="VL.Skia" Version="2020.1.2" />
   <DocumentDependency Id="SMtEvYqQ0XBNcOrpsTh0oI" Location="../../VVVV.Schema.Core.vl" />
   <NugetDependency Id="ULkdtBZTTq5PNxOQrRYqVY" Location="ncalc" Version="1.3.8" />
   <DocumentDependency Id="Hhe6QFox9lIOM4DkseNEL1" Location="../DMXOutput/Schema.Plugins.DMXOutput.vl" />
+  <NugetDependency Id="Th4Wrbgb75JOkqjNFFufWF" Location="VL.IO.ArtNet" Version="1.0.1" />
 </Document>

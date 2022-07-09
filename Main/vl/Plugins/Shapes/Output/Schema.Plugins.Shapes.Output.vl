@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="T0JlEFXSW2aNnOSNhzMbkc" LanguageVersion="2020.1.0.53" Version="0.128">
-  <NugetDependency Id="PNWZnU1bdjnLxLhpkwTmob" Location="VL.CoreLib" Version="2020.1.0" />
+<Document xmlns:p="property" Id="T0JlEFXSW2aNnOSNhzMbkc" LanguageVersion="2021.4.9.982" Version="0.128">
+  <NugetDependency Id="PNWZnU1bdjnLxLhpkwTmob" Location="VL.CoreLib" Version="2021.4.9" />
   <Patch Id="E155STev0OPQLuasvZyDUN">
     <Canvas Id="UDUlsodRg1jQP7wECPJ4fS" DefaultCategory="Schema.Plugins.Shapes.Output" CanvasType="FullCategory">
       <!--
@@ -72,7 +72,7 @@
               </p:Value>
             </Pad>
             <Node Bounds="337,346,100,74" Id="AjUi1DKTuK9P8E7UBkiYBQ">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -100,6 +100,7 @@
                 <Choice Kind="ProcessAppFlag" Name="Group (Spectral)" />
               </p:NodeReference>
               <Pin Id="Vk614j9Ly5ePVzwby1xLI0" Name="Input" Kind="InputPin" />
+              <Pin Id="HdVGwBfRz6vL4Wa2s6DgXY" Name="Debug" Kind="InputPin" />
               <Pin Id="OwiLdP7a54UOUpXbrPbQeF" Name="Enabled" Kind="InputPin" />
               <Pin Id="FRDUv01vOQVQT0EBxBzFdw" Name="Output" Kind="OutputPin" />
             </Node>
@@ -184,7 +185,7 @@
               <Pin Id="SwfipkC2gKmLSsoT9ECX6u" Name="Result" Kind="OutputPin" />
             </Node>
             <Node Bounds="243,661,150,58" Id="QEJUqiOwzDlQPkAFfNDJuL">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="If" />
                 <FullNameCategoryReference ID="Primitive" />
@@ -291,12 +292,10 @@
             <ProcessDefinition Id="FYcwlYAbWOrQbT3Ukyd2tm" IsHidden="true">
               <Fragment Id="TTxsl56jht1N78q2EnZeqv" Patch="QkBD5TsHPhfLlvTcLLDc25" Enabled="true" />
             </ProcessDefinition>
+            <Link Id="QPCR3VMYROFOV2nQXe4h4k" Ids="NMQNFfTHRl2Lg8FdWLCYca,GyulOym4G09OHhz3TDMRv4" IsHidden="true" />
+            <Link Id="V0JOvXI9M8fPBX3qcGc8nm" Ids="LtvqD8TdCPROGD5KGTAHjD,A92f8oMWSm6MYFZSM60vHY" IsHidden="true" />
+            <Link Id="Hv8g6Ny2hSUMfULqQTrdwO" Ids="UyVsE2bGLFqPGzbDMDcca0,TdxlnVuUdDzNpXgjyjD1Ta" IsHidden="true" />
             <Patch Id="QkBD5TsHPhfLlvTcLLDc25" Name="Update">
-              <Pin Id="NMQNFfTHRl2Lg8FdWLCYca" Name="State" Kind="InputPin">
-                <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="PropertyBank" />
-                </p:TypeAnnotation>
-              </Pin>
               <Pin Id="LtvqD8TdCPROGD5KGTAHjD" Name="Positions" Kind="InputPin">
                 <p:TypeAnnotation>
                   <Choice Kind="TypeFlag" Name="Spread" />
@@ -307,15 +306,17 @@
                   </p:TypeArguments>
                 </p:TypeAnnotation>
               </Pin>
+              <Pin Id="NMQNFfTHRl2Lg8FdWLCYca" Name="State" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="PropertyBank" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="TdxlnVuUdDzNpXgjyjD1Ta" Name="Output" Kind="OutputPin">
                 <p:TypeAnnotation>
                   <Choice Kind="TypeFlag" Name="Layer" />
                 </p:TypeAnnotation>
               </Pin>
             </Patch>
-            <Link Id="QPCR3VMYROFOV2nQXe4h4k" Ids="NMQNFfTHRl2Lg8FdWLCYca,GyulOym4G09OHhz3TDMRv4" IsHidden="true" />
-            <Link Id="V0JOvXI9M8fPBX3qcGc8nm" Ids="LtvqD8TdCPROGD5KGTAHjD,A92f8oMWSm6MYFZSM60vHY" IsHidden="true" />
-            <Link Id="Hv8g6Ny2hSUMfULqQTrdwO" Ids="UyVsE2bGLFqPGzbDMDcca0,TdxlnVuUdDzNpXgjyjD1Ta" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -338,7 +339,7 @@
               <ControlPoint Id="F15sTAYmNtfMGILUibnZ2a" Bounds="763,332" />
               <ControlPoint Id="UFY80KUwPvmQBUc8C17Flx" Bounds="783,791" />
               <Node Bounds="768,521,129,198" Id="OLUdWRmTnc7MW62rc5v9xr">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                   <FullNameCategoryReference ID="Primitive" />
@@ -381,6 +382,7 @@
                   <Choice Kind="ProcessAppFlag" Name="Group (Spectral)" />
                 </p:NodeReference>
                 <Pin Id="Fz1I0uzAMXTMPCM34bi9gW" Name="Input" Kind="InputPin" />
+                <Pin Id="BfBYZAZSTj7MUk4FCClICK" Name="Debug" Kind="InputPin" />
                 <Pin Id="A70T5bBO9uxPAMuoCvZWrh" Name="Enabled" Kind="InputPin" />
                 <Pin Id="EiVUVQrxeKDL6LkWDu3inA" Name="Output" Kind="OutputPin" />
               </Node>
@@ -518,7 +520,7 @@
             <ControlPoint Id="EzztxRRI7k4LWc0wWodQvW" Bounds="789,812" />
             <ControlPoint Id="LF0FADAgM9xNZQSUimhEsu" Bounds="588,306" />
             <Node Bounds="699,458,53,218" Id="SeXvJjX0G5xOVxA48uzfkN">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -663,9 +665,9 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dh18pTWyGOUMOJHES4lxuv" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="Dh18pTWyGOUMOJHES4lxuv" Location="VL.Skia" Version="2021.4.9" />
   <DocumentDependency Id="GtoNSr5Jck5MoLUBgvyH2B" Location="../../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="PXXQC734twkPzvFz6zbV6M" Location="../../../UI/Schema.UI.Camera.vl" />
-  <NugetDependency Id="IeRfMfEoiluO7iujOcuIIn" Location="VL.WinFormsUtils" Version="1.0.7" />
+  <NugetDependency Id="IeRfMfEoiluO7iujOcuIIn" Location="VL.WinFormsUtils" Version="1.0.9" />
   <DocumentDependency Id="MLaZ39lusIgL1STTLSrfaF" Location="../../../Schema.PropertyExtensions.vl" />
 </Document>

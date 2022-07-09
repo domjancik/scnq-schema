@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="R5RqewORngSMQbG9if8V1M" LanguageVersion="2020.1.7.184" Version="0.128">
-  <NugetDependency Id="EEdu3lFpEMsNWB8VHiyOFY" Location="VL.CoreLib" Version="2020.1.7" />
+<Document xmlns:p="property" Id="R5RqewORngSMQbG9if8V1M" LanguageVersion="2021.4.9.982" Version="0.128">
+  <NugetDependency Id="EEdu3lFpEMsNWB8VHiyOFY" Location="VL.CoreLib" Version="2021.4.9" />
   <Patch Id="ANIPJZYB9qSOvOZ5kFuj0U">
     <Canvas Id="JSd8qZWg5K1Nr7fcm2AEWt" DefaultCategory="Schema.Blocks.Effects.Value" CanvasType="FullCategory">
       <!--
@@ -195,11 +195,7 @@
               <Pin Id="JzvK5gvGuGeO1RnPpI27B9" Name="Duration" Kind="InputPin" />
               <Pin Id="NV85k5egIH6LtnHfl7W2cS" Name="Filter Time" Kind="InputPin" />
               <Pin Id="GQgwBihAqvuNzbMeaEZMCn" Name="Output Minimum" Kind="InputPin" />
-              <Pin Id="DDnPYBo1mSWMuCPgc2wr3w" Name="Output Maximum" Kind="InputPin">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float32" />
-                </p:TypeAnnotation>
-              </Pin>
+              <Pin Id="DDnPYBo1mSWMuCPgc2wr3w" Name="Output Maximum" Kind="InputPin" />
               <Pin Id="NXfEBu3JIGOMJes9VnFwEQ" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="579,278,65,19" Id="HXIBMJBM03aNFewEf3NdfU">
@@ -368,11 +364,7 @@
                 <CategoryReference Kind="RecordType" Name="Time" />
                 <Choice Kind="OperationCallFlag" Name="FromSeconds" />
               </p:NodeReference>
-              <Pin Id="JCOZv9sPHRfPPjMMvMgmx0" Name="Input" Kind="StateInputPin">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float64" />
-                </p:TypeAnnotation>
-              </Pin>
+              <Pin Id="JCOZv9sPHRfPPjMMvMgmx0" Name="Input" Kind="StateInputPin" />
               <Pin Id="SOB2k1jPbDCNK46qkSwcPC" Name="Result" Kind="OutputPin" />
             </Node>
             <Node Bounds="435,462,113,143" Id="BxNgXrOvFF7OXKY5NspHkU">
@@ -436,7 +428,7 @@
             <Pad Id="IHbQVhuob2MOynSkh5gkK1" SlotId="Jn4dvbNSCpqN7vtuIBWWHR" Bounds="436,675" />
             <ControlPoint Id="LZVDgqFAc64MKhuvctpAOZ" Bounds="554,782" />
             <Node Bounds="519,651,80,80" Id="CSqFNQgQwmTNY3HY1MVhrM">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -543,13 +535,6 @@
             <ControlPoint Id="Bzc5y47Z4CINDFwVuZKU34" Bounds="310,248" />
             <ControlPoint Id="G7AfVHQuoJENIMkmmWwS1p" Bounds="366,248" />
           </Canvas>
-          <Patch Id="Qm8kCVKkem2LlNudUBGXvZ" Name="Create" />
-          <Patch Id="NmiqRBOSlqQMQudqgazZ2e" Name="Update">
-            <Pin Id="IjgHmvMJZZ2Ll8LFu8g1Ss" Name="Max" Kind="OutputPin" />
-            <Pin Id="Lp4XtX5ZeVVQRmNh2oQVsM" Name="Min" Kind="OutputPin" />
-            <Pin Id="BJLiPDYJQakQdPBGFSBfA2" Name="Input" Kind="InputPin" />
-            <Pin Id="HNESMg2FIYdMwluGW5XYjY" Name="Duration" Kind="InputPin" />
-          </Patch>
           <ProcessDefinition Id="OwVIRulUK1dLRVE8WiTL9E">
             <Fragment Id="J4iBESkdDO8O6p7h158riL" Patch="Qm8kCVKkem2LlNudUBGXvZ" Enabled="true" />
             <Fragment Id="T0LYikIZnYdNex5K7mveRy" Patch="NmiqRBOSlqQMQudqgazZ2e" Enabled="true" />
@@ -564,6 +549,13 @@
           <Link Id="KpIoKrYOChXPg6Fkhs0aAs" Ids="Bzc5y47Z4CINDFwVuZKU34,JpbGKdjxGTOMDWkRc7Wx8M" />
           <Link Id="VL087YTokETOhPz1NbVYLD" Ids="HNESMg2FIYdMwluGW5XYjY,G7AfVHQuoJENIMkmmWwS1p" IsHidden="true" />
           <Link Id="LUazsDVkMb8Nj5bU9i38R8" Ids="G7AfVHQuoJENIMkmmWwS1p,RAYQiw2Q41rL2eRkieRLFA" />
+          <Patch Id="Qm8kCVKkem2LlNudUBGXvZ" Name="Create" />
+          <Patch Id="NmiqRBOSlqQMQudqgazZ2e" Name="Update">
+            <Pin Id="BJLiPDYJQakQdPBGFSBfA2" Name="Input" Kind="InputPin" />
+            <Pin Id="HNESMg2FIYdMwluGW5XYjY" Name="Duration" Kind="InputPin" />
+            <Pin Id="Lp4XtX5ZeVVQRmNh2oQVsM" Name="Min" Kind="OutputPin" />
+            <Pin Id="IjgHmvMJZZ2Ll8LFu8g1Ss" Name="Max" Kind="OutputPin" />
+          </Patch>
         </Patch>
       </Node>
       <!--
@@ -583,11 +575,7 @@
                 <Choice Kind="ProcessAppFlag" Name="RunningBounds" />
               </p:NodeReference>
               <Pin Id="AiDqbDJlTdqOphunMakwBS" Name="Input" Kind="InputPin" />
-              <Pin Id="N8CQAqGIMuSPOlRxFoDTni" Name="Duration" Kind="InputPin">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float32" />
-                </p:TypeAnnotation>
-              </Pin>
+              <Pin Id="N8CQAqGIMuSPOlRxFoDTni" Name="Duration" Kind="InputPin" />
               <Pin Id="Uw1QhhFdx5sPu0h8MaQ2c6" Name="Min" Kind="OutputPin" />
               <Pin Id="OVBFSD2zbSTQIyAsg9Aa2h" Name="Max" Kind="OutputPin" />
             </Node>
@@ -623,14 +611,6 @@
             <ControlPoint Id="Jjw7LINZqiZPsnDtmOsYDN" Bounds="489,431" />
             <ControlPoint Id="PanwcOlCgiHLOoc6bNOnuL" Bounds="474,288" />
           </Canvas>
-          <Patch Id="OhebaGciwrwOFew9EbAAYv" Name="Create" />
-          <Patch Id="NXpyLeBqaVONQlMc7eRnzi" Name="Update">
-            <Pin Id="U11xa8h01rXMuSFFFe3UAs" Name="Filter Time" Kind="InputPin" Bounds="544,288" />
-            <Pin Id="JIimfIlsYd3QABt6v6G18m" Name="Input" Kind="InputPin" Bounds="403,261" />
-            <Pin Id="EdInnMPvfniOReK8TxX2x4" Name="Min" Kind="OutputPin" Bounds="400,438" />
-            <Pin Id="Kj5lJXlKwGzMH4hmIBuS92" Name="Max" Kind="OutputPin" Bounds="489,431" />
-            <Pin Id="BNtuxVK18wYOlFKXPXMzF1" Name="Length" Kind="InputPin" Bounds="477,287" />
-          </Patch>
           <ProcessDefinition Id="NeMrKXHAw5wPfxn7tWI8Oz">
             <Fragment Id="O0fqTxKQu00PJR0wPWg9NF" Patch="OhebaGciwrwOFew9EbAAYv" Enabled="true" />
             <Fragment Id="NDJ8Zg9Cz3jNYCoqmez5yN" Patch="NXpyLeBqaVONQlMc7eRnzi" Enabled="true" />
@@ -648,6 +628,14 @@
           <Link Id="EwQJc0YalxhNoa3wjfyZil" Ids="Jjw7LINZqiZPsnDtmOsYDN,Kj5lJXlKwGzMH4hmIBuS92" IsHidden="true" />
           <Link Id="Drr21K36L7xOzQHsKyQVtm" Ids="PanwcOlCgiHLOoc6bNOnuL,N8CQAqGIMuSPOlRxFoDTni" />
           <Link Id="V1mntf0cRoSOvs2S3idsai" Ids="BNtuxVK18wYOlFKXPXMzF1,PanwcOlCgiHLOoc6bNOnuL" IsHidden="true" />
+          <Patch Id="OhebaGciwrwOFew9EbAAYv" Name="Create" />
+          <Patch Id="NXpyLeBqaVONQlMc7eRnzi" Name="Update">
+            <Pin Id="JIimfIlsYd3QABt6v6G18m" Name="Input" Kind="InputPin" Bounds="403,261" />
+            <Pin Id="BNtuxVK18wYOlFKXPXMzF1" Name="Length" Kind="InputPin" Bounds="477,287" />
+            <Pin Id="U11xa8h01rXMuSFFFe3UAs" Name="Filter Time" Kind="InputPin" Bounds="544,288" />
+            <Pin Id="EdInnMPvfniOReK8TxX2x4" Name="Min" Kind="OutputPin" Bounds="400,438" />
+            <Pin Id="Kj5lJXlKwGzMH4hmIBuS92" Name="Max" Kind="OutputPin" Bounds="489,431" />
+          </Patch>
         </Patch>
       </Node>
       <!--
@@ -691,15 +679,6 @@
             <ControlPoint Id="OIWCOkZP5umPa4s1qzwBDR" Bounds="550,310" />
             <ControlPoint Id="J61mYlVetHeLJAQki98GjG" Bounds="492,307" />
           </Canvas>
-          <Patch Id="HnQdh9oaowwM7asFouy6N2" Name="Create" />
-          <Patch Id="JW1Kah7NOOGQRiIS8B2UwN" Name="Update">
-            <Pin Id="RLMHpeUGNEOQTaLGLFD5tm" Name="Output Minimum" Kind="InputPin" Bounds="582,343" />
-            <Pin Id="JMKzgDnTWQbOwJeRbEbDMx" Name="Output Maximum" Kind="InputPin" Bounds="698,347" />
-            <Pin Id="OcrVRy8bQ0FPDNgixW1KUJ" Name="Input" Kind="InputPin" Bounds="455,307" />
-            <Pin Id="Jo1skjwCLrnP3NHCYgzb7B" Name="Output" Kind="OutputPin" Bounds="449,449" />
-            <Pin Id="Q5I0yoKR5XzOB1bSD7tOt6" Name="Filter Time" Kind="InputPin" Bounds="554,301" />
-            <Pin Id="RgDOmVJrePRMXNHgFbYKDo" Name="Duration" Kind="InputPin" Bounds="505,310" />
-          </Patch>
           <ProcessDefinition Id="KutN53x6HY8N8Y301a2AJE">
             <Fragment Id="HuBKUfwf4BDPnpn0Y1HjXx" Patch="HnQdh9oaowwM7asFouy6N2" Enabled="true" />
             <Fragment Id="QTxq9G2VtWGOy41Rmp7HV4" Patch="JW1Kah7NOOGQRiIS8B2UwN" Enabled="true" />
@@ -719,6 +698,15 @@
           <Link Id="Ij9jPCyTWahObbHEtEXtYO" Ids="Q5I0yoKR5XzOB1bSD7tOt6,OIWCOkZP5umPa4s1qzwBDR" IsHidden="true" />
           <Link Id="SiS302cffBJM9yq812VxmP" Ids="J61mYlVetHeLJAQki98GjG,BGEYTRh1OQjLnXlLQWhFEH" />
           <Link Id="Uwae1CCPqtML6DS5OUbFFX" Ids="RgDOmVJrePRMXNHgFbYKDo,J61mYlVetHeLJAQki98GjG" IsHidden="true" />
+          <Patch Id="HnQdh9oaowwM7asFouy6N2" Name="Create" />
+          <Patch Id="JW1Kah7NOOGQRiIS8B2UwN" Name="Update">
+            <Pin Id="OcrVRy8bQ0FPDNgixW1KUJ" Name="Input" Kind="InputPin" Bounds="455,307" />
+            <Pin Id="RgDOmVJrePRMXNHgFbYKDo" Name="Duration" Kind="InputPin" Bounds="505,310" />
+            <Pin Id="Q5I0yoKR5XzOB1bSD7tOt6" Name="Filter Time" Kind="InputPin" Bounds="554,301" />
+            <Pin Id="RLMHpeUGNEOQTaLGLFD5tm" Name="Output Minimum" Kind="InputPin" Bounds="582,343" />
+            <Pin Id="JMKzgDnTWQbOwJeRbEbDMx" Name="Output Maximum" Kind="InputPin" Bounds="698,347" />
+            <Pin Id="Jo1skjwCLrnP3NHCYgzb7B" Name="Output" Kind="OutputPin" Bounds="449,449" />
+          </Patch>
         </Patch>
       </Node>
     </Canvas>
@@ -743,7 +731,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="LoVgArVwiRzQWmswY2zrZZ" Location="VL.Skia" Version="2020.1.7" />
+  <NugetDependency Id="LoVgArVwiRzQWmswY2zrZZ" Location="VL.Skia" Version="2021.4.9" />
   <DocumentDependency Id="E1FN0unSnQuQTlIpKWK04b" Location="../../../VVVV.Schema.Core.vl" />
   <DocumentDependency Id="DfovotMkJjvOr2b85Bjedi" Location="../../../PropertyDefinition/Schema.PropertyDefinition.Helpers.vl" />
 </Document>

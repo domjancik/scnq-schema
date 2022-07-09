@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="M1TGnrU41z8PVVlccSWS3R" LanguageVersion="2021.4.9.982" Version="0.128">
-  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2021.4.9" />
+<Document xmlns:p="property" Id="M1TGnrU41z8PVVlccSWS3R" LanguageVersion="2020.1.7.184" Version="0.128">
+  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2020.1.7" />
   <Patch Id="Ep2iriBhATjLXxcs4iOjXi">
     <Canvas Id="LgcqCAAEeisOEqqW9H5Ak2" DefaultCategory="Schema.App" CanvasType="FullCategory">
       <!--
@@ -98,7 +98,11 @@
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="BjYO8yMl9ABLY0R7GG21Et" Name="Input" Kind="InputPin" />
-              <Pin Id="VnNVTDLyO11MnGT1Bwb8zC" Name="Color" Kind="InputPin" />
+              <Pin Id="VnNVTDLyO11MnGT1Bwb8zC" Name="Color" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="RGBA" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="QEtItTg3O1WOGqtKGsfyTz" Name="Clear" Kind="InputPin" />
               <Pin Id="PdGBgMneC0rOJgVWuXGpCz" Name="Space" Kind="InputPin" />
               <Pin Id="NbohgLHhRnOLoXb4QLOFXU" Name="Show Cursor" Kind="InputPin" />
@@ -206,12 +210,10 @@
               </p:NodeReference>
               <Pin Id="PKH0ItoQzt8LYBbiWoxQ1o" Name="Input" Kind="InputPin" />
               <Pin Id="R5flNC2zVC0Mv5REWMe7Py" Name="Input 2" Kind="InputPin" />
-              <Pin Id="NcGYweOUaFqMnryEhbjI4E" Name="Debug" Kind="InputPin" />
-              <Pin Id="RPJxcfzPn3HMkA9IVlIUnV" Name="Enabled" Kind="InputPin" />
               <Pin Id="KMlVJWj0eiCQAK0nUkpl6m" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="620,311,364,192" Id="MLsZsfQKo3AOL3ND7tXGaz">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ApplicationStatefulRegion" Name="Repeat" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -294,7 +296,6 @@
                 <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
               </p:NodeReference>
               <Pin Id="NbKGpxzSuohMVnrxkUc3Do" Name="Input" Kind="InputPin" />
-              <Pin Id="T6geDL15qLTOtQqY1k8gZ0" Name="Debug" Kind="InputPin" />
               <Pin Id="DBS9NMmpuydM87RNbBSqbo" Name="Enabled" Kind="InputPin" />
               <Pin Id="NKzIolaPGCnPGsEkrdp0D8" Name="Output" Kind="OutputPin" />
             </Node>
@@ -314,8 +315,16 @@
                 <Choice Kind="ProcessAppFlag" Name="SetTitle" />
               </p:NodeReference>
               <Pin Id="Lqt0zYKZLKXLabdlousru9" Name="Input" Kind="InputPin" />
-              <Pin Id="ITvONpG8OzTOcM6Ruzz39E" Name="Title" Kind="InputPin" />
-              <Pin Id="JMFbCT8KXgeNMBAiNt9Shy" Name="Default" Kind="InputPin" />
+              <Pin Id="ITvONpG8OzTOcM6Ruzz39E" Name="Title" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="JMFbCT8KXgeNMBAiNt9Shy" Name="Default" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pin>
               <Pin Id="GOPHhKJZZnpOi0NufhgWVA" Name="Input" Kind="OutputPin" />
             </Node>
             <Node Bounds="254,650,25,19" Id="D8zDwHp5PXSMBcH3YNL9N1">
@@ -387,7 +396,7 @@
             </Node>
             <Pad Id="A1ZeWj0kG9pMi0Wae7Iyup" SlotId="EFhMi6yLfsgOeFOahJMIyA" Bounds="278,475" />
             <Node Bounds="727,169,205,96" Id="OLC3csr6CN3NhEfWhyrqIM">
-              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+              <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                 <FullNameCategoryReference ID="Primitive" />
@@ -508,7 +517,7 @@
       <Patch Id="OjCe3WTRNvMMfpypOYLR2Y">
         <Canvas Id="JGR4jnQZJpfOS7Q1TqLU1P" CanvasType="Group">
           <Node Bounds="539,579,250,220" Id="NT0ByjyjEjYMGYbOo2ti9m">
-            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="If" />
               <FullNameCategoryReference ID="Primitive" />
@@ -519,8 +528,8 @@
               <Patch Id="AgijohnPJX6K939dN7G2RH" Name="Then" ManuallySortedPins="true" />
               <Node Bounds="570,599,122,116" Id="I7EsLj95GPlO0ZvqHIYLnU">
                 <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="VL.CoreLib.Experimental.vl">
+                  <Choice Kind="ProcessAppFlag" Name="Try" />
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                  <Choice Kind="ProcessStatefulRegion" Name="Try (1 Output)" />
                 </p:NodeReference>
                 <Pin Id="JbMiNinWadbNSpDNOHVlIC" Name="Default Output" Kind="InputPin" />
                 <Pin Id="OErh17pqtMIQFj5NEW1fPQ" Name="Result" Kind="OutputPin" />
@@ -572,7 +581,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Node Bounds="23,177,107,82" Id="DMuaCavfHD1OyqoI2YUNNU">
-            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="If" />
               <FullNameCategoryReference ID="Primitive" />
@@ -652,7 +661,7 @@
             <Pin Id="CzEa50nDorfOmocvmXmnFS" Name="Output" Kind="StateOutputPin" />
           </Node>
           <Node Bounds="284,337,169,102" Id="LS1l3BbKWOHMO5E9HkH4VS">
-            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+            <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="If" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -736,7 +745,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2021.4.9" />
+  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2020.1.7" />
   <DocumentDependency Id="AIZZPl56EDgLMbYWA5MQcV" Location="../vl/VVVV.Schema.Core.vl" />
   <DocumentDependency Id="LxWQRtP0OlsOmBcYssV78H" Location="../vl/Blocks/Schema.Blocks.vl" />
   <DocumentDependency Id="EQvzUt9U4aQL4pH4TLv5MM" Location="../vl/UI/Schema.UI.vl" />
@@ -744,6 +753,6 @@
   <DocumentDependency Id="PGfhivXukngOFaWILNWxTW" Location="../vl/Schema.App.vl" />
   <DocumentDependency Id="BrfGLl6uZS1LhBac9eidMN" Location="../vl/Schema.Projects.vl" />
   <DocumentDependency Id="COO6uM87138P1Ucx1xfn8l" Location="../vl/App/Schema.App.RuntimeEditor.vl" />
-  <NugetDependency Id="Mv1PkBfOXpZN3ZUAecBtl5" Location="VL.WinFormsUtils" Version="1.0.9" />
+  <NugetDependency Id="Mv1PkBfOXpZN3ZUAecBtl5" Location="VL.WinFormsUtils" Version="0.0.0.0" />
   <DocumentDependency Id="U6zJ8Xw3GmTOJSz7f07Gr9" Location="../vl/UI/Logo/Schema.UI.Logo.vl" />
 </Document>
