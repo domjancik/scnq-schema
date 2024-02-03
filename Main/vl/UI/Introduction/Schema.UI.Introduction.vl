@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="FfzNYZ66YsVP7CT1r4VtPy" LanguageVersion="2023.5.0" Version="0.128">
-  <NugetDependency Id="VdqrKXxI7J6OFE2rF5qxjt" Location="VL.CoreLib" Version="2023.5.0" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="FfzNYZ66YsVP7CT1r4VtPy" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="VdqrKXxI7J6OFE2rF5qxjt" Location="VL.CoreLib" Version="2023.5.2" />
   <Patch Id="Lw8LWeY7t0VOzRf1O4GswF">
     <Canvas Id="BDSYEdn7AywMQEV6RjlPNr" DefaultCategory="Schema.UI.Introduction" CanvasType="FullCategory">
       <!--
@@ -251,7 +251,7 @@
                           <Pin Id="FYsS70TkP0oMTarJ7LCBXF" Name="Baseline Position" Kind="OutputPin" />
                         </Node>
                         <Pad Id="QwXiA3fOJvbNnrUAAUii8e" Comment="Text" Bounds="600,437,95,21" ShowValueBox="true" isIOBox="true" Value="Hi there!">
-                          <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="CoreLibBasics.vl">
+                          <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="TypeFlag" Name="String" />
                           </p:TypeAnnotation>
                         </Pad>
@@ -277,11 +277,7 @@
                               <Choice Kind="TypeFlag" Name="SKTextAlign" />
                             </p:TypeAnnotation>
                           </Pin>
-                          <Pin Id="H0bqKrYj49TN5tctRoYQh5" Name="Vertical Alignment" Kind="InputPin">
-                            <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastDependency="VL.Skia.vl">
-                              <Choice Kind="TypeFlag" Name="VerticalTextAlignment" />
-                            </p:TypeAnnotation>
-                          </Pin>
+                          <Pin Id="H0bqKrYj49TN5tctRoYQh5" Name="Vertical Alignment" Kind="InputPin" />
                           <Pin Id="HtM8JeJbsidMzq1Z2BApOQ" Name="Show Helpers" Kind="InputPin" />
                           <Pin Id="DazMXY5KQdAQMZlrT4EQjt" Name="Output" Kind="OutputPin" />
                         </Node>
@@ -289,7 +285,7 @@
                         <ControlPoint Id="VfFhK2auzAGLv21gvYFtb5" Bounds="848,364" />
                         <ControlPoint Id="S7K2KIiEnyLNzkOKs5rGvd" Bounds="759,367" />
                         <Node Bounds="845,405" Id="TCF7TfvrFJKNmHlrDZvTbw">
-                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="SetAlpha" />
                             <CategoryReference Kind="ColorRGBAType" Name="RGBA" NeedsToBeDirectParent="true" />
@@ -300,13 +296,6 @@
                         </Node>
                         <ControlPoint Id="OVytAnOdGbGPpqaEhtbAMv" Bounds="936,347" />
                       </Canvas>
-                      <Patch Id="R1ohaLZoyCRLYRTTg8FPXs" Name="Create" />
-                      <Patch Id="JXd4G1Al5bfQLQwTq4BnNd" Name="Update">
-                        <Pin Id="FRURCAFGPMBOlsYuvUuJ4Q" Name="Output" Kind="OutputPin" Bounds="672,622" />
-                        <Pin Id="DkSMx7kx8oOPX9AQCP9nui" Name="Color" Kind="InputPin" Bounds="848,364" />
-                        <Pin Id="JaVKjIFCjHEOyqtbC3qSt2" Name="Bounds" Kind="InputPin" Bounds="759,367" />
-                        <Pin Id="DJsLqxC4TwiMtiUiiy6S80" Name="Alpha" Kind="InputPin" Bounds="936,347" />
-                      </Patch>
                       <ProcessDefinition Id="Au43Wb6MMyeL599miTnCC3">
                         <Fragment Id="OhCkgHhCMQVP6vNM9NVPPB" Patch="R1ohaLZoyCRLYRTTg8FPXs" Enabled="true" />
                         <Fragment Id="RXIsAgV3euNPCQZG6HkalJ" Patch="JXd4G1Al5bfQLQwTq4BnNd" Enabled="true" />
@@ -322,6 +311,13 @@
                       <Link Id="Q982HjtIvTGQWjCaMF8SfG" Ids="M33xXdoV0QdLmlTV0HdmF3,CecyMsnZG14MaHGPkCW8Xk" />
                       <Link Id="BUJAZBNx7tLQStwt5Hbl4Y" Ids="OVytAnOdGbGPpqaEhtbAMv,Knie4w5hdqgNSbWzsqA2HN" />
                       <Link Id="LFgyStpu63LNLf0ALMFSD5" Ids="DJsLqxC4TwiMtiUiiy6S80,OVytAnOdGbGPpqaEhtbAMv" IsHidden="true" />
+                      <Patch Id="R1ohaLZoyCRLYRTTg8FPXs" Name="Create" />
+                      <Patch Id="JXd4G1Al5bfQLQwTq4BnNd" Name="Update">
+                        <Pin Id="JaVKjIFCjHEOyqtbC3qSt2" Name="Bounds" Kind="InputPin" Bounds="759,367" />
+                        <Pin Id="DkSMx7kx8oOPX9AQCP9nui" Name="Color" Kind="InputPin" Bounds="848,364" />
+                        <Pin Id="DJsLqxC4TwiMtiUiiy6S80" Name="Alpha" Kind="InputPin" Bounds="936,347" />
+                        <Pin Id="FRURCAFGPMBOlsYuvUuJ4Q" Name="Output" Kind="OutputPin" Bounds="672,622" />
+                      </Patch>
                     </Patch>
                   </Node>
                   <!--
@@ -356,37 +352,21 @@
                             </CategoryReference>
                           </p:NodeReference>
                           <Pin Id="Ov6bOCD80JyQRAswvBG9S2" Name="Input" Kind="InputPin" />
-                          <Pin Id="HXBzf8LsLdCPOF05oxPEnk" Name="Style" Kind="InputPin">
-                            <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastDependency="VL.Skia.vl">
-                              <Choice Kind="TypeFlag" Name="SKTypefaceStyle" />
-                            </p:TypeAnnotation>
-                          </Pin>
+                          <Pin Id="HXBzf8LsLdCPOF05oxPEnk" Name="Style" Kind="InputPin" />
                           <Pin Id="G7AMKOYFOc1P1kdMWEpX0s" Name="Size" Kind="InputPin" DefaultValue="0.039">
-                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="CoreLibBasics.vl">
+                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="TypeFlag" Name="Float32" />
                             </p:TypeAnnotation>
                           </Pin>
-                          <Pin Id="FltNO4iYKsULwoNODRk5aJ" Name="Color" Kind="InputPin">
-                            <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="CoreLibBasics.vl">
-                              <Choice Kind="TypeFlag" Name="RGBA" />
-                            </p:TypeAnnotation>
-                          </Pin>
+                          <Pin Id="FltNO4iYKsULwoNODRk5aJ" Name="Color" Kind="InputPin" />
                           <Pin Id="Dv4LjKMHSziOWn6IWzdErk" Name="Line Height in em" Kind="InputPin" />
-                          <Pin Id="Eb1cLfIDZ4HOBX7xJyl5QN" Name="Horizontal Alignment" Kind="InputPin">
-                            <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastDependency="VL.Skia.vl">
-                              <Choice Kind="TypeFlag" Name="SKTextAlign" />
-                            </p:TypeAnnotation>
-                          </Pin>
-                          <Pin Id="QfLR2oVNN2TOI0BVUMop0Y" Name="Vertical Alignment" Kind="InputPin">
-                            <p:TypeAnnotation LastCategoryFullName="Graphics.Skia.Unwrapped.Enums" LastDependency="VL.Skia.vl">
-                              <Choice Kind="TypeFlag" Name="VerticalTextAlignment" />
-                            </p:TypeAnnotation>
-                          </Pin>
+                          <Pin Id="Eb1cLfIDZ4HOBX7xJyl5QN" Name="Horizontal Alignment" Kind="InputPin" />
+                          <Pin Id="QfLR2oVNN2TOI0BVUMop0Y" Name="Vertical Alignment" Kind="InputPin" />
                           <Pin Id="MOypnGMqAmkOywQlQ0ypWy" Name="Show Helpers" Kind="InputPin" />
                           <Pin Id="CFxIJNVZo71Lih2GkDE6Fy" Name="Output" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="685,535,85,26" Id="CgbmWaOWlqZPVBytc3C50a">
-                          <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="Inflate" />
                           </p:NodeReference>
@@ -394,7 +374,7 @@
                           <Pin Id="Niq3p4xbuz5QGBphqqM0IO" Name="Left" Kind="InputPin" />
                           <Pin Id="OoavGaQDAPAQaiAoEccWhj" Name="Right" Kind="InputPin" />
                           <Pin Id="Ug7ZSrORHdqNzdQNDtdNXA" Name="Up" Kind="InputPin" DefaultValue="-0.26">
-                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="CoreLibBasics.vl">
+                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="TypeFlag" Name="Float32" />
                             </p:TypeAnnotation>
                           </Pin>
@@ -419,12 +399,13 @@
                           <Pin Id="SNwGVp7gs0vOXhboxpiWu0" Name="Rectangle" Kind="InputPin" />
                           <Pin Id="PBbvSCmGSAWOoz1vKoX9PL" Name="Remove Empty Lines" Kind="InputPin" />
                           <Pin Id="NmQkQlV1n0MOMTEFTQRQng" Name="Break at Words" Kind="InputPin" />
+                          <Pin Id="Ukm8hwTeETbNchDCnewJYn" Name="Align Bottom" Kind="InputPin" />
                           <Pin Id="QAAdEdzOpQcLG0Yg6d92R7" Name="Paint" Kind="InputPin" />
                           <Pin Id="KoA0O4aNV2uL7ILmWRBjlk" Name="Output" Kind="OutputPin" />
                           <Pin Id="EvqIdJhs3THLk4dIT80FsO" Name="Leftover" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="805,686,60,26" Id="FpZzVWTklPCLwatdyqramW">
-                          <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="Substring (Length)" />
                           </p:NodeReference>
@@ -434,7 +415,7 @@
                           <Pin Id="BK0OQqwvRDHPl7VQ9jRdKq" Name="Output" Kind="StateOutputPin" />
                         </Node>
                         <Node Bounds="880,627,48,26" Id="NR8Jcm62Ga3PFj032DFYDp">
-                          <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="Length" />
                             <FullNameCategoryReference ID="Primitive.String" />
@@ -443,7 +424,7 @@
                           <Pin Id="PZCA3yIW5MzNaMNBv7ScnJ" Name="Length" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="860,659,45,19" Id="OwAmAmt2N0iO5vrQeWIdpa">
-                          <p:NodeReference LastCategoryFullName="Math" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Math" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="Lerp" />
                           </p:NodeReference>
@@ -455,7 +436,7 @@
                         <ControlPoint Id="GBpj12a0axDQVhscSfybwO" Bounds="905,293" />
                         <ControlPoint Id="Tz2FRR9GaGxPIebis85MsL" Bounds="1042,292" />
                         <Node Bounds="1040,427,65,19" Id="GCfV8FIfp6qNaVSHkCD6FU">
-                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="ToHSL" />
                           </p:NodeReference>
@@ -466,14 +447,14 @@
                           <Pin Id="O1QnBjdRuYRPhGQNeJx0bz" Name="Alpha" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="1040,460,65,19" Id="BEPVtSMaZ7lNnBZ8WHq3I0">
-                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="FromHSL" />
                           </p:NodeReference>
                           <Pin Id="BTAunkmBK8ENWhN2471oDc" Name="Hue" Kind="InputPin" />
                           <Pin Id="KKQEW4kc7CHLEUTTzaXJcM" Name="Saturation" Kind="InputPin" />
                           <Pin Id="CyvIEfEvVIXNWOfyBGXqfK" Name="Lightness" Kind="InputPin" DefaultValue="0.9">
-                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="CoreLibBasics.vl">
+                            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="TypeFlag" Name="Float32" />
                             </p:TypeAnnotation>
                           </Pin>
@@ -481,7 +462,7 @@
                           <Pin Id="Vw5DmwguWabMAbzaxEIISK" Name="Result" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="1040,494,56,19" Id="QaMFYd5N4JxNC3VaWCGkpS">
-                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="CoreLibBasics.vl">
+                          <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="OperationCallFlag" Name="SetAlpha" />
                             <CategoryReference Kind="ColorRGBAType" Name="RGBA" NeedsToBeDirectParent="true" />
@@ -1351,7 +1332,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Px1l7jtXJuFNPmmeyfC1cR" Location="VL.Skia" Version="2023.5.0" />
+  <NugetDependency Id="Px1l7jtXJuFNPmmeyfC1cR" Location="VL.Skia" Version="2023.5.2" />
   <DocumentDependency Id="UJ05ve6hkKtMWY53DG9zwt" Location="../../domj.Skia.UI.vl" />
   <DocumentDependency Id="K1njyWzI2JNP4ZVS5Mep7G" Location="../../VL.LinearSpread.vl" />
   <DocumentDependency Id="F8dufQFZXGzLditl7dZhmQ" Location="../Schema.UI.Utilities.vl" />
