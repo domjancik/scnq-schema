@@ -1,5 +1,7 @@
-# scnq-schema
-Intuitive realtime programming of physical devices such as lights, motors and more, I'll make it into an mmo game one day I promise
+# Schéma, an Integrated Creative Environment
+Schéma provides an intuitive visual programming interface and runtime.
+
+The system is focused on multimedia installations for use in music performances, theater shows, film lighting or interactive art exhibits but is general-purpose and can be expanded.
 
 ## Download pre-compiled releases
 https://domj.itch.io/schema
