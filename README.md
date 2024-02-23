@@ -1,28 +1,58 @@
 # scnq-schema
 Intuitive realtime programming of physical devices such as lights, motors and more, I'll make it into an mmo game one day I promise
 
-# Open source patches with vvvv gamma
-
-You can use the source to run or integrate with other vvvv gamma projects. For pre-compiled releases, see below.
-
-Last tested version: vvvv gamma 5.2 stable
-Download at http://visualprogramming.net/
-
-- Go to the `Main/gamma` folder and open `Schema_Minimal.vl` (no extra blocks, plugins, basic startup experience) or `Schema_Studio.vl` (all available blocks, plugins and project selection)
-- A console focused version with Linux support is available with `Schema_Lite.vl`
-- If you see red, open patches and install missing dependencies. These include `ncalc`, `csv`, `VL.IO.Xbox360Controller`, ...
-- Dig around! Feel free to raise questions/issues/requests in Github issues here or on Discord
-
-As a sidenote, some patches are objectively messy, some quite nice. You're in for a ride.
-
-# Save time, download and maybe donate at itch
+## Download pre-compiled releases
 https://domj.itch.io/schema
 
-# Learn how to drive it
+## Learn how to drive it
 https://docs.scenic.tools/
 
-# Read mildly entertaining front page
+## Explore features and use-cases
 https://schema.scenic.tools/
 
-# Propose ridiculous changes
+## Join the community and get help
 https://discord.gg/Q27rcfd
+
+
+## Running from source and vvvv gamma integration
+
+Schema is developed using the vvvv gamma .NET visual programming environment, stable release.
+
+You can use the source to run or modify Schema and to integrate with other vvvv gamma projects. For pre-compiled releases, see above.
+
+Last tested version: vvvv gamma 5.2
+Download at http://visualprogramming.net/
+
+It will likely work with higher versions as well, however there may be undocumented bugs, superficial document changes after saving and more.
+
+### First setup and run
+
+1. Clone this repository to run Schema from source.
+
+```powershell
+git clone https://github.com/domjancik/scnq-schema.git
+```
+
+2. Install nuget dependencies
+
+```powershell
+.\Main\installDependencies.ps1
+```
+
+This should avoid any red error nodes after opening. If you still see any after the next step, double-check that all required Dependencies are installed.
+
+3. Open in vvvv gamma
+
+Full application files are within the `Main/gamma` folder
+
+There are a few patches, choose depending on your need:
+
+- `Schema_Minimal.vl` Barebones running example of the Schema system with UI. No extra Blocks outside of Core or Plugins (specific outputs, etc.)
+- `Schema_Studio.vl` The full version including all stable features and UI. This is the released Schema Studio executable.
+- `Schema_Lite.vl` No-UI version intended for deployments, also targeting Linux. No Windows specific (graphical and some outputs) Plugins included.
+
+### Integrating with vvvv gamma projects
+
+Explore available methods on the Schema State object.
+
+Block creation and other guides upcoming.
