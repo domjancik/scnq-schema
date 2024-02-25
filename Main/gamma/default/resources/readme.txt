@@ -1,0 +1,1 @@
+Place assets such as images and other resources into this folder.
