@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="SzZuiWuzARkP3KG7pmRHf9" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="DQ52f8UeCbmPBA0UNMuAQA" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="Pbx3Esw0PwPMK4AmoL5F2n">
+    <Canvas Id="FbHhy98xF0KLrKSRzeQFwC" DefaultCategory="Schema.Plugins.Sequences.Blocks" CanvasType="FullCategory">
+      <!--
+
+    ************************ RegisterSequencesBlocks ************************
+
+-->
+      <Node Name="RegisterSequencesBlocks" Bounds="523,305,338,208" Id="FB9sUDaECZMMY5GypsxLEy">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="TujpZ03Lfi6PXFV3Ec4efS">
+          <Node Bounds="600,365,107,90" Id="VaiQ9JCHeX4QA5b1pIWqeG">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastDependency="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="APFl1PIBx2aPWLaxQrsuwi" Name="Input" Kind="StateInputPin" />
+            <Pin Id="FxrfHrfIJjXOYC52Zc8l8a" Name="Key" Kind="InputPin" />
+            <Pin Id="QLsJQxbFfL2NonkKig4pdO" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="HKD65jwL35TO40Fgkr73pN" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="EkD00b7sNuAQOy7FGdCKSj" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="HGXrxbyThw0L6xLmZEqmHN" Bounds="606,448" />
+              <Node Bounds="612,388,83,26" Id="Rn5V7WRAWijQRsXNCyB8Ae">
+                <p:NodeReference LastCategoryFullName="Schema.Plugins.Sequences.Blocks.Source.Reference.SequenceOffset" LastDependency="Schema.Blocks.Source.Reference.SequenceOffset.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="SequenceOffset" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="RpiMgNtnQhVLjjVnP3O0Nd" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="PNQH643y0ruMxlodFxu4cv" Comment="Key" Bounds="704,333,106,15" ShowValueBox="true" isIOBox="true" Value="Create.Reference.SequenceOffset">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="LlBvjptKGSuMUrOBH6fvRB" Ids="HGXrxbyThw0L6xLmZEqmHN,EkD00b7sNuAQOy7FGdCKSj" IsHidden="true" />
+          <Link Id="KIF8yhfJH2MOFxiiSStwpq" Ids="PNQH643y0ruMxlodFxu4cv,FxrfHrfIJjXOYC52Zc8l8a" />
+          <Link Id="VGBIsw9OtqKLGuwlOVXWFe" Ids="RpiMgNtnQhVLjjVnP3O0Nd,HGXrxbyThw0L6xLmZEqmHN" />
+          <Pin Id="KEuXTt62tAKNb625xtPmf9" Name="Input" Kind="InputPin" />
+          <ControlPoint Id="RSsNGgu56VqMUiS08oBEXY" Bounds="600,335" />
+          <Link Id="KuTsy99SI1yQAQtBxG75BX" Ids="KEuXTt62tAKNb625xtPmf9,RSsNGgu56VqMUiS08oBEXY" IsHidden="true" />
+          <Link Id="BTRhKptdbdHPov55LDHFHH" Ids="RSsNGgu56VqMUiS08oBEXY,APFl1PIBx2aPWLaxQrsuwi" />
+          <Pin Id="VoqmvQCQz2FLzcDWbvKA6o" Name="Output" Kind="OutputPin" />
+          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="602,496" />
+          <Link Id="MwiF4dPEHWnM5aGER08Fub" Ids="Ve87I013pMiMJIb9YMyjVM,VoqmvQCQz2FLzcDWbvKA6o" IsHidden="true" />
+          <Link Id="GL1dlMqACN0Mg7bwqVh8EI" Ids="QLsJQxbFfL2NonkKig4pdO,Ve87I013pMiMJIb9YMyjVM" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="Ko9xc9aZJWWP3JoE9k7D7V">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="BRF0KzAXQXGP2iWlZffGkO">
+        <Canvas Id="LxU6cOdsto5QPYN2d93xue" CanvasType="Group" />
+        <Patch Id="C2I1rzK3uwnNKmPzZfbwKQ" Name="Create" />
+        <Patch Id="Ft48G11MmcaLRWZFSVL7Z5" Name="Update" />
+        <ProcessDefinition Id="MrPjlcOoPl5O0rJ6BswNQJ">
+          <Fragment Id="REiX7hYvC6PMRIZqWF2x1u" Patch="C2I1rzK3uwnNKmPzZfbwKQ" Enabled="true" />
+          <Fragment Id="AycXwefGWacOdYdcTIiQZo" Patch="Ft48G11MmcaLRWZFSVL7Z5" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="M5YsaEU3hmEPmE9YpaSB58" Location="../../../VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="RLcIfKiiIOsMOy9QGLCu5A" Location="./Source/Reference/Schema.Blocks.Source.Reference.SequenceOffset.vl" />
+</Document>

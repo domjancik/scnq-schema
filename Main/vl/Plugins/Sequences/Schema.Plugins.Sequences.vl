@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="Lc4EYotfBafPcJ9nm9Y41m" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="DthQJVJ4TnfOcFPMtK9KM2" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="OTpflJZ8ILoMOTgJ92i3Ck">
+    <Canvas Id="MJjcxhV0fIPO8xra3hrfRj" DefaultCategory="Schema.Plugins.Sequences" CanvasType="FullCategory">
+      <!--
+
+    ************************ RegisterSequencesPlugin ************************
+
+-->
+      <Node Name="RegisterSequencesPlugin" Bounds="30,98" Id="UMCRiQ2s3aZLRlPaZUoVJ9">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="ContainerDefinition" Name="Process" />
+        </p:NodeReference>
+        <Patch Id="EnOrKosWJ6JN7QxIRp7e2E">
+          <Canvas Id="JgrIh7V5FkSPsTEYsZTTx2" CanvasType="Group">
+            <Node Bounds="53,113,98,26" Id="DX7rRIfS523OashatTHiul">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastDependency="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="IsReloadingBlocks" />
+              </p:NodeReference>
+              <Pin Id="PX7saGCTTXcOj1aRgTdBWy" Name="Input" Kind="StateInputPin" />
+              <Pin Id="FmNFEcSq6CQPo5paMT1Ziw" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="B2gdtxQVJh1QTu7t4DF1sI" Name="Result" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="FwYMzTbfTHzND1ZNsbBNyD" Bounds="53,77" />
+            <ControlPoint Id="D6xEsIW0ISPN6adcXgNZeS" Bounds="54,387" />
+            <Node Bounds="53,160,130,19" Id="N1iEIEAyRAULugT75J5DQ7">
+              <p:NodeReference LastCategoryFullName="Main" LastDependency="Schema.Plugins.Sequences.Blocks.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterSequencesBlocks" />
+              </p:NodeReference>
+              <Pin Id="OavOE8K9OcMOgSGwTJr5QR" Name="Input" Kind="InputPin" />
+              <Pin Id="PF6Y70Uoez3ODoWLLhNbYe" Name="Output" Kind="OutputPin" />
+              <Pin Id="KlWRAxcwWFaNxkTlXmO0IT" Name="Apply" Kind="InputPin" />
+            </Node>
+            <Node Bounds="52,225,99,26" Id="Sk7bmH4qyNGO5QD4jGOdD7">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastDependency="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="IsReloadingEnums" />
+              </p:NodeReference>
+              <Pin Id="N4It38zDzr1Mv0hotLVzHj" Name="Input" Kind="StateInputPin" />
+              <Pin Id="T9F1YUIKfGlMN8PEzuDTal" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="ACBbZ9GPwB8QOByivuyCJM" Name="Result" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="52,272,131,19" Id="HZQYq0z8r7ANjdb5LRPluJ">
+              <p:NodeReference LastCategoryFullName="Schema.Plugins.Sequences" LastDependency="Schema.Plugins.Sequences.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="RegisterSequencesEnums" />
+              </p:NodeReference>
+              <Pin Id="TMZjiPxXxERM2Id5dndi65" Name="Input" Kind="InputPin" />
+              <Pin Id="Cf0rDnVBPWVNuEN3wck6xr" Name="Output" Kind="OutputPin" />
+              <Pin Id="FniaYddNk5oNLT2MKaY3DK" Name="Apply" Kind="InputPin" />
+            </Node>
+          </Canvas>
+          <Patch Id="NJ3vvz1WwELMwIk9FX3I6X" Name="Create" />
+          <Patch Id="GKdJ6RMYCJqLIiekMl2Ts6" Name="Update">
+            <Pin Id="K1QZ7v4nX2oNPkqoAwShF1" Name="Input" Kind="InputPin" Bounds="204,-24" />
+            <Pin Id="ML3RJigXAavLdvi3JQ6pAo" Name="Output" Kind="OutputPin" Bounds="211,318" />
+          </Patch>
+          <ProcessDefinition Id="NQRxTyYCHHHLC1G1IRrXmO">
+            <Fragment Id="C85UtQK3fr9N31jcuwUl7l" Patch="NJ3vvz1WwELMwIk9FX3I6X" Enabled="true" />
+            <Fragment Id="Gf7l18nbelFQImUwRQf2GQ" Patch="GKdJ6RMYCJqLIiekMl2Ts6" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="HiWrprpzdSlOTDJLKPNbro" Ids="K1QZ7v4nX2oNPkqoAwShF1,FwYMzTbfTHzND1ZNsbBNyD" IsHidden="true" />
+          <Link Id="SdiIa7D9DgbOieGINjQ4rq" Ids="FwYMzTbfTHzND1ZNsbBNyD,PX7saGCTTXcOj1aRgTdBWy" />
+          <Link Id="RShxKydb8TDN7amtc3yrSb" Ids="D6xEsIW0ISPN6adcXgNZeS,ML3RJigXAavLdvi3JQ6pAo" IsHidden="true" />
+          <Link Id="Tk9bFDglmeyOnEby5xuqxA" Ids="B2gdtxQVJh1QTu7t4DF1sI,KlWRAxcwWFaNxkTlXmO0IT" />
+          <Link Id="LbuEKSb7VHtNn9Esc6EiEC" Ids="FmNFEcSq6CQPo5paMT1Ziw,OavOE8K9OcMOgSGwTJr5QR" />
+          <Link Id="Tvml3jDekjdOElHV98pSj5" Ids="PF6Y70Uoez3ODoWLLhNbYe,N4It38zDzr1Mv0hotLVzHj" />
+          <Link Id="KDs5btAMcCZLcdDsYYcRrO" Ids="T9F1YUIKfGlMN8PEzuDTal,TMZjiPxXxERM2Id5dndi65" />
+          <Link Id="DxOiBMYzxUJNi0q66NGRHD" Ids="Cf0rDnVBPWVNuEN3wck6xr,D6xEsIW0ISPN6adcXgNZeS" />
+          <Link Id="S8Yab6DL3hOLNtHC4R0BXi" Ids="ACBbZ9GPwB8QOByivuyCJM,FniaYddNk5oNLT2MKaY3DK" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ RegisterSequencesEnums ************************
+
+-->
+      <Node Name="RegisterSequencesEnums" Bounds="29,141,344,205" Id="S2v3p1BdabTLiCFrEG7ODM">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="GrA4de8msGQPeUZcw2HoXw">
+          <Node Bounds="147,222,139,95" Id="SuphTxaybLEPJgau6lNSe3">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.Registry.Enum.EnumRegistry" LastDependency="VVVV.Schema.Core.vl">
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="RegisterDynamicEnum" />
+            </p:NodeReference>
+            <Pin Id="GghdPfgk7dTQLE33SiDfWN" Name="Input" Kind="StateInputPin" />
+            <Pin Id="S42yiplddEYM1So2RcefGX" Name="Key" Kind="InputPin" />
+            <Pin Id="BKwfAIYmAvbPrbwWvFlP1q" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="Do215TZxruMN2HMujkzhEy" Name="Value" ManuallySortedPins="true">
+              <Pin Id="AOBcBWqAOo9Ndd4kVWhvqh" Name="Input 1" Kind="InputPin" />
+              <Pin Id="C2H8MI7yYXuNDffUTuFwtd" Name="Input 2" Kind="InputPin" />
+              <Pin Id="V29xsqkOS9nNtWR3bXvWh6" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="LyGTBLvEJo8O8KapqdoSxt" Bounds="151,230" />
+              <ControlPoint Id="AGDdtb0Ng8OQDeF0IK6x0m" Bounds="211,230" />
+              <ControlPoint Id="CvOzO0D6CJxLw6HrL33UZM" Bounds="151,310" />
+              <Pad Id="IjzGsBQuXOeNU3D5NMd65Z" Comment="" Bounds="171,259,84,34" ShowValueBox="true" isIOBox="true">
+                <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Spread" />
+                  <p:TypeArguments>
+                    <TypeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </TypeReference>
+                  </p:TypeArguments>
+                </p:TypeAnnotation>
+                <p:Value>
+                  <Item>BuiltIn.Name</Item>
+                </p:Value>
+              </Pad>
+            </Patch>
+          </Node>
+          <Link Id="UmMQMK3rPJGNTv4BDhDgsj" Ids="AOBcBWqAOo9Ndd4kVWhvqh,LyGTBLvEJo8O8KapqdoSxt" IsHidden="true" />
+          <Link Id="KcjeAOxsGh8LDsWyL3Zt60" Ids="C2H8MI7yYXuNDffUTuFwtd,AGDdtb0Ng8OQDeF0IK6x0m" IsHidden="true" />
+          <Link Id="PnR0MiTCJqdNTLsVvCCprD" Ids="CvOzO0D6CJxLw6HrL33UZM,V29xsqkOS9nNtWR3bXvWh6" IsHidden="true" />
+          <Link Id="SpkdBAAq4EENw3HXZyk20N" Ids="IjzGsBQuXOeNU3D5NMd65Z,CvOzO0D6CJxLw6HrL33UZM" />
+          <Node Bounds="281,188,80,19" Id="AJ6sZ7ZwwCYLEcPzmjuaJ4">
+            <p:NodeReference LastCategoryFullName="Schema.Plugins.Sequences" LastDependency="Schema.Plugins.Sequences.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="SequenceKey" />
+            </p:NodeReference>
+            <Pin Id="DpoBmuxYYiXMrw3BSY26Fa" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Link Id="C7oLaktCLw1MvRAnvg6s1X" Ids="DpoBmuxYYiXMrw3BSY26Fa,S42yiplddEYM1So2RcefGX" />
+          <Node Bounds="74,181,125,26" Id="FciwZ5uIKBmN8suBAnKclR">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastDependency="VVVV.Schema.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="State" />
+              <Choice Kind="OperationCallFlag" Name="Split" />
+            </p:NodeReference>
+            <Pin Id="HaZFg0LjIOrQGVZjqxlq4F" Name="Input" Kind="StateInputPin" />
+            <Pin Id="NK214mdZ5jcL6COdjwlwBt" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="E0zJNQTwiWAQPzFxVP8r2U" Name="Fixtures" Kind="OutputPin" />
+            <Pin Id="GgPzazxOChELwCLJD35mHq" Name="Global Properties" Kind="OutputPin" />
+            <Pin Id="L84S7MTrKMYPBdV4nQi4TS" Name="Director" Kind="OutputPin" />
+            <Pin Id="Le1J8mahmiYO2H2B5Z6SU4" Name="Enum Registry" Kind="OutputPin" />
+            <Pin Id="EoXOZzAGoQcMZADN943V6O" Name="Tree Registry" Kind="OutputPin" />
+            <Pin Id="Owp1EfM5jVVPQr8LCvVTn1" Name="Bee Registry" Kind="OutputPin" />
+          </Node>
+          <Link Id="QKvaqkG3UeRMtidxCXhv4y" Ids="Le1J8mahmiYO2H2B5Z6SU4,GghdPfgk7dTQLE33SiDfWN" />
+          <ControlPoint Id="ClNViBYa7wtLOjFoZOJJFv" Bounds="73,329" />
+          <Link Id="RmBN9VCyU68M0i06xwCuoc" Ids="NK214mdZ5jcL6COdjwlwBt,ClNViBYa7wtLOjFoZOJJFv" />
+          <Pin Id="MaePus8RgpkL2QvFrEa0oi" Name="Output" Kind="OutputPin" Bounds="73,330" />
+          <Link Id="EQ4NyLrCffNNh6IcoKAwzY" Ids="ClNViBYa7wtLOjFoZOJJFv,MaePus8RgpkL2QvFrEa0oi" IsHidden="true" />
+          <ControlPoint Id="Q7GK7XdyH1wN20iAEex0hH" Bounds="76,159" />
+          <Link Id="BpcUgIHPOhVOCKkILMkGNS" Ids="Q7GK7XdyH1wN20iAEex0hH,HaZFg0LjIOrQGVZjqxlq4F" />
+          <Pin Id="RZM9yAI1OdqN1qqsnUn73b" Name="Input" Kind="InputPin" Bounds="76,159" />
+          <Link Id="ObGhS4T41xqObKe9s8A2ZJ" Ids="RZM9yAI1OdqN1qqsnUn73b,Q7GK7XdyH1wN20iAEex0hH" IsHidden="true" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ SequenceKey ************************
+
+-->
+      <Node Name="SequenceKey" Bounds="414,188,122,105" Id="EUsdLMAtCYSPQPS4BXr6eb">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="QW3TVmkwyXxOMRUHi1ztR5">
+          <Pad Id="JJeLPtYFfsnNh9C2fmj8MF" Bounds="453,235,52,15" ShowValueBox="true" isIOBox="true" Value="Sequence">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+          </Pad>
+          <ControlPoint Id="FEFt9lbTTbzOkh6lDgA9EL" Bounds="455,276" />
+          <Link Id="LLIUF6Sduy6LELx9P40K5T" Ids="JJeLPtYFfsnNh9C2fmj8MF,FEFt9lbTTbzOkh6lDgA9EL" />
+          <Pin Id="T8DgC60AqVKQGf0EfhfZ0P" Name="Output" Kind="OutputPin" Bounds="413,268" />
+          <Link Id="EEWBaAIjbrNMA46CVo8Kdm" Ids="FEFt9lbTTbzOkh6lDgA9EL,T8DgC60AqVKQGf0EfhfZ0P" IsHidden="true" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="UjYqtx2bQzNOT9LUC44zqV" Summary="Support YAML format for Stacks">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="TAnvMVNVdTtOPnlVMXIjxm">
+        <Canvas Id="MnCLYqnJJ86Pjh2CcqLe3f" CanvasType="Group" />
+        <Patch Id="BAnVA61DpVQMVbdoVFBjjq" Name="Create" />
+        <Patch Id="I5yRGEpHI7HLsSUDIxdY8K" Name="Update" />
+        <ProcessDefinition Id="CBl6tAfITphNasBtMvYZvS">
+          <Fragment Id="UNQvZ9Rsf5uPrNpJRVvS7u" Patch="BAnVA61DpVQMVbdoVFBjjq" Enabled="true" />
+          <Fragment Id="SDMyQK3V6YIO6dTOsIJXuw" Patch="I5yRGEpHI7HLsSUDIxdY8K" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="CxAgz9QxuUYONuf9h23jkO" Location="../../VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="GFIEHXrxcsqOxtmPlg3qLr" Location="./Blocks/Schema.Plugins.Sequences.Blocks.vl" />
+</Document>
