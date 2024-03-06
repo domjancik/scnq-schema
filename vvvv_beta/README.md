@@ -21,4 +21,4 @@ See project gallery for the mentioned projects: https://schema.scenic.tools/gall
 
 To use a patch, copy it over to the `/Main` directory.
 
-You may also need to copy over the `plugins` directory, which should be necessary only for OctoWS2811 patches.
+You may also need to copy over the `plugins`, `modules` or `vis` directories, which should be necessary only for OctoWS2811 patches.
