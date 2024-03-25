@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="CFAhxanqjU9OKGl8EJ2Ekx" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="UE30RSOrMKfNsdpEs0ZFYR" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="Ep2iriBhATjLXxcs4iOjXi">
+    <Canvas Id="LgcqCAAEeisOEqqW9H5Ak2" DefaultCategory="Schema.App" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="U6mThikZFVpOBrmLUCJYxO">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="OjCe3WTRNvMMfpypOYLR2Y">
+        <Canvas Id="JGR4jnQZJpfOS7Q1TqLU1P" CanvasType="Group">
+          <Node Bounds="39,120,148,218" Id="NT0ByjyjEjYMGYbOo2ti9m">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <Choice Kind="ApplicationStatefulRegion" Name="If" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:NodeReference>
+            <Pin Id="P5RliCwwTkIOUclxZyuKPw" Name="Condition" Kind="InputPin" />
+            <Patch Id="RB9U3NvThNeNio41QdlQGD" ManuallySortedPins="true">
+              <Patch Id="GE4U5vAZIW4P1Rd7YtQtO7" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="AgijohnPJX6K939dN7G2RH" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="70,140,105,127" Id="I7EsLj95GPlO0ZvqHIYLnU">
+                <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="Try" />
+                </p:NodeReference>
+                <Pin Id="MbcY6bIP4ypMlq71EFso4B" Name="Stick To Last Valid Outputs" Kind="InputPin" />
+                <Pin Id="RCCu2YlL1YtPlBaYml0JJZ" Name="Reset Region On Failure" Kind="InputPin" />
+                <Pin Id="DKYeQNA6TadL2siDsRIlMc" Name="Success" Kind="OutputPin" />
+                <Pin Id="EMwNwZkfdRINCyG7PBoBIn" Name="Failure" Kind="OutputPin" />
+                <Pin Id="RtpWKaoayrkPug3m2oh1At" Name="Error Message" Kind="OutputPin" />
+                <Pin Id="GNVZ28DqUz5PiYh47eH6Xx" Name="Exceptions" Kind="OutputPin" />
+                <Patch Id="AeeG168VVorNfw9BM59HVq" ManuallySortedPins="true">
+                  <Node Bounds="82,163,81,19" Id="P8bk1VJui51PBpBTDTapcm">
+                    <p:NodeReference LastCategoryFullName="Schema.App" LastDependency="Schema.App.RuntimeEditor.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="RuntimeEditor" />
+                    </p:NodeReference>
+                    <Pin Id="ALXwzfSpSFQNASMKGhzbFK" Name="Reload Modules" Kind="InputPin" />
+                    <Pin Id="JoaIXP3Hh0UNTfvVozXPtI" Name="Output" Kind="OutputPin" />
+                    <Pin Id="SNNJRZFZNxOQX5kYVHxRqf" Name="EditorState" Kind="OutputPin" />
+                  </Node>
+                  <Patch Id="Vxp17jOflgrLO4QQNsV2AM" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="MFaRAFM8ukSNWBhA0hcgSB" Name="Update" ParticipatingElements="CCWtPvmlG8NPI4Tq6y3pnt,F2a9kiF8HzkOu0OqTf4kHj,CFHRWFEhrc2PmIIUdzgxXm" />
+                  <Node Bounds="82,196,45,19" Id="ML0w9A4USw4Ppt9LhiJDdk">
+                    <p:NodeReference LastCategoryFullName="Schema" LastDependency="Schema.Blocks.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="Blocks" />
+                    </p:NodeReference>
+                    <Pin Id="SobUFMmLm1NLgnWDDk0eYO" Name="Input" Kind="InputPin" />
+                    <Pin Id="P9KetpyYAkKO6dYdW1ki3l" Name="Output" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="82,228,71,19" Id="Cezkh2HD5CUNtzJSzij7Z0">
+                    <p:NodeReference LastCategoryFullName="Schema.Plugins.Audio" LastDependency="Schema.Plugins.Audio.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="AudioPlugin" />
+                    </p:NodeReference>
+                    <Pin Id="VoeBL1FLkRJPdOymotIRaa" Name="Input" Kind="InputPin" />
+                    <Pin Id="L3T1EjRkGhjMWupf2ZO47P" Name="EditorState" Kind="InputPin" />
+                    <Pin Id="Lz7kCpXPnqpLx80LDmEJYi" Name="Output" Kind="OutputPin" />
+                    <Pin Id="M2UJS7qfuJXLfaJXQDVror" Name="EditorState" Kind="OutputPin" />
+                  </Node>
+                </Patch>
+              </Node>
+              <Node Bounds="96,299,55,19" Id="GACsbksMduWN1ie9fGnuBn">
+                <p:NodeReference LastCategoryFullName="VVVV.Schema.Debug" LastDependency="VVVV.Schema.Core.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="LogError (String)" />
+                </p:NodeReference>
+                <Pin Id="PngurFqwGQQNharJGl40qv" Name="Message" Kind="InputPin" />
+                <Pin Id="DJXvBEZdkPnOhVMEANLSND" Name="Apply" Kind="InputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="RO37yIr3bcZLUjIFtfgcJq" Comment="Start Runtime" Bounds="41,67,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Boolean" />
+              <FullNameCategoryReference ID="Primitive" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="39,25,95,19" Id="VvCBk40viKSLD6W8Hvfr6H">
+            <p:NodeReference LastCategoryFullName="Schema.App" LastDependency="Schema.App.ProjectSelector.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SelectProjectFlow" />
+            </p:NodeReference>
+            <Pin Id="MDh2SXdhavdNXhsshE5L2E" Name="Selected" Kind="OutputPin" />
+          </Node>
+        </Canvas>
+        <Patch Id="VZ1PY486ObVNlm7Bqp7y2d" Name="Create" />
+        <Patch Id="Vd6kBLH2EfQMqNSuVo0Cbr" Name="Update" />
+        <ProcessDefinition Id="HjbhUVE9fO0PFTwwupgQQB">
+          <Fragment Id="CAcGOZN57MFL6c5RBvpWb6" Patch="VZ1PY486ObVNlm7Bqp7y2d" Enabled="true" />
+          <Fragment Id="Mf7RnfFTCVRPqhy6mz5bgJ" Patch="Vd6kBLH2EfQMqNSuVo0Cbr" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="GgK1lCe3YNXPHzKpJpiTLl" Ids="RO37yIr3bcZLUjIFtfgcJq,P5RliCwwTkIOUclxZyuKPw" />
+        <Link Id="JMZg5AYOtZ1PHQlW6MExEh" Ids="EMwNwZkfdRINCyG7PBoBIn,DJXvBEZdkPnOhVMEANLSND" />
+        <Link Id="TdM3DIVtc4gNYHdywHPjDt" Ids="RtpWKaoayrkPug3m2oh1At,PngurFqwGQQNharJGl40qv" />
+        <Link Id="CCWtPvmlG8NPI4Tq6y3pnt" Ids="JoaIXP3Hh0UNTfvVozXPtI,SobUFMmLm1NLgnWDDk0eYO" />
+        <Link Id="FwZI5lNWpL1Ns5SQGbjaXp" Ids="MDh2SXdhavdNXhsshE5L2E,RO37yIr3bcZLUjIFtfgcJq" />
+        <Link Id="F2a9kiF8HzkOu0OqTf4kHj" Ids="SNNJRZFZNxOQX5kYVHxRqf,L3T1EjRkGhjMWupf2ZO47P" />
+        <Link Id="CFHRWFEhrc2PmIIUdzgxXm" Ids="P9KetpyYAkKO6dYdW1ki3l,VoeBL1FLkRJPdOymotIRaa" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="QLtFNGbqxEpNp5tg50c80H" Location="VL.Skia" Version="2023.5.2" />
+  <DocumentDependency Id="AIZZPl56EDgLMbYWA5MQcV" Location="../vl/VVVV.Schema.Core.vl" />
+  <DocumentDependency Id="LxWQRtP0OlsOmBcYssV78H" Location="../vl/Blocks/Schema.Blocks.vl" />
+  <DocumentDependency Id="COO6uM87138P1Ucx1xfn8l" Location="../vl/App/Schema.App.RuntimeEditor.vl" />
+  <NugetDependency Id="Mv1PkBfOXpZN3ZUAecBtl5" Location="VL.WinFormsUtils" Version="1.0.9" />
+  <DocumentDependency Id="TeUFoG7lzJKOvpRyn6BpdA" Location="../vl/App/Schema.App.ProjectSelector.vl" />
+  <DocumentDependency Id="C61GPCmM5HsORaV7cPPc6A" Location="../vl/Plugins/Audio/Schema.Plugins.Audio.vl" />
+</Document>
