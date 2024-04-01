@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="JiAENFEHnEKLAkj6igPOkI" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="K7KoVqx0LG1PkX9QH1ggrF" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="KTeFIGtkG4oPcz7mKAN7u2">
+    <Canvas Id="OI1LCR9Jcm4LUrEyi5e002" DefaultCategory="Schema.Blocks.Operator.Audio" CanvasType="FullCategory">
+      <!--
+
+    ************************ AudioOperator ************************
+
+-->
+      <Node Name="AudioOperator" Bounds="68,84" Id="KG6HwtlnJhuQLKpLMvyigj">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
+          <Choice Kind="ClassDefinition" Name="Class" />
+        </p:NodeReference>
+        <Patch Id="MmZSgZqmvmBLmnDhaWiCqh">
+          <Canvas Id="UMithmqGdSNP3Y6vbMEm2a" CanvasType="Group">
+            <Overlay Id="TeNkGz25cdWN6689TLBLo2" Name="Handle incoming spread" Bounds="65,90,262,98" />
+            <Overlay Id="NDYDYp93GPQPr19Fc7ITEC" Name="Set new attributes" Bounds="63,343,266,119" />
+            <ControlPoint Id="RqHhmWHJEcKLxW28Ul0zaI" Bounds="83,63" />
+            <ControlPoint Id="EOflTKQnQZuLkuV0j8dcou" Bounds="83,495" />
+            <Node Bounds="81,147,45,19" Id="VoBVuE628YdMb8TE6YjgX9">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.PropertyBank" LastDependency="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="Merge" />
+                <CategoryReference Kind="ClassType" Name="PropertyBank" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="P8AwrdhhbsGOTVkB31yo5p" Name="Input" Kind="InputPin" />
+              <Pin Id="Qk9z2UM5lRaLYAzugSWL3Q" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="81,418,145,19" Id="DkKerHJnPgMN7Nypppg2xi">
+              <p:NodeReference LastCategoryFullName="Schema.Plugins.Audio" LastDependency="Schema.Plugins.Audio.PropertyExtensions.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="SetAudioSignal (PropertyBank)" />
+              </p:NodeReference>
+              <Pin Id="Pdq2bfvLm6qLifzIP40VK2" Name="Input" Kind="InputPin" />
+              <Pin Id="P6iV1Y8SD3BQdwF8DjMJkF" Name="Value" Kind="InputPin" />
+              <Pin Id="RKqupX4GQePMwfELQTT5kn" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="128,225,112,87" Id="NcTWlaH2vPvOQvAj4JBNjp">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+              </p:NodeReference>
+              <Pin Id="MaAZm2h8UbEMFiNtnmFPBx" Name="Break" Kind="OutputPin" />
+              <Patch Id="OiuG8K4T2kRQERB5uehGwt" ManuallySortedPins="true">
+                <Patch Id="F10WyGTljxbPGyDqRdStvY" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="OL36agEnYmyNj7sa7b7s78" Name="Update" ManuallySortedPins="true" />
+                <Patch Id="OKn8sfffBhnPBhekrjnY9y" Name="Dispose" ManuallySortedPins="true" />
+                <Node Bounds="140,265,86,19" Id="ROkvrpQWXaqN5pnssLw36l">
+                  <p:NodeReference LastCategoryFullName="Schema.Plugins.Audio" LastDependency="Schema.Plugins.Audio.PropertyExtensions.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="GetAudioSignal (PropertyBank)" />
+                  </p:NodeReference>
+                  <Pin Id="C6MwM3PC7SAL7yOjF6SHmD" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="AjYJB4NuZToQaRseMvTnsd" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="C7gBQAGcGNJPF3axVltkVI" Name="Result" Kind="OutputPin" />
+                </Node>
+              </Patch>
+              <ControlPoint Id="MJI7DfE2E64N0k40TEyswy" Bounds="142,231" Alignment="Top" />
+              <ControlPoint Id="EoTA57VAYoJN3y0iPGPvQ2" Bounds="223,306" Alignment="Bottom" />
+            </Node>
+            <Node Bounds="221,380,79,26" Id="ERM1617cbwRLFDBmAAzFhJ">
+              <p:NodeReference LastCategoryFullName="Primitive.Delegates.Delegate (1 -&gt; 1)" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="FuncType" Name="Delegate (1 -&gt; 1)" />
+                <Choice Kind="OperationCallFlag" Name="Invoke" />
+              </p:NodeReference>
+              <Pin Id="HsVWlK6xbDDMBTEVp33wGP" Name="Input" Kind="StateInputPin" />
+              <Pin Id="OWNNTKePEDRLq5LZmRyWvp" Name="Arg" Kind="InputPin" />
+              <Pin Id="EX7w2G2JF7WMuAvtuRXcoj" Name="Result" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="LrIaI0vTf5jQW4avxAMtnB" Bounds="223,332" />
+          </Canvas>
+          <ProcessDefinition Id="FkjXrjDjib6Lg9Yu1HALcK" IsHidden="true">
+            <Fragment Id="UAyrrX2vkB4MPn63aaxQaM" Patch="VgTWMhjWd3oNisvG9C65nJ" Enabled="true" />
+          </ProcessDefinition>
+          <Patch Id="VgTWMhjWd3oNisvG9C65nJ" Name="Update">
+            <Pin Id="VMetmqUAGZbLFFdZuDWYQl" Name="State" Kind="InputPin" />
+            <Pin Id="JFxdrXaKYJEPUw8kP6IBH7" Name="New State" Kind="OutputPin" />
+            <Pin Id="NdQgH70AkU7NJdhUdwMwKs" Name="Operation" Kind="InputPin" Bounds="227,63" />
+          </Patch>
+          <Link Id="PpZdkCFOzWLOf9Epeb1vsc" Ids="VMetmqUAGZbLFFdZuDWYQl,RqHhmWHJEcKLxW28Ul0zaI" IsHidden="true" />
+          <Link Id="RTiA9RRkF6dOX5j2GZX8a4" Ids="EOflTKQnQZuLkuV0j8dcou,JFxdrXaKYJEPUw8kP6IBH7" IsHidden="true" />
+          <Link Id="G4HK0Lcp7VqOWdJmFWcPIn" Ids="RqHhmWHJEcKLxW28Ul0zaI,P8AwrdhhbsGOTVkB31yo5p" />
+          <Link Id="FOyvoOpf9tbN37LBsyHp3h" Ids="Qk9z2UM5lRaLYAzugSWL3Q,Pdq2bfvLm6qLifzIP40VK2" />
+          <Link Id="Bm8UO22KdtlLBQ36c8fP6H" Ids="RKqupX4GQePMwfELQTT5kn,EOflTKQnQZuLkuV0j8dcou" />
+          <Link Id="EwBkON7zloSPFj71p3SHL3" Ids="RqHhmWHJEcKLxW28Ul0zaI,MJI7DfE2E64N0k40TEyswy" />
+          <Link Id="PKfMrFrNlaAPZM0w1gJfjj" Ids="MJI7DfE2E64N0k40TEyswy,C6MwM3PC7SAL7yOjF6SHmD" />
+          <Link Id="OyVJqD4Eg88Mz0U2UCAVWl" Ids="C7gBQAGcGNJPF3axVltkVI,EoTA57VAYoJN3y0iPGPvQ2" />
+          <Link Id="VUnNdl31GqUOnYQIIYgTdN" Ids="EoTA57VAYoJN3y0iPGPvQ2,OWNNTKePEDRLq5LZmRyWvp" />
+          <Link Id="SB1ZkbO08pFLydqHx3P3rY" Ids="EX7w2G2JF7WMuAvtuRXcoj,P6iV1Y8SD3BQdwF8DjMJkF" />
+          <Link Id="N3nTHCyZDYVN7shstrVrho" Ids="LrIaI0vTf5jQW4avxAMtnB,HsVWlK6xbDDMBTEVp33wGP" />
+          <Link Id="MYYwN3tJqC4MkuNfGK9DHB" Ids="NdQgH70AkU7NJdhUdwMwKs,LrIaI0vTf5jQW4avxAMtnB" IsHidden="true" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="UIEhJRWPgFDPgw8tmYbAzN">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="UFu4FbiEoTuPk0vM3Jt6k1">
+        <Canvas Id="NWUzA0GwOdoQLIo64Sjnnp" CanvasType="Group" />
+        <Patch Id="UUyQa3Pow6oPv3Oy4jUH0v" Name="Create" />
+        <Patch Id="ErBhmJn71xeMOWuujelwj7" Name="Update" />
+        <ProcessDefinition Id="DDEBi7xXbHuPCxa9k7nGfC">
+          <Fragment Id="AGEmVAcvPjPOnMf9JrufrU" Patch="UUyQa3Pow6oPv3Oy4jUH0v" Enabled="true" />
+          <Fragment Id="Ij6o3pGuzcfPWM76fFISSX" Patch="ErBhmJn71xeMOWuujelwj7" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="UlBcYzWobVGQB6LMrLpO2R" Location="../../../../../VVVV.Schema.Core.vl" />
+  <NugetDependency Id="LABeGGm7fKVNB748wygc3O" Location="VL.Audio" Version="1.2.2" />
+  <DocumentDependency Id="TwSj4meIIshPDqAVvQA5vC" Location="../../../Schema.Plugins.Audio.PropertyExtensions.vl" />
+</Document>

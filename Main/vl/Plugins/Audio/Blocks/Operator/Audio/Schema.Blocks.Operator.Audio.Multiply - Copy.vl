@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="U26uyhI1pmzO1Ge35RbiRH" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="K7KoVqx0LG1PkX9QH1ggrF" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="KTeFIGtkG4oPcz7mKAN7u2">
+    <Canvas Id="OI1LCR9Jcm4LUrEyi5e002" DefaultCategory="Schema.Blocks.Operator.Audio" CanvasType="FullCategory">
+      <!--
+
+    ************************ MultiplyAudioOperator ************************
+
+-->
+      <Node Name="MultiplyAudioOperator" Bounds="339,197" Id="KG6HwtlnJhuQLKpLMvyigj">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
+          <Choice Kind="ClassDefinition" Name="Class" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="VVVV.Schema" LastDependency="VVVV.Schema.Core.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IBee" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="MmZSgZqmvmBLmnDhaWiCqh">
+          <Canvas Id="UMithmqGdSNP3Y6vbMEm2a" CanvasType="Group">
+            <ControlPoint Id="PIUrxlIBvtVL5xA44kPG4i" Bounds="155,263" />
+            <Node Bounds="155,111,79,19" Id="PWI9H4fta6KOgzulgOsgdQ">
+              <p:NodeReference LastCategoryFullName="Collections.Builder.DictionaryBuilder" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="CreateDefault" />
+                <CategoryReference Kind="ClassType" Name="DictionaryBuilder" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="IMWVuSIPOFULokaJ4Yrvzv" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <Node Bounds="155,201,77,26" Id="PklJN53iQ13Oqk9XqiOQ6F">
+              <p:NodeReference LastCategoryFullName="Collections.Builder.DictionaryBuilder" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="ToImmutable" />
+                <CategoryReference Kind="ClassType" Name="DictionaryBuilder" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="BiKyW5OkOMCLa6tvUFAIAW" Name="Input" Kind="StateInputPin" />
+              <Pin Id="BPlzO5eMJwpLxyIcDxpB62" Name="Output" Kind="StateOutputPin" />
+              <Pin Id="KtJy7dVLuaoO41QfT6S4XV" Name="Result" Kind="OutputPin" />
+            </Node>
+            <Overlay Id="G2lwOPtUOFNNwO8ND0AFmL" Name="Declare Properties (accessible through the UI)" Bounds="58,60,446,259" />
+            <Overlay Id="TeNkGz25cdWN6689TLBLo2" Name="Handle incoming spread" Bounds="572,95,262,98" />
+            <Overlay Id="NDYDYp93GPQPr19Fc7ITEC" Name="Set new attributes" Bounds="569,338,266,119" />
+            <ControlPoint Id="V54K16pcpEBL6AOKZZ1RFY" Bounds="612,68" />
+            <ControlPoint Id="BeUW0QB6jKUM055aIEvDXV" Bounds="612,500" />
+            <Node Bounds="610,152,45,19" Id="IfxKS6q7njiQTPuH4JUavV">
+              <p:NodeReference LastCategoryFullName="VVVV.Schema.PropertyBank" LastDependency="VVVV.Schema.Core.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="Merge" />
+                <CategoryReference Kind="ClassType" Name="PropertyBank" NeedsToBeDirectParent="true" />
+              </p:NodeReference>
+              <Pin Id="SjeG7UOxTu5MDINV8amXig" Name="Input" Kind="InputPin" />
+              <Pin Id="FSUVoF2ljK5NJGwuLDF1V6" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="610,423,145,19" Id="KCXuMAwUAo7NHQmHXZeV0G">
+              <p:NodeReference LastCategoryFullName="Schema.Plugins.Audio" LastDependency="Schema.Plugins.Audio.PropertyExtensions.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="SetAudioSignal (PropertyBank)" />
+              </p:NodeReference>
+              <Pin Id="Bt4STADH4j5QF9u1eXSsdw" Name="Input" Kind="InputPin" />
+              <Pin Id="A83C0keH221P9ZZSg5gLzO" Name="Value" Kind="InputPin" />
+              <Pin Id="SDwnOzUsXSKMii2eRhec71" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="750,393,24,19" Id="CYOojTrD3OIOdmKAGnepJh">
+              <p:NodeReference LastCategoryFullName="Audio.Operators" LastDependency="VL.Audio.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="Category" Name="Audio" />
+                <Choice Kind="ProcessAppFlag" Name="* (Spectral)" />
+              </p:NodeReference>
+              <Pin Id="A7lmB0mjzewM3cEz2DtNVW" Name="Input" Kind="InputPin" />
+              <Pin Id="E9arxNZ0HZVOQRzsMGTWg6" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="657,230,112,87" Id="PQ6QSChxjUVN0SaUbmH5Br">
+              <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+                <CategoryReference Kind="Category" Name="Primitive" />
+              </p:NodeReference>
+              <Pin Id="EZAXTFMjvRsMdpOd2ebZ5I" Name="Break" Kind="OutputPin" />
+              <Patch Id="FVKwHYMzoTlOUYL3SlIPRp" ManuallySortedPins="true">
+                <Patch Id="JMClpagaCnbLGP2JfIvsBv" Name="Create" ManuallySortedPins="true" />
+                <Patch Id="DZJSGZxKMD3MtVO8aSdSiu" Name="Update" ManuallySortedPins="true" />
+                <Patch Id="IwyZ5nmsNuPOG56BjijslU" Name="Dispose" ManuallySortedPins="true" />
+                <Node Bounds="669,270,86,19" Id="ROR7xp3Ln1XNNQftFBa5eI">
+                  <p:NodeReference LastCategoryFullName="Schema.Plugins.Audio" LastDependency="Schema.Plugins.Audio.PropertyExtensions.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="GetAudioSignal (PropertyBank)" />
+                  </p:NodeReference>
+                  <Pin Id="DjQ35i4MfRSPPgAeaAv3Hv" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="TjizDnwME6pLhKFSK8rS5f" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="GopOFFIbuZ3LwzMXjvjXkw" Name="Result" Kind="OutputPin" />
+                </Node>
+              </Patch>
+              <ControlPoint Id="LtKVrknVzUfOtbu7NY3IDH" Bounds="671,236" Alignment="Top" />
+              <ControlPoint Id="EyN0f9BUayzN7SQqpdL9k2" Bounds="752,311" Alignment="Bottom" />
+            </Node>
+          </Canvas>
+          <ProcessDefinition Id="FkjXrjDjib6Lg9Yu1HALcK" IsHidden="true">
+            <Fragment Id="FAA1wA94AXnPf4WPPMuJXi" Patch="H22KsheGdBFMJXGu8crkLC" Enabled="true" />
+            <Fragment Id="UAyrrX2vkB4MPn63aaxQaM" Patch="VgTWMhjWd3oNisvG9C65nJ" Enabled="true" />
+            <Fragment Id="FxHnzOeC12PL0vG4azeBfM" Patch="LHQASWiu65eMa9szzzdV0l" Enabled="true" />
+            <Fragment Id="Hvx72tpk1feQOdTf8mifgP" Patch="M6Nmr2FrRx0LmBQpBXcJtU" Enabled="true" />
+            <Fragment Id="OqC9pr3taSYNvf5AjDmmOl" Patch="ALmzCTd4bl4P3oLkfmqr5G" Enabled="true" />
+            <Fragment Id="TSh8YmWdX6mOJKue6vHutN" Patch="Dx4N9STMnFtPuOxviTAJaC" Enabled="true" />
+            <Fragment Id="OLo9ezoG9ivOw47gjFKC1y" Patch="OhH66LjctNFNyW5yAnDlht" Enabled="true" />
+            <Fragment Id="D6C7sYU7PuFNQebrMC3JDC" Patch="QNZWOXPry7BMj4XK5VoDof" Enabled="true" />
+            <Fragment Id="RY8YAwES7LILioaQEA8SlD" Patch="A8aLp85mwH6PPN5KpygeEa" Enabled="true" />
+            <Fragment Id="FqsK0q1A2quPMH7nAzVC5a" Patch="CnJd29VttRqOdUT46feE0q" Enabled="true" />
+          </ProcessDefinition>
+          <Link Id="S59aAYv9qTBNj6xCpz9Ckv" Ids="PIUrxlIBvtVL5xA44kPG4i,HeWzj6nOZ9bQabOSmJAXtL" IsHidden="true" />
+          <Link Id="I3uDbaIwsW8OVug3Bzea55" Ids="KtJy7dVLuaoO41QfT6S4XV,PIUrxlIBvtVL5xA44kPG4i" />
+          <Link Id="TfyFgm2PhQ3LAPr52apLdY" Ids="IMWVuSIPOFULokaJ4Yrvzv,BiKyW5OkOMCLa6tvUFAIAW" />
+          <Patch Id="H22KsheGdBFMJXGu8crkLC" Name="Create" />
+          <Patch Id="VgTWMhjWd3oNisvG9C65nJ" Name="Update">
+            <Pin Id="J6yqjpTVc8iNVobDTVjB64" Name="Setup" Kind="InputPin" />
+            <Pin Id="Nr7VT3430FbPhxnQmbFJwa" Name="State" Kind="InputPin" />
+            <Pin Id="JsK9BHw7EuILzSFlMb4RfE" Name="Previous Layer States" Kind="InputPin" />
+            <Pin Id="VhXP9esV4V7L7l9wuCYNNQ" Name="Global" Kind="InputPin" />
+            <Pin Id="EnaqSvR1R5oPZVNaM0GmaK" Name="Properties" Kind="InputPin" />
+            <Pin Id="TSV66BErz2mM5EKmDQZUjv" Name="New State" Kind="OutputPin" />
+            <Pin Id="FFHILEWJ2AUOUsdEfUP4VV" Name="Node Operation" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="LHQASWiu65eMa9szzzdV0l" Name="Provides">
+            <Pin Id="LKxKiwBUpbxPJeTYGh63ne" Name="Color" Kind="OutputPin" />
+            <Pin Id="V3GBY20Ljx2LDdQ6dHWtts" Name="Pick" Kind="OutputPin" />
+            <Pin Id="B2udR8EzjHbLfzMDB9J49r" Name="Gate" Kind="OutputPin" />
+            <Pin Id="D1ISyjdAZtRO8tPZbGq4DN" Name="Own Color" Kind="OutputPin" />
+            <Pin Id="OcgntfpscHdMxf7yc8bqqj" Name="Text" Kind="OutputPin" />
+            <Pin Id="AUqzvmbiVoqOoVcudzkd0t" Name="Progress" Kind="OutputPin" />
+            <Pin Id="C49fMQ73eFpPea4hbdyoBk" Name="Levels" Kind="OutputPin" />
+            <Pin Id="FJPAZxS6YzhLTK32j8V4qZ" Name="Active Levels" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="M6Nmr2FrRx0LmBQpBXcJtU" Name="GetPick">
+            <Pin Id="J0R3wdCgsKvLXeZwsC4pan" Name="Index" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="ALmzCTd4bl4P3oLkfmqr5G" Name="GetGate">
+            <Pin Id="QouY7mIOVHwMmAzPsc0jX3" Name="Open" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="Dx4N9STMnFtPuOxviTAJaC" Name="GetPropertyDefinitions">
+            <Pin Id="HeWzj6nOZ9bQabOSmJAXtL" MergeId="190249" Name="Properties" Kind="OutputPin">
+              <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Dictionary" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </TypeReference>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="PropertyDefinition" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+          </Patch>
+          <Patch Id="OhH66LjctNFNyW5yAnDlht" Name="GetColor">
+            <Pin Id="OGSFfl5KiL0LEYHdbe1Ehe" Name="Color" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="QNZWOXPry7BMj4XK5VoDof" Name="GetText">
+            <Pin Id="SyOZ98LBVY5PSQ1vBhOzxG" Name="Text" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="A8aLp85mwH6PPN5KpygeEa" Name="GetProgress">
+            <Pin Id="O5f9l19kzj4Ltq6XGUQxw9" Name="Progress" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="CnJd29VttRqOdUT46feE0q" Name="GetLevels">
+            <Pin Id="FSgtQhYzBcuMvLJLqVqpP7" Name="Levels" Kind="OutputPin" />
+          </Patch>
+          <Link Id="Go7pnsrBZi4QLnFxHfeAJ6" Ids="Nr7VT3430FbPhxnQmbFJwa,V54K16pcpEBL6AOKZZ1RFY" IsHidden="true" />
+          <Link Id="Pwl5Zo2GTlZMSVyTNG0wMN" Ids="BeUW0QB6jKUM055aIEvDXV,TSV66BErz2mM5EKmDQZUjv" IsHidden="true" />
+          <Link Id="H2eqlLX3IOtLX7wNIkSb2R" Ids="V54K16pcpEBL6AOKZZ1RFY,SjeG7UOxTu5MDINV8amXig" />
+          <Link Id="G7XeeRJqcRhP67Rjwu1YVw" Ids="FSUVoF2ljK5NJGwuLDF1V6,Bt4STADH4j5QF9u1eXSsdw" />
+          <Link Id="DccYEUZQrY9M2SKzJcV1L8" Ids="SDwnOzUsXSKMii2eRhec71,BeUW0QB6jKUM055aIEvDXV" />
+          <Link Id="Gta5l49LhKnNMpmCgMG7Zj" Ids="V54K16pcpEBL6AOKZZ1RFY,LtKVrknVzUfOtbu7NY3IDH" />
+          <Link Id="ScrPpZBs2AgLmdeCwCEvlM" Ids="LtKVrknVzUfOtbu7NY3IDH,DjQ35i4MfRSPPgAeaAv3Hv" />
+          <Link Id="Ae80Tz56yWLMid3OIZGdTm" Ids="GopOFFIbuZ3LwzMXjvjXkw,EyN0f9BUayzN7SQqpdL9k2" />
+          <Link Id="NoNu7QL77oWOZjfFshVOSl" Ids="EyN0f9BUayzN7SQqpdL9k2,A7lmB0mjzewM3cEz2DtNVW" />
+          <Link Id="KgYvvq2mwJnPq0Bhk7X276" Ids="E9arxNZ0HZVOQRzsMGTWg6,A83C0keH221P9ZZSg5gLzO" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="UIEhJRWPgFDPgw8tmYbAzN">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="UFu4FbiEoTuPk0vM3Jt6k1">
+        <Canvas Id="NWUzA0GwOdoQLIo64Sjnnp" CanvasType="Group" />
+        <Patch Id="UUyQa3Pow6oPv3Oy4jUH0v" Name="Create" />
+        <Patch Id="ErBhmJn71xeMOWuujelwj7" Name="Update" />
+        <ProcessDefinition Id="DDEBi7xXbHuPCxa9k7nGfC">
+          <Fragment Id="AGEmVAcvPjPOnMf9JrufrU" Patch="UUyQa3Pow6oPv3Oy4jUH0v" Enabled="true" />
+          <Fragment Id="Ij6o3pGuzcfPWM76fFISSX" Patch="ErBhmJn71xeMOWuujelwj7" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="UlBcYzWobVGQB6LMrLpO2R" Location="../../../../../VVVV.Schema.Core.vl" />
+  <NugetDependency Id="LABeGGm7fKVNB748wygc3O" Location="VL.Audio" Version="1.2.2" />
+  <DocumentDependency Id="TwSj4meIIshPDqAVvQA5vC" Location="../../../Schema.Plugins.Audio.PropertyExtensions.vl" />
+</Document>
