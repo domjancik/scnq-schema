@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="P15No9i1puvPva9uccINK3" LanguageVersion="2023.5.2" Version="0.128">
-  <NugetDependency Id="O8rkadEMSZvPVSLaTTUFSl" Location="VL.CoreLib" Version="2023.5.2" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="P15No9i1puvPva9uccINK3" LanguageVersion="2024.6.2" Version="0.128">
+  <NugetDependency Id="O8rkadEMSZvPVSLaTTUFSl" Location="VL.CoreLib" Version="2024.6.2" />
   <Patch Id="G2wB3KnHuu4Pc6o6E7gmVb">
     <Canvas Id="BsauRu0mlZTQYKw0ziAAPc" DefaultCategory="Schema.UI" CanvasType="FullCategory">
       <!--
@@ -19,6 +19,7 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="FontAndParagraph" />
               </p:NodeReference>
+              <Pin Id="Pmf9lIXji8eNKmPz0DHl2T" Name="Node Context" Kind="InputPin" IsHidden="true" />
               <Pin Id="Lt5pYuULvgiNYBwMjo4aBG" Name="Input" Kind="InputPin" />
               <Pin Id="V7yWVMf64nROkJnuk3TLAN" Name="Family Name" Kind="InputPin" />
               <Pin Id="U7hinHFeZ4RMnNCB9ZtkcC" Name="Style" Kind="InputPin" />
@@ -45,6 +46,9 @@
                 <CategoryReference Kind="Category" Name="Primitive" />
                 <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
               </p:NodeReference>
+              <Pin Id="Bsv8qty8W9GOtqcbTU729e" Name="Force New Instance" Kind="InputPin" />
+              <Pin Id="L8nsVHSQmG4Ph0NqdEDjGG" Name="On Stop" Kind="InputPin" />
+              <Pin Id="MefiDNgf1upOTVlsRfjNH3" Name="Singleton" Kind="OutputPin" />
               <Patch Id="PzS0IE3Zxq3NmPHD7lrHD1" Name="Producer" ManuallySortedPins="true">
                 <Pin Id="HpYbK0cXG4eMupvVeFnAHk" Name="Result" Kind="OutputPin" />
                 <ControlPoint Id="Uy4B4K7XHk3QKFj4zPDmU1" Bounds="762,680" />
@@ -54,12 +58,10 @@
                     <CategoryReference Kind="ClassType" Name="FontStore" />
                     <Choice Kind="OperationCallFlag" Name="Create" />
                   </p:NodeReference>
+                  <Pin Id="GCo5Mt1OtohMUd61USV6RN" Name="Node Context" Kind="InputPin" IsHidden="true" />
                   <Pin Id="E7YxFMcAOdDPAEWQk3u2pm" Name="Output" Kind="StateOutputPin" />
                 </Node>
               </Patch>
-              <Pin Id="Bsv8qty8W9GOtqcbTU729e" Name="Force New Instance" Kind="InputPin" />
-              <Pin Id="L8nsVHSQmG4Ph0NqdEDjGG" Name="On Stop" Kind="InputPin" />
-              <Pin Id="MefiDNgf1upOTVlsRfjNH3" Name="Singleton" Kind="OutputPin" />
             </Node>
             <Pad Id="O05iqKs8M90PXptgk1w358" SlotId="HEgMhCfHY2gMf73aN71NjX" Bounds="752,715" />
             <Node Bounds="719,746,124,114" Id="HsRMhOnY52nQGsh1PtXtlq">
@@ -68,6 +70,12 @@
                 <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:NodeReference>
+              <ControlPoint Id="CTkNCmxk0yoP8esgOViOuZ" Bounds="731,752" Alignment="Top" />
+              <ControlPoint Id="SE6efbGVaXzNWj5QelpSEZ" Bounds="750,854" Alignment="Bottom" />
+              <ControlPoint Id="JYgjndzj3wVLyIHCs5xi0C" Bounds="827,752" Alignment="Top" />
+              <Pin Id="OlQYYaJf9g1NAxswQoEvAL" Name="Force" Kind="InputPin" />
+              <Pin Id="Rxj9BZqnVkxOwnuBFCWM2a" Name="Dispose Cached Outputs" Kind="InputPin" />
+              <Pin Id="Srn30q4z2V0Oi59knHUtYn" Name="Has Changed" Kind="OutputPin" />
               <Patch Id="P7VOg7bMHZ0NazPUUr7U4t" ManuallySortedPins="true">
                 <Patch Id="POqW29Q8IRPM3zj5cgzLSX" Name="Create" ManuallySortedPins="true" />
                 <Patch Id="CLXBjYcYLDoOSZCNccOwY6" Name="Then" ManuallySortedPins="true" />
@@ -77,6 +85,7 @@
                     <Choice Kind="ProcessAppFlag" Name="SetTypeface" />
                   </p:NodeReference>
                   <p:HelpFocus p:Assembly="VL.Lang" p:Type="VL.Model.HelpPriority">High</p:HelpFocus>
+                  <Pin Id="CzLvXP6xld1PKEh6gSCNOw" Name="Node Context" Kind="InputPin" IsHidden="true" />
                   <Pin Id="AO2v3CanOjwMsPX1kftLz1" Name="Input" Kind="InputPin" />
                   <Pin Id="O2daZuPXw47MhEckyJUBFn" Name="Value" Kind="InputPin" />
                   <Pin Id="LMJFU0rW5vIP7hJGdgcN8u" Name="Output" Kind="OutputPin" />
@@ -92,12 +101,6 @@
                   <Pin Id="NMIkMq4PmgtLBLxz89mj6v" Name="Result" Kind="OutputPin" />
                 </Node>
               </Patch>
-              <ControlPoint Id="CTkNCmxk0yoP8esgOViOuZ" Bounds="731,752" Alignment="Top" />
-              <ControlPoint Id="SE6efbGVaXzNWj5QelpSEZ" Bounds="750,854" Alignment="Bottom" />
-              <ControlPoint Id="JYgjndzj3wVLyIHCs5xi0C" Bounds="827,752" Alignment="Top" />
-              <Pin Id="OlQYYaJf9g1NAxswQoEvAL" Name="Force" Kind="InputPin" />
-              <Pin Id="Rxj9BZqnVkxOwnuBFCWM2a" Name="Dispose Cached Outputs" Kind="InputPin" />
-              <Pin Id="Srn30q4z2V0Oi59knHUtYn" Name="Has Changed" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="MPhi3mK84CnPEtlZNFS8Uz" Bounds="752,389" />
             <Node Bounds="799,898,355,232" Id="BKYC91HvuIBLDRteJPB58q">
@@ -395,6 +398,7 @@
                 </p:NodeReference>
                 <Pin Id="MEUOSJoa8iTN1ko3IuK1PF" Name="Input" Kind="StateInputPin" />
                 <Pin Id="JTE7JarobtKQaCUmzbf8qd" Name="Key" Kind="InputPin" />
+                <Pin Id="CyT546zIbsGNt93WVIFNAU" Name="Output" Kind="OutputPin" IsHidden="true" />
                 <Pin Id="Lz547vUSQjDNyEvbeNcL3l" Name="Item" Kind="OutputPin" />
               </Node>
               <ControlPoint Id="V4XziC2nj01LHLXFmNpYmE" Bounds="759,656" />
@@ -413,6 +417,7 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="LoadFont" />
                 </p:NodeReference>
+                <Pin Id="I3E8CtDQ3w8OpoxwZWMNPd" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="AHSFdAD1cGeNGX6p0XX8Ab" Name="FontFilename" Kind="InputPin" />
                 <Pin Id="QUEpdGq1QU0Ls25LVIte9W" Name="Output" Kind="OutputPin" />
               </Node>
@@ -470,6 +475,7 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="LoadFont" />
                 </p:NodeReference>
+                <Pin Id="U0ohxtVxFaDOmvtx8s1PRb" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="MwSgX0PU2YKOL77uxxMPjh" Name="FontFilename" Kind="InputPin" DefaultValue="JetBrainsMono-Bold.ttf">
                   <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="String" />
@@ -482,6 +488,7 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="LoadFont" />
                 </p:NodeReference>
+                <Pin Id="FAGElzf5ePpMOQGEp5tMlR" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="JkW9Di40n49MW23O29mzcW" Name="FontFilename" Kind="InputPin" DefaultValue="JetBrainsMono-Bold-Italic.ttf">
                   <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="String" />
@@ -494,6 +501,7 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="LoadFont" />
                 </p:NodeReference>
+                <Pin Id="Of6euVdJ4MfMUrxeHZV738" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="DJJdABgGRwtMCJmUkrLfZu" Name="FontFilename" Kind="InputPin" DefaultValue="JetBrainsMono-Italic.ttf">
                   <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="String" />
@@ -614,6 +622,7 @@
                       </CategoryReference>
                       <PinReference Kind="InputPin" Name="Value" />
                     </p:NodeReference>
+                    <Pin Id="OjA75QpExJsLZM7hIJOio4" Name="Node Context" Kind="InputPin" IsHidden="true" />
                     <Pin Id="DFQhWGJvQ0eNJuxKJOGQFU" Name="Input" Kind="InputPin" />
                     <Pin Id="AAjPr2LCE2DLsJpcfluII8" Name="Value" Kind="InputPin" />
                     <Pin Id="BUfPW6c0KZwPIfIfiY6KQ1" Name="Output" Kind="OutputPin" />
@@ -626,6 +635,7 @@
                     </p:NodeReference>
                     <Pin Id="DJggmKwgApULKbuUWiPfnc" Name="Input" Kind="StateInputPin" />
                     <Pin Id="Ji6Eg0TjCbfM4C6hVjBPky" Name="Key" Kind="InputPin" />
+                    <Pin Id="FPZAwiNphrUNGYeYQqqA2T" Name="Output" Kind="OutputPin" IsHidden="true" />
                     <Pin Id="G0z9wpPrynSPtt9B4X0iWA" Name="Result" Kind="OutputPin" />
                   </Node>
                 </Patch>
@@ -730,6 +740,7 @@
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="ApplicationPath" />
                     </p:NodeReference>
+                    <Pin Id="SGFBPq8Ta8xMBopvv2O6ZI" Name="Node Context" Kind="InputPin" IsHidden="true" />
                     <Pin Id="Nn8DtpH9ejwPMIiD0dTGGv" Name="Output" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="553,506,25,19" Id="Ee47AycJJKCNIpkJznhIlE">
@@ -878,5 +889,5 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="C09xgurPLIxMYzKFTnY0DU" Location="VL.Skia" Version="2023.5.2" />
+  <NugetDependency Id="C09xgurPLIxMYzKFTnY0DU" Location="VL.Skia" Version="2024.6.2" />
 </Document>

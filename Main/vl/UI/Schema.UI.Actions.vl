@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="D7pUulfaFqNOSUkpVaKSgz" LanguageVersion="2022.5.0-0737-geed43202fd" Version="0.128">
-  <NugetDependency Id="NLDlfXsXztmMT2NGLWav5v" Location="VL.CoreLib" Version="2022.5.0-0737-geed43202fd" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="D7pUulfaFqNOSUkpVaKSgz" LanguageVersion="2024.6.2" Version="0.128">
+  <NugetDependency Id="NLDlfXsXztmMT2NGLWav5v" Location="VL.CoreLib" Version="2024.6.2" />
   <Patch Id="Ppwbi80ruVVMZwEzY9Pu1m">
     <Canvas Id="UgfJqrPUZ90LuMrH1d46Wz" DefaultCategory="Schema.UI.Actions" CanvasType="FullCategory">
       <!--
@@ -76,12 +76,16 @@
             <Pin Id="HApGjoL1YRDONe3HZQ0s9L" Name="Result" Kind="OutputPin" />
           </Node>
           <Node Bounds="479,282,74,26" Id="TAd4RUZAK45QDQTr9OcmmX">
-            <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
+            <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll" OverloadStrategy="UserSelectedPins">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
               <Choice Kind="OperationCallFlag" Name="Create" />
               <PinReference Kind="InputPin" Name="File Name" />
-              <PinReference Kind="InputPin" Name="Arguments" />
+              <PinReference Kind="InputPin" Name="Arguments">
+                <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:DataTypeReference>
+              </PinReference>
             </p:NodeReference>
             <Pin Id="UxhLhHQUlKFQEhPPXU5kBf" Name="File Name" Kind="InputPin" />
             <Pin Id="Rbc42HqJyfMM8ZawjO2m3c" Name="Arguments" Kind="InputPin" />
@@ -279,6 +283,7 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="GetCurrentProject" />
               </p:NodeReference>
+              <Pin Id="R32GvGAqiEYOlboaXUZvDk" Name="Node Context" Kind="InputPin" IsHidden="true" />
               <Pin Id="OBirHIinZweMIhNmTmSDv9" Name="Read" Kind="InputPin" DefaultValue="True">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
@@ -326,12 +331,16 @@
             <Pin Id="LP7HwRWJMK0L7zxekqLmrn" Name="Result" Kind="OutputPin" />
           </Node>
           <Node Bounds="620,288,74,26" Id="QLZjApr7uibPcU0gBGf2en">
-            <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
+            <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll" OverloadStrategy="UserSelectedPins">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
               <Choice Kind="OperationCallFlag" Name="Create" />
               <PinReference Kind="InputPin" Name="File Name" />
-              <PinReference Kind="InputPin" Name="Arguments" />
+              <PinReference Kind="InputPin" Name="Arguments">
+                <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:DataTypeReference>
+              </PinReference>
             </p:NodeReference>
             <Pin Id="UeHjZE4dLFMM0dN5rQAtQN" Name="File Name" Kind="InputPin" />
             <Pin Id="HrL85Z3oOHPLwj55rQUVpb" Name="Arguments" Kind="InputPin" />
@@ -372,7 +381,7 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="RPBhjyUJNAbMISRTlvEHQN" Location="VL.Skia" Version="2022.5.0-0737-geed43202fd" />
+  <NugetDependency Id="RPBhjyUJNAbMISRTlvEHQN" Location="VL.Skia" Version="2024.6.2" />
   <PlatformDependency Id="IUHLyeSUjpQM6JKT5tvgJj" Location="System.Diagnostics.Process" />
   <DocumentDependency Id="NEUaoYnChWXO8GbbkMCIFW" Location="../Schema.Projects.vl" />
 </Document>
