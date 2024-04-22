@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="RFFAeuRmYZ2QLUQ7LsKD6o" LanguageVersion="2023.5.2" Version="0.128">
+  <NugetDependency Id="DX1ZKZdGSe0Odmm68EgsgO" Location="VL.CoreLib" Version="2023.5.2" />
+  <Patch Id="VkgCXp22AMOMG3w63Wdbx6">
+    <Canvas Id="Vd7N1ji04GULwsy6GQzfsn" DefaultCategory="Schema.UI.Model.Actions" CanvasType="FullCategory">
+      <!--
+
+    ************************ IUIEditAction ************************
+
+-->
+      <Node Name="IUIEditAction" Bounds="95,116" Id="El6hhkJMKsIOhlHW5b6WkM">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="InterfaceDefinition" Name="Interface" />
+        </p:NodeReference>
+        <Patch Id="JQi6UoQT0hNN2NO8S2VKz5">
+          <Canvas Id="LBR2DyAHvBJMRGm7Ymxc1i" CanvasType="Group" />
+          <ProcessDefinition Id="Ms3x8K0oHcdOhnnYioBaRB" IsHidden="true" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ SelectAndInsertAction ************************
+
+-->
+      <Node Name="SelectAndInsertAction" Bounds="95,184" Id="ThTsy4wxkoSMdzy5HJdJr1">
+        <p:NodeReference>
+          <Choice Kind="RecordDefinition" Name="Record" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Schema.UI.Model.Actions" LastDependency="Schema.UI.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IUIEditAction" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="CgPigNvcYzjNSBHZVkWMXP">
+          <Canvas Id="U9OwlNP8g19MvxDtFyc7AV" CanvasType="Group">
+            <Pad Id="SXPCEBrfj2IPGngePWL1Sk" SlotId="FHZO8d6EdIGNHHh3xp2Bha" Bounds="154,143" />
+            <ControlPoint Id="RJ5OIYa6fQfM5NmUoPItm2" Bounds="154,113" />
+            <ControlPoint Id="LzgRe7OXfIYLAxiRECiLsa" Bounds="154,173" />
+            <Pad Id="FFIqiGCKoAWNOxgtWYFQ1b" SlotId="L5utS1idUmnPHPLqNuKz6S" Bounds="287,139" />
+            <ControlPoint Id="MzkHgqxewZUQNfX7ovSz9P" Bounds="287,109" />
+            <ControlPoint Id="VcpHKPdAeLvPWLAXrnLuTM" Bounds="287,169" />
+          </Canvas>
+          <Patch Id="L5xodmvmmOHMzxDjR501Gi" Name="Create">
+            <Pin Id="U6M5nodmecmQaDMBQlSNsi" Name="Node" Kind="InputPin" />
+            <Pin Id="I5bjLhJeVuRQACrBeRAsCO" Name="Child Index" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="BaqUfigUhchLOpwmKi4OLq" IsHidden="true">
+            <Fragment Id="OyVfF3lpXlONRNcRzmtxHO" Patch="L5xodmvmmOHMzxDjR501Gi" Enabled="true" />
+            <Fragment Id="LoaR6lQ0MuzMCBeYhiRDX9" Patch="PQFAkgeIHKaOvKheJy8ns5" />
+          </ProcessDefinition>
+          <Slot Id="FHZO8d6EdIGNHHh3xp2Bha" Name="Node">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="JnMDEnAERnPLMYtLIgYiE3" Ids="U6M5nodmecmQaDMBQlSNsi,RJ5OIYa6fQfM5NmUoPItm2" IsHidden="true" />
+          <Link Id="Egs6v9PLbZXPwYzKEFHxfj" Ids="RJ5OIYa6fQfM5NmUoPItm2,SXPCEBrfj2IPGngePWL1Sk" />
+          <Patch Id="PQFAkgeIHKaOvKheJy8ns5" Name="Split">
+            <Pin Id="TvGTQjDgNcCNqUbGgjn5mw" Name="Node" Kind="OutputPin" />
+            <Pin Id="I3qb0wn0JkbMHgEZGcXwwR" Name="Child Index" Kind="OutputPin" />
+          </Patch>
+          <Link Id="HfQss1vY6kaORjneC0wnpP" Ids="LzgRe7OXfIYLAxiRECiLsa,TvGTQjDgNcCNqUbGgjn5mw" IsHidden="true" />
+          <Link Id="BXPBkABfDbXOSzX7YA0Gdj" Ids="SXPCEBrfj2IPGngePWL1Sk,LzgRe7OXfIYLAxiRECiLsa" />
+          <Slot Id="L5utS1idUmnPHPLqNuKz6S" Name="Child Index">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="AxzLRA50EW4N6NABZIQRXJ" Ids="I5bjLhJeVuRQACrBeRAsCO,MzkHgqxewZUQNfX7ovSz9P" IsHidden="true" />
+          <Link Id="Teo7oSYPjKCOMZ2mCb9S9n" Ids="MzkHgqxewZUQNfX7ovSz9P,FFIqiGCKoAWNOxgtWYFQ1b" />
+          <Link Id="Dh2ST7lNrmlP5U57OlMktn" Ids="VcpHKPdAeLvPWLAXrnLuTM,I3qb0wn0JkbMHgEZGcXwwR" IsHidden="true" />
+          <Link Id="KdkcmOFvZFYMFtwCz8BplL" Ids="FFIqiGCKoAWNOxgtWYFQ1b,VcpHKPdAeLvPWLAXrnLuTM" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ SelectAndLiftAction ************************
+
+-->
+      <Node Name="SelectAndLiftAction" Bounds="94,249" Id="TnGYZD3DRkQLsjrjAUCydg">
+        <p:NodeReference>
+          <Choice Kind="RecordDefinition" Name="Record" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Schema.UI.Model.Actions" LastDependency="Schema.UI.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IUIEditAction" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="HBZs9Um1z11O6hEe35t7yu">
+          <Canvas Id="RfA3rTpdx5uNP3EjehbTDo" CanvasType="Group">
+            <Pad Id="Oe9woY8mPrLNNRDLiXClZW" SlotId="EPnV0wMnGdmOtmHpQaHpYP" Bounds="154,143" />
+            <ControlPoint Id="LU2R81mMNJDOpyLCzGJh0G" Bounds="154,113" />
+            <ControlPoint Id="C9DXofVjlQANAVIkFhxhsV" Bounds="154,173" />
+            <Pad Id="Db2qbEHmCHQNltghuDcRM1" SlotId="IQsKaQ6jjfqLADjjYK4nJT" Bounds="287,139" />
+            <ControlPoint Id="BSx7MRkDd69LQwbq46CP4b" Bounds="287,109" />
+            <ControlPoint Id="MwPrHUETnRlM0CTWmu6d8s" Bounds="287,169" />
+          </Canvas>
+          <Patch Id="PsZmCTbvoqoPs3ZNfqCuN5" Name="Create">
+            <Pin Id="G8HWM3UbjhxQXKaxxBtZjJ" Name="Node" Kind="InputPin" />
+            <Pin Id="RbQKeqNfeXgP9JijmrsLN4" Name="Child Index" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="Qbb4ZkdHc31NRbAlH1gOpq" IsHidden="true">
+            <Fragment Id="UvMrOrj7rCqNTXDSMNN1sO" Patch="PsZmCTbvoqoPs3ZNfqCuN5" Enabled="true" />
+            <Fragment Id="L5cSoHrkbNALBBvmZcpnZp" Patch="P9d9BB4a2t5PcRCB8dXkYu" />
+          </ProcessDefinition>
+          <Slot Id="EPnV0wMnGdmOtmHpQaHpYP" Name="Node">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="CNu2qyOlHJMN56tZ9jki8b" Ids="G8HWM3UbjhxQXKaxxBtZjJ,LU2R81mMNJDOpyLCzGJh0G" IsHidden="true" />
+          <Link Id="EadlFvu36mrQFkowOg2hGZ" Ids="LU2R81mMNJDOpyLCzGJh0G,Oe9woY8mPrLNNRDLiXClZW" />
+          <Patch Id="P9d9BB4a2t5PcRCB8dXkYu" Name="Split">
+            <Pin Id="FtHkjL4DNFWLiplihYP2OZ" Name="Node" Kind="OutputPin" />
+            <Pin Id="SldvwA3tVrDOEpAwbtIsqI" Name="Child Index" Kind="OutputPin" />
+          </Patch>
+          <Link Id="EVbCzXrbNJzMP3FRfrjHfk" Ids="C9DXofVjlQANAVIkFhxhsV,FtHkjL4DNFWLiplihYP2OZ" IsHidden="true" />
+          <Link Id="V0qkklOErScOkpO8WAmjox" Ids="Oe9woY8mPrLNNRDLiXClZW,C9DXofVjlQANAVIkFhxhsV" />
+          <Slot Id="IQsKaQ6jjfqLADjjYK4nJT" Name="Child Index">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="A0vSSopW8EGOwt4YyG3lRW" Ids="RbQKeqNfeXgP9JijmrsLN4,BSx7MRkDd69LQwbq46CP4b" IsHidden="true" />
+          <Link Id="KEEeMar6h6WP3HGi4UYNGw" Ids="BSx7MRkDd69LQwbq46CP4b,Db2qbEHmCHQNltghuDcRM1" />
+          <Link Id="IHmsq4BeidWQGi7vB3n3CU" Ids="MwPrHUETnRlM0CTWmu6d8s,SldvwA3tVrDOEpAwbtIsqI" IsHidden="true" />
+          <Link Id="JbPoKh3oCCuOdpIAXls7xr" Ids="Db2qbEHmCHQNltghuDcRM1,MwPrHUETnRlM0CTWmu6d8s" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ SelectAndSwapAction ************************
+
+-->
+      <Node Name="SelectAndSwapAction" Bounds="92,320" Id="RWLe8HXvLpbMFbKx2A32CT">
+        <p:NodeReference>
+          <Choice Kind="RecordDefinition" Name="Record" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Schema.UI.Model.Actions" LastDependency="Schema.UI.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IUIEditAction" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="N1GTR2gehj4NaKkO33n9LO">
+          <Canvas Id="ExtWLhBsDgwLZN3rE6DmTI" CanvasType="Group">
+            <Pad Id="DOzCQ4mWL7mNK6CfXla60n" SlotId="NBtLuCcTaIMO9NDmlQuISq" Bounds="154,143" />
+            <ControlPoint Id="Mow7FP03cSOOwpwHvJNqsC" Bounds="154,113" />
+            <ControlPoint Id="L8vrbakqS6HN33ZbtvuV5O" Bounds="154,173" />
+          </Canvas>
+          <Patch Id="B4wkx0esZbUMFprRY3ceGJ" Name="Create">
+            <Pin Id="ClfvLyCMDShMoomNIihM1q" Name="Node" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="SsDjqaCs4DnL9TUGB0wgd8" IsHidden="true">
+            <Fragment Id="FaJKfmAptDnOUEes8HY1kp" Patch="B4wkx0esZbUMFprRY3ceGJ" Enabled="true" />
+            <Fragment Id="FwOjDM456k0PTev0QeYiMW" Patch="LyvAiX6eueBNnkviMCuEoR" />
+          </ProcessDefinition>
+          <Slot Id="NBtLuCcTaIMO9NDmlQuISq" Name="Node">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="AicSdJ24bZNMdpUZpmjTnI" Ids="ClfvLyCMDShMoomNIihM1q,Mow7FP03cSOOwpwHvJNqsC" IsHidden="true" />
+          <Link Id="OSipT7EM3XXLjHbgC7Qm9g" Ids="Mow7FP03cSOOwpwHvJNqsC,DOzCQ4mWL7mNK6CfXla60n" />
+          <Patch Id="LyvAiX6eueBNnkviMCuEoR" Name="Split">
+            <Pin Id="N7LdhRi0hK3M0zSm3sTzDX" Name="Node" Kind="OutputPin" />
+          </Patch>
+          <Link Id="IA2El8HmGRWNXgGjQmM8iu" Ids="L8vrbakqS6HN33ZbtvuV5O,N7LdhRi0hK3M0zSm3sTzDX" IsHidden="true" />
+          <Link Id="MC5vZKRxCNXOgPC1klJ2lg" Ids="DOzCQ4mWL7mNK6CfXla60n,L8vrbakqS6HN33ZbtvuV5O" />
+        </Patch>
+      </Node>
+    </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="CFQAuBfPcxiPFnBLNFKBBT">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="Nn1zIocWC0cNx3o8jzZJg6">
+        <Canvas Id="DIg0OiRHNlJM3zAU6yMzT1" CanvasType="Group" />
+        <Patch Id="GiLZzU8smOyPsBxFJlHnbb" Name="Create" />
+        <Patch Id="VJfBUmCuR0BN76c7AiTdtC" Name="Update" />
+        <ProcessDefinition Id="G6wniIbJYzjLNqJSvoXvMK">
+          <Fragment Id="GDRzG7MNkX1OCKxxsg7qkZ" Patch="GiLZzU8smOyPsBxFJlHnbb" Enabled="true" />
+          <Fragment Id="OmpXqArECPRMcrQ3FThYUv" Patch="VJfBUmCuR0BN76c7AiTdtC" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
+  </Patch>
+  <DocumentDependency Id="SBYXNTjjnROObrYSUrDwh5" Location="../../VVVV.Schema.Core.vl" />
+</Document>
