@@ -1,20 +1,24 @@
 # Schéma, an Integrated Creative Environment
+
 Schéma provides an intuitive visual programming interface and runtime.
 
 The system is focused on multimedia installations for use in music performances, theater shows, film lighting or interactive art exhibits but is general-purpose and can be expanded.
 
 ## Download pre-compiled releases
+
 https://domj.itch.io/schema
 
 ## Learn how to drive it
+
 https://docs.scenic.tools/
 
 ## Explore features and use-cases
+
 https://schema.scenic.tools/
 
 ## Join the community and get help
-https://discord.gg/Q27rcfd
 
+https://discord.gg/Q27rcfd
 
 ## Running from source and vvvv gamma integration
 
@@ -22,7 +26,7 @@ Schema is developed using the vvvv gamma .NET visual programming environment, st
 
 You can use the source to run or modify Schema and to integrate with other vvvv gamma projects. For pre-compiled releases, see above.
 
-Last tested version: vvvv gamma 5.2
+Last tested version: vvvv gamma 6.2
 Download at http://visualprogramming.net/
 
 It will likely work with higher versions as well, however there may be undocumented bugs, superficial document changes after saving and more.
