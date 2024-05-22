@@ -8,7 +8,7 @@
     ************************ RegisterAudioBlocks ************************
 
 -->
-      <Node Name="RegisterAudioBlocks" Bounds="481,305,390,834" Id="FB9sUDaECZMMY5GypsxLEy">
+      <Node Name="RegisterAudioBlocks" Bounds="481,305,395,1100" Id="FB9sUDaECZMMY5GypsxLEy">
         <p:NodeReference LastCategoryFullName="Primitive" LastDependency="builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -106,7 +106,7 @@
             </p:TypeAnnotation>
           </Pad>
           <Pin Id="VoqmvQCQz2FLzcDWbvKA6o" Name="Output" Kind="OutputPin" />
-          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="572,1122" />
+          <ControlPoint Id="Ve87I013pMiMJIb9YMyjVM" Bounds="568,1388" />
           <Link Id="GEyzEHYQJfBLKBMGn2P956" Ids="EmmrHSvUBMQMSPPqCFuzp8,JkoQ505fvZqMg917itbD2e" IsHidden="true" />
           <Link Id="PzjRz0ftbrlLpokRmBX3yF" Ids="ELYTRDGehcoMTg7Nsl5gq2,DxgX8zXrajzLxYBWZYXg9T" />
           <Link Id="RpO5T81c1udMk19qAPiFya" Ids="VpFeSPVI7PCP7ODjtXThYm,EmmrHSvUBMQMSPPqCFuzp8" />
@@ -174,7 +174,38 @@
           <Link Id="DmZDmGyWAOzOvt6xIL4JxB" Ids="EGmYfZxBrIKPLwKIaK6aVT,TreiKKDcInhN6GjMvZlOGD" />
           <Link Id="Tt7fWjAT2m5L4EYy6FLPlb" Ids="Du5zNnmi4uPPM8XfCKPyay,TTTwfDDA986LWsgN2yE4uq" />
           <Link Id="BwoyVbwOi22L56cS7arANg" Ids="NynbMxfIWQBM2YYynRtjQo,P7BB1DMo5OeLfqCjxlNs8X" />
-          <Link Id="JatMJ9jdLFANTkEjjPktm3" Ids="KW7QSbKlKjNLG8w7zh2MB0,Ve87I013pMiMJIb9YMyjVM" />
+          <Node Bounds="566,1211,133,90" Id="S1YmqrQpgMIMjfPUfGxFzf">
+            <p:NodeReference LastCategoryFullName="VVVV.Schema.Model.State" LastDependency="VVVV.Schema.Core.vl">
+              <Choice Kind="OperationCallFlag" Name="RegisterBlock" />
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+            </p:NodeReference>
+            <Pin Id="MJxIE0PZRu3MqNOtPwYJlG" Name="Input" Kind="StateInputPin" />
+            <Pin Id="QtgAd0zvYOSPcIPxygyh9S" Name="Key" Kind="InputPin" />
+            <Pin Id="OfAnj341KpBNR2XSF038dn" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="RkTcDxzIL33MkyEA9D9WlM" Name="Constructor" ManuallySortedPins="true">
+              <Pin Id="MGEaKjbZW9aOqFOJcWTln2" Name="Result" Kind="OutputPin" />
+              <ControlPoint Id="OJtl5TodUEHMGV3u88kLBG" Bounds="580,1294" />
+              <Node Bounds="578,1234,97,26" Id="FZ4S4nDEMDmQUlV1ayxlno">
+                <p:NodeReference LastCategoryFullName="Schema.Blocks.Source.Audio.InputAudioSource" LastDependency="Schema.Blocks.Source.Audio.Input.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="InputAudioSource" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                </p:NodeReference>
+                <Pin Id="VfBlzpbND5BPxa1EEtZeP6" Name="Node Context" Kind="InputPin" IsHidden="true" />
+                <Pin Id="ClNiczdrFM4NZbCMkFcsoW" Name="Output" Kind="StateOutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="Do9vvVry9W5LrRyENSlGvJ" Comment="Key" Bounds="695,1189,130,15" ShowValueBox="true" isIOBox="true" Value="Create.Audio.Input">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="NEIqs0MM7B9NYx18X61QCm" Ids="OJtl5TodUEHMGV3u88kLBG,MGEaKjbZW9aOqFOJcWTln2" IsHidden="true" />
+          <Link Id="IjtapDPkjY8NtifraB4Ngm" Ids="Do9vvVry9W5LrRyENSlGvJ,QtgAd0zvYOSPcIPxygyh9S" />
+          <Link Id="JAqlYuwes9JLsuSiuTlxrF" Ids="ClNiczdrFM4NZbCMkFcsoW,OJtl5TodUEHMGV3u88kLBG" />
+          <Link Id="U7IgT6Iu15SP4YexDttfSp" Ids="KW7QSbKlKjNLG8w7zh2MB0,MJxIE0PZRu3MqNOtPwYJlG" />
+          <Link Id="EWIErq2DPd6LKjF9475USZ" Ids="OfAnj341KpBNR2XSF038dn,Ve87I013pMiMJIb9YMyjVM" />
         </Patch>
       </Node>
     </Canvas>
@@ -205,4 +236,5 @@
   <DocumentDependency Id="COK6bUA5fFcNKldrhbefO6" Location="./Convert/Schema.Blocks.Convert.AudioMeter.vl" />
   <DocumentDependency Id="UkqFCCziWEYLUgpBv3Bssa" Location="./Source/Audio/Schema.Blocks.Source.Audio.Sample.vl" />
   <DocumentDependency Id="Q1Pa8Ak8RbXMIj9hRFvX1B" Location="./Operator/Audio/Schema.Blocks.Operator.Audio.Multiply.vl" />
+  <DocumentDependency Id="QW0ALDYRYOkLOcUowdbsgT" Location="./Source/Audio/Schema.Blocks.Source.Audio.Input.vl" />
 </Document>
