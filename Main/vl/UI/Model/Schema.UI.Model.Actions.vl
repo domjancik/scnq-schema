@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="RFFAeuRmYZ2QLUQ7LsKD6o" LanguageVersion="2023.5.2" Version="0.128">
-  <NugetDependency Id="DX1ZKZdGSe0Odmm68EgsgO" Location="VL.CoreLib" Version="2023.5.2" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="RFFAeuRmYZ2QLUQ7LsKD6o" LanguageVersion="2024.6.5" Version="0.128">
+  <NugetDependency Id="DX1ZKZdGSe0Odmm68EgsgO" Location="VL.CoreLib" Version="2024.6.5" />
   <Patch Id="VkgCXp22AMOMG3w63Wdbx6">
     <Canvas Id="Vd7N1ji04GULwsy6GQzfsn" DefaultCategory="Schema.UI.Model.Actions" CanvasType="FullCategory">
       <!--
@@ -8,7 +8,7 @@
     ************************ IUIEditAction ************************
 
 -->
-      <Node Name="IUIEditAction" Bounds="95,116" Id="El6hhkJMKsIOhlHW5b6WkM">
+      <Node Name="IUIEditAction" Bounds="91,116" Id="El6hhkJMKsIOhlHW5b6WkM">
         <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
           <Choice Kind="InterfaceDefinition" Name="Interface" />
         </p:NodeReference>
@@ -22,7 +22,7 @@
     ************************ SelectAndInsertAction ************************
 
 -->
-      <Node Name="SelectAndInsertAction" Bounds="95,184" Id="ThTsy4wxkoSMdzy5HJdJr1">
+      <Node Name="SelectAndInsertAction" Bounds="91,183" Id="ThTsy4wxkoSMdzy5HJdJr1">
         <p:NodeReference>
           <Choice Kind="RecordDefinition" Name="Record" />
           <CategoryReference Kind="Category" Name="Primitive" />
@@ -78,7 +78,7 @@
     ************************ SelectAndLiftAction ************************
 
 -->
-      <Node Name="SelectAndLiftAction" Bounds="94,249" Id="TnGYZD3DRkQLsjrjAUCydg">
+      <Node Name="SelectAndLiftAction" Bounds="91,250" Id="TnGYZD3DRkQLsjrjAUCydg">
         <p:NodeReference>
           <Choice Kind="RecordDefinition" Name="Record" />
           <CategoryReference Kind="Category" Name="Primitive" />
@@ -134,7 +134,7 @@
     ************************ SelectAndSwapAction ************************
 
 -->
-      <Node Name="SelectAndSwapAction" Bounds="92,320" Id="RWLe8HXvLpbMFbKx2A32CT">
+      <Node Name="SelectAndSwapAction" Bounds="91,317" Id="RWLe8HXvLpbMFbKx2A32CT">
         <p:NodeReference>
           <Choice Kind="RecordDefinition" Name="Record" />
           <CategoryReference Kind="Category" Name="Primitive" />
@@ -169,6 +169,132 @@
           </Patch>
           <Link Id="IA2El8HmGRWNXgGjQmM8iu" Ids="L8vrbakqS6HN33ZbtvuV5O,N7LdhRi0hK3M0zSm3sTzDX" IsHidden="true" />
           <Link Id="MC5vZKRxCNXOgPC1klJ2lg" Ids="DOzCQ4mWL7mNK6CfXla60n,L8vrbakqS6HN33ZbtvuV5O" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ RemoveBranchAction ************************
+
+-->
+      <Node Name="RemoveBranchAction" Bounds="91,451" Id="EAIJ6jO4bAYNf7uDZ7mPEu">
+        <p:NodeReference>
+          <Choice Kind="RecordDefinition" Name="Record" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Schema.UI.Model.Actions" LastDependency="Schema.UI.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IUIEditAction" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="PKL4BKit3PKPXPlPV212Wm">
+          <Canvas Id="EUjb6OImBC8OFNFnW3t7v8" CanvasType="Group">
+            <Pad Id="AFaCTLoVJccMVHEPXN2FhZ" SlotId="Rgc1o6Px54zMxNdTP8HMnQ" Bounds="154,143" />
+            <ControlPoint Id="ISNZ7Q5YA2nMlK2OpjYCj0" Bounds="154,113" />
+            <ControlPoint Id="PPV9PycfCnJMcfqNT7cSES" Bounds="154,173" />
+            <Pad Id="NgC8hw04jELMWcYi3EdQ7m" SlotId="CItwh9gAXFOQaRkcDqHZhb" Bounds="287,139" />
+            <ControlPoint Id="OOy8YiTYZC5Lo2XIl5fDms" Bounds="287,109" />
+            <ControlPoint Id="UL1SsL5nGuPMJSjafKtgCj" Bounds="287,169" />
+          </Canvas>
+          <Patch Id="DpwIJDFxuH9NJmHyjtEmLE" Name="Create">
+            <Pin Id="Uqc6ByfrSzOO0KVkB0rK2z" Name="Node" Kind="InputPin" />
+            <Pin Id="NQSg6D0HePMLBlWBmuudFa" Name="Child Index" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="AXNwlH3OHHSMP73REz4X3D" IsHidden="true">
+            <Fragment Id="IIAOk5d2Y1LLTTO8sK3Uhp" Patch="DpwIJDFxuH9NJmHyjtEmLE" Enabled="true" />
+            <Fragment Id="FxPGHR84RekPENFx8XHv8u" Patch="HxN9D4CkkOQQcrG3zU5bq2" />
+          </ProcessDefinition>
+          <Slot Id="Rgc1o6Px54zMxNdTP8HMnQ" Name="Node">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="NyAQxAuwTmrMalvo1xDiHt" Ids="Uqc6ByfrSzOO0KVkB0rK2z,ISNZ7Q5YA2nMlK2OpjYCj0" IsHidden="true" />
+          <Link Id="U36R5tCnsjWPTt5ESoa1IB" Ids="ISNZ7Q5YA2nMlK2OpjYCj0,AFaCTLoVJccMVHEPXN2FhZ" />
+          <Patch Id="HxN9D4CkkOQQcrG3zU5bq2" Name="Split">
+            <Pin Id="FC6Goadaq1PLjjDvTU08L8" Name="Node" Kind="OutputPin" />
+            <Pin Id="SMAwEyuzeHcNkHG8OcmUx4" Name="Child Index" Kind="OutputPin" />
+          </Patch>
+          <Link Id="LuaK2ySdwtpQDTqAeudQNg" Ids="PPV9PycfCnJMcfqNT7cSES,FC6Goadaq1PLjjDvTU08L8" IsHidden="true" />
+          <Link Id="UKz9ejNOsjiLOu05AYVklu" Ids="AFaCTLoVJccMVHEPXN2FhZ,PPV9PycfCnJMcfqNT7cSES" />
+          <Slot Id="CItwh9gAXFOQaRkcDqHZhb" Name="Child Index">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="AbLXZyg60kNM1Q0KEjGg9f" Ids="NQSg6D0HePMLBlWBmuudFa,OOy8YiTYZC5Lo2XIl5fDms" IsHidden="true" />
+          <Link Id="AiM1YvkvHDMPOeCyXqHIRD" Ids="OOy8YiTYZC5Lo2XIl5fDms,NgC8hw04jELMWcYi3EdQ7m" />
+          <Link Id="RWS17BDheKYLFS2TvgqWDI" Ids="UL1SsL5nGuPMJSjafKtgCj,SMAwEyuzeHcNkHG8OcmUx4" IsHidden="true" />
+          <Link Id="TgMRo6jDzyJL06RDsweTWc" Ids="NgC8hw04jELMWcYi3EdQ7m,UL1SsL5nGuPMJSjafKtgCj" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ RemoveAction ************************
+
+-->
+      <Node Name="RemoveAction" Bounds="91,384" Id="Al1o1R9hOyKL4qbQ8vruSE">
+        <p:NodeReference>
+          <Choice Kind="RecordDefinition" Name="Record" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Schema.UI.Model.Actions" LastDependency="Schema.UI.vl">
+            <Choice Kind="InterfaceTypeFlag" Name="IUIEditAction" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="LVnXnfXaBd5NLOZpY7puA9">
+          <Canvas Id="TMB4Aj04z7SMiasR502Oga" CanvasType="Group">
+            <Pad Id="JZyzpgHCwSTN3YmaTuaM4c" SlotId="BawRGCNpAYpMhZXmzgRfBv" Bounds="154,143" />
+            <ControlPoint Id="VBdWZjvX0JqOq0S28EDJzy" Bounds="154,113" />
+            <ControlPoint Id="BhKHP1NU7OpNPGJNys5Rqp" Bounds="154,173" />
+            <Pad Id="Nyjg7zaFKJhPiZDfU29TRt" SlotId="DRm0Y9h99kZMRlVh3fg6ic" Bounds="386,139" />
+            <ControlPoint Id="KWetcocaNG2MJAcXRwtZC9" Bounds="386,109" />
+            <ControlPoint Id="HvirwKjFvBIMEoxoGyQ8lx" Bounds="386,169" />
+            <Pad Id="VK6uRkn2rpvLKW4yyymL3K" SlotId="DZ82JLuoh2vNSCggyIpxbS" Bounds="254,141" />
+            <ControlPoint Id="TMW4aObmmSYMEqEitXqxuA" Bounds="254,111" />
+            <ControlPoint Id="NC6bbEwH01cLRQAZJzMtX8" Bounds="254,171" />
+          </Canvas>
+          <Patch Id="L6qoYE7NHzIQWt5cWSdL5I" Name="Create">
+            <Pin Id="QDZJuyz6V03PbrkJERAazS" Name="Node" Kind="InputPin" />
+            <Pin Id="JuIXTUrIrvINHy1PgyZ3SV" Name="Parent" Kind="InputPin" />
+            <Pin Id="U67qBeIb362QQ7WWwpBTA6" Name="Child Index" Kind="InputPin" />
+          </Patch>
+          <ProcessDefinition Id="PcsgZwK29yFOAESV0kG4Tt" IsHidden="true">
+            <Fragment Id="L7293YdGgH9MSI7xnQfzQy" Patch="L6qoYE7NHzIQWt5cWSdL5I" Enabled="true" />
+            <Fragment Id="HzIaupErevfQcb3nxt2OAc" Patch="E2y4PW9e7OdMoDs42bnMHr" />
+          </ProcessDefinition>
+          <Slot Id="BawRGCNpAYpMhZXmzgRfBv" Name="Node">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="KY7CHVGgzQWOHg1HAHt2dw" Ids="QDZJuyz6V03PbrkJERAazS,VBdWZjvX0JqOq0S28EDJzy" IsHidden="true" />
+          <Link Id="QKRmvKKHQyJOeA9jEcdCjn" Ids="VBdWZjvX0JqOq0S28EDJzy,JZyzpgHCwSTN3YmaTuaM4c" />
+          <Patch Id="E2y4PW9e7OdMoDs42bnMHr" Name="Split">
+            <Pin Id="R8zjFnyjRQ7PJLTLUjJB2z" Name="Node" Kind="OutputPin" />
+            <Pin Id="MDsPnvsUxY7PHkD8xqkXZ7" Name="Parent" Kind="OutputPin" />
+            <Pin Id="IDNMgnZoY3lN74YjhqXPkR" Name="Child Index" Kind="OutputPin" />
+          </Patch>
+          <Link Id="VbFrsCVrLtEOz0E65hI2S8" Ids="BhKHP1NU7OpNPGJNys5Rqp,R8zjFnyjRQ7PJLTLUjJB2z" IsHidden="true" />
+          <Link Id="CQjYGRxlfrXQPQe10176Al" Ids="JZyzpgHCwSTN3YmaTuaM4c,BhKHP1NU7OpNPGJNys5Rqp" />
+          <Slot Id="DRm0Y9h99kZMRlVh3fg6ic" Name="Child Index">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="VXYW3MzuVxSOLmWOTjxohR" Ids="U67qBeIb362QQ7WWwpBTA6,KWetcocaNG2MJAcXRwtZC9" IsHidden="true" />
+          <Link Id="R1VIymELSePMv5bAFG74WR" Ids="KWetcocaNG2MJAcXRwtZC9,Nyjg7zaFKJhPiZDfU29TRt" />
+          <Link Id="V2wt6h6epAOLMgy96VdYxq" Ids="HvirwKjFvBIMEoxoGyQ8lx,IDNMgnZoY3lN74YjhqXPkR" IsHidden="true" />
+          <Link Id="DxqaxyczPtENE0Gw0A3tic" Ids="Nyjg7zaFKJhPiZDfU29TRt,HvirwKjFvBIMEoxoGyQ8lx" />
+          <Link Id="TWGZ4geFyqVOUT7qpcp5U1" Ids="TMW4aObmmSYMEqEitXqxuA,VK6uRkn2rpvLKW4yyymL3K" />
+          <Link Id="G9L6DZuY7nqQXUhDBJ8NXv" Ids="VK6uRkn2rpvLKW4yyymL3K,NC6bbEwH01cLRQAZJzMtX8" />
+          <Link Id="NKGE8Q7P7I7OwbZ1MBPwfl" Ids="JuIXTUrIrvINHy1PgyZ3SV,TMW4aObmmSYMEqEitXqxuA" IsHidden="true" />
+          <Slot Id="DZ82JLuoh2vNSCggyIpxbS" Name="Parent">
+            <p:TypeAnnotation p:Type="TypeReference">
+              <Choice Kind="TypeFlag" Name="Node" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="KRESvBDuf3UMWlpc0cSPp0" Ids="NC6bbEwH01cLRQAZJzMtX8,MDsPnvsUxY7PHkD8xqkXZ7" IsHidden="true" />
         </Patch>
       </Node>
     </Canvas>
