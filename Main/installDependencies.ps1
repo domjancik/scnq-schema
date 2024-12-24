@@ -23,7 +23,7 @@ $ignoreList = @(
 $nugetDirectory = Join-Path -Path $env:USERPROFILE -ChildPath "AppData\Local\vvvv\gamma\nugets"
 
 # NuGet executable path
-$nugetPath = "C:\Program Files\vvvv\vvvv_gamma_5.2\tools\NuGet.exe"
+$nugetPath = "C:\Program Files\vvvv\vvvv_gamma_6.6\tools\NuGet.exe"
 
 # Ensure NuGet executable exists
 if (-not (Test-Path -Path $nugetPath)) {
