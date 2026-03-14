@@ -1,5 +1,7 @@
 # Schéma, an Integrated Creative Environment
 
+Schéma is licensed under the MIT License. See [LICENSE](LICENSE).
+
 Schéma provides an intuitive visual programming interface and runtime.
 
 The system is focused on multimedia installations for use in music performances, theater shows, film lighting or interactive art exhibits but is general-purpose and can be expanded.
