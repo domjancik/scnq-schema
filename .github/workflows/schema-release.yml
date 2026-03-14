@@ -1,0 +1,269 @@
+name: Schema release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (for example: v1.2.3)'
+        required: true
+        type: string
+      offline_url:
+        description: 'Optional TeamCity offline installer URL override'
+        required: false
+        type: string
+      studio_patch_path:
+        description: 'Optional Schema_Studio patch path override relative to repo root'
+        required: false
+        type: string
+      lite_patch_path:
+        description: 'Optional Schema_Lite patch path override relative to repo root'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    env:
+      VVVV_OFFLINE_URL_DEFAULT: https://teamcity.vvvv.org/guestAuth/app/rest/builds/id:39385/artifacts/content/vvvv_gamma_7.0-win-x64_setup_offline.exe
+      VVVV_INSTALLER: ${{ github.workspace }}\vvvv_setup_offline.exe
+      EXPORT_ROOT: ${{ github.workspace }}\dist
+      STUDIO_PATCH_PATH_DEFAULT: ${{ github.workspace }}\Main\gamma\Schema_Studio.vl
+      LITE_PATCH_PATH_DEFAULT: ${{ github.workspace }}\Main\gamma\Schema_Lite.vl
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Resolve inputs
+        id: resolve
+        shell: pwsh
+        run: |
+          function Resolve-PatchPath([string]$inputValue, [string]$defaultValue) {
+            if ([string]::IsNullOrWhiteSpace($inputValue)) {
+              return $defaultValue
+            }
+            return (Join-Path $env:GITHUB_WORKSPACE $inputValue)
+          }
+
+          $offlineUrl = '${{ inputs.offline_url }}'
+          if ([string]::IsNullOrWhiteSpace($offlineUrl)) {
+            $offlineUrl = $env:VVVV_OFFLINE_URL_DEFAULT
+          }
+
+          $studioPatch = Resolve-PatchPath '${{ inputs.studio_patch_path }}' $env:STUDIO_PATCH_PATH_DEFAULT
+          $litePatch = Resolve-PatchPath '${{ inputs.lite_patch_path }}' $env:LITE_PATCH_PATH_DEFAULT
+
+          foreach ($path in @($studioPatch, $litePatch)) {
+            if (-not (Test-Path $path)) {
+              throw "Patch path does not exist: $path"
+            }
+          }
+
+          "offline_url=$offlineUrl" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "studio_patch=$studioPatch" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          "lite_patch=$litePatch" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Download offline installer
+        shell: pwsh
+        run: |
+          $ProgressPreference = 'SilentlyContinue'
+          Invoke-WebRequest -Uri '${{ steps.resolve.outputs.offline_url }}' -OutFile $env:VVVV_INSTALLER
+          Get-Item $env:VVVV_INSTALLER | Format-List FullName,Length,LastWriteTime
+
+      - name: Install vvvv gamma silently
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath $env:VVVV_INSTALLER -ArgumentList '/SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART' -Wait -PassThru
+          if ($p.ExitCode -ne 0) {
+            throw "Installer failed with exit code $($p.ExitCode)"
+          }
+
+      - name: Locate vvvvc.exe
+        id: locate
+        shell: pwsh
+        run: |
+          $candidates = @(
+            'C:\Program Files\vvvv\vvvv_gamma_7.0-win-x64\vvvvc.exe',
+            'C:\Program Files\vvvv\vvvv gamma\vvvvc.exe',
+            'C:\Program Files\vvvv\vvvv\vvvvc.exe',
+            'C:\Program Files\vvvv gamma\vvvvc.exe',
+            'C:\Program Files (x86)\vvvv\vvvv gamma\vvvvc.exe',
+            'C:\Program Files (x86)\vvvv\vvvv\vvvvc.exe',
+            'C:\Program Files (x86)\vvvv gamma\vvvvc.exe'
+          )
+
+          if (Test-Path 'C:\Program Files\vvvv') {
+            $candidates += Get-ChildItem 'C:\Program Files\vvvv' -Directory -ErrorAction SilentlyContinue |
+              Where-Object { $_.Name -like 'vvvv_gamma_*' } |
+              ForEach-Object { Join-Path $_.FullName 'vvvvc.exe' }
+          }
+
+          $found = $candidates | Where-Object { Test-Path $_ } | Select-Object -First 1
+          if (-not $found) {
+            $searchRoots = @(
+              'C:\Program Files',
+              'C:\Program Files (x86)',
+              "$env:LOCALAPPDATA\Programs"
+            ) | Where-Object { Test-Path $_ }
+
+            foreach ($root in $searchRoots) {
+              $found = Get-ChildItem $root -Filter vvvvc.exe -File -Recurse -ErrorAction SilentlyContinue |
+                Select-Object -ExpandProperty FullName -First 1
+              if ($found) { break }
+            }
+          }
+
+          if (-not $found) {
+            throw 'vvvvc.exe not found after install'
+          }
+
+          "vvvvc=$found" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Export Schema variants
+        shell: pwsh
+        run: |
+          function Set-MsBuildPropertyValue([string]$propsPath, [string]$propertyName, [string]$value) {
+            $content = Get-Content -LiteralPath $propsPath -Raw
+            $pattern = "(<$propertyName>)(.*?)(</$propertyName>)"
+            $updated = [regex]::Replace($content, $pattern, "`${1}$value`${3}")
+            if ($updated -eq $content) {
+              throw "Could not update property '$propertyName' in $propsPath"
+            }
+            Set-Content -LiteralPath $propsPath -Value $updated
+          }
+
+          function Remove-BuildOnlyFolders([string]$outputDir) {
+            $srcPath = Join-Path $outputDir 'src'
+            if (Test-Path $srcPath) {
+              Remove-Item -LiteralPath $srcPath -Recurse -Force
+            }
+          }
+
+          function Invoke-Export([string]$label, [string]$patch, [string]$rid, [string]$outputType, [string]$outputDir) {
+            $common = @(
+              '--verbosity', 'Information',
+              '--output-directory', $outputDir,
+              '--output-type', $outputType,
+              '--rid', $rid,
+              '--clean', 'true'
+            )
+
+            & '${{ steps.locate.outputs.vvvvc }}' @common $patch
+            if ($LASTEXITCODE -ne 0) {
+              Write-Host "First attempt failed for $label; retrying with patch path first."
+              & '${{ steps.locate.outputs.vvvvc }}' $patch @common
+            }
+
+            if ($LASTEXITCODE -ne 0) {
+              throw "vvvvc export failed for $label with exit code $LASTEXITCODE"
+            }
+          }
+
+          function Export-Variant(
+            [string]$label,
+            [string]$patch,
+            [string]$rid,
+            [string]$outputType,
+            [string]$outputDir,
+            [string]$propsPath,
+            [hashtable]$propsOverrides
+          ) {
+            New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
+
+            if ($propsPath -and $propsOverrides.Count -gt 0) {
+              $backup = "$propsPath.bak"
+              Copy-Item -LiteralPath $propsPath -Destination $backup -Force
+              try {
+                foreach ($entry in $propsOverrides.GetEnumerator()) {
+                  Set-MsBuildPropertyValue -propsPath $propsPath -propertyName $entry.Key -value $entry.Value
+                }
+                Invoke-Export -label $label -patch $patch -rid $rid -outputType $outputType -outputDir $outputDir
+              }
+              finally {
+                Move-Item -LiteralPath $backup -Destination $propsPath -Force
+              }
+            }
+            else {
+              Invoke-Export -label $label -patch $patch -rid $rid -outputType $outputType -outputDir $outputDir
+            }
+
+            Remove-BuildOnlyFolders -outputDir $outputDir
+          }
+
+          $studioPatch = '${{ steps.resolve.outputs.studio_patch }}'
+          $litePatch = '${{ steps.resolve.outputs.lite_patch }}'
+          $liteProps = [System.IO.Path]::ChangeExtension($litePatch, '.props')
+
+          Export-Variant -label 'Schema_Studio win-x64' -patch $studioPatch -rid 'win-x64' -outputType 'WinExe' -outputDir (Join-Path $env:EXPORT_ROOT 'schema-studio-win-x64') -propsPath '' -propsOverrides @{}
+          Export-Variant -label 'Schema_Lite win-x64' -patch $litePatch -rid 'win-x64' -outputType 'Exe' -outputDir (Join-Path $env:EXPORT_ROOT 'schema-lite-win-x64') -propsPath $liteProps -propsOverrides @{ VLTargetOS = 'Windows' }
+          Export-Variant -label 'Schema_Lite linux-arm64' -patch $litePatch -rid 'linux-arm64' -outputType 'Exe' -outputDir (Join-Path $env:EXPORT_ROOT 'schema-lite-linux-arm64') -propsPath '' -propsOverrides @{}
+
+      - name: Package release zips
+        id: package
+        shell: pwsh
+        run: |
+          $tag = '${{ github.ref_name }}'
+          if ('${{ github.event_name }}' -eq 'workflow_dispatch' -and -not [string]::IsNullOrWhiteSpace('${{ inputs.tag }}')) {
+            $tag = '${{ inputs.tag }}'
+          }
+
+          if ([string]::IsNullOrWhiteSpace($tag)) {
+            throw 'Could not resolve tag name for release.'
+          }
+
+          $packages = @(
+            @{ Name = "schema-studio-$tag-win-x64.zip"; Source = Join-Path $env:EXPORT_ROOT 'schema-studio-win-x64' },
+            @{ Name = "schema-lite-$tag-win-x64.zip"; Source = Join-Path $env:EXPORT_ROOT 'schema-lite-win-x64' },
+            @{ Name = "schema-lite-$tag-linux-arm64.zip"; Source = Join-Path $env:EXPORT_ROOT 'schema-lite-linux-arm64' }
+          )
+
+          $zipPaths = @()
+          foreach ($package in $packages) {
+            $zipPath = Join-Path $env:GITHUB_WORKSPACE $package.Name
+            if (Test-Path $zipPath) {
+              Remove-Item -LiteralPath $zipPath -Force
+            }
+            Compress-Archive -Path (Join-Path $package.Source '*') -DestinationPath $zipPath
+            $zipPaths += $zipPath
+          }
+
+          "tag=$tag" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+          $zipPathsJson = $zipPaths | ConvertTo-Json -Compress
+          "zip_paths_json=$zipPathsJson" | Out-File -FilePath $env:GITHUB_OUTPUT -Append -Encoding utf8
+
+      - name: Create or update GitHub release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = '${{ steps.package.outputs.tag }}'
+          $zipPaths = ConvertFrom-Json @'
+          ${{ steps.package.outputs.zip_paths_json }}
+          '@
+          if ($zipPaths -isnot [System.Array]) {
+            $zipPaths = @($zipPaths)
+          }
+
+          $exists = gh release view $tag --repo $env:GITHUB_REPOSITORY 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag @zipPaths --repo $env:GITHUB_REPOSITORY --clobber
+          }
+          else {
+            gh release create $tag @zipPaths --repo $env:GITHUB_REPOSITORY --title $tag --generate-notes
+          }
+
+      - name: Upload release build artifact (CI)
+        uses: actions/upload-artifact@v6
+        with:
+          name: schema-release-builds
+          path: |
+            dist/**
+            !dist/**/src/**
+
