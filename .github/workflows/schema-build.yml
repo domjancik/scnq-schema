@@ -1,4 +1,4 @@
-name: Schema export smoke test
+name: Schema build
 
 on:
   workflow_dispatch:
@@ -230,3 +230,4 @@ jobs:
           - Silent install: ${{ steps.install.outputs.seconds }}s
           - Exports: Schema_Studio win-x64, Schema_Lite win-x64, Schema_Lite linux-arm64
           "@ | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append -Encoding utf8
+
