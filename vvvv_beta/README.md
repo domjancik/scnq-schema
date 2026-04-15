@@ -1,5 +1,8 @@
 # Schema vvvv beta patches
 
+These archived patches are distributed under the MIT License. See the repository
+root [LICENSE](../LICENSE).
+
 These are archived vvvv beta patches from initial Schema development before the existence of vvvv gamma (standalone VL)/when vvvv gamma was very limited.
 
 They may still contain some interesting and yet (as of writing) unimplemented features such as:
