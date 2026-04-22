@@ -1,3 +1,16 @@
+param(
+    [string]$SearchRoot = (Split-Path -Parent $PSScriptRoot),
+    [string]$NugetDirectory = (Join-Path -Path $env:USERPROFILE -ChildPath "AppData\Local\vvvv\gamma\nugets"),
+    [string]$NugetPath = "",
+    [string[]]$Sources = @(
+        "https://teamcity.vvvv.org/guestAuth/app/nuget/v1/FeedService.svc/",
+        "https://api.nuget.org/v3/index.json"
+    )
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = "Stop"
+
 # Define the list of locations to ignore
 $ignoreList = @(
     "SharpDX.Mathematics",
@@ -19,64 +32,101 @@ $ignoreList = @(
     "VL.Video.MediaFoundation"
 )
 
-# The NuGet commands directory
-$nugetDirectory = Join-Path -Path $env:USERPROFILE -ChildPath "AppData\Local\vvvv\gamma\nugets"
+function Get-VvvvNugetPath {
+    param([string]$PreferredPath)
 
-# NuGet executable path
-$nugetPath = "C:\Program Files\vvvv\vvvv_gamma_6.7\tools\NuGet.exe"
+    if (-not [string]::IsNullOrWhiteSpace($PreferredPath) -and (Test-Path -LiteralPath $PreferredPath)) {
+        return (Resolve-Path -LiteralPath $PreferredPath).Path
+    }
 
-# Ensure NuGet executable exists
-if (-not (Test-Path -Path $nugetPath)) {
-    Write-Error "NuGet executable not found at $nugetPath. Please ensure it is installed correctly."
-    exit
+    if (-not [string]::IsNullOrWhiteSpace($env:VVVV_NUGET_PATH) -and (Test-Path -LiteralPath $env:VVVV_NUGET_PATH)) {
+        return (Resolve-Path -LiteralPath $env:VVVV_NUGET_PATH).Path
+    }
+
+    $candidates = @()
+    foreach ($root in @('C:\Program Files\vvvv', 'C:\Program Files (x86)\vvvv')) {
+        if (Test-Path -LiteralPath $root) {
+            $candidates += Get-ChildItem -LiteralPath $root -Filter NuGet.exe -File -Recurse -ErrorAction SilentlyContinue |
+                Where-Object { $_.FullName -match '\\tools\\NuGet\.exe$' }
+        }
+    }
+
+    $best = $candidates |
+        Sort-Object -Property LastWriteTimeUtc -Descending |
+        Select-Object -First 1
+
+    if ($best) {
+        return $best.FullName
+    }
+
+    throw "NuGet executable not found. Set -NugetPath or VVVV_NUGET_PATH."
 }
 
-# Initialize a hashtable to hold the highest version for each package
-$highestVersions = @{}
-
 # Function to parse and return a comparable version object
-function Parse-Version($versionString) {
-    $match = [regex]::Match($versionString, '^\d+(\.\d+){0,3}')
+function Parse-Version {
+    param([string]$VersionString)
+    $match = [regex]::Match($VersionString, '^\d+(\.\d+){0,3}')
     if ($match.Success) {
         try {
             return [System.Version]$match.Value
-        } catch {
+        }
+        catch {
             return $null
         }
     }
     return $null
 }
 
-# Find all .vl files in the current directory and subdirectories
-$files = Get-ChildItem -Path . -Filter *.vl -Recurse
+$nugetPathResolved = Get-VvvvNugetPath -PreferredPath $NugetPath
+Write-Host "Using NuGet: $nugetPathResolved"
+Write-Host "Dependency scan root: $SearchRoot"
+Write-Host "NuGet output directory: $NugetDirectory"
+Write-Host "NuGet sources: $($Sources -join '; ')"
+
+New-Item -ItemType Directory -Force -Path $NugetDirectory | Out-Null
+
+# Initialize a hashtable to hold the highest version for each package
+$highestVersions = @{}
+
+# Find all .vl files in the requested directory and subdirectories
+$files = Get-ChildItem -Path $SearchRoot -Filter *.vl -Recurse -File
 
 foreach ($file in $files) {
-    # Read the contents of the file
-    $content = Get-Content $file.FullName
-    
-    # Find lines that match the NugetDependency pattern
-    $dependencies = $content | Select-String -Pattern '<NugetDependency Id=".*" Location="(?<Location>.*)" Version="(?<Version>.*)" />' -AllMatches
-    
-    foreach ($dependency in $dependencies.Matches) {
+    $content = Get-Content -LiteralPath $file.FullName -Raw
+    $dependencies = [regex]::Matches($content, '<NugetDependency Id=".*?" Location="(?<Location>.*?)" Version="(?<Version>.*?)" />')
+
+    foreach ($dependency in $dependencies) {
         $location = $dependency.Groups["Location"].Value
         $versionString = $dependency.Groups["Version"].Value
-        $version = Parse-Version $versionString
-        
+        $version = Parse-Version -VersionString $versionString
+
         # Skip if version could not be parsed
         if ($null -eq $version) { continue }
-        
+
         # Check if the location is in the ignore list
         if ($location -notin $ignoreList) {
             # Update the hashtable with the highest version found for each package
-            if (-not $highestVersions.ContainsKey($location) -or (Parse-Version $highestVersions[$location]) -lt $version) {
+            if (-not $highestVersions.ContainsKey($location) -or (Parse-Version -VersionString $highestVersions[$location]) -lt $version) {
                 $highestVersions[$location] = $versionString
             }
         }
     }
 }
 
+Write-Host "Resolved package count: $($highestVersions.Count)"
+
 # Install the highest version found for each package
-foreach ($package in $highestVersions.GetEnumerator()) {
-    $nugetCommand = "& `"$nugetPath`" install $($package.Name) -Version $($package.Value) -OutputDirectory `"$nugetDirectory`""
-    Invoke-Expression $nugetCommand
+$failedPackages = @()
+foreach ($package in $highestVersions.GetEnumerator() | Sort-Object Name) {
+    Write-Host "Installing $($package.Name) $($package.Value)"
+    & $nugetPathResolved install $package.Name -Version $package.Value -OutputDirectory $NugetDirectory -Source ($Sources -join ';') -Prerelease -NonInteractive
+    if ($LASTEXITCODE -ne 0) {
+        Write-Warning "NuGet install failed for $($package.Name) $($package.Value) with exit code $LASTEXITCODE. Continuing."
+        $failedPackages += "$($package.Name) $($package.Value)"
+    }
+}
+
+if ($failedPackages.Count -gt 0) {
+    Write-Warning "Some packages could not be pre-installed:"
+    $failedPackages | ForEach-Object { Write-Warning " - $_" }
 }
